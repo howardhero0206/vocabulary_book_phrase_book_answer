@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>單字書+片語書小考 詳解｜7-1~7-2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7EBEE; --card:#FDFDFC;
+  --ink:#10202F; --ink-2:#56687A; --ink-3:#7C8B99;
+  --rule:#C6D0D8; --pen:#17457E; --hl:#FFE773; --miss:#A34234;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono','Cascadia Mono',Menlo,Consolas,monospace;
+  --read:'Literata',Georgia,'Times New Roman',serif;
+  --han:'PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--han);font-size:16px;line-height:1.75}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2px}
+
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+.title{font-size:23px;font-weight:600;margin:0;line-height:1.3}
+.meta{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin:4px 0 0;letter-spacing:.04em}
+.bar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;padding:12px 0 11px;margin-top:10px;border-top:1px solid var(--rule)}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--rule);background:transparent;color:var(--ink-2);padding:5px 10px;border-radius:999px;cursor:pointer;text-decoration:none;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:var(--pen);color:var(--pen)}
+.chip.solid{margin-left:auto;border-color:var(--ink);color:var(--ink);font-weight:500}
+.chip.solid:hover{background:var(--ink);color:var(--card)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:28px 24px 96px;display:grid;gap:36px;grid-template-columns:minmax(0,1fr) 288px}
+@media (max-width:1020px){.wrap{grid-template-columns:minmax(0,1fr);gap:44px}}
+
+.sec{margin:0 0 48px;scroll-margin-top:136px}
+.sec-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--ink-3)}
+.sec-label{font-size:18px;font-weight:600;margin:0}
+.sec-score{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-left:auto}
+.sec-inst{font-size:13.5px;color:var(--ink-2);margin:9px 0 0}
+
+.bank{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:16px 0 0}
+@media (max-width:760px){.bank{grid-template-columns:repeat(2,1fr)}}
+.bank-i{background:var(--card);padding:8px 10px;font-family:var(--read);font-size:14.5px}
+.bank-i span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-right:5px}
+.bank-i.used{background:#F2F5F6;color:var(--ink-3)}
+
+.passage{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--ink);padding:22px 26px;margin:18px 0 0;font-family:var(--read);font-size:16.5px;line-height:1.95;color:#1a2836}
+.passage p{margin:0 0 1em}
+.passage p:last-child{margin-bottom:0}
+.blank{display:inline-block;min-width:70px;text-align:center;border:0;border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:13px;color:var(--pen);cursor:pointer;background:none;padding:0 4px;line-height:1.4}
+.blank:hover{background:rgba(23,69,126,.07)}
+.blank.filled{font-family:var(--read);font-size:16.5px;color:var(--ink);border-bottom-color:transparent;min-width:0}
+.blank sup{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:2px}
+.zhbtn{display:block;margin:0 0 18px;background:var(--card);border:1px solid var(--rule);border-top:0;width:100%;text-align:left;padding:8px 26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--pen);cursor:pointer}
+.zhbtn:hover{color:var(--ink)}
+.zhbtn::after{content:' ▾'}
+.zhbtn.on::after{content:' ▴'}
+.zhbox{display:none;background:#F7F9FA;border:1px solid var(--rule);border-top:0;padding:18px 26px;margin:0 0 18px;font-size:15px;line-height:1.95;color:#22323F}
+.zhbox.on{display:block}
+.zhbox p{margin:0 0 .9em}
+.zhbox p:last-child{margin:0}
+
+.q{background:var(--card);border:1px solid var(--rule);margin:14px 0 0;scroll-margin-top:142px}
+.q-top{padding:16px 22px 14px}
+.q-tag{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.q-n{font-family:var(--mono);font-size:13px;font-weight:600}
+.q-kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.prompt{font-size:14.5px;line-height:1.85;color:var(--ink-2);margin:0 0 11px;padding-left:11px;border-left:2px solid var(--rule)}
+.stem{font-family:var(--read);font-size:16.5px;line-height:1.85;margin:0 0 13px;color:#1a2836}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:9px;font-family:var(--read);font-size:15.5px;line-height:1.6;padding:3px 0;color:#243342}
+.opt-k{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);padding-top:2px;flex:none}
+.reveal{display:block;width:100%;text-align:left;margin-top:14px;background:none;border:0;border-top:1px dashed var(--rule);padding:11px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--pen);cursor:pointer}
+.reveal:hover{color:var(--ink)}
+.reveal::after{content:' ▾'}
+.q.open .reveal::after{content:' ▴'}
+.q.open .reveal{color:var(--ink-3)}
+
+.body{display:none;border-top:1px solid var(--rule);background:#F7F9FA;padding:18px 22px 20px}
+.q.open .body{display:block}
+.ans{display:flex;align-items:baseline;gap:10px;margin:0 0 13px;flex-wrap:wrap}
+.ans-k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink-3);flex:none;padding-top:2px}
+.ans-v{font-family:var(--read);font-size:18px;font-weight:600}
+.fills{list-style:none;margin:0 0 13px;padding:0}
+.fill{display:flex;gap:11px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--rule)}
+.fill-k{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);flex:none;width:26px}
+.fill-w{font-family:var(--read);font-size:17px;font-weight:600;flex:none}
+.fill-n{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.zh{font-size:15px;line-height:1.85;margin:0 0 14px;color:#22323F}
+.why{font-size:14.5px;line-height:1.85;margin:0 0 4px;color:#22323F;border-top:1px solid var(--rule);padding-top:12px}
+.lines{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.line{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.75;color:var(--ink-2)}
+.line-k{font-family:var(--mono);font-size:12.5px;flex:none;width:28px;color:var(--ink-3);padding-top:2px}
+.line.right{color:var(--ink)}
+.line.right .line-k{color:var(--ink);font-weight:600}
+.line.right .line-k::after{content:'✓';display:block;font-size:12px;line-height:1.3}
+.line.wrong .line-k{color:var(--miss);opacity:.85}
+.line.wrong .line-k::after{content:'✗';display:block;font-size:12px;line-height:1.3}
+.evid{margin:15px 0 0;font-family:var(--read);font-size:14.5px;line-height:1.8;color:var(--ink-2);padding-left:13px;border-left:2px solid var(--hl)}
+.evid span{font-family:var(--han);font-size:11px;letter-spacing:.14em;color:var(--ink-3);display:block;margin-bottom:3px}
+
+.hl{background-image:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 90%,transparent 90%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size .55s cubic-bezier(.2,.75,.3,1);border-radius:1px}
+.hl.on{background-size:100% 100%}
+
+.note{margin:15px 0 0;border:1px solid var(--rule);background:var(--card);padding:13px 16px}
+.note-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:0 0 9px}
+.note-i{margin:0;padding:9px 0 0;border-top:1px dotted var(--rule)}
+.note-i:first-of-type{border-top:0;padding-top:0}
+.term{font-family:var(--read);font-size:16px;font-weight:600}
+.pos{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin:0 6px}
+.gloss{font-size:14.5px}
+.ex{font-family:var(--read);font-size:14px;color:var(--ink-2);line-height:1.7;margin:3px 0 0;display:block}
+.ex i{font-family:var(--han);font-style:normal;font-size:13px;color:var(--ink-3);display:block}
+
+.side{position:sticky;top:136px;align-self:start;max-height:calc(100vh - 164px);overflow:auto;padding-right:4px}
+@media (max-width:1020px){.side{position:static;max-height:none;scroll-margin-top:136px}}
+.side-h{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 3px}
+.side-t{font-size:16px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.card-list{margin:0;padding:0;list-style:none}
+.card-item{border-bottom:1px solid var(--rule);padding:11px 0}
+.card-item a{display:block;text-decoration:none;color:inherit}
+.card-item a:hover .term{background:var(--hl)}
+.jump{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);float:right;padding-top:5px}
+.side-note{font-size:12.5px;color:var(--ink-3);line-height:1.7;margin:16px 0 0}
+.foot{max-width:var(--maxw);margin:0 auto;padding:0 24px 48px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .top,.side,.reveal,.foot,.zhbtn{display:none!important}
+  .wrap{display:block;max-width:none;padding:0}
+  .q .body{display:block!important}
+  .zhbox{display:block!important}
+  .q{break-inside:avoid;border-color:#999;margin-bottom:9pt}
+  .passage{break-inside:avoid}
+  .hl{background-size:100% 100%!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <p class="eyebrow" id="brand"></p>
+    <h1 class="title" id="examTitle"></h1>
+    <p class="meta" id="examMeta"></p>
+    <nav class="bar" id="nav"></nav>
+  </div>
+</header>
+
+<div class="wrap"><main id="main"></main><aside class="side" id="side"></aside></div>
+<p class="foot" id="foot"></p>
+
+<script>
+/* ==========================================================================
+   ①  題目與詳解全部寫在下面的 EXAM 物件裡。要改題、加題、修字，只動這裡。
+
+   section（大題）：{ id, label, score, instruction, bank?, groups: [...] }
+   group（同一篇文章的題組）：{ passage?, zh?, questions: [...] }
+       passage 裡寫 __7__ 就會變成可點的空格，數字對應題號。
+       zh 是全文中譯，會做成可展開的按鈕。
+
+   question 依題型三選一：
+     選擇題   { n, kind, stem, options:{A..D}, answer:"B", translation, explain:{A..D}, evidence?, notes? }
+     單一填答 { n, kind, stem, answerText:"prejudice", why, notes? }
+     多格填答 { n, kind, prompt, stem, answers:[{k:"①", w:"字", note:"說明"}], notes? }
+   ========================================================================== */
+const EXAM = {
+  brand: "單字書+片語書小考",
+  title: "單字書+片語書小考 詳解｜7-1~7-2 + Unit 1-5",
+  meta: "Instructor: Howard Chang　·　範圍：單字書7-1 ~7-2+ 片語書 Unit 1-5 (Class 310)　·　滿分 85 分",
+  footer: "班級複習用",
+  sections: [
+  /* ===================== I. 字彙選擇 ===================== */
+  {
+    id:"vocab", label:"I. 字彙選擇", score:"30% · 每題 2%",
+    instruction:"選出最適合句意的一個選項。答案：C B D A C　D B C D A　C B C A D",
+    groups:[{
+      questions:[
+        { n:1, kind:"名詞",
+          stem:"Because of the tight time ______, the research team decided to focus on only three of the five experiments they had originally planned.",
+          options:{A:"accommodation",B:"distinction",C:"constraint",D:"fragment"}, answer:"C",
+          translation:"由於時間限制緊迫，研究團隊決定只專注在原先計畫的五項實驗中的三項。",
+          explain:{
+            A:"accommodation 住宿；容納、通融。與時間搭不起來，time accommodation 不成詞。",
+            B:"distinction 區別、差異。「時間的區別」語意不通。此字是第二大題的相關字群。",
+            C:"constraint 限制、約束。time constraint（時間限制）是固定搭配，tight 也正是修飾它的常見形容詞；後半句「五項砍成三項」就是受限的結果。",
+            D:"fragment 碎片。指具體的破碎物，不能修飾抽象的時間。"
+          },
+          notes:[{term:"constraint", pos:"n.", gloss:"限制、約束（v. constrain）；常用複數 constraints", ex:"We finished early despite tight time constraints.", exZh:"儘管時間吃緊，我們仍提早完成。"}]},
+
+        { n:2, kind:"名詞",
+          stem:"Workers who handle industrial waste every day must receive training that helps them identify any ______ before it causes permanent damage.",
+          options:{A:"framework",B:"hazard",C:"equivalent",D:"density"}, answer:"B",
+          translation:"每天處理工業廢棄物的工人必須接受訓練，以協助他們在造成永久傷害之前辨識出任何危害。",
+          explain:{
+            A:"framework 骨架、架構。與工安風險無關。",
+            B:"hazard 危害、潛在的危險。before it causes permanent damage（在造成永久傷害之前）正好點出 hazard 的特性——它是「尚未發生」的風險。",
+            C:"equivalent 相等物、等值物。",
+            D:"density 密度。"
+          },
+          notes:[{term:"hazard", pos:"n.", gloss:"（潛在的）危害、危險源（adj. hazardous）", ex:"Loose wires are a serious fire hazard.", exZh:"鬆脫的電線是嚴重的火災隱患。"},
+                 {term:"hazard vs. danger", pos:"辨析", gloss:"hazard 指潛在的風險源，danger 指當下實際的危險。"}]},
+
+        { n:3, kind:"形容詞",
+          stem:"The ______ cost of the entire project was so enormous that the city council voted to delay construction for another two years.",
+          options:{A:"fertile",B:"abrupt",C:"coarse",D:"gross"}, answer:"D",
+          translation:"整項工程的總成本高得驚人，市議會因此投票決定再延後兩年動工。",
+          explain:{
+            A:"fertile 肥沃的；（想像力）豐富的。",
+            B:"abrupt 突然的；（態度）唐突的。",
+            C:"coarse 粗糙的；粗俗的。與 course（課程）拼字近似，是常見的混淆點。",
+            D:"gross 總計的、未扣除的。gross cost 即「總成本」，與 net（淨額）相對；so enormous 也呼應「總額」的規模感。"
+          },
+          notes:[{term:"gross ↔ net", pos:"辨析", gloss:"gross 是扣除前的總額，net 是扣除後的淨額（gross income／net income）", ex:"The gross weight includes the packaging.", exZh:"毛重包含包裝在內。"}]},
+
+        { n:4, kind:"形容詞",
+          stem:"Although the team had lost three ______ matches, the coach remained confident that his young players would eventually find their rhythm.",
+          options:{A:"successive",B:"accessible",C:"excessive",D:"progressive"}, answer:"A",
+          translation:"儘管球隊已經連輸三場，教練仍有信心他年輕的球員最終會找到節奏。",
+          explain:{
+            A:"successive 連續的、接連的。three successive matches 即「三連敗」；Although 的轉折與 eventually 都暗示這是一連串的挫敗。",
+            B:"accessible 容易接近的、可取得的。",
+            C:"excessive 過度的、過多的。與 successive 只差一個字母，是本題最大的陷阱；three excessive matches 語意不通。",
+            D:"progressive 漸進的；進步的。"
+          },
+          notes:[{term:"successive / consecutive / excessive", pos:"辨析", gloss:"前兩者都是「連續的」（本卷第 13 題的干擾選項就是 consecutive）；excessive 是「過度的」，只有拼字像。", ex:"They won five consecutive games.", exZh:"他們連贏五場。"}]},
+
+        { n:5, kind:"讓步倒裝",
+          stem:"______ as the young lawyer is, he still becomes surprisingly nervous whenever he has to speak in front of a camera.",
+          options:{A:"Barren",B:"Compact",C:"Articulate",D:"Destructive"}, answer:"C",
+          translation:"儘管這位年輕律師口才便給，每當必須面對鏡頭說話時，他仍然會緊張得出人意料。",
+          explain:{
+            A:"Barren 貧瘠的、不毛的。形容土地。",
+            B:"Compact 小巧緊湊的。形容相機、車子、空間。",
+            C:"Articulate 口齒清晰的、善於表達的。這是「形容詞＋as＋S＋be」的讓步倒裝（＝Although the young lawyer is articulate），前後必須形成對比：擅長表達，面對鏡頭卻緊張。",
+            D:"Destructive 破壞性的。"
+          },
+          notes:[{term:"形容詞 + as + S + V", pos:"倒裝", gloss:"＝Although + S + be + 形容詞，表讓步。看到句首是形容詞、緊接著 as，就是這個句型。", ex:"Young as she is, she runs the whole department.", exZh:"她雖然年輕，卻掌管整個部門。"},
+                 {term:"articulate", pos:"adj.", gloss:"表達清楚的（本卷第二大題第 20 題再考一次）；當形容詞時字尾唸 /ət/，當動詞唸 /eɪt/。"}]},
+
+        { n:6, kind:"動詞",
+          stem:"The scientist whose reputation had ______ after the failed experiment spent nearly a decade rebuilding the trust of his former colleagues.",
+          options:{A:"blurred",B:"elaborated",C:"averted",D:"diminished"}, answer:"D",
+          translation:"那位在實驗失敗後聲譽受損的科學家，花了將近十年重建昔日同事對他的信任。",
+          explain:{
+            A:"blur 使模糊。常用於影像、界線（blur the line between...）。",
+            B:"elaborate 詳細闡述。常搭配 on（elaborate on a point）。",
+            C:"avert 避開、防止（災難）。本卷第 14 題也用它當干擾選項。",
+            D:"diminish 減少、削弱。rebuilding the trust（重建信任）反推出他的聲譽先是下滑了。"
+          },
+          notes:[{term:"diminish", pos:"vi. / vt.", gloss:"（使）減少、削弱", ex:"Nothing can diminish her achievement.", exZh:"沒有什麼能減損她的成就。"}]},
+
+        { n:7, kind:"名詞",
+          stem:"The poet spent nearly twenty years in ______ before the new government finally allowed him to return to his childhood village.",
+          options:{A:"assumption",B:"exile",C:"coincidence",D:"dilemma"}, answer:"B",
+          translation:"這位詩人流亡了將近二十年，新政府才終於允許他回到兒時的村莊。",
+          explain:{
+            A:"assumption 假設、臆測。",
+            B:"exile 流亡、放逐。in exile 是固定用法；before the new government finally allowed him to return 說明他這段期間有家歸不得。",
+            C:"coincidence 巧合。",
+            D:"dilemma 兩難。"
+          },
+          notes:[{term:"in exile", pos:"phr.", gloss:"流亡中（go into exile 開始流亡）", ex:"He wrote his best poems in exile.", exZh:"他最好的詩是在流亡期間寫的。"}]},
+
+        { n:8, kind:"形容詞",
+          stem:"What the archaeologists discovered was a(n) ______ stone tool that early humans probably used to cut meat more than a million years ago.",
+          options:{A:"fatal",B:"distinct",C:"crude",D:"obese"}, answer:"C",
+          translation:"考古學家發現的是一件粗糙的石器，早期人類大概在一百多萬年前用它來切肉。",
+          explain:{
+            A:"fatal 致命的。修飾 accident、mistake、illness。",
+            B:"distinct 明顯不同的、清晰可辨的。",
+            C:"crude 粗糙的、未加工的。一百多萬年前的石器工法必然原始，crude 正是「未經細緻加工」；crude oil（原油）用的也是這個意思。",
+            D:"obese 肥胖的。只能形容人或動物。"
+          },
+          notes:[{term:"crude", pos:"adj.", gloss:"粗糙的、未加工的；也可指言行「粗魯的」", ex:"They built a crude shelter from branches.", exZh:"他們用樹枝搭了一個簡陋的遮蔽處。"}]},
+
+        { n:9, kind:"形容詞",
+          stem:"The school made helmet use ______ last year, and the number of serious cycling injuries among students dropped almost immediately.",
+          options:{A:"anonymous",B:"bizarre",C:"coherent",D:"mandatory"}, answer:"D",
+          translation:"學校去年把戴安全帽列為強制規定，學生嚴重的騎車受傷人數幾乎立刻下降。",
+          explain:{
+            A:"anonymous 匿名的。",
+            B:"bizarre 怪異的。",
+            C:"coherent 連貫的、有條理的。",
+            D:"mandatory 強制的、義務的。這是 make + 受詞 + 受詞補語的句型，空格要填形容詞；受傷人數「幾乎立刻」下降，說明這不是建議而是硬性規定。"
+          },
+          notes:[{term:"mandatory", pos:"adj.", gloss:"強制的（反義 optional／voluntary 自願的）", ex:"Attendance at the briefing is mandatory.", exZh:"這場說明會強制出席。"},
+                 {term:"make + O + adj.", pos:"句型", gloss:"使…成為…；受詞補語用形容詞。"}]},
+
+        { n:10, kind:"形容詞",
+          stem:"Worn down by the ______ complaints of the passengers, the young flight attendant finally asked a senior colleague for help.",
+          options:{A:"incessant",B:"exotic",C:"versatile",D:"compatible"}, answer:"A",
+          translation:"被乘客沒完沒了的抱怨消磨得筋疲力盡，這位年輕空服員最後向資深同事求助。",
+          explain:{
+            A:"incessant 不間斷的、沒完沒了的。Worn down（被消磨殆盡）與 finally asked for help 都說明抱怨是持續不斷的。",
+            B:"exotic 異國風情的。",
+            C:"versatile 多才多藝的；用途廣泛的。",
+            D:"compatible 相容的、合得來的。"
+          },
+          notes:[{term:"incessant", pos:"adj.", gloss:"不停的、連綿不絕的（常帶負面語氣）", ex:"The incessant noise made it hard to think.", exZh:"沒完沒了的噪音讓人無法思考。"},
+                 {term:"wear sb down", pos:"phr. v.", gloss:"把某人消磨得筋疲力盡；此處為分詞構句 Worn down by...（被動）"}]},
+
+        { n:11, kind:"名詞",
+          stem:"Few citizens realize how quickly a national ______ can grow when a government borrows money to cover its daily expenses.",
+          options:{A:"behalf",B:"extension",C:"deficit",D:"clarity"}, answer:"C",
+          translation:"很少國民意識到，當政府借錢支應日常開銷時，國家赤字會膨脹得多快。",
+          explain:{
+            A:"behalf 只用於 on behalf of（代表…）這個片語，不能單獨使用。",
+            B:"extension 延長、擴充；分機。",
+            C:"deficit 赤字、逆差。borrows money to cover its daily expenses（借錢支應開銷）就是產生赤字的定義。",
+            D:"clarity 清晰、明確。"
+          },
+          notes:[{term:"deficit", pos:"n.", gloss:"赤字、不足額（反義 surplus 盈餘）", ex:"The country ran a record trade deficit last year.", exZh:"該國去年出現創紀錄的貿易逆差。"}]},
+
+        { n:12, kind:"形容詞",
+          stem:"The craft of repairing wooden fishing boats is nearly ______ here, since young people prefer jobs in the city's air-conditioned offices.",
+          options:{A:"apt",B:"extinct",C:"vulgar",D:"ample"}, answer:"B",
+          translation:"修補木造漁船的手藝在這裡幾乎已經失傳，因為年輕人比較想要城市裡有冷氣的辦公室工作。",
+          explain:{
+            A:"apt 易於…的（be apt to V）；恰當的。",
+            B:"extinct 絕跡的、消失的。它不只用於生物——技藝、語言、行業的消亡也用 extinct。since 子句說明後繼無人，正是失傳的原因。",
+            C:"vulgar 粗俗的。",
+            D:"ample 充裕的、足夠的。"
+          },
+          notes:[{term:"extinct", pos:"adj.", gloss:"絕種的；（技藝、語言）失傳的（n. extinction）", ex:"Many regional dialects are already extinct.", exZh:"許多地方方言已經消失了。"}]},
+
+        { n:13, kind:"形容詞",
+          stem:"Having worked in the laboratory since its founding, Dr. Chen has become ______ to every research project the institute now conducts.",
+          options:{A:"consecutive",B:"distinctive",C:"indispensable",D:"exclusive"}, answer:"C",
+          translation:"自實驗室創立之初就在此工作，陳博士如今對該所進行的每一項研究計畫都不可或缺。",
+          explain:{
+            A:"consecutive 連續的。與第 4 題的 successive 同義，但無法接 to。",
+            B:"distinctive 獨特的、有辨識度的。",
+            C:"indispensable 不可或缺的。空格後的介系詞 to 是關鍵：be indispensable to sb/sth。句首的分詞構句 Having worked... since its founding 說明他的資歷無人能取代。",
+            D:"exclusive 專屬的、排他的。搭配的介系詞是 to，但語意變成「陳博士專屬於每項計畫」，不通。"
+          },
+          notes:[{term:"be indispensable to", pos:"phr.", gloss:"對…不可或缺", ex:"Sleep is indispensable to memory.", exZh:"睡眠對記憶不可或缺。"},
+                 {term:"Having + p.p.", pos:"分詞構句", gloss:"完成式分詞構句，表示該動作發生在主要子句之前。"}]},
+
+        { n:14, kind:"動詞",
+          stem:"Any officer who ______ his authority for personal gain should be removed from the force, no matter how many years he has served.",
+          options:{A:"abuses",B:"constitutes",C:"averts",D:"confines"}, answer:"A",
+          translation:"任何為了私利濫用職權的員警都應被開除，無論他服務了多少年。",
+          explain:{
+            A:"abuse 濫用；虐待。abuse one's authority／power 是固定搭配；for personal gain（為了私利）點明這是不當使用。",
+            B:"constitute 構成、組成。The four states constitute the region. 受詞是整體。",
+            C:"avert 避開、防止（災難、危機）。第 6 題也用它當干擾選項。",
+            D:"confine 限制、侷限（confine sth to...）。"
+          },
+          notes:[{term:"abuse", pos:"vt. / n.", gloss:"濫用；虐待。abuse of power 濫權", ex:"He was accused of abusing his position.", exZh:"他被指控濫用職權。"},
+                 {term:"the force", pos:"n.", gloss:"（加定冠詞）警界、警力"}]},
+
+        { n:15, kind:"形容詞",
+          stem:"Emergency doctors are trained to tell the difference between ______ symptoms and problems that have troubled a patient for years.",
+          options:{A:"vague",B:"apt",C:"chronic",D:"acute"}, answer:"D",
+          translation:"急診醫師受過訓練，能分辨急性症狀與困擾病人多年的問題。",
+          explain:{
+            A:"vague 模糊的、含糊的。與「多年的問題」形不成對比。",
+            B:"apt 易於…的；恰當的。",
+            C:"chronic 慢性的、長期的。這是本題最大的陷阱：chronic 的意思正是句子後半 problems that have troubled a patient for years，它是被對比的那一方，不能再填進空格，否則整句變成「分辨慢性症狀與慢性問題」。",
+            D:"acute 急性的、劇烈的。tell the difference between A and B 要求 A、B 相對；後半既然是「多年的慢性問題」，空格就必須是「急性」。"
+          },
+          notes:[{term:"acute ↔ chronic", pos:"辨析", gloss:"急性（來得快而猛）／慢性（持續很久）。醫學用語必背的一組。", ex:"acute pain / a chronic illness", exZh:"急性疼痛／慢性疾病"},
+                 {term:"tell the difference between", pos:"phr.", gloss:"分辨…之間的差異。看到 between A and B，就要想 A 與 B 必須是對立或並列的概念。"}]}
+      ]
+    }]
+  },
+
+  /* ===================== II. 配合題 ===================== */
+  {
+    id:"match", label:"II. 配合題", score:"16% · 每題 2%",
+    instruction:"從下列選項中選出最適合的答案，每個選項限用一次。答案：C B D G A　H E F",
+    bank:{A:"articulate 表達清楚的",B:"confidential 機密的",C:"criterion 標準",D:"debris 殘骸、瓦礫",E:"explicit 明確的",F:"immense 巨大的",G:"deadly 致命的",H:"concession 讓步"},
+    groups:[{
+      questions:[
+        { n:16, kind:"名詞", answer:"C", answerText:"criterion",
+          stem:"Before hiring anyone, the company insists that academic background should never be the single ______ by which candidates are judged.",
+          translation:"在僱用任何人之前，這家公司堅持學歷絕不該是評斷應徵者的唯一標準。",
+          why:"by which candidates are judged（據以評斷應徵者的東西）就是「標準」。注意 criterion 是單數形，複數為 criteria——這組不規則變化很常考，空格前有 the single 就必須用單數。",
+          notes:[{term:"criterion / criteria", pos:"n.", gloss:"標準（單數 criterion，複數 criteria）", ex:"Price was not the only criterion.", exZh:"價格並不是唯一的標準。"}]},
+
+        { n:17, kind:"形容詞", answer:"B", answerText:"confidential",
+          stem:"Since these documents are highly ______, please do not leave them lying on your desk whenever you step out for lunch.",
+          translation:"由於這些文件高度機密，請不要在你外出用餐時把它們留在桌上。",
+          why:"do not leave them lying on your desk（別擱在桌上）說明內容不能被旁人看到。highly confidential 是新聞與公文裡的固定搭配。",
+          notes:[{term:"confidential", pos:"adj.", gloss:"機密的、保密的（n. confidence 信賴／confidentiality 保密）", ex:"This conversation is strictly confidential.", exZh:"這段談話絕對保密。"}]},
+
+        { n:18, kind:"名詞", answer:"D", answerText:"debris",
+          stem:"After the typhoon passed, volunteers spent three whole days clearing the ______ that blocked every narrow lane in the fishing village.",
+          translation:"颱風過後，志工花了整整三天清除堵住漁村每條窄巷的瓦礫殘骸。",
+          why:"颱風過後堵住巷子、需要花三天清除的東西就是殘骸瓦礫。debris 為不可數名詞，源自法文，字尾的 s 不發音（唸作 /dəˈbriː/），這點常被念錯。",
+          notes:[{term:"debris", pos:"n.", gloss:"殘骸、瓦礫、碎片（不可數，字尾 s 不發音）", ex:"Rescue teams searched the debris for survivors.", exZh:"救難隊在瓦礫中搜尋生還者。"}]},
+
+        { n:19, kind:"形容詞", answer:"G", answerText:"deadly",
+          stem:"Bitten by a(n) ______ snake while hiking alone, the young man survived only because a farmer happened to find him within an hour.",
+          translation:"獨自健行時被毒蛇咬傷，這名年輕男子之所以生還，只是因為一位農夫剛好在一小時內發現了他。",
+          why:"survived only because a farmer happened to find him within an hour——「只差一點就沒命」反推出這條蛇的毒性是致命的。句首 Bitten by... 為被動分詞構句。",
+          notes:[{term:"deadly", pos:"adj.", gloss:"致命的（＝fatal）", ex:"The disease proved deadly in older patients.", exZh:"這種病對年長患者是致命的。"}]},
+
+        { n:20, kind:"形容詞", answer:"A", answerText:"articulate",
+          stem:"What impressed the judges was not the boy's confidence but how ______ he sounded while answering every difficult question they asked.",
+          translation:"讓評審印象深刻的不是這男孩的自信，而是他在回答每個刁鑽問題時表達得多麼清楚有條理。",
+          why:"not A but B 的句型要求 A、B 是兩個不同的特質：與 confidence（自信）並列而不同的，是「話說得多清楚」。本卷第 5 題考的也是這個字，那裡當作讓步倒裝的形容詞用。",
+          notes:[{term:"articulate", pos:"adj. / vt.", gloss:"表達清楚的；清楚說出。形容詞唸 /ɑrˈtɪkjələt/，動詞唸 /ɑrˈtɪkjəleɪt/。", ex:"She is the most articulate student in the class.", exZh:"她是班上表達最清楚的學生。"}]},
+
+        { n:21, kind:"名詞", answer:"H", answerText:"concession",
+          stem:"Neither side was willing to make the smallest ______, and the negotiations finally collapsed after eleven exhausting hours of argument.",
+          translation:"雙方都不願做出最小的讓步，談判在十一小時精疲力竭的爭論後終告破裂。",
+          why:"Neither side was willing to make... 加上 negotiations finally collapsed——談判破裂的原因就是沒有人退讓。make a concession（做出讓步）是固定搭配。",
+          notes:[{term:"concession", pos:"n.", gloss:"讓步、退讓（v. concede）", ex:"Both sides made concessions to reach a deal.", exZh:"雙方都作出讓步才達成協議。"}]},
+
+        { n:22, kind:"形容詞", answer:"E", answerText:"explicit",
+          stem:"Written in plain and ______ language, the safety manual leaves no room for the kind of misunderstanding that once caused several accidents.",
+          translation:"這本安全手冊以淺白而明確的語言寫成，不留任何曾經導致多起事故的誤解空間。",
+          why:"leaves no room for ... misunderstanding（不留誤解空間）正是 explicit 的定義。另外 plain and ______ 是兩個形容詞並列，語意必須同向，plain（淺白的）已經定調。",
+          notes:[{term:"explicit", pos:"adj.", gloss:"明確的、不含糊的（反義 implicit 含蓄的、暗示的）", ex:"The contract is explicit about who pays.", exZh:"合約明確寫出由誰付款。"},
+                 {term:"leave no room for", pos:"phr.", gloss:"不留…的餘地", ex:"The wording leaves no room for doubt.", exZh:"這個措辭不留任何懷疑的餘地。"}]},
+
+        { n:23, kind:"形容詞", answer:"F", answerText:"immense",
+          stem:"The ______ pressure at the bottom of the ocean would easily crush any submarine that engineers had designed before the 1960s.",
+          translation:"海底的巨大壓力，會輕易壓碎任何一九六○年代以前工程師設計的潛艇。",
+          why:"would easily crush any submarine（輕易壓碎潛艇）說明壓力之驚人。immense 用來形容規模、數量、程度的龐大，語氣比 big、large 都強。",
+          notes:[{term:"immense", pos:"adj.", gloss:"巨大的、極大的（＝enormous／vast）", ex:"The project required an immense amount of work.", exZh:"這項計畫需要極大量的工作。"}]}
+      ]
+    }]
+  },
+
+  /* ===================== III. 片語選擇 ===================== */
+  {
+    id:"phrase", label:"III. 片語選擇", score:"20% · 每題 2%",
+    instruction:"選出最適合句意的一個選項。答案：C B A C D　B A B A A",
+    groups:[{
+      questions:[
+        { n:24, kind:"程度片語",
+          stem:"The mechanic warned that fixing the engine would cost ______ NT$50,000, and the final bill might turn out to be even higher than that.",
+          options:{A:"at length",B:"at worst",C:"at least",D:"at best"}, answer:"C",
+          translation:"技師警告，修理引擎至少要花五萬元新台幣，而最後的帳單可能還會更高。",
+          explain:{
+            A:"at length 詳盡地；也可指「終於」。注意它不是「在長度上」，這是常見的誤解。",
+            B:"at worst 最糟的情況下。語意可通，但與 even higher 的語氣衝突：最糟的情況不會再往上加。",
+            C:"at least 至少。後半句 the final bill might turn out to be even higher 直接證明五萬是下限。",
+            D:"at best 充其量、頂多。帶貶抑語氣，且同樣是上限。"
+          },
+          notes:[{term:"at least ↔ at most", pos:"phr.", gloss:"至少／至多。看句子其他部分是往上加還是往下扣就能判斷。", ex:"It'll take at least two hours.", exZh:"這至少要花兩小時。"},
+                 {term:"at length", pos:"phr.", gloss:"詳盡地；終於。常被誤以為是「長度上」。", ex:"She spoke at length about the plan.", exZh:"她詳細談了這個計畫。"}]},
+
+        { n:25, kind:"介系詞片語",
+          stem:"Free shuttle buses run ______ the science park every twenty minutes, so employees living downtown rarely need to drive their own cars.",
+          options:{A:"back and forth",B:"to and from",C:"up and down",D:"high and low"}, answer:"B",
+          translation:"免費接駁車每二十分鐘往返科學園區一趟，所以住在市區的員工很少需要自己開車。",
+          explain:{
+            A:"back and forth 來回地。它是副詞片語，後面不能直接接受詞；要說 run back and forth between A and B。",
+            B:"to and from 往返於…。to 與 from 都是介系詞，後面可以直接接地點 the science park，只有它文法上站得住。",
+            C:"up and down 上上下下、來來回回。用於實際的上下移動。",
+            D:"high and low 到處（常見於 search high and low 到處找）。"
+          },
+          notes:[{term:"to and from + 地點", pos:"phr.", gloss:"往返於…（本卷第 35 題再考一次）", ex:"She commutes to and from Taipei every day.", exZh:"她每天往返台北通勤。"},
+                 {term:"back and forth vs. to and from", pos:"辨析", gloss:"back and forth 是副詞不接受詞；to and from 是介系詞片語，後面一定要有地點。"}]},
+
+        { n:26, kind:"方式片語",
+          stem:"I met my former roommate ______ at Taipei Main Station; neither of us had any idea the other had moved back to Taiwan.",
+          options:{A:"by chance",B:"on purpose",C:"in haste",D:"in advance"}, answer:"A",
+          translation:"我在台北車站偶然遇到我以前的室友；我們都不知道對方已經搬回台灣了。",
+          explain:{
+            A:"by chance 偶然地、碰巧。分號後 neither of us had any idea 說明這場相遇完全沒有預期。",
+            B:"on purpose 故意地。與「毫不知情」矛盾。本卷第 35 題考這個片語。",
+            C:"in haste 匆忙地。描述的是動作的速度，不是相遇的偶然性。",
+            D:"in advance 事先、預先。與 neither of us had any idea 直接衝突。"
+          },
+          notes:[{term:"by chance", pos:"phr.", gloss:"偶然地（＝by accident；反義 on purpose 故意地）", ex:"I found the letter quite by chance.", exZh:"我完全是碰巧才發現那封信。"}]},
+
+        { n:27, kind:"形容詞片語",
+          stem:"At first the coach doubted that such a small player was ______ scoring against the tallest defenders, but he proved everyone wrong.",
+          options:{A:"fond of",B:"rich in",C:"capable of",D:"absent from"}, answer:"C",
+          translation:"起初教練懷疑這麼矮小的球員有能力在最高大的防守者面前得分，但他證明了所有人都錯了。",
+          explain:{
+            A:"fond of 喜愛的。教練懷疑的是能力，不是喜好。",
+            B:"rich in 富含…的。主詞須為食物、土壤、資源（rich in vitamin C）。",
+            C:"capable of 有能力做…。of 是介系詞，後面接動名詞 scoring；proved everyone wrong 也證明他確實辦到了。",
+            D:"absent from 缺席。語意完全不合。"
+          },
+          notes:[{term:"be capable of + V-ing = be able to + V", pos:"辨析", gloss:"同義但搭配不同：capable of 接動名詞，able to 接原形動詞。", ex:"She is capable of handling it. / She is able to handle it.", exZh:"她有能力處理這件事。"}]},
+
+        { n:28, kind:"形容詞片語",
+          stem:"Although the melody sounded ______ everyone in the audience, nobody could remember the name of the film in which it first appeared.",
+          options:{A:"familiar with",B:"opposite to",C:"the same as",D:"familiar to"}, answer:"D",
+          translation:"雖然這段旋律對在場每個人來說都很耳熟，卻沒有人記得它最早出現在哪一部電影裡。",
+          explain:{
+            A:"familiar with 熟悉…的。主詞必須是「人」：Everyone was familiar with the melody. 這裡的主詞是 the melody，用不上。",
+            B:"opposite to 與…相對、位於…對面。",
+            C:"the same as 與…相同。旋律不會「和觀眾一樣」。",
+            D:"familiar to 為…所熟悉。主詞是事物（the melody），對人而言熟悉，用 familiar to。"
+          },
+          notes:[{term:"familiar to vs. familiar with", pos:"辨析", gloss:"事物 be familiar to 人／人 be familiar with 事物。判斷主詞是人還是物就能選對。", ex:"The name is familiar to me. / I am familiar with the name.", exZh:"這名字我很耳熟。／我對這名字很熟悉。"}]},
+
+        { n:29, kind:"因果片語",
+          stem:"The delay in the construction project was ______ the heavy rainfall that hit the region for three straight weeks in June.",
+          options:{A:"responsible for",B:"due to",C:"aware of",D:"close to"}, answer:"B",
+          translation:"這項工程的延誤是由於六月連續三週侵襲該地區的大雨。",
+          explain:{
+            A:"responsible for 是…的原因、對…負責。因果方向剛好相反：要用它得改寫成 The heavy rainfall was responsible for the delay。",
+            B:"due to 由於、因為。主詞是結果（延誤），後面接原因（大雨），方向正確。",
+            C:"aware of 察覺到、意識到。主詞須為人。",
+            D:"close to 接近。語意不合。"
+          },
+          notes:[{term:"be due to + N", pos:"phr.", gloss:"起因於…（主詞是結果）", ex:"The cancellation was due to a technical fault.", exZh:"取消是因為技術故障。"},
+                 {term:"A is due to B ↔ B is responsible for A", pos:"辨析", gloss:"兩者因果方向相反，寫作時最容易搞混。"}]},
+
+        { n:30, kind:"介系詞片語",
+          stem:"The employees were completely ______ about the merger until the announcement appeared on the company website early on Monday morning.",
+          options:{A:"in the dark",B:"in the first place",C:"in general",D:"in public"}, answer:"A",
+          translation:"直到週一一早公告出現在公司網站上之前，員工對這樁併購案完全一無所知。",
+          explain:{
+            A:"in the dark 被蒙在鼓裡、毫不知情。until the announcement appeared 說明公告前完全沒消息，且後面接 about 也符合搭配。",
+            B:"in the first place 首先；一開始。時間副詞，不能被 completely 修飾，也接不了 about。",
+            C:"in general 大體上、一般而言。",
+            D:"in public 公開地。與「不知情」無關。"
+          },
+          notes:[{term:"(be / keep sb) in the dark about", pos:"phr.", gloss:"對…毫不知情／把某人蒙在鼓裡", ex:"Staff were kept in the dark about the layoffs.", exZh:"員工被瞞著裁員的事。"}]},
+
+        { n:31, kind:"介系詞片語",
+          stem:"The morning program goes ______ at six o'clock sharp, so the hosts usually arrive at the studio before five to prepare.",
+          options:{A:"in the air",B:"on the air",C:"in use",D:"on purpose"}, answer:"B",
+          translation:"晨間節目在六點整開播，所以主持人通常五點前就到攝影棚準備。",
+          explain:{
+            A:"in the air 懸而未決、還不確定。只差一個介系詞，意思完全不同；本卷第 35 題考的正是它。",
+            B:"on the air 播出中；go on the air 即「開播」。前後文的 program、hosts、studio 都是廣播電視的語境。",
+            C:"in use 使用中。主詞須為設備、房間（The room is in use）。",
+            D:"on purpose 故意地。語意不合。"
+          },
+          notes:[{term:"on the air vs. in the air", pos:"辨析", gloss:"on the air 播出中／in the air 尚未定案。本卷兩個都考，記成一組最有效率。", ex:"We're on the air in ten seconds.", exZh:"十秒後我們就開播了。"}]},
+
+        { n:32, kind:"轉承語",
+          stem:"Don't be too disappointed that your grandmother forgot your birthday this year. ______, she is almost ninety and her memory has been failing recently.",
+          options:{A:"After all",B:"Above all",C:"In fact",D:"In short"}, answer:"A",
+          translation:"別為了奶奶今年忘了你的生日太失望。畢竟，她都快九十歲了，記憶力最近也一直在衰退。",
+          explain:{
+            A:"After all 畢竟。用來補上一個替前面說法緩頰、解釋的理由，正是這裡的功能：先安慰，再說明為什麼不該生氣。",
+            B:"Above all 最重要的是。用於列舉多項後挑出最重要的一項，但這裡只有一個理由。",
+            C:"In fact 事實上。用於修正或加強前一句，但後句並不是在推翻「別太失望」。",
+            D:"In short 簡言之。用來總結已說過的內容，但後句是新資訊。"
+          },
+          notes:[{term:"After all", pos:"phr.", gloss:"畢竟（補充理由）；置於句尾時另有「終究還是」之意。", ex:"Don't blame him—after all, he's new here.", exZh:"別怪他，畢竟他才剛來。"}]},
+
+        { n:33, kind:"轉承語",
+          stem:"The new restaurant downtown serves only plant-based dishes. ______, you will not find any meat, fish, eggs, or dairy products on its menu.",
+          options:{A:"That is to say",B:"On the other hand",C:"Most of all",D:"In this way"}, answer:"A",
+          translation:"市中心那家新餐廳只供應植物性料理。也就是說，你在它的菜單上找不到任何肉類、魚類、蛋或乳製品。",
+          explain:{
+            A:"That is to say 也就是說。後句把前句的 plant-based 換句話說、講得更具體，正是它的功能。",
+            B:"On the other hand 另一方面。表對比，但前後兩句立場一致。",
+            C:"Most of all 最重要的是。用於強調多項中的一項。",
+            D:"In this way 用這種方式。表方法，但後句講的是內容不是做法。"
+          },
+          notes:[{term:"That is to say", pos:"phr.", gloss:"也就是說（＝in other words＝i.e.）", ex:"He's my mother's brother—that is to say, my uncle.", exZh:"他是我母親的兄弟，也就是我舅舅。"}]}
+      ]
+    }]
+  },
+
+  /* ===================== IV. 中譯填空 ===================== */
+  {
+    id:"fill", label:"IV. 中譯填空", score:"19%",
+    instruction:"依中文語意完成英文句子。此處以片語為單位呈現答案，實際格數請對照原卷。",
+    groups:[{
+      questions:[
+        { n:34, kind:"片語填空",
+          prompt:"這家當地麵包店以手工製作的酸種麵包聞名，與大型連鎖店不同。例如，每週五早上都有新鮮糕點特價販售。",
+          stem:"This local bakery is ①__________ its handmade sourdough bread and is ②__________ large chain stores. ③__________, fresh pastries are ④__________ every Friday morning.",
+          answers:[
+            {k:"①", w:"noted for", note:"以…聞名（＝be famous for／be known for）。介系詞是 for，不是 of。"},
+            {k:"②", w:"different from", note:"與…不同。介系詞用 from；不少人會誤寫成 different with 或 different to。"},
+            {k:"③", w:"For instance", note:"例如（＝for example）。置於句首後要加逗號，第一個字母大寫。"},
+            {k:"④", w:"on sale", note:"特價出售。注意與 for sale（待售、有在賣）不同——這組是本題最容易失分的地方。"}
+          ],
+          why:"四個片語都靠中文提示對應：「以…聞名」→ be noted for，「與…不同」→ be different from，「例如」→ For instance，「特價販售」→ on sale。真正要小心的是介系詞：noted 配 for、different 配 from，兩個都不能換。另外 on sale 與 for sale 的差別務必記牢：櫥窗貼 For Sale 是「出售中」，貼 On Sale 才是「打折中」。",
+          notes:[
+            {term:"be noted for", pos:"phr.", gloss:"以…聞名", ex:"The town is noted for its hot springs.", exZh:"這座小鎮以溫泉聞名。"},
+            {term:"on sale vs. for sale", pos:"辨析", gloss:"on sale 特價中／for sale 出售中", ex:"The house is for sale. / The jackets are on sale this week.", exZh:"這房子要賣。／夾克本週特價。"}
+          ]},
+
+        { n:35, kind:"片語填空",
+          prompt:"Nina 發現自己拿錯了她同學的傘，趕忙拿去歸還，一再強調自己不是故意的。她同學只是笑了笑說：「儘管拿去用吧，反正我上下班都是搭接駁車往返學校的。」不過那班接駁車下學期還開不開，目前還不確定。",
+          stem:"When Nina realized she had taken her classmate's umbrella ①__________, she hurried to return it, insisting that she had not done it ②__________. Her classmate only laughed and said, \"③__________, keep it. I ride the shuttle bus ④__________ the office anyway.\" Whether that shuttle service will continue next semester, though, is still ⑤__________.",
+          answers:[
+            {k:"①", w:"by mistake", note:"不小心、弄錯地。對應中文的「拿錯了」。"},
+            {k:"②", w:"on purpose", note:"故意地。對應「不是故意的」。本句刻意把 by mistake 與 on purpose 放在一起對照。"},
+            {k:"③", w:"By all means", note:"儘管去做吧、當然可以。用來爽快答應對方的請求。注意不是「無論如何」（那是 at all costs／in any case）。"},
+            {k:"④", w:"to and from", note:"往返於…。與第 25 題同一個片語，後面直接接地點。"},
+            {k:"⑤", w:"in the air", note:"懸而未決、還不確定。與第 31 題的 on the air（播出中）恰好成對。"}
+          ],
+          why:"這一題是整份考卷的收網題——五個空格裡有四個在前面的選擇題出現過（第 26 題的 by chance 對照組 on purpose、第 25 題的 to and from、第 31 題的 in the air）。出題者是刻意讓同一個片語換個形式再考一次，所以前面選擇題答錯的人，這裡通常會連錯兩次。最容易誤譯的是 By all means：它是「儘管拿去用吧」的爽快答應，不是「無論如何」。",
+          notes:[
+            {term:"by mistake ↔ on purpose", pos:"辨析", gloss:"不小心／故意。這組反義詞常在同一句裡對照出現。", ex:"I deleted the file by mistake, not on purpose.", exZh:"我是不小心刪掉檔案的，不是故意的。"},
+            {term:"By all means", pos:"phr.", gloss:"（答應請求）儘管、當然可以", ex:"\"May I borrow this?\" \"By all means.\"", exZh:"「我可以借這個嗎？」「儘管拿去。」"},
+            {term:"in the air", pos:"phr.", gloss:"（計畫）懸而未決、尚未確定", ex:"Their wedding plans are still up in the air.", exZh:"他們的婚禮計畫還沒定案。"}
+          ]}
+      ]
+    }]
+  }
+  ]
+};
+
+/* ==========================================================================
+   ②  以下為程式碼，一般情況不需要修改。
+   ========================================================================== */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const wordOf = q => q.options ? q.options[q.answer] : (q.answerText || '');
+const allQ = [];
+EXAM.sections.forEach(s => s.groups.forEach(g => g.questions.forEach(q => allQ.push(q))));
+const findQ = n => allQ.find(q => String(q.n) === String(n));
+
+document.getElementById('brand').textContent = EXAM.brand;
+document.getElementById('examTitle').textContent = EXAM.title;
+document.getElementById('examMeta').textContent = EXAM.meta;
+
+let noteCount = 0;
+allQ.forEach(q => noteCount += (q.notes || []).length);
+
+const nav = document.getElementById('nav');
+EXAM.sections.forEach(s => {
+  const a = document.createElement('a');
+  a.className = 'chip'; a.href = '#sec-' + s.id; a.textContent = s.label.replace(/^[一二三四五六]、/, m => m);
+  nav.appendChild(a);
+});
+const noteChip = document.createElement('a');
+noteChip.className = 'chip'; noteChip.href = '#side'; noteChip.textContent = '重點表 ' + noteCount;
+nav.appendChild(noteChip);
+const toggleAll = document.createElement('button');
+toggleAll.className = 'chip solid'; toggleAll.textContent = '全部展開';
+nav.appendChild(toggleAll);
+
+function renderPassage(g, i, sid) {
+  let html = esc(g.passage);
+  g.questions.forEach(q => {
+    if (!q.evidence) return;
+    const t = esc(q.evidence);
+    if (html.includes(t)) html = html.replace(t, `<span class="hl ev" data-ev="${q.n}">${t}</span>`);
+  });
+  html = html.replace(/__(\d+)__/g, (m, n) =>
+    `<button class="blank" data-blank="${n}" aria-label="第 ${n} 題空格">${n}</button>`);
+  const body = '<div class="passage">' +
+    html.split(/\n{2,}/).map(p => '<p>' + p.replace(/\n/g, ' ') + '</p>').join('') + '</div>';
+  if (!g.zh) return body;
+  const id = sid + '-' + i;
+  return body +
+    `<button class="zhbtn" data-zh="${id}">全文中譯</button>` +
+    `<div class="zhbox" id="zh-${id}">` +
+      g.zh.split(/\n{2,}/).map(p => '<p>' + esc(p).replace(/\n/g, ' ') + '</p>').join('') +
+    '</div>';
+}
+
+function renderQ(q) {
+  const parts = [];
+  if (q.options) {
+    const ks = Object.keys(q.options);
+    parts.push('<div class="opts">' + ks.map(k =>
+      `<div class="opt"><span class="opt-k">(${k})</span><span>${esc(q.options[k])}</span></div>`).join('') + '</div>');
+  }
+  const head = `<div class="q-tag"><span class="q-n">${String(q.n).padStart(2,'0')}</span><span class="q-kind">${esc(q.kind || '')}</span></div>` +
+    (q.prompt ? `<p class="prompt">${esc(q.prompt)}</p>` : '') +
+    (q.stem ? `<p class="stem">${esc(q.stem).replace(/\n/g,'<br>')}</p>` : '');
+
+  let ans = '';
+  if (q.answers) {
+    ans = '<ul class="fills">' + q.answers.map(a =>
+      `<li class="fill"><span class="fill-k">${esc(a.k)}</span><span class="fill-w hl" data-ansmulti>${esc(a.w)}</span><span class="fill-n">${esc(a.note || '')}</span></li>`).join('') + '</ul>';
+  } else {
+    const label = q.options ? `(${q.answer}) ${esc(wordOf(q))}` :
+      (q.answer ? `(${q.answer}) ${esc(q.answerText)}` : esc(q.answerText));
+    ans = `<p class="ans"><span class="ans-k">答案</span><span class="ans-v hl" data-ans="${q.n}">${label}</span></p>`;
+  }
+
+  let expl = '';
+  if (q.explain) {
+    expl = '<ul class="lines">' + Object.keys(q.options).map(k => {
+      const right = k === q.answer;
+      return `<li class="line ${right ? 'right' : 'wrong'}"><span class="line-k">(${k})</span><span>${esc(q.explain[k] || '')}</span></li>`;
+    }).join('') + '</ul>';
+  }
+  const why = q.why ? `<p class="why">${esc(q.why)}</p>` : '';
+  const evid = q.evidence ? `<p class="evid"><span>文中依據</span>${esc(q.evidence)}</p>` : '';
+  const notes = (q.notes || []).length ? `<div class="note"><p class="note-h">重點整理</p>` +
+    q.notes.map(nt => `<p class="note-i"><span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span><span class="gloss">${esc(nt.gloss || '')}</span>` +
+      (nt.ex ? `<span class="ex">${esc(nt.ex)}<i>${esc(nt.exZh || '')}</i></span>` : '') + '</p>').join('') + '</div>' : '';
+
+  return `<article class="q" id="q-${q.n}" data-n="${q.n}">
+    <div class="q-top">${head}${parts.join('')}
+      <button class="reveal" aria-expanded="false" aria-controls="body-${q.n}">看詳解</button>
+    </div>
+    <div class="body" id="body-${q.n}">
+      ${ans}${q.translation ? `<p class="zh">${esc(q.translation)}</p>` : ''}${expl}${why}${evid}${notes}
+    </div>
+  </article>`;
+}
+
+document.getElementById('main').innerHTML = EXAM.sections.map((s, i) => `
+  <section class="sec" id="sec-${s.id}">
+    <div class="sec-head">
+      <span class="sec-num">${String(i+1).padStart(2,'0')}</span>
+      <h2 class="sec-label">${esc(s.label)}</h2>
+      <span class="sec-score">${esc(s.score || '')}</span>
+    </div>
+    ${s.instruction ? `<p class="sec-inst">${esc(s.instruction)}</p>` : ''}
+    ${s.bank ? `<div class="bank">${Object.keys(s.bank).map(k =>
+      `<div class="bank-i" data-bank="${k}"><span>(${k})</span>${esc(s.bank[k])}</div>`).join('')}</div>` : ''}
+    ${s.groups.map((g, gi) => (g.passage ? renderPassage(g, gi, s.id) : '') + g.questions.map(renderQ).join('')).join('')}
+  </section>`).join('');
+
+const items = [];
+allQ.forEach(q => (q.notes || []).forEach(nt => items.push({ ...nt, n: q.n })));
+document.getElementById('side').innerHTML = `
+  <p class="side-h">Notes</p>
+  <p class="side-t">本卷重點 ${items.length} 則</p>
+  <ul class="card-list">${items.map(nt => `
+    <li class="card-item"><a href="#q-${nt.n}">
+      <span class="jump">第 ${nt.n} 題</span>
+      <span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span>
+      <div class="gloss">${esc(nt.gloss || '')}</div>
+    </a></li>`).join('')}</ul>
+  <p class="side-note">點任一則可跳到出處題目。用瀏覽器列印（Ctrl／⌘ + P）會自動展開全部詳解與中譯，可直接印成講義。</p>`;
+
+document.getElementById('foot').textContent = `共 ${allQ.length} 題 · ${EXAM.footer}`;
+
+function setOpen(card, open) {
+  card.classList.toggle('open', open);
+  const btn = card.querySelector('.reveal');
+  btn.setAttribute('aria-expanded', open);
+  btn.firstChild.nodeValue = open ? '收合詳解' : '看詳解';
+  const n = card.dataset.n;
+  card.querySelectorAll('.hl').forEach(h => h.classList.toggle('on', open));
+  const ev = document.querySelector(`[data-ev="${n}"]`);
+  if (ev) ev.classList.toggle('on', open);
+  const q = findQ(n);
+  if (q && q.answer && q.answerText) {
+    const bi = document.querySelector(`[data-bank="${q.answer}"]`);
+    if (bi) bi.classList.toggle('used', open);
+  }
+  const bl = document.querySelector(`[data-blank="${n}"]`);
+  if (bl) {
+    if (open) {
+      bl.classList.add('filled');
+      bl.innerHTML = `<sup>${n}</sup><span class="hl">${esc(wordOf(q))}</span>`;
+      requestAnimationFrame(() => bl.querySelector('.hl').classList.add('on'));
+    } else {
+      bl.classList.remove('filled');
+      bl.textContent = n;
+    }
+  }
+}
+document.addEventListener('click', e => {
+  const rv = e.target.closest('.reveal');
+  if (rv) { const c = rv.closest('.q'); setOpen(c, !c.classList.contains('open')); return; }
+  const zb = e.target.closest('.zhbtn');
+  if (zb) { zb.classList.toggle('on'); document.getElementById('zh-' + zb.dataset.zh).classList.toggle('on'); return; }
+  const bl = e.target.closest('.blank');
+  if (bl) {
+    const c = document.getElementById('q-' + bl.dataset.blank);
+    if (!c.classList.contains('open')) setOpen(c, true);
+    c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+toggleAll.addEventListener('click', () => {
+  const open = toggleAll.textContent === '全部展開';
+  document.querySelectorAll('.q').forEach(c => setOpen(c, open));
+  toggleAll.textContent = open ? '全部收合' : '全部展開';
+});
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('.q').forEach(c => setOpen(c, true));
+  document.querySelectorAll('.zhbox').forEach(b => b.classList.add('on'));
+  toggleAll.textContent = '全部收合';
+});
+</script>
+</body>
+</html>
