@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>單字書小考 詳解｜9-4~10-1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7EBEE; --card:#FDFDFC;
+  --ink:#10202F; --ink-2:#56687A; --ink-3:#7C8B99;
+  --rule:#C6D0D8; --pen:#17457E; --hl:#FFE773; --miss:#A34234;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono','Cascadia Mono',Menlo,Consolas,monospace;
+  --read:'Literata',Georgia,'Times New Roman',serif;
+  --han:'PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--han);font-size:16px;line-height:1.75}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2px}
+
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+.title{font-size:23px;font-weight:600;margin:0;line-height:1.3}
+.meta{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin:4px 0 0;letter-spacing:.04em}
+.bar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;padding:12px 0 11px;margin-top:10px;border-top:1px solid var(--rule)}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--rule);background:transparent;color:var(--ink-2);padding:5px 10px;border-radius:999px;cursor:pointer;text-decoration:none;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:var(--pen);color:var(--pen)}
+.chip.solid{margin-left:auto;border-color:var(--ink);color:var(--ink);font-weight:500}
+.chip.solid:hover{background:var(--ink);color:var(--card)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:28px 24px 96px;display:grid;gap:36px;grid-template-columns:minmax(0,1fr) 288px}
+@media (max-width:1020px){.wrap{grid-template-columns:minmax(0,1fr);gap:44px}}
+
+.sec{margin:0 0 48px;scroll-margin-top:136px}
+.sec-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--ink-3)}
+.sec-label{font-size:18px;font-weight:600;margin:0}
+.sec-score{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-left:auto}
+.sec-inst{font-size:13.5px;color:var(--ink-2);margin:9px 0 0}
+
+.bank{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:16px 0 0}
+@media (max-width:760px){.bank{grid-template-columns:repeat(2,1fr)}}
+.bank-i{background:var(--card);padding:8px 10px;font-family:var(--read);font-size:14.5px}
+.bank-i span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-right:5px}
+.bank-i.used{background:#F2F5F6;color:var(--ink-3)}
+
+.passage{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--ink);padding:22px 26px;margin:18px 0 0;font-family:var(--read);font-size:16.5px;line-height:1.95;color:#1a2836}
+.passage p{margin:0 0 1em}
+.passage p:last-child{margin-bottom:0}
+.blank{display:inline-block;min-width:70px;text-align:center;border:0;border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:13px;color:var(--pen);cursor:pointer;background:none;padding:0 4px;line-height:1.4}
+.blank:hover{background:rgba(23,69,126,.07)}
+.blank.filled{font-family:var(--read);font-size:16.5px;color:var(--ink);border-bottom-color:transparent;min-width:0}
+.blank sup{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:2px}
+.zhbtn{display:block;margin:0 0 18px;background:var(--card);border:1px solid var(--rule);border-top:0;width:100%;text-align:left;padding:8px 26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--pen);cursor:pointer}
+.zhbtn:hover{color:var(--ink)}
+.zhbtn::after{content:' ▾'}
+.zhbtn.on::after{content:' ▴'}
+.zhbox{display:none;background:#F7F9FA;border:1px solid var(--rule);border-top:0;padding:18px 26px;margin:0 0 18px;font-size:15px;line-height:1.95;color:#22323F}
+.zhbox.on{display:block}
+.zhbox p{margin:0 0 .9em}
+.zhbox p:last-child{margin:0}
+
+.q{background:var(--card);border:1px solid var(--rule);margin:14px 0 0;scroll-margin-top:142px}
+.q-top{padding:16px 22px 14px}
+.q-tag{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.q-n{font-family:var(--mono);font-size:13px;font-weight:600}
+.q-kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.prompt{font-size:14.5px;line-height:1.85;color:var(--ink-2);margin:0 0 11px;padding-left:11px;border-left:2px solid var(--rule)}
+.stem{font-family:var(--read);font-size:16.5px;line-height:1.85;margin:0 0 13px;color:#1a2836}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:9px;font-family:var(--read);font-size:15.5px;line-height:1.6;padding:3px 0;color:#243342}
+.opt-k{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);padding-top:2px;flex:none}
+.reveal{display:block;width:100%;text-align:left;margin-top:14px;background:none;border:0;border-top:1px dashed var(--rule);padding:11px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--pen);cursor:pointer}
+.reveal:hover{color:var(--ink)}
+.reveal::after{content:' ▾'}
+.q.open .reveal::after{content:' ▴'}
+.q.open .reveal{color:var(--ink-3)}
+
+.body{display:none;border-top:1px solid var(--rule);background:#F7F9FA;padding:18px 22px 20px}
+.q.open .body{display:block}
+.ans{display:flex;align-items:baseline;gap:10px;margin:0 0 13px;flex-wrap:wrap}
+.ans-k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink-3);flex:none;padding-top:2px}
+.ans-v{font-family:var(--read);font-size:18px;font-weight:600}
+.fills{list-style:none;margin:0 0 13px;padding:0}
+.fill{display:flex;gap:11px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--rule)}
+.fill-k{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);flex:none;width:26px}
+.fill-w{font-family:var(--read);font-size:17px;font-weight:600;flex:none}
+.fill-n{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.zh{font-size:15px;line-height:1.85;margin:0 0 14px;color:#22323F}
+.why{font-size:14.5px;line-height:1.85;margin:0 0 4px;color:#22323F;border-top:1px solid var(--rule);padding-top:12px}
+.lines{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.line{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.75;color:var(--ink-2)}
+.line-k{font-family:var(--mono);font-size:12.5px;flex:none;width:28px;color:var(--ink-3);padding-top:2px}
+.line.right{color:var(--ink)}
+.line.right .line-k{color:var(--ink);font-weight:600}
+.line.right .line-k::after{content:'✓';display:block;font-size:12px;line-height:1.3}
+.line.wrong .line-k{color:var(--miss);opacity:.85}
+.line.wrong .line-k::after{content:'✗';display:block;font-size:12px;line-height:1.3}
+.evid{margin:15px 0 0;font-family:var(--read);font-size:14.5px;line-height:1.8;color:var(--ink-2);padding-left:13px;border-left:2px solid var(--hl)}
+.evid span{font-family:var(--han);font-size:11px;letter-spacing:.14em;color:var(--ink-3);display:block;margin-bottom:3px}
+
+.hl{background-image:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 90%,transparent 90%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size .55s cubic-bezier(.2,.75,.3,1);border-radius:1px}
+.hl.on{background-size:100% 100%}
+
+.sample{margin:15px 0 0;border:1px solid var(--rule);border-left:3px solid var(--ink);background:var(--card);padding:16px 20px}
+.sample p:not(.note-h){font-family:var(--read);font-size:15.5px;line-height:1.9;color:#1a2836;margin:0 0 1em}
+.sample p:last-child{margin-bottom:0}
+.bank.wide{grid-template-columns:1fr}
+.bank.wide .bank-i{font-size:15px;line-height:1.7;padding:10px 14px}
+.note{margin:15px 0 0;border:1px solid var(--rule);background:var(--card);padding:13px 16px}
+.note-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:0 0 9px}
+.note-i{margin:0;padding:9px 0 0;border-top:1px dotted var(--rule)}
+.note-i:first-of-type{border-top:0;padding-top:0}
+.term{font-family:var(--read);font-size:16px;font-weight:600}
+.pos{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin:0 6px}
+.gloss{font-size:14.5px}
+.ex{font-family:var(--read);font-size:14px;color:var(--ink-2);line-height:1.7;margin:3px 0 0;display:block}
+.ex i{font-family:var(--han);font-style:normal;font-size:13px;color:var(--ink-3);display:block}
+
+.side{position:sticky;top:136px;align-self:start;max-height:calc(100vh - 164px);overflow:auto;padding-right:4px}
+@media (max-width:1020px){.side{position:static;max-height:none;scroll-margin-top:136px}}
+.side-h{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 3px}
+.side-t{font-size:16px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.card-list{margin:0;padding:0;list-style:none}
+.card-item{border-bottom:1px solid var(--rule);padding:11px 0}
+.card-item a{display:block;text-decoration:none;color:inherit}
+.card-item a:hover .term{background:var(--hl)}
+.jump{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);float:right;padding-top:5px}
+.side-note{font-size:12.5px;color:var(--ink-3);line-height:1.7;margin:16px 0 0}
+.foot{max-width:var(--maxw);margin:0 auto;padding:0 24px 48px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .top,.side,.reveal,.foot,.zhbtn{display:none!important}
+  .wrap{display:block;max-width:none;padding:0}
+  .q .body{display:block!important}
+  .zhbox{display:block!important}
+  .q{break-inside:avoid;border-color:#999;margin-bottom:9pt}
+  .passage{break-inside:avoid}
+  .hl{background-size:100% 100%!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <p class="eyebrow" id="brand"></p>
+    <h1 class="title" id="examTitle"></h1>
+    <p class="meta" id="examMeta"></p>
+    <nav class="bar" id="nav"></nav>
+  </div>
+</header>
+
+<div class="wrap"><main id="main"></main><aside class="side" id="side"></aside></div>
+<p class="foot" id="foot"></p>
+
+<script>
+/* ==========================================================================
+   ①  題目與詳解全部寫在下面的 EXAM 物件裡。要改題、加題、修字，只動這裡。
+
+   section（大題）：{ id, label, score, instruction, bank?, groups: [...] }
+   group（同一篇文章的題組）：{ passage?, zh?, questions: [...] }
+       passage 裡寫 __7__ 就會變成可點的空格，數字對應題號。
+       zh 是全文中譯，會做成可展開的按鈕。
+
+   question 依題型三選一：
+     選擇題   { n, kind, stem, options:{A..D}, answer:"B", translation, explain:{A..D}, evidence?, notes? }
+     單一填答 { n, kind, stem, answerText:"prejudice", why, notes? }
+     多格填答 { n, kind, prompt, stem, answers:[{k:"①", w:"字", note:"說明"}], notes? }
+   ========================================================================== */
+const EXAM = {
+  brand: "單字書小考",
+  title: "單字書小考 詳解｜9-4~10-1",
+  meta: "Instructor: Howard Chang　·　範圍：單字書9-4~10-1",
+  footer: "KGHS 英文字彙字識+ Level 5 · 班級複習用",
+  sections: [
+  {
+    id:"mc", label:"字彙選擇", score:"80% · 每題 2%",
+    instruction:"選出最適合句意的一個選項。答案：C C A B D　B C A D C　B A D B A　C D A B D　A C B D B　A C B D C　A B D C A　D B A C B",
+    groups:[{
+      questions:[
+        { n:1, kind:"名詞",
+          stem:"Before the new menu was launched last month, every diner in the restaurant was handed a short ______ asking which dessert they liked best.",
+          options:{A:"rehearsal 排練",B:"script 劇本、腳本",C:"questionnaire 問卷",D:"visa 簽證"}, answer:"C",
+          translation:"上個月新菜單推出之前，餐廳裡的每位用餐客人都拿到一份簡短的問卷，詢問他們最喜歡哪一款甜點。",
+          explain:{
+            A:"rehearsal 是「排練」，指表演前的練習，不是可以發給客人填寫的東西。",
+            B:"script 是「劇本、腳本」，是演員或主持人照著唸的文稿，客人不會拿到腳本來作答。",
+            C:"分詞片語 asking which dessert they liked best（詢問他們最喜歡哪款甜點）就是答案的定義——用來蒐集意見的表格，正是問卷。動詞 was handed（被遞給）也符合發放問卷的動作。",
+            D:"visa 是「簽證」，出入境文件，與餐廳調查完全無關。"
+          },
+          notes:[
+            {term:"questionnaire", pos:"n.", gloss:"問卷（源自法文，-naire 字尾；fill out／complete a questionnaire）", ex:"Please complete the questionnaire before you leave.", exZh:"離開前請填完這份問卷。"},
+            {term:"launch", pos:"vt.", gloss:"推出（新產品、計畫）；也指「發射」"}
+          ]},
+
+        { n:2, kind:"形容詞",
+          stem:"Winning three gold medals seems to have made him ______; he no longer even greets the teammates who have trained beside him for years.",
+          options:{A:"courteous 有禮貌的",B:"ethical 合乎道德的",C:"arrogant 傲慢自大的",D:"humble 謙遜的"}, answer:"C",
+          translation:"拿下三面金牌似乎讓他變得傲慢；他甚至不再跟那些與他一起訓練多年的隊友打招呼。",
+          explain:{
+            A:"courteous 是「有禮貌的」，但分號後說他連招呼都不打，正是失禮的表現，語意相反。",
+            B:"ethical 是「合乎道德的」，談的是是非對錯，與待人態度的高傲無關。",
+            C:"分號後的 no longer even greets the teammates（連隊友都不再打招呼）就是答案的具體表現，而前半句 Winning three gold medals（拿下三面金牌）正是讓人自滿的原因。arrogant 意為「傲慢自大」。",
+            D:"humble 是「謙遜的」，與不理睬隊友的行為完全相反。這是最直接的反義干擾選項。"
+          },
+          notes:[
+            {term:"arrogant", pos:"adj.", gloss:"傲慢的、自大的（n. arrogance；反義 humble／modest）", ex:"Success made him arrogant and difficult to work with.", exZh:"成功使他變得傲慢且難以共事。"},
+            {term:"分號後的解釋", pos:"技巧", gloss:"分號連接的兩句關係緊密，後句常是前句的具體例證。空格在前句時，答案往往就藏在分號後面。"}
+          ]},
+
+        { n:3, kind:"名詞",
+          stem:"The landlord insists on a monthly ______ of NT$40,000, which is far more than we can afford on two teachers' salaries.",
+          options:{A:"rental 租金",B:"earnings 收入、盈餘",C:"income 收入",D:"tuition 學費"}, answer:"A",
+          translation:"房東堅持要每月四萬元的租金，這遠遠超過我們兩個老師的薪水所能負擔的。",
+          explain:{
+            A:"主詞是 The landlord（房東），而關係子句說 far more than we can afford（遠超過我們負擔得起的）——房東堅持要收、房客要付的，就是租金。rental 意為「租金」，monthly rental（月租）是固定搭配。",
+            B:"earnings 是「收入、盈餘」，指賺進來的錢；但這裡的四萬元是要付出去的，方向相反。",
+            C:"income 同樣是「收入」，是進帳而非支出。而且句尾已經用 two teachers' salaries（兩個老師的薪水）指稱他們的收入，若空格也是收入就重複了。",
+            D:"tuition 是「學費」，付給學校的；但付款對象是 landlord（房東），不是學校。"
+          },
+          notes:[
+            {term:"rental", pos:"n. / adj.", gloss:"租金；也可當形容詞（a rental car 租賃車）", ex:"The monthly rental includes utilities.", exZh:"月租已含水電費。"},
+            {term:"insist on + N/V-ing", pos:"phr.", gloss:"堅持要…；on 是介系詞，後面不接原形動詞。"}
+          ]},
+
+        { n:4, kind:"動詞",
+          stem:"A retired engineer was hired to ______ the repair work on the old bridge, and he now visits the site twice a day.",
+          options:{A:"attract 吸引",B:"oversee 監督、監管",C:"riot 暴動",D:"specialize 專精（於某領域）"}, answer:"B",
+          translation:"一位退休工程師被聘來監督這座舊橋的修復工程，他現在每天到工地視察兩次。",
+          explain:{
+            A:"attract 是「吸引」，受詞是人或注意力（attract tourists／attention），不能接工程項目。",
+            B:"and 後面的 he now visits the site twice a day（每天到工地視察兩次）就是答案的具體作為——定期到現場查看進度，正是監督。oversee 由 over（在上方）＋ see（看）構成，字面就是「從上面看著」。",
+            C:"riot 是「暴動」，為不及物動詞，後面不接受詞，語意也完全不合。",
+            D:"specialize 是「專精於」，為不及物動詞，必須搭配 in（specialize in bridge design），不能直接接受詞。"
+          },
+          notes:[
+            {term:"oversee", pos:"vt.", gloss:"監督、監管（oversee-oversaw-overseen；n. oversight 監督，另有「疏忽」之意）", ex:"She oversees all overseas operations.", exZh:"她監管所有海外業務。"},
+            {term:"oversee vs. overlook", pos:"辨析", gloss:"oversee 是「監督」；overlook 是「忽略」或「俯瞰」。只差一個字，意思差很多。"}
+          ]},
+
+        { n:5, kind:"名詞",
+          stem:"The school's handbook says that good ______ matters as much as good grades, and bullying will be punished no matter who does it.",
+          options:{A:"initiative 主動性、倡議",B:"ego 自我、自尊心",C:"fluency 流利度",D:"conduct 品行、行為舉止"}, answer:"D",
+          translation:"學校手冊寫道，良好的品行與好成績同樣重要，而霸凌行為不論是誰所為都會受到懲處。",
+          explain:{
+            A:"initiative 是「主動性」或「新倡議」，指積極作為的態度，但與 bullying will be punished（霸凌會受罰）這個線索對不上。",
+            B:"ego 是「自我、自尊心」，屬心理學概念，學校手冊不會把它與成績並列為評量項目。",
+            C:"fluency 是「（語言）流利度」，是單一技能，不能涵蓋霸凌這類行為問題。",
+            D:"and 後面的 bullying will be punished（霸凌會受罰）是關鍵——霸凌屬於行為問題，與 good grades（好成績）並列的自然是「品行」。conduct 當名詞意為「品行、行為舉止」，是校規用語的標準字。"
+          },
+          notes:[
+            {term:"conduct", pos:"n. / vt.", gloss:"品行、行為（不可數，重音在前 CON-duct）；當動詞為「進行、指揮」（重音在後 con-DUCT）", ex:"He was expelled for poor conduct.", exZh:"他因品行不良而被退學。"},
+            {term:"重音辨詞性", pos:"發音", gloss:"CON-duct（名詞：品行）／con-DUCT（動詞：進行）。同類還有 CON-tent／con-TENT、RE-cord／re-CORD。"}
+          ]},
+
+        { n:6, kind:"名詞",
+          stem:"Voters were tired of grand promises, and behind the mayor's polished ______ there was still no actual plan for the flooded neighborhoods downtown.",
+          options:{A:"conception 概念、構想",B:"rhetoric 華麗詞藻、修辭",C:"implication 言外之意；牽連",D:"theology 神學"}, answer:"B",
+          translation:"選民已經厭倦了華而不實的承諾，而在市長那套打磨得光亮的辭令背後，對市區淹水的社區仍然沒有任何實際的計畫。",
+          explain:{
+            A:"conception 是「概念、構想」，指想法本身；但句子批評的是「只有漂亮話、沒有實際內容」，重點在說話的方式而非想法。",
+            B:"兩個線索：前半句的 grand promises（華麗的承諾）與形容詞 polished（打磨光亮的）都在形容言辭的修飾，而 there was still no actual plan（仍沒有實際計畫）則點出言辭背後的空洞。rhetoric 正是「華麗但未必有實質的辭令」。",
+            C:"implication 是「言外之意」或「牽連」，指未明說的含意，但句中市長說的是檯面上的漂亮話，不是暗示。",
+            D:"theology 是「神學」，宗教學科，與政治演說無關。"
+          },
+          notes:[
+            {term:"rhetoric", pos:"n.", gloss:"修辭、華麗辭令（常帶貶意，指「說得漂亮卻無實質」）。adj. rhetorical", ex:"We need action, not rhetoric.", exZh:"我們需要的是行動，不是空話。"},
+            {term:"polished", pos:"adj.", gloss:"（表現、言辭）精練純熟的；原意為「擦亮的」"}
+          ]},
+
+        { n:7, kind:"動詞",
+          stem:"Lisa said nothing all evening, but anyone could clearly ______ from her expression that she was still angry with Mark about his broken promise.",
+          options:{A:"articulate 清楚表達",B:"distract 使分心",C:"perceive 察覺、看出",D:"vow 發誓"}, answer:"C",
+          translation:"Lisa 整個晚上一句話也沒說，但任何人都能從她的表情清楚看出，她仍在為 Mark 毀約的事生氣。",
+          explain:{
+            A:"articulate 是「清楚表達（想法）」，主詞是說話的人；但句中 Lisa said nothing（一句話都沒說），而察覺的是「任何人」，主客顛倒。",
+            B:"distract 是「使分心」，受詞是人（distract the driver），不能接 that 子句。",
+            C:"兩個線索夾出答案：Lisa said nothing（沒說話）與 from her expression（從她的表情）——沒有語言，只能靠觀察表情推斷。perceive 意為「察覺、看出」，後面可接 that 子句。",
+            D:"vow 是「發誓、立誓」，主詞須為做出承諾的人；而且句中 Mark 的 broken promise（毀約）才與承諾有關，Lisa 並沒有在發誓。"
+          },
+          notes:[
+            {term:"perceive", pos:"vt.", gloss:"察覺、看出；也指「視…為」（perceive A as B）。n. perception", ex:"I perceived a slight change in his tone.", exZh:"我察覺到他語氣有些微變化。"},
+            {term:"from one's expression", pos:"phr.", gloss:"從某人的表情（判斷）"}
+          ]},
+
+        { n:8, kind:"名詞",
+          stem:"The council chamber is closed to visitors while the council is in ______, so reporters must wait outside in the hall until the afternoon break.",
+          options:{A:"session 開會期間、會期",B:"comprehension 理解力",C:"rebellion 叛亂",D:"version 版本"}, answer:"A",
+          translation:"議會開會期間，議事廳不對訪客開放，因此記者必須在外面的大廳等候，直到下午休息時間。",
+          explain:{
+            A:"be in session 是固定片語，意為「（議會、法院）正在開會、開庭中」。句尾的 until the afternoon break（直到下午的休息時間）正好對應會議進行中的狀態，而 The council chamber is closed（議事廳關閉）也是開會時的管制措施。",
+            B:"comprehension 是「理解力」，in comprehension 不成片語，語意也不合。",
+            C:"rebellion 是「叛亂」，in rebellion 確實是片語（本卷第 18 題就考它），但議會不會在叛亂中還照常開會。",
+            D:"version 是「版本」，in version 不成片語。"
+          },
+          notes:[
+            {term:"be in session", pos:"phr.", gloss:"（議會、法院、學校）開會中、開庭中、上課中", ex:"The court is now in session.", exZh:"法庭現在開庭。"},
+            {term:"session", pos:"n.", gloss:"會期、一節、一場（a training session 一場訓練）"}
+          ]},
+
+        { n:9, kind:"名詞",
+          stem:"After ten years of failed experiments, the laboratory announced a major ______ last week: a cheap test that can detect lung cancer early.",
+          options:{A:"competence 能力、勝任",B:"expertise 專業知識",C:"reminder 提醒物",D:"breakthrough 重大突破"}, answer:"D",
+          translation:"在十年實驗失敗之後，這間實驗室上週宣布了一項重大突破：一種能及早偵測肺癌的平價檢測。",
+          explain:{
+            A:"competence 是「能力、勝任」，指具備完成工作的水準，不是一項可以「宣布」的成果。",
+            B:"expertise 是「專業知識」，為不可數名詞，前面不能加冠詞 a，而且它是長期累積的能力而非單一發現。",
+            C:"reminder 是「提醒物」，與十年研究的成果無關。",
+            D:"兩個線索：After ten years of failed experiments（歷經十年失敗）形成強烈對比，冒號後的 a cheap test that can detect lung cancer early（能及早驗出肺癌的平價檢測）則是具體成果。久攻不下後的重大進展，正是 breakthrough。"
+          },
+          notes:[
+            {term:"breakthrough", pos:"n.", gloss:"重大突破、關鍵進展（make／announce a breakthrough）", ex:"The team made a breakthrough in cancer research.", exZh:"該團隊在癌症研究上取得重大突破。"},
+            {term:"冒號的解釋功能", pos:"技巧", gloss:"冒號後面是對前面名詞的具體說明，等於命題者直接給出答案的內容。"}
+          ]},
+
+        { n:10, kind:"副詞",
+          stem:"Small shops cannot match the supermarket's prices because it buys ______ and ships everything straight from the factory to its own huge warehouses.",
+          options:{A:"retail 零售地",B:"solo 單獨地",C:"wholesale 批發地、大量地",D:"alone 獨自地"}, answer:"C",
+          translation:"小商店無法與這家超市的價格競爭，因為它採大量批發進貨，並把所有東西直接從工廠運到自家的大型倉庫。",
+          explain:{
+            A:"retail 是「零售」，指賣給最終消費者；但句中談的是超市「進貨」的方式，而且零售價更高，無法解釋它為何便宜。這是方向正好相反的干擾選項。",
+            B:"solo 是「單獨地」，多用於表演或飛行（fly solo），與採購規模無關。",
+            C:"buy wholesale 意為「以批發方式大量採購」。because 子句要解釋超市為何能壓低價格，而 ships everything straight from the factory（直接從工廠出貨）更說明它省去了中間商——大量直購正是壓價的關鍵。",
+            D:"alone 是「獨自」，強調沒有別人陪同，與採購量無關。"
+          },
+          notes:[
+            {term:"wholesale", pos:"adv. / adj. / n.", gloss:"批發地、大批地（反義 retail 零售）", ex:"They buy wholesale and sell retail.", exZh:"他們批發進貨、零售出貨。"},
+            {term:"match", pos:"vt.", gloss:"與…匹敵、相當（cannot match the price 無法與其價格競爭）"}
+          ]},
+
+        { n:11, kind:"形容詞",
+          stem:"To the villagers, the grove on the hill is ______ ground, and no one would dare to cut even a single branch from its trees.",
+          options:{A:"corrupt 腐敗的",B:"sacred 神聖的",C:"descriptive 描述性的",D:"theoretical 理論上的"}, answer:"B",
+          translation:"對村民而言，山丘上的那片樹林是神聖的土地，沒有人敢從那裡的樹上折下哪怕一根枝條。",
+          explain:{
+            A:"corrupt 是「腐敗的」，形容官員或制度，不能形容土地，而且是負面評價，與村民的敬畏態度不合。",
+            B:"and 後面的 no one would dare to cut even a single branch（沒人敢折一根樹枝）就是答案的證明——連一根樹枝都不敢碰，是出於敬畏而非法律。sacred ground（聖地）是固定搭配。",
+            C:"descriptive 是「描述性的」，用於文字或統計（descriptive writing），不能形容土地。",
+            D:"theoretical 是「理論上的」，與實際存在的樹林矛盾。"
+          },
+          notes:[
+            {term:"sacred", pos:"adj.", gloss:"神聖的（sacred ground／a sacred duty）；讀作 /ˈseɪkrɪd/", ex:"The mountain is sacred to local people.", exZh:"這座山對當地人而言是神聖的。"},
+            {term:"dare to V", pos:"用法", gloss:"膽敢做…；否定時也可用 dare not V（dare 當助動詞用）。"}
+          ]},
+
+        { n:12, kind:"動詞",
+          stem:"My cousin and her husband had almost given up hope when she finally ______ last November, and their daughter was born in August.",
+          options:{A:"conceived 受孕；構想出",B:"rallied 集會；重振",C:"specialized 專精",D:"ventured 冒險"}, answer:"A",
+          translation:"我表姊和她先生幾乎已經放棄希望，她去年十一月終於懷孕了，而他們的女兒在八月出生。",
+          explain:{
+            A:"兩個線索：had almost given up hope（幾乎放棄希望）暗示他們一直在求子，而 their daughter was born in August（女兒八月出生）往前推約九個月正好是十一月。conceive 除了「構想出」，也有「受孕、懷上」之意，此處取後者。",
+            B:"rally 是「集會」或「（病情、股市）重振回升」，無法解釋八月出生的孩子。",
+            C:"specialize 是「專精於」，為不及物動詞且須搭配 in，語意完全不合。",
+            D:"venture 是「冒險前往、斗膽嘗試」，與懷孕的脈絡無關。"
+          },
+          notes:[
+            {term:"conceive", pos:"vi. / vt.", gloss:"受孕；構想出（conceive an idea）。n. conception 受孕／概念", ex:"She conceived shortly after the treatment.", exZh:"她在治療後不久就懷孕了。"},
+            {term:"時間線是線索", pos:"技巧", gloss:"十一月到隔年八月約九個月，正是孕期。本題不靠字義也能靠常識推出答案。"}
+          ]},
+
+        { n:13, kind:"名詞",
+          stem:"After five noisy days at the conference, Regina longed for some ______ and spent the whole weekend walking in the quiet hills alone.",
+          options:{A:"devotion 奉獻、虔誠",B:"rehearsal 排練",C:"comprehension 理解力",D:"solitude 獨處、清靜"}, answer:"D",
+          translation:"在研討會上度過五天喧鬧的日子後，Regina 渴望獨處，整個週末都獨自在寧靜的山間散步。",
+          explain:{
+            A:"devotion 是「奉獻、虔誠」，指對人或信仰的投入，與獨處的需求無關。",
+            B:"rehearsal 是「排練」，需要與他人配合，與 alone（獨自）矛盾。",
+            C:"comprehension 是「理解力」，是能力而非可以「渴望」的狀態。",
+            D:"前後兩端都指向答案：After five noisy days（五天喧鬧之後）是原因，spent the whole weekend walking in the quiet hills alone（整個週末獨自在寧靜山間散步）是結果。solitude 意為「（自願的）獨處、清靜」，不帶寂寞的負面意味。"
+          },
+          notes:[
+            {term:"solitude vs. loneliness", pos:"辨析", gloss:"solitude 是自願享受的獨處（中性或正面）；loneliness 是不願意的孤單（負面）。本題的 longed for（渴望）確認是前者。", ex:"She writes best in solitude.", exZh:"她在獨處時寫得最好。"},
+            {term:"long for", pos:"phr. v.", gloss:"渴望（＝yearn for）"}
+          ]},
+
+        { n:14, kind:"名詞",
+          stem:"Thanks to a surge in online orders, the company's ______ rose by almost a third, even though it closed six of its stores.",
+          options:{A:"capability 能力",B:"revenue 營收",C:"theft 竊盜",D:"subsidy 補助金"}, answer:"B",
+          translation:"由於線上訂單激增，這家公司的營收成長了將近三分之一，儘管它關掉了六家門市。",
+          explain:{
+            A:"capability 是「能力」，指能做到什麼，不會因為訂單增加而「成長三分之一」這種可量化的比例。",
+            B:"兩個線索：a surge in online orders（線上訂單激增）是原因，rose by almost a third（成長近三分之一）是可量化的結果。公司因訂單增加而上升的，就是營收。even though it closed six stores（儘管關了六家店）的讓步更凸顯線上成長的幅度。",
+            C:"theft 是「竊盜」，若它上升是壞事，與 Thanks to（多虧）的正面語氣矛盾。",
+            D:"subsidy 是「政府補助金」，由政府決定發放，不會因為公司訂單變多而增加。本卷第 37 題才是它的正確用法。"
+          },
+          notes:[
+            {term:"revenue", pos:"n.", gloss:"營收、收益（公司的總收入；profit 則是扣除成本後的利潤）", ex:"Annual revenue topped two billion dollars.", exZh:"年營收突破二十億美元。"},
+            {term:"a surge in", pos:"phr.", gloss:"…的激增（a surge in demand／prices）"}
+          ]},
+
+        { n:15, kind:"動詞",
+          stem:"Many students cannot ______ between a reliable news source and a fake one, so our school now offers a course on media literacy.",
+          options:{A:"discriminate 區辨、分辨",B:"beware 當心",C:"comprehend 理解",D:"envision 想像、展望"}, answer:"A",
+          translation:"許多學生無法分辨可靠的新聞來源與假新聞，因此本校現在開設媒體素養課程。",
+          explain:{
+            A:"空格後接 between A and B 的結構是決定性線索。discriminate between 意為「區辨兩者的不同」，正好搭配。語意上，so 之後的 a course on media literacy（媒體素養課程）就是為了培養這種辨別能力。注意這個字另有「歧視」之意（discriminate against sb）。",
+            B:"beware 是「當心」，搭配的介系詞是 of（beware of pickpockets），不能接 between。",
+            C:"comprehend 是「理解」，為及物動詞，後面直接接受詞，不接 between。",
+            D:"envision 是「想像、構想未來」，受詞是尚未發生的景象，與辨別真假無關。"
+          },
+          notes:[
+            {term:"discriminate", pos:"vi.", gloss:"① discriminate between A and B 分辨兩者 ② discriminate against sb 歧視某人。同一個字，介系詞決定意思。", ex:"Babies soon learn to discriminate between voices.", exZh:"嬰兒很快就能分辨不同的聲音。"},
+            {term:"media literacy", pos:"n.", gloss:"媒體素養（辨別與判讀媒體訊息的能力）"}
+          ]},
+
+        { n:16, kind:"動詞",
+          stem:"Three neighbors agreed to ______ in court about the night of the fire, though each of them was clearly nervous about doing so.",
+          options:{A:"assemble 集合、組裝",B:"deliberate 仔細考慮",C:"testify 作證",D:"supervise 監督"}, answer:"C",
+          translation:"三位鄰居同意出庭作證說明火災當晚的情況，儘管他們每個人顯然都對此感到緊張。",
+          explain:{
+            A:"assemble 是「集合」或「組裝」，雖然三個人可以集合，但 in court（在法庭上）加上 about the night of the fire（關於火災當晚）說明他們是去陳述所見所聞。",
+            B:"deliberate 當動詞是「仔細考慮、審議」，進行審議的是陪審團或委員會，不是出庭的證人。",
+            C:"testify in court 是固定搭配，意為「出庭作證」。讓步子句 though each of them was clearly nervous（儘管都很緊張）也符合一般人上法庭的心情。",
+            D:"supervise 是「監督」，為及物動詞，後面需要受詞，且監督者通常是負責人而非證人。"
+          },
+          notes:[
+            {term:"testify", pos:"vi. / vt.", gloss:"作證（testify in court／testify against sb）。n. testimony 證詞", ex:"She refused to testify against her brother.", exZh:"她拒絕出庭指證她哥哥。"},
+            {term:"deliberate 的兩種詞性", pos:"辨析", gloss:"動詞 de-LIB-er-ate（審議）／形容詞 de-LIB-er-it（刻意的）。本卷第 35 題考的是形容詞義。"}
+          ]},
+
+        { n:17, kind:"形容詞",
+          stem:"Bobby has been cheated twice by phone scammers, so he is now extremely ______ of any stranger who calls offering a bargain.",
+          options:{A:"courteous 有禮貌的",B:"eligible 符合資格的",C:"honorable 可敬的",D:"wary 警惕的、提防的"}, answer:"D",
+          translation:"Bobby 已經被電話詐騙集團騙過兩次，所以他現在對任何打電話來提供優惠的陌生人都極為提防。",
+          explain:{
+            A:"courteous 是「有禮貌的」，形容待人態度，但被騙兩次後的反應是戒備而非客氣。",
+            B:"eligible 是「符合資格的」，搭配 for（eligible for a loan），與警覺心無關。",
+            C:"honorable 是「可敬的、光榮的」，形容人格或行為，不能表達戒心。",
+            D:"be wary of sb/sth 是固定搭配，意為「對…提防戒備」。前半句 has been cheated twice by phone scammers（被電話詐騙兩次）是原因，而介系詞 of 也正是這個字的搭配。"
+          },
+          notes:[
+            {term:"be wary of", pos:"phr.", gloss:"對…提防、小心（＝be cautious about）", ex:"Be wary of offers that sound too good.", exZh:"對聽起來好過頭的優惠要提高警覺。"},
+            {term:"scammer", pos:"n.", gloss:"詐騙者（v. scam 詐騙；n. a phone scam 電話詐騙）"}
+          ]},
+
+        { n:18, kind:"介系詞片語",
+          stem:"Students across the country refused to take the new exam, rising ______ against a set of rules that had been imposed without any discussion.",
+          options:{A:"in rebellion 群起反抗",B:"beyond comprehension 難以理解",C:"on recommendation 經推薦",D:"under supervision 在監督之下"}, answer:"A",
+          translation:"全國各地的學生拒絕參加新的考試，群起反抗一套未經任何討論就強行實施的規則。",
+          explain:{
+            A:"rise in rebellion against sth 意為「群起反抗某事」。兩個線索：refused to take the new exam（拒絕應考）是反抗的行動，而 imposed without any discussion（未經討論就強行實施）是反抗的理由；介系詞 against 也正好搭配。",
+            B:"beyond comprehension 是「難以理解」，用來形容某事令人費解，但句中學生不是不懂，而是不接受。",
+            C:"on recommendation 是「經由推薦」，表示依照建議行事，與「拒絕」的對抗姿態相反。",
+            D:"under supervision 是「在監督之下」，表示被管理的狀態，與學生主動抗爭的語氣衝突。"
+          },
+          notes:[
+            {term:"rise in rebellion (against)", pos:"phr.", gloss:"群起反抗、揭竿而起（n. rebellion；adj. rebellious 叛逆的）", ex:"The colonies rose in rebellion against the king.", exZh:"各殖民地群起反抗國王。"},
+            {term:"impose", pos:"vt.", gloss:"強行實施、強加（impose rules／a tax／a ban on）"}
+          ]},
+
+        { n:19, kind:"形容詞",
+          stem:"Nobody doubts that she is ______ at her job; the problem is that she takes on far more work than one person can reasonably handle.",
+          options:{A:"descriptive 描述性的",B:"competent 有能力的、能勝任的",C:"symbolic 象徵性的",D:"eligible 符合資格的"}, answer:"B",
+          translation:"沒有人懷疑她能夠勝任她的工作；問題在於她承接的工作量遠超過一個人所能合理負荷的。",
+          explain:{
+            A:"descriptive 是「描述性的」，形容文字或統計方法，不能形容一個人的工作表現。",
+            B:"be competent at/in sth 意為「在…方面能勝任、有能力」。分號後的 the problem is that...（問題在於…）形成轉折——能力沒問題，問題在工作量，這個對比正好襯托出前半句是肯定她的能力。",
+            C:"symbolic 是「象徵性的」，形容行為或物件代表某種意義（a symbolic gesture），與工作能力無關。",
+            D:"eligible 是「符合資格的」，指形式上具備條件（年齡、學歷），而非實際做得好。能不能勝任和夠不夠資格是兩回事，這是本題最需要分辨的地方。"
+          },
+          notes:[
+            {term:"competent", pos:"adj.", gloss:"有能力的、能勝任的（n. competence；反義 incompetent）", ex:"He is perfectly competent at his job.", exZh:"他完全能勝任他的工作。"},
+            {term:"competent vs. eligible", pos:"辨析", gloss:"competent 是「做得來」（能力）；eligible 是「有資格」（條件）。前者看表現，後者看門檻。"}
+          ]},
+
+        { n:20, kind:"動詞",
+          stem:"Let the soup boil with the lid on for five minutes, then ______ the pot and stir gently so that nothing sticks to the bottom and burns.",
+          options:{A:"conceal 隱藏",B:"dedicate 奉獻",C:"attract 吸引",D:"uncover 掀開蓋子、揭開"}, answer:"D",
+          translation:"讓湯蓋著蓋子煮五分鐘，然後掀開鍋蓋輕輕攪拌，以免有東西黏在鍋底燒焦。",
+          explain:{
+            A:"conceal 是「隱藏、遮掩」，方向相反——前面已經 with the lid on（蓋著蓋子），接下來要攪拌就必須打開。",
+            B:"dedicate 是「奉獻、致力於」，受詞是時間或生命（dedicate oneself to），不能接鍋子。",
+            C:"attract 是「吸引」，受詞是人或注意力，語意完全不合。",
+            D:"前半句 with the lid on（蓋著蓋子）與後面的 stir gently（輕輕攪拌）之間必然要有「打開」的動作。uncover 由 un-（反向）＋ cover（蓋上）構成，字面就是把蓋子拿掉。"
+          },
+          notes:[
+            {term:"uncover", pos:"vt.", gloss:"掀開（蓋子）；也指「揭發（真相、陰謀）」（uncover a scandal）", ex:"Uncover the pan and let the sauce reduce.", exZh:"把鍋蓋打開讓醬汁收乾。"},
+            {term:"so that + S + V", pos:"句型", gloss:"以便…（表目的）；本句用來說明掀蓋攪拌的用意。"}
+          ]},
+
+        { n:21, kind:"動詞",
+          stem:"The crook ______ the old woman with a story about a sick grandson and walked away with most of the savings she kept at home.",
+          options:{A:"deceived 欺騙",B:"scripted 寫劇本",C:"repaid 償還",D:"unlocked 解鎖"}, answer:"A",
+          translation:"這名騙子用一個孫子生病的故事欺騙了這位老婦人，然後帶走了她放在家裡的大部分積蓄。",
+          explain:{
+            A:"主詞是 The crook（騙子），而 and 後面的 walked away with most of the savings（帶走大部分積蓄）說明他得手了。deceive sb with sth 意為「用…欺騙某人」，a story about a sick grandson（孫子生病的故事）正是行騙的說詞。",
+            B:"script 當動詞是「為…撰寫腳本」，受詞是影片或節目，不能接人。",
+            C:"repay 是「償還」，方向完全相反——他是拿走錢而不是還錢。",
+            D:"unlock 是「解鎖、打開」，受詞是門鎖或潛能（unlock one's potential），不能接人表示行騙。"
+          },
+          notes:[
+            {term:"deceive", pos:"vt.", gloss:"欺騙（deceive sb with／into doing sth）。n. deception／adj. deceptive", ex:"He deceived investors with false reports.", exZh:"他用不實的報表欺騙投資人。"},
+            {term:"crook", pos:"n.", gloss:"騙子、不法之徒（口語）；也指「彎鉤」"}
+          ]},
+
+        { n:22, kind:"名詞",
+          stem:"After almost thirty years in power, the military ______ finally collapsed, and crowds filled the square to tear down the statues of its founder.",
+          options:{A:"venture 冒險事業",B:"faculty 全體教職員；才能",C:"regime 政權、統治體制",D:"throne 王位"}, answer:"C",
+          translation:"在掌權將近三十年之後，這個軍事政權終於垮台，群眾擠滿廣場，拆毀其創建者的雕像。",
+          explain:{
+            A:"venture 是「（有風險的）事業」，指商業投資（a joint venture 合資企業），不能被形容為 military 且掌權三十年。",
+            B:"faculty 是「大學全體教職員」或「（人的）官能、才能」，與政治統治無關。",
+            C:"三個線索疊在一起：in power（掌權）、military（軍事的）、tear down the statues of its founder（拆毀創建者的雕像）——一個長期統治、有創建者、會垮台的政治體制，正是 regime。這個字常帶負面或威權的語感。",
+            D:"throne 是「王位」，指君主的寶座；但軍事統治不是君主制，而且 throne 不會被形容為 military。"
+          },
+          notes:[
+            {term:"regime", pos:"n.", gloss:"政權、統治體制（常帶威權的貶意：a military／authoritarian regime）；讀作 /reɪˈʒiːm/", ex:"The regime fell after months of protests.", exZh:"經過數月抗議後，該政權垮台了。"},
+            {term:"tear down", pos:"phr. v.", gloss:"拆除、推倒（tear-tore-torn）"}
+          ]},
+
+        { n:23, kind:"名詞",
+          stem:"Before you sign anything, a word of ______: that company has changed its name twice and still owes money to several small suppliers.",
+          options:{A:"rhetoric 華麗辭令",B:"caution 警告、告誡",C:"theology 神學",D:"initiative 主動性、倡議"}, answer:"B",
+          translation:"在你簽下任何東西之前，先給你一句忠告：那家公司改過兩次名字，而且還欠好幾家小供應商的錢。",
+          explain:{
+            A:"rhetoric 是「華麗辭令」，指修飾過的空話，但這裡說的是實質的提醒。本卷第 6 題才是它的正確用法。",
+            B:"a word of caution 是固定說法，意為「一句提醒、一個忠告」。冒號後列出的兩項事實（改過兩次名字、積欠供應商貨款）都是負面訊息，而句首的 Before you sign anything（在你簽任何東西之前）更點明這是事前警示。",
+            C:"theology 是「神學」，語意完全不合。",
+            D:"initiative 是「主動性」或「新倡議」，a word of initiative 不成搭配。"
+          },
+          notes:[
+            {term:"a word of caution / advice / warning", pos:"phr.", gloss:"一句忠告／建議／警告（word 在此指「一番話」）", ex:"A word of caution: read the fine print.", exZh:"提醒一句：要看清楚細則。"},
+            {term:"owe", pos:"vt.", gloss:"欠（owe sb money ＝ owe money to sb）"}
+          ]},
+
+        { n:24, kind:"動詞",
+          stem:"The order form asks you to ______ your preferred color and size; otherwise, the factory will simply send whatever is left in the warehouse.",
+          options:{A:"articulate 清楚表達",B:"contemplate 沉思、考慮",C:"uncover 掀開、揭露",D:"specify 明確指定、具體說明"}, answer:"D",
+          translation:"訂購單要求你明確指定偏好的顏色與尺寸；否則，工廠就只會把倉庫裡剩下的東西隨便寄出。",
+          explain:{
+            A:"articulate 是「（把想法）清楚表達出來」，受詞多為 ideas、feelings 這類抽象概念，不是表單上的規格欄位。",
+            B:"contemplate 是「沉思、考慮」，指內心的思索；但訂購單要的是把選擇「寫下來」，不是在心裡想。",
+            C:"uncover 是「掀開、揭露」，受詞是被遮蓋的東西或祕密。本卷第 20 題才是它的用法。",
+            D:"otherwise 之後的 the factory will simply send whatever is left（工廠就隨便寄剩下的）說明不講清楚的後果——必須明確指定規格才不會出錯。specify 意為「具體載明、明確指定」，是表單與契約的標準用字。"
+          },
+          notes:[
+            {term:"specify", pos:"vt.", gloss:"明確指定、具體說明（n. specification 規格；縮寫 specs）", ex:"Please specify your dietary requirements.", exZh:"請具體說明您的飲食需求。"},
+            {term:"otherwise", pos:"adv.", gloss:"否則；用來帶出「不這麼做的後果」，是推論答案的好線索。"}
+          ]},
+
+        { n:25, kind:"動詞片語",
+          stem:"It took the team only one afternoon to ______ the idea of selling lunch boxes online, but three years to turn that idea into a profitable business.",
+          options:{A:"pay back 償還、報復",B:"come up with 想出、提出",C:"stand for 代表；容忍",D:"tell apart 分辨"}, answer:"B",
+          translation:"這個團隊只花了一個下午就想出線上賣便當的點子，卻花了三年才把那個點子變成賺錢的事業。",
+          explain:{
+            A:"pay back 是「還錢」或「報復」，受詞是金錢或人，不能接 the idea。",
+            B:"come up with 意為「想出（點子、辦法）」，受詞正是 the idea。句子用 only one afternoon（只花一個下午）與 but three years（卻花了三年）對比「想到」與「做到」的難度差距，前者自然是發想。",
+            C:"stand for 是「代表（縮寫、理念）」或「容忍」（常用否定 I won't stand for it），都接不上「點子」。",
+            D:"tell apart 是「分辨兩者」，需要兩個比較對象，但句中只有一個點子。"
+          },
+          notes:[
+            {term:"come up with", pos:"phr. v.", gloss:"想出、提出（an idea／a solution／a plan）", ex:"She came up with a brilliant solution.", exZh:"她想出了一個絕妙的解決辦法。"},
+            {term:"It takes sb + 時間 + to V", pos:"句型", gloss:"某人花多少時間做某事；本句用兩個時間長度對比，是常見的修辭手法。"}
+          ]},
+
+        { n:26, kind:"動詞",
+          stem:"The director ignored the warnings of his own engineers and ______ the seeds of a disaster that closed the factory two years later.",
+          options:{A:"sowed 播下（種子）",B:"reaped 收割",C:"tolled 鳴（鐘）",D:"vowed 發誓"}, answer:"A",
+          translation:"這位主管無視自家工程師的警告，埋下了兩年後導致工廠關閉的災難種子。",
+          explain:{
+            A:"sow the seeds of sth 是固定比喻，意為「埋下…的種子、種下禍根」。前半句 ignored the warnings（無視警告）是種下禍根的行為，而關係子句 that closed the factory two years later（兩年後導致工廠關閉）則是日後的惡果——播種與收成之間的時間差，正是這個比喻的精髓。",
+            B:"reap 是「收割」，指收成結果而非埋下原因。reap what you sow（自食其果）中的 reap 是後段，但句中關閉工廠是兩年「之後」的事，可見這裡還在播種階段。這是方向顛倒的干擾選項。",
+            C:"toll 當動詞是「（喪鐘）緩慢鳴響」，受詞是鐘，不是種子。",
+            D:"vow 是「發誓」，受詞是承諾內容，語意完全不合。"
+          },
+          notes:[
+            {term:"sow the seeds of", pos:"idiom", gloss:"埋下…的種子、種下禍根（sow-sowed-sown；You reap what you sow 種什麼因得什麼果）", ex:"The decision sowed the seeds of future conflict.", exZh:"這項決定埋下了日後衝突的種子。"},
+            {term:"sow vs. sew vs. so", pos:"辨析", gloss:"sow 播種／sew 縫紉／so 所以。三字同音，拼字完全不同。"}
+          ]},
+
+        { n:27, kind:"形容詞",
+          stem:"The defense lawyer was so ______ that several members of the jury were already in tears before she finished her closing argument.",
+          options:{A:"corrupt 腐敗的",B:"impolite 無禮的",C:"eloquent 口才雄辯、極具感染力的",D:"moral 道德的"}, answer:"C",
+          translation:"這位辯護律師的辯才如此動人，以致於好幾位陪審員在她結辯還沒說完之前就已經落淚。",
+          explain:{
+            A:"corrupt 是「腐敗的」，形容收賄或濫權，與說話的感染力無關。",
+            B:"impolite 是「無禮的」，若律師態度無禮，陪審員不會被感動落淚。",
+            C:"這是 so ... that 句型，結果子句是 several members of the jury were already in tears（好幾位陪審員已經落淚）——能說到讓人動容，正是 eloquent（雄辯而富感染力）。而 closing argument（結辯）更是展現口才的場合。",
+            D:"moral 是「道德的」，形容行為或原則；一個人品德高尚不必然能讓聽眾落淚，與「說話能力」是兩回事。"
+          },
+          notes:[
+            {term:"eloquent", pos:"adj.", gloss:"雄辯的、有說服力而動人的（n. eloquence）", ex:"She gave an eloquent defense of free speech.", exZh:"她為言論自由作了一場動人的辯護。"},
+            {term:"closing argument", pos:"n.", gloss:"（法庭上的）結辯、總結陳詞"}
+          ]},
+
+        { n:28, kind:"名詞",
+          stem:"For more than two centuries, Japan followed a policy of ______ and allowed only Dutch and Chinese ships to trade at a single port.",
+          options:{A:"rebellion 叛亂",B:"isolation 孤立、鎖國",C:"discrimination 歧視；區辨",D:"solitude 獨處、清靜"}, answer:"B",
+          translation:"兩百多年來，日本奉行鎖國政策，只允許荷蘭與中國的船隻在單一港口通商。",
+          explain:{
+            A:"rebellion 是「叛亂」，指對統治者的反抗，不是國家對外的政策。",
+            B:"and 後面的 allowed only Dutch and Chinese ships to trade at a single port（只准荷蘭與中國船隻在單一港口通商）就是答案的定義——幾乎切斷對外往來，正是 a policy of isolation（鎖國政策）。",
+            C:"discrimination 是「歧視」或「區辨」，雖然日本確實只對特定國家開放，但這項政策的核心是「封閉」而非「差別待遇」；而且 a policy of discrimination 指的是歧視政策，與史實不符。",
+            D:"solitude 是「個人的獨處清靜」，主詞必須是人，不能用於國家層級的外交政策。這是與 isolation 最容易混淆的選項：一個是個人的，一個是國家或群體的。"
+          },
+          notes:[
+            {term:"isolation", pos:"n.", gloss:"孤立、隔離（a policy of isolation 鎖國政策；in isolation 單獨地）。v. isolate", ex:"The country ended its long isolation in 1854.", exZh:"該國於一八五四年結束長期的鎖國。"},
+            {term:"isolation vs. solitude", pos:"辨析", gloss:"isolation 是被動或政策性的隔絕（可用於國家）；solitude 是個人自願的獨處。本卷第 13 題考的正是後者。"}
+          ]},
+
+        { n:29, kind:"名詞",
+          stem:"The café has been open for only a month, and the students next door have already reached a clear ______: good coffee, terrible music.",
+          options:{A:"conception 概念、構想",B:"implication 言外之意",C:"reminder 提醒物",D:"verdict 評斷、裁決"}, answer:"D",
+          translation:"這家咖啡館才開幕一個月，隔壁的學生就已經下了明確的評斷：咖啡好喝，音樂很糟。",
+          explain:{
+            A:"conception 是「概念、構想」，指對事物的想法形成，但句中學生是在「做出評價」而非提出構想。",
+            B:"implication 是「言外之意」，指未明說的暗示；但冒號後的 good coffee, terrible music（咖啡好、音樂糟）說得非常直白。",
+            C:"reminder 是「提醒物」，與評價無關。",
+            D:"reach a verdict 是固定搭配，原指陪審團「作出裁決」，此處引申為一般人對事物下的明確評斷。冒號後的簡短評語正是這份「判決書」的內容，形容詞 clear（明確的）也呼應判決的果斷。"
+          },
+          notes:[
+            {term:"reach / deliver a verdict", pos:"phr.", gloss:"作出裁決、下評斷（法律用語，日常可引申為對人事物的評價）", ex:"The jury reached a verdict after two hours.", exZh:"陪審團在兩小時後作出裁決。"},
+            {term:"冒號的補充說明", pos:"技巧", gloss:"冒號後的內容是對前面名詞的展開。看冒號後是什麼性質的內容（評價、清單、定義），就能反推空格。"}
+          ]},
+
+        { n:30, kind:"名詞",
+          stem:"The castle held out under ______ for eleven months, and by the end the defenders were eating their own horses just to stay alive.",
+          options:{A:"greed 貪婪",B:"revolt 反抗、起義",C:"siege 圍城、包圍",D:"corruption 貪腐"}, answer:"C",
+          translation:"這座城堡在圍城之下撐了十一個月，到最後守軍為了活命，連自己的馬都吃了。",
+          explain:{
+            A:"greed 是「貪婪」，為心理狀態，under greed 不成片語。",
+            B:"revolt 是「起義、反抗」，指民眾推翻統治者的行動；但句中城堡是被外力包圍的一方，不是內部有人造反。",
+            C:"under siege 是固定片語，意為「被圍困中」。兩個線索：held out for eleven months（撐了十一個月）說明是長期對峙，而 the defenders were eating their own horses just to stay alive（守軍吃馬求生）正是補給被切斷的典型狀況。",
+            D:"corruption 是「貪腐」，指權力濫用，與軍事圍困無關。"
+          },
+          notes:[
+            {term:"under siege", pos:"phr.", gloss:"被圍困（lay siege to 圍攻；也可引申為「飽受抨擊」）", ex:"The city was under siege for two years.", exZh:"這座城市被圍困了兩年。"},
+            {term:"hold out", pos:"phr. v.", gloss:"堅守、撐住（hold out against the enemy 抵擋敵人）"}
+          ]},
+
+        { n:31, kind:"動詞",
+          stem:"The small factory uses steam rather than chemicals to ______ oil from lavender, which is probably why its products smell so fresh and natural.",
+          options:{A:"extract 萃取、提煉",B:"conceal 隱藏",C:"dedicate 奉獻",D:"receive 收到"}, answer:"A",
+          translation:"這家小工廠用蒸氣而非化學藥劑從薰衣草中萃取精油，這或許就是為什麼它的產品聞起來如此清新自然。",
+          explain:{
+            A:"extract A from B 是固定結構，意為「從 B 中萃取出 A」。空格後有受詞 oil 與介系詞 from lavender，結構完全吻合；uses steam rather than chemicals（用蒸氣而非化學藥劑）談的也正是萃取方法。",
+            B:"conceal 是「隱藏」，若成立會變成「把精油從薰衣草裡藏起來」，語意荒謬。",
+            C:"dedicate 是「奉獻」，搭配 to（dedicate oneself to），不接 from。",
+            D:"receive 是「收到」，指被動接收，但工廠是主動提煉的一方；而且 receive 的搭配是 from sb（收到某人給的東西），不是從植物中取得成分。"
+          },
+          notes:[
+            {term:"extract A from B", pos:"phr.", gloss:"從 B 中萃取／提煉出 A（n. extract 萃取物／extraction 萃取）", ex:"Sugar is extracted from sugarcane.", exZh:"糖是從甘蔗中提煉出來的。"},
+            {term:"rather than", pos:"phr.", gloss:"而不是…；前後成分須對稱（uses steam rather than chemicals）。"}
+          ]},
+
+        { n:32, kind:"名詞",
+          stem:"After the newspaper printed three false stories in one month, it lost all ______ with the readers who had trusted it for decades.",
+          options:{A:"expertise 專業知識",B:"credibility 公信力、可信度",C:"fluency 流利度",D:"version 版本"}, answer:"B",
+          translation:"在一個月內刊出三則不實報導之後，這家報社失去了那些信任它數十年的讀者心中的所有公信力。",
+          explain:{
+            A:"expertise 是「專業知識」，指累積的專業能力；刊出假新聞損害的是「信任」而非專業技能本身。",
+            B:"兩個線索：printed three false stories（刊出三則不實報導）是原因，而關係子句 who had trusted it for decades（信任它數十年的讀者）直接用了 trusted 這個字。失去讀者的信任，正是 credibility（公信力）的喪失。",
+            C:"fluency 是「（語言）流利度」，與新聞報導的真實性無關。",
+            D:"version 是「版本」，語意完全不合。"
+          },
+          notes:[
+            {term:"credibility", pos:"n.", gloss:"公信力、可信度（adj. credible 可信的；字根 cred- 表「相信」，同源字 credit、incredible）", ex:"The scandal destroyed his credibility.", exZh:"這樁醜聞摧毀了他的公信力。"},
+            {term:"lose all credibility with sb", pos:"phr.", gloss:"在某人心中失去所有公信力"}
+          ]},
+
+        { n:33, kind:"名詞",
+          stem:"Three years of night shifts have taken a heavy ______ on his health, and his doctor has now told him to change jobs.",
+          options:{A:"recommendation 推薦、建議",B:"greed 貪婪",C:"faculty 全體教職員；官能",D:"toll 損害、代價"}, answer:"D",
+          translation:"三年的夜班工作對他的健康造成了沉重的損害，他的醫生現在已經要他換工作。",
+          explain:{
+            A:"recommendation 是「建議」，take a recommendation 不成片語；而且建議是醫生給的，出現在句子後半。",
+            B:"greed 是「貪婪」，為情緒狀態，無法搭配 take a heavy ... on。",
+            C:"faculty 是「大學教職員」或「（人的）官能」，與健康損耗的因果無關。",
+            D:"take a heavy toll on sth 是固定片語，意為「對…造成重大損害」。主詞 Three years of night shifts（三年夜班）是長期的消耗，而 his doctor has told him to change jobs（醫生要他換工作）則是損害已經嚴重到需要處置。",
+          },
+          notes:[
+            {term:"take a toll on", pos:"idiom", gloss:"對…造成損害（常加 heavy／serious 強化；toll 原意為「通行費」，引申為「代價」）", ex:"The long war took a heavy toll on the economy.", exZh:"這場長期戰爭對經濟造成重大損害。"},
+            {term:"toll 的另一義", pos:"補充", gloss:"the death toll 死亡人數。同一個字在新聞中有兩種常見用法。"}
+          ]},
+
+        { n:34, kind:"名詞",
+          stem:"Thousands of farmers drove their tractors into the capital and joined a huge ______ demanding that the government raise the price of rice.",
+          options:{A:"ceremony 典禮",B:"seminar 研討會",C:"rally 集會、造勢大會",D:"workshop 工作坊"}, answer:"C",
+          translation:"數千名農民把曳引機開進首都，加入一場要求政府提高稻米價格的大型集會。",
+          explain:{
+            A:"ceremony 是「典禮」，指具儀式性的正式場合（婚禮、頒獎），不會用來提出訴求。",
+            B:"seminar 是「研討會」，規模小且以學術討論為主，與 thousands of farmers（數千名農民）和 tractors（曳引機）的場面完全不符。",
+            C:"三個線索：Thousands of farmers（數千人）、drove their tractors into the capital（把曳引機開進首都）、demanding that the government raise the price（要求政府漲價）——人數眾多、帶有訴求的群眾集會，正是 rally。",
+            D:"workshop 是「工作坊」，是小型的實作教學活動，規模與目的都不合。"
+          },
+          notes:[
+            {term:"rally", pos:"n. / vi.", gloss:"集會、造勢大會（a political rally）；當動詞為「集結、重振」", ex:"Over 10,000 people attended the rally.", exZh:"超過一萬人參加了這場集會。"},
+            {term:"demand that + S + (should) V", pos:"文法", gloss:"demand／insist／suggest 後的 that 子句用假設語氣，should 常省略，所以是 raise 而非 raises。"}
+          ]},
+
+        { n:35, kind:"形容詞",
+          stem:"The referee decided the push was ______ rather than accidental, so the player was sent off before the end of the second half.",
+          options:{A:"deliberate 蓄意的、故意的",B:"ethical 合乎道德的",C:"theoretical 理論上的",D:"symbolic 象徵性的"}, answer:"A",
+          translation:"裁判判定那次推人是蓄意而非意外，因此該球員在下半場結束前就被罰出場。",
+          explain:{
+            A:"決定性線索是 rather than accidental（而非意外）——與「意外」相對的，就是「蓄意」。而 so 之後的 the player was sent off（球員被罰出場）也說明這是嚴重犯規，唯有故意才會受此重罰。deliberate 當形容詞意為「蓄意的」。",
+            B:"ethical 是「合乎道德的」，若推人合乎道德就不會被罰出場，語意矛盾。",
+            C:"theoretical 是「理論上的」，與實際發生的推人動作相反。",
+            D:"symbolic 是「象徵性的」，指代表某種意義的行為，與是否出於故意無關。"
+          },
+          notes:[
+            {term:"deliberate", pos:"adj. / vi.", gloss:"蓄意的、從容審慎的（adv. deliberately 故意地）；當動詞為「審議」，重音與讀音皆不同", ex:"It was a deliberate attempt to mislead us.", exZh:"那是蓄意誤導我們的舉動。"},
+            {term:"A rather than B", pos:"句型", gloss:"是 A 而不是 B；B 已知時可直接反推 A 的反義。"}
+          ]},
+
+        { n:36, kind:"形容詞",
+          stem:"It was very ______ of the neighbors to look after my mother's cat for a month without ever asking for a single dollar.",
+          options:{A:"cautious 謹慎的",B:"arrogant 傲慢的",C:"verbal 口頭的",D:"decent 正派厚道的、體面的"}, answer:"D",
+          translation:"鄰居幫我母親照顧貓咪一個月卻從未索取一分錢，真是非常厚道。",
+          explain:{
+            A:"cautious 是「謹慎的」，形容做事小心；但照顧貓咪不收錢展現的是善意而非謹慎。",
+            B:"arrogant 是「傲慢的」，是負面評價，與不求回報的善舉完全相反。本卷第 2 題才是它的用法。",
+            C:"verbal 是「口頭的」，形容溝通方式（a verbal agreement 口頭協議），不能評價人品。",
+            D:"這是 It is ＋ 形容詞 ＋ of sb ＋ to V 的句型，用來評價「某人的人品」。without ever asking for a single dollar（從未索取一分錢）正是答案的根據——無償幫忙，為人厚道。decent 意為「正派、厚道」。"
+          },
+          notes:[
+            {term:"It is + adj. + of sb + to V", pos:"句型", gloss:"某人做某事真是…（評價人品，用 of）；若評價事情難易則用 for（It is hard for me to...）。", ex:"It was kind of you to help.", exZh:"你來幫忙真是好心。"},
+            {term:"decent", pos:"adj.", gloss:"正派厚道的；也指「還不錯的、過得去的」（a decent meal）"}
+          ]},
+
+        { n:37, kind:"名詞",
+          stem:"Without a government ______, the little island ferry would have stopped running long ago, since only about twenty passengers use it on a normal day.",
+          options:{A:"rent 租金",B:"subsidy 補助金",C:"tuition 學費",D:"capability 能力"}, answer:"B",
+          translation:"若沒有政府補助，這艘小島渡輪早就停駛了，因為平常日大約只有二十名乘客搭乘。",
+          explain:{
+            A:"rent 是「租金」，是要付出去的錢；但渡輪需要的是外來的財務支援才能維持營運，方向相反。",
+            B:"since 子句說 only about twenty passengers use it on a normal day（平日僅約二十名乘客）——票房收入顯然無法支撐營運，必須靠政府補貼才能繼續。subsidy 正是政府為維持公共服務而發放的補助金。",
+            C:"tuition 是「學費」，教育場域的用字，與渡輪無關。",
+            D:"capability 是「能力」，為抽象能力；a government capability 不成搭配，而且問題出在錢不是能力。"
+          },
+          notes:[
+            {term:"subsidy", pos:"n.", gloss:"補助金、津貼（government subsidies；v. subsidize）", ex:"Farmers rely on government subsidies.", exZh:"農民仰賴政府補助。"},
+            {term:"Without + N, S would have p.p.", pos:"假設語氣", gloss:"＝If it had not been for...，表與過去事實相反。看到 would have stopped 就知道是過去的假設。"}
+          ]},
+
+        { n:38, kind:"動詞",
+          stem:"To get the house finished before winter, my parents ______ a local builder and his team to do the work, and construction began the following Monday.",
+          options:{A:"contracted 簽約聘請、承包",B:"repaid 償還",C:"supervised 監督",D:"envisioned 想像、展望"}, answer:"A",
+          translation:"為了趕在冬天前完工，我父母與一位當地的營造商及其團隊簽約承攬這項工程，施工在隔週一就開始了。",
+          explain:{
+            A:"contract sb to do sth 意為「簽約委託某人做某事」。and 後面的 construction began the following Monday（施工隔週一開始）說明雙方已經談定並立即動工，正是簽約的結果。contract 當名詞是「合約」，當動詞即為「訂約承攬」。",
+            B:"repay 是「償還」，受詞是借款或恩情；但工程還沒開始，談不上還錢。",
+            C:"supervise 是「監督」，是工程進行中的角色；但句中是「找人來做」這個起始動作，而且 supervise 無法接 to do the work 的結構。",
+            D:"envision 是「想像、構想」，受詞是尚未實現的願景，無法接「一位營造商與他的團隊」。"
+          },
+          notes:[
+            {term:"contract", pos:"vt. / n.", gloss:"簽約聘請、承攬（contract sb to do sth）；名詞為「合約」。另有「感染（疾病）」與「收縮」之意", ex:"They contracted a firm to rebuild the roof.", exZh:"他們與一家公司簽約重建屋頂。"},
+            {term:"get + O + p.p.", pos:"句型", gloss:"使…被完成（get the house finished 把房子弄好）。"}
+          ]},
+
+        { n:39, kind:"形容詞",
+          stem:"Her thesis was so ______ that the department even published it as a small booklet and sent copies to three partner universities overseas.",
+          options:{A:"satisfactory 令人滿意的、及格的",B:"moral 道德的",C:"exceptional 卓越出眾的",D:"honorable 可敬的"}, answer:"C",
+          translation:"她的論文如此出色，以致於系上甚至把它印成一本小冊子，寄送給三所海外的合作大學。",
+          explain:{
+            A:"satisfactory 的程度太低——它只是「達到標準、過得去」，不足以讓系上特別出版並寄送到海外。這是本題最需要分辨程度的選項。",
+            B:"moral 是「道德的」，形容行為的是非，不能評價論文的學術水準。",
+            C:"這是 so ... that 句型，結果子句的 the department even published it... and sent copies to three partner universities overseas（系上甚至出版並寄往三所海外合作大學）是極高的肯定，副詞 even（甚至）更強化了這份破格待遇。能引發這種反應的，必須是 exceptional（卓越出眾）而非僅僅及格。",
+            D:"honorable 是「可敬的、光榮的」，形容人格或行為（an honorable man），不用來形容學術作品的品質。"
+          },
+          notes:[
+            {term:"exceptional", pos:"adj.", gloss:"卓越的、異常出色的（也指「例外的、罕見的」）", ex:"Her performance was truly exceptional.", exZh:"她的表現真的非常出色。"},
+            {term:"程度要對得上結果", pos:"技巧", gloss:"so ... that 句型中，形容詞的強度必須與 that 子句的結果相稱。結果越誇張，形容詞就要越強。"}
+          ]},
+
+        { n:40, kind:"名詞",
+          stem:"Feeding the stray cats behind the office before he goes home has become a small daily ______ for Mr. Lin; he hasn't missed a single evening in three years.",
+          options:{A:"ego 自我、自尊心",B:"ritual 固定儀式、例行習慣",C:"workshop 工作坊",D:"competence 能力"}, answer:"B",
+          translation:"下班回家前餵辦公室後面的流浪貓，已經成為林先生每天的一項小小儀式；三年來他沒有漏掉任何一個晚上。",
+          explain:{
+            A:"ego 是「自我、自尊心」，屬心理學概念，不能用 daily（每天的）修飾成一件例行的事。",
+            B:"兩個線索：形容詞 daily（每天的）與分號後的 he hasn't missed a single evening in three years（三年來一晚也沒漏掉）——固定、持續、帶有個人意義的重複行為，正是 ritual。這個字除了宗教儀式，也常指個人的日常儀式感。",
+            C:"workshop 是「工作坊」，指有講師與課程的活動，不是個人的日常習慣。",
+            D:"competence 是「能力」，指做得來某事的本事，而非重複的行為本身。"
+          },
+          notes:[
+            {term:"ritual", pos:"n. / adj.", gloss:"儀式；也指個人固定的例行習慣（a morning ritual 晨間儀式）", ex:"Making coffee is part of his morning ritual.", exZh:"煮咖啡是他晨間儀式的一部分。"},
+            {term:"ritual vs. routine", pos:"辨析", gloss:"routine 偏重「例行公事」（中性、講效率）；ritual 帶有儀式感與情感意義。本題的「三年不間斷餵貓」顯然屬於後者。"}
+          ]}
+      ]
+    }]
+  }
+  ]
+};
+
+/* ==========================================================================
+   ②  以下為程式碼，一般情況不需要修改。
+   ========================================================================== */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const wordOf = q => q.options ? q.options[q.answer] : (q.answerText || '');
+const allQ = [];
+EXAM.sections.forEach(s => s.groups.forEach(g => g.questions.forEach(q => allQ.push(q))));
+const findQ = n => allQ.find(q => String(q.n) === String(n));
+
+document.getElementById('brand').textContent = EXAM.brand;
+document.getElementById('examTitle').textContent = EXAM.title;
+document.getElementById('examMeta').textContent = EXAM.meta;
+
+let noteCount = 0;
+allQ.forEach(q => noteCount += (q.notes || []).length);
+
+const nav = document.getElementById('nav');
+EXAM.sections.forEach(s => {
+  const a = document.createElement('a');
+  a.className = 'chip'; a.href = '#sec-' + s.id; a.textContent = s.label.replace(/^[一二三四五六]、/, m => m);
+  nav.appendChild(a);
+});
+const noteChip = document.createElement('a');
+noteChip.className = 'chip'; noteChip.href = '#side'; noteChip.textContent = '重點表 ' + noteCount;
+nav.appendChild(noteChip);
+const toggleAll = document.createElement('button');
+toggleAll.className = 'chip solid'; toggleAll.textContent = '全部展開';
+nav.appendChild(toggleAll);
+
+function renderPassage(g, i, sid) {
+  let html = esc(g.passage);
+  g.questions.forEach(q => {
+    if (!q.evidence) return;
+    const t = esc(q.evidence);
+    if (html.includes(t)) html = html.replace(t, `<span class="hl ev" data-ev="${q.n}">${t}</span>`);
+  });
+  html = html.replace(/__(\d+)__/g, (m, n) =>
+    `<button class="blank" data-blank="${n}" aria-label="第 ${n} 題空格">${n}</button>`);
+  const body = '<div class="passage">' +
+    html.split(/\n{2,}/).map(p => '<p>' + p.replace(/\n/g, ' ') + '</p>').join('') + '</div>';
+  if (!g.zh) return body;
+  const id = sid + '-' + i;
+  return body +
+    `<button class="zhbtn" data-zh="${id}">全文中譯</button>` +
+    `<div class="zhbox" id="zh-${id}">` +
+      g.zh.split(/\n{2,}/).map(p => '<p>' + esc(p).replace(/\n/g, ' ') + '</p>').join('') +
+    '</div>';
+}
+
+function renderQ(q) {
+  const parts = [];
+  if (q.options) {
+    const ks = Object.keys(q.options);
+    parts.push('<div class="opts">' + ks.map(k =>
+      `<div class="opt"><span class="opt-k">(${k})</span><span>${esc(q.options[k])}</span></div>`).join('') + '</div>');
+  }
+  const head = `<div class="q-tag"><span class="q-n">${String(q.n).padStart(2,'0')}</span><span class="q-kind">${esc(q.kind || '')}</span></div>` +
+    (q.prompt ? `<p class="prompt">${esc(q.prompt)}</p>` : '') +
+    (q.stem ? `<p class="stem">${esc(q.stem).replace(/\n/g,'<br>')}</p>` : '');
+
+  let ans = '';
+  if (q.answers) {
+    ans = '<ul class="fills">' + q.answers.map(a =>
+      `<li class="fill"><span class="fill-k">${esc(a.k)}</span><span class="fill-w hl" data-ansmulti>${esc(a.w)}</span><span class="fill-n">${esc(a.note || '')}</span></li>`).join('') + '</ul>';
+  } else {
+    const label = q.options ? `(${q.answer}) ${esc(wordOf(q))}` :
+      (q.answer ? `(${q.answer}) ${esc(q.answerText)}` : esc(q.answerText));
+    ans = `<p class="ans"><span class="ans-k">答案</span><span class="ans-v hl" data-ans="${q.n}">${label}</span></p>`;
+  }
+
+  let expl = '';
+  if (q.explain) {
+    expl = '<ul class="lines">' + Object.keys(q.options).map(k => {
+      const right = q.multi ? q.multi.includes(k) : k === q.answer;
+      return `<li class="line ${right ? 'right' : 'wrong'}"><span class="line-k">(${k})</span><span>${esc(q.explain[k] || '')}</span></li>`;
+    }).join('') + '</ul>';
+  }
+  const why = q.why ? `<p class="why">${esc(q.why)}</p>` : '';
+  const sample = q.sample ? `<div class="sample"><p class="note-h">參考範文</p>` +
+    q.sample.split(/\n{2,}/).map(p => `<p>${esc(p).replace(/\n/g,' ')}</p>`).join('') + '</div>' : '';
+  const evid = q.evidence ? `<p class="evid"><span>文中依據</span>${esc(q.evidence)}</p>` : '';
+  const notes = (q.notes || []).length ? `<div class="note"><p class="note-h">重點整理</p>` +
+    q.notes.map(nt => `<p class="note-i"><span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span><span class="gloss">${esc(nt.gloss || '')}</span>` +
+      (nt.ex ? `<span class="ex">${esc(nt.ex)}<i>${esc(nt.exZh || '')}</i></span>` : '') + '</p>').join('') + '</div>' : '';
+
+  return `<article class="q" id="q-${q.n}" data-n="${q.n}">
+    <div class="q-top">${head}${parts.join('')}
+      <button class="reveal" aria-expanded="false" aria-controls="body-${q.n}">看詳解</button>
+    </div>
+    <div class="body" id="body-${q.n}">
+      ${ans}${q.translation ? `<p class="zh">${esc(q.translation)}</p>` : ''}${expl}${why}${evid}${sample}${notes}
+    </div>
+  </article>`;
+}
+
+document.getElementById('main').innerHTML = EXAM.sections.map((s, i) => `
+  <section class="sec" id="sec-${s.id}">
+    <div class="sec-head">
+      <span class="sec-num">${String(i+1).padStart(2,'0')}</span>
+      <h2 class="sec-label">${esc(s.label)}</h2>
+      <span class="sec-score">${esc(s.score || '')}</span>
+    </div>
+    ${s.instruction ? `<p class="sec-inst">${esc(s.instruction)}</p>` : ''}
+    ${s.bank ? `<div class="bank${s.bankWide ? ' wide' : ''}">${Object.keys(s.bank).map(k =>
+      `<div class="bank-i" data-bank="${k}"><span>(${k})</span>${esc(s.bank[k])}</div>`).join('')}</div>` : ''}
+    ${s.groups.map((g, gi) => (g.passage ? renderPassage(g, gi, s.id) : '') + g.questions.map(renderQ).join('')).join('')}
+  </section>`).join('');
+
+const items = [];
+allQ.forEach(q => (q.notes || []).forEach(nt => items.push({ ...nt, n: q.n })));
+document.getElementById('side').innerHTML = `
+  <p class="side-h">Notes</p>
+  <p class="side-t">本卷重點 ${items.length} 則</p>
+  <ul class="card-list">${items.map(nt => `
+    <li class="card-item"><a href="#q-${nt.n}">
+      <span class="jump">第 ${nt.n} 題</span>
+      <span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span>
+      <div class="gloss">${esc(nt.gloss || '')}</div>
+    </a></li>`).join('')}</ul>
+  <p class="side-note">點任一則可跳到出處題目。用瀏覽器列印（Ctrl／⌘ + P）會自動展開全部詳解與中譯，可直接印成講義。</p>`;
+
+document.getElementById('foot').textContent = `共 ${allQ.length} 題 · ${EXAM.footer}`;
+
+function setOpen(card, open) {
+  card.classList.toggle('open', open);
+  const btn = card.querySelector('.reveal');
+  btn.setAttribute('aria-expanded', open);
+  btn.firstChild.nodeValue = open ? '收合詳解' : '看詳解';
+  const n = card.dataset.n;
+  card.querySelectorAll('.hl').forEach(h => h.classList.toggle('on', open));
+  const ev = document.querySelector(`[data-ev="${n}"]`);
+  if (ev) ev.classList.toggle('on', open);
+  const q = findQ(n);
+  if (q && q.answer && q.answerText) {
+    const bi = document.querySelector(`[data-bank="${q.answer}"]`);
+    if (bi) bi.classList.toggle('used', open);
+  }
+  const bl = document.querySelector(`[data-blank="${n}"]`);
+  if (bl) {
+    if (open) {
+      bl.classList.add('filled');
+      bl.innerHTML = `<sup>${n}</sup><span class="hl">${esc(wordOf(q))}</span>`;
+      requestAnimationFrame(() => bl.querySelector('.hl').classList.add('on'));
+    } else {
+      bl.classList.remove('filled');
+      bl.textContent = n;
+    }
+  }
+}
+document.addEventListener('click', e => {
+  const rv = e.target.closest('.reveal');
+  if (rv) { const c = rv.closest('.q'); setOpen(c, !c.classList.contains('open')); return; }
+  const zb = e.target.closest('.zhbtn');
+  if (zb) { zb.classList.toggle('on'); document.getElementById('zh-' + zb.dataset.zh).classList.toggle('on'); return; }
+  const bl = e.target.closest('.blank');
+  if (bl) {
+    const c = document.getElementById('q-' + bl.dataset.blank);
+    if (!c.classList.contains('open')) setOpen(c, true);
+    c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+toggleAll.addEventListener('click', () => {
+  const open = toggleAll.textContent === '全部展開';
+  document.querySelectorAll('.q').forEach(c => setOpen(c, open));
+  toggleAll.textContent = open ? '全部收合' : '全部展開';
+});
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('.q').forEach(c => setOpen(c, true));
+  document.querySelectorAll('.zhbox').forEach(b => b.classList.add('on'));
+  toggleAll.textContent = '全部收合';
+});
+</script>
+</body>
+</html>
