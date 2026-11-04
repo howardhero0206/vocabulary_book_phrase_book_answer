@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>片語書基礎篇小考 詳解｜Unit 21~25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7EBEE; --card:#FDFDFC;
+  --ink:#10202F; --ink-2:#56687A; --ink-3:#7C8B99;
+  --rule:#C6D0D8; --pen:#17457E; --hl:#FFE773; --miss:#A34234;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono','Cascadia Mono',Menlo,Consolas,monospace;
+  --read:'Literata',Georgia,'Times New Roman',serif;
+  --han:'PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--han);font-size:16px;line-height:1.75}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2px}
+
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+.title{font-size:23px;font-weight:600;margin:0;line-height:1.3}
+.meta{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin:4px 0 0;letter-spacing:.04em}
+.bar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;padding:12px 0 11px;margin-top:10px;border-top:1px solid var(--rule)}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--rule);background:transparent;color:var(--ink-2);padding:5px 10px;border-radius:999px;cursor:pointer;text-decoration:none;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:var(--pen);color:var(--pen)}
+.chip.solid{margin-left:auto;border-color:var(--ink);color:var(--ink);font-weight:500}
+.chip.solid:hover{background:var(--ink);color:var(--card)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:28px 24px 96px;display:grid;gap:36px;grid-template-columns:minmax(0,1fr) 288px}
+@media (max-width:1020px){.wrap{grid-template-columns:minmax(0,1fr);gap:44px}}
+
+.sec{margin:0 0 48px;scroll-margin-top:136px}
+.sec-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--ink-3)}
+.sec-label{font-size:18px;font-weight:600;margin:0}
+.sec-score{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-left:auto}
+.sec-inst{font-size:13.5px;color:var(--ink-2);margin:9px 0 0}
+
+.bank{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:16px 0 0}
+@media (max-width:760px){.bank{grid-template-columns:repeat(2,1fr)}}
+.bank-i{background:var(--card);padding:8px 10px;font-family:var(--read);font-size:14.5px}
+.bank-i span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-right:5px}
+.bank-i.used{background:#F2F5F6;color:var(--ink-3)}
+
+.passage{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--ink);padding:22px 26px;margin:18px 0 0;font-family:var(--read);font-size:16.5px;line-height:1.95;color:#1a2836}
+.passage p{margin:0 0 1em}
+.passage p:last-child{margin-bottom:0}
+.blank{display:inline-block;min-width:70px;text-align:center;border:0;border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:13px;color:var(--pen);cursor:pointer;background:none;padding:0 4px;line-height:1.4}
+.blank:hover{background:rgba(23,69,126,.07)}
+.blank.filled{font-family:var(--read);font-size:16.5px;color:var(--ink);border-bottom-color:transparent;min-width:0}
+.blank sup{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:2px}
+.zhbtn{display:block;margin:0 0 18px;background:var(--card);border:1px solid var(--rule);border-top:0;width:100%;text-align:left;padding:8px 26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--pen);cursor:pointer}
+.zhbtn:hover{color:var(--ink)}
+.zhbtn::after{content:' ▾'}
+.zhbtn.on::after{content:' ▴'}
+.zhbox{display:none;background:#F7F9FA;border:1px solid var(--rule);border-top:0;padding:18px 26px;margin:0 0 18px;font-size:15px;line-height:1.95;color:#22323F}
+.zhbox.on{display:block}
+.zhbox p{margin:0 0 .9em}
+.zhbox p:last-child{margin:0}
+
+.q{background:var(--card);border:1px solid var(--rule);margin:14px 0 0;scroll-margin-top:142px}
+.q-top{padding:16px 22px 14px}
+.q-tag{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.q-n{font-family:var(--mono);font-size:13px;font-weight:600}
+.q-kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.prompt{font-size:14.5px;line-height:1.85;color:var(--ink-2);margin:0 0 11px;padding-left:11px;border-left:2px solid var(--rule)}
+.stem{font-family:var(--read);font-size:16.5px;line-height:1.85;margin:0 0 13px;color:#1a2836}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:9px;font-family:var(--read);font-size:15.5px;line-height:1.6;padding:3px 0;color:#243342}
+.opt-k{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);padding-top:2px;flex:none}
+.reveal{display:block;width:100%;text-align:left;margin-top:14px;background:none;border:0;border-top:1px dashed var(--rule);padding:11px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--pen);cursor:pointer}
+.reveal:hover{color:var(--ink)}
+.reveal::after{content:' ▾'}
+.q.open .reveal::after{content:' ▴'}
+.q.open .reveal{color:var(--ink-3)}
+
+.body{display:none;border-top:1px solid var(--rule);background:#F7F9FA;padding:18px 22px 20px}
+.q.open .body{display:block}
+.ans{display:flex;align-items:baseline;gap:10px;margin:0 0 13px;flex-wrap:wrap}
+.ans-k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink-3);flex:none;padding-top:2px}
+.ans-v{font-family:var(--read);font-size:18px;font-weight:600}
+.fills{list-style:none;margin:0 0 13px;padding:0}
+.fill{display:flex;gap:11px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--rule)}
+.fill-k{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);flex:none;width:26px}
+.fill-w{font-family:var(--read);font-size:17px;font-weight:600;flex:none}
+.fill-n{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.zh{font-size:15px;line-height:1.85;margin:0 0 14px;color:#22323F}
+.why{font-size:14.5px;line-height:1.85;margin:0 0 4px;color:#22323F;border-top:1px solid var(--rule);padding-top:12px}
+.lines{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.line{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.75;color:var(--ink-2)}
+.line-k{font-family:var(--mono);font-size:12.5px;flex:none;width:28px;color:var(--ink-3);padding-top:2px}
+.line.right{color:var(--ink)}
+.line.right .line-k{color:var(--ink);font-weight:600}
+.line.right .line-k::after{content:'✓';display:block;font-size:12px;line-height:1.3}
+.line.wrong .line-k{color:var(--miss);opacity:.85}
+.line.wrong .line-k::after{content:'✗';display:block;font-size:12px;line-height:1.3}
+.evid{margin:15px 0 0;font-family:var(--read);font-size:14.5px;line-height:1.8;color:var(--ink-2);padding-left:13px;border-left:2px solid var(--hl)}
+.evid span{font-family:var(--han);font-size:11px;letter-spacing:.14em;color:var(--ink-3);display:block;margin-bottom:3px}
+
+.hl{background-image:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 90%,transparent 90%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size .55s cubic-bezier(.2,.75,.3,1);border-radius:1px}
+.hl.on{background-size:100% 100%}
+
+.sample{margin:15px 0 0;border:1px solid var(--rule);border-left:3px solid var(--ink);background:var(--card);padding:16px 20px}
+.sample p:not(.note-h){font-family:var(--read);font-size:15.5px;line-height:1.9;color:#1a2836;margin:0 0 1em}
+.sample p:last-child{margin-bottom:0}
+.bank.wide{grid-template-columns:1fr}
+.bank.wide .bank-i{font-size:15px;line-height:1.7;padding:10px 14px}
+.note{margin:15px 0 0;border:1px solid var(--rule);background:var(--card);padding:13px 16px}
+.note-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:0 0 9px}
+.note-i{margin:0;padding:9px 0 0;border-top:1px dotted var(--rule)}
+.note-i:first-of-type{border-top:0;padding-top:0}
+.term{font-family:var(--read);font-size:16px;font-weight:600}
+.pos{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin:0 6px}
+.gloss{font-size:14.5px}
+.ex{font-family:var(--read);font-size:14px;color:var(--ink-2);line-height:1.7;margin:3px 0 0;display:block}
+.ex i{font-family:var(--han);font-style:normal;font-size:13px;color:var(--ink-3);display:block}
+
+.side{position:sticky;top:136px;align-self:start;max-height:calc(100vh - 164px);overflow:auto;padding-right:4px}
+@media (max-width:1020px){.side{position:static;max-height:none;scroll-margin-top:136px}}
+.side-h{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 3px}
+.side-t{font-size:16px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.card-list{margin:0;padding:0;list-style:none}
+.card-item{border-bottom:1px solid var(--rule);padding:11px 0}
+.card-item a{display:block;text-decoration:none;color:inherit}
+.card-item a:hover .term{background:var(--hl)}
+.jump{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);float:right;padding-top:5px}
+.side-note{font-size:12.5px;color:var(--ink-3);line-height:1.7;margin:16px 0 0}
+.foot{max-width:var(--maxw);margin:0 auto;padding:0 24px 48px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .top,.side,.reveal,.foot,.zhbtn{display:none!important}
+  .wrap{display:block;max-width:none;padding:0}
+  .q .body{display:block!important}
+  .zhbox{display:block!important}
+  .q{break-inside:avoid;border-color:#999;margin-bottom:9pt}
+  .passage{break-inside:avoid}
+  .hl{background-size:100% 100%!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <p class="eyebrow" id="brand"></p>
+    <h1 class="title" id="examTitle"></h1>
+    <p class="meta" id="examMeta"></p>
+    <nav class="bar" id="nav"></nav>
+  </div>
+</header>
+
+<div class="wrap"><main id="main"></main><aside class="side" id="side"></aside></div>
+<p class="foot" id="foot"></p>
+
+<script>
+/* ==========================================================================
+   ①  題目與詳解全部寫在下面的 EXAM 物件裡。要改題、加題、修字，只動這裡。
+
+   section（大題）：{ id, label, score, instruction, bank?, groups: [...] }
+   group（同一篇文章的題組）：{ passage?, zh?, questions: [...] }
+       passage 裡寫 __7__ 就會變成可點的空格，數字對應題號。
+       zh 是全文中譯，會做成可展開的按鈕。
+
+   question 依題型三選一：
+     選擇題   { n, kind, stem, options:{A..D}, answer:"B", translation, explain:{A..D}, evidence?, notes? }
+     單一填答 { n, kind, stem, answerText:"prejudice", why, notes? }
+     多格填答 { n, kind, prompt, stem, answers:[{k:"①", w:"字", note:"說明"}], notes? }
+   ========================================================================== */
+const EXAM = {
+  brand: "片語書小考",
+  title: "片語書基礎篇小考 詳解｜Unit 21~25",
+  meta: "Instructor: Howard Chang　·　範圍：片語書基礎篇 Unit 21~25",
+  footer: "KGHS 英文片語書 基礎篇 Unit 21~25 片語小考",
+  sections: [
+  {
+    id:"mc", label:"Multiple Choice", score:"第 1-25 題（每題 4%）",
+    instruction:"依句意選出最適當的片語。答案：C A D B A　C B D A B　C D A B C　A D B C A　D B C A D",
+    groups:[{
+      questions:[
+        { n:1, kind:"make 片語",
+          stem:"Seeing an elderly woman with two heavy bags get on the crowded bus, several students quickly stood up and moved their backpacks to ______ her.",
+          options:{A:"make fun of 嘲笑、取笑",B:"make use of 利用、善用",C:"make room for 為…騰出空間",D:"make up for 彌補、補償"}, answer:"C",
+          translation:"看到一位提著兩個沉重袋子的老太太上了擠滿人的公車，幾位學生立刻站起來，把背包移開好為她騰出位子。",
+          explain:{
+            A:"make fun of 意為「嘲笑、取笑」，是不友善的行為；但學生 quickly stood up and moved their backpacks（立刻起身並移開背包）顯然是出於善意，語意完全相反。",
+            B:"make use of 意為「利用、善用」，受詞通常是資源或機會（make use of the library）；把一位老太太「拿來利用」語意不通，而且與讓座的情境不合。",
+            C:"make room for sb 是固定片語，意為「為某人騰出空間」。三個線索：公車是 crowded（擠滿人的）、老太太帶著 two heavy bags（兩個沉重袋子）需要空間，而學生的動作 stood up and moved their backpacks（起身、移開背包）正是在清出位子。",
+            D:"make up for 意為「彌補、補償（過失或損失）」（make up for lost time 把失去的時間補回來）；但學生並沒有對不起她什麼需要補償。"
+          },
+          notes:[
+            {term:"make room for", pos:"phr.", gloss:"為…騰出空間（make room for sb／sth；move over to make room 挪過去讓位）。注意 room 在此是「空間」之意，為不可數名詞，不加 a。", ex:"Could you make room for one more chair?", exZh:"你可以騰個位子再放一張椅子嗎？"},
+            {term:"make 片語整理", pos:"整理", gloss:"make room for 騰出空間／make use of 善用／make fun of 嘲笑／make up for 彌補／make up one's mind 下定決心（本卷第 15 題的誘答）／make sure 確認（第 25 題的誘答）／make it 成功趕上（第 23 題的誘答）。"}
+          ]},
+
+        { n:2, kind:"take 片語",
+          stem:"Dishonest taxi drivers sometimes ______ tourists who are unfamiliar with the city by taking long detours and charging them almost twice the normal fare.",
+          options:{A:"take advantage of 佔便宜、利用（他人的弱點）",B:"take a look at 看一看",C:"take part in 參與、參加",D:"take care of 照顧、處理"}, answer:"A",
+          translation:"不誠實的計程車司機有時會佔不熟悉這座城市的觀光客的便宜，繞遠路並收取將近兩倍的正常車資。",
+          explain:{
+            A:"take advantage of sb 意為「佔某人的便宜、利用他人的弱點」。三個線索：主詞 Dishonest taxi drivers（不誠實的司機）帶有負面意味，受害者 tourists who are unfamiliar with the city（不熟悉城市的觀光客）正是被利用的弱點，而手段 taking long detours and charging them almost twice the normal fare（繞遠路、多收近兩倍車資）就是佔便宜的具體內容。",
+            B:"take a look at 意為「看一看」；司機「看一看觀光客」無法解釋後面的繞路與超收。",
+            C:"take part in 意為「參與某活動」，受詞是活動而非人（take part in a contest）；觀光客不是一項活動。",
+            D:"take care of 意為「照顧、妥善處理」，是正面的；但繞遠路多收錢顯然不是在照顧客人，語意相反。注意 take advantage of 與 take care of 都接人，差別全在褒貶。"
+          },
+          notes:[
+            {term:"take advantage of", pos:"phr.", gloss:"① 佔便宜、利用他人（take advantage of sb，負面）② 善加利用機會（take advantage of the opportunity／the good weather，中性或正面）。受詞是人或機會，語氣跟著改變。", ex:"Don't let anyone take advantage of you.", exZh:"別讓任何人佔你的便宜。"},
+            {term:"detour / fare", pos:"字彙", gloss:"n. detour 繞道（take a detour 繞路走）／n. fare 車資、票價（the normal／full fare；對照 fee 手續費／fine 罰款／charge 收費）。"}
+          ]},
+
+        { n:3, kind:"point 片語",
+          stem:"During the safety meeting, the engineer ______ that the bridge's new design, though attractive, could not support the weight of heavy trucks for long.",
+          options:{A:"picked on 針對、找…的麻煩",B:"pointed at 用手指向",C:"picked out 挑選出；辨認出",D:"pointed out 指出（事實或問題）"}, answer:"D",
+          translation:"在安全會議上，這位工程師指出這座橋的新設計雖然好看，卻無法長期承受重型卡車的重量。",
+          explain:{
+            A:"pick on sb 意為「針對某人、找某人麻煩」，受詞必須是人；但空格後接的是 that 引導的名詞子句，結構不合，而且工程師是在陳述技術問題，不是在針對誰。",
+            B:"point at 意為「用手指向」，是實際的肢體動作，受詞是具體的人或物（point at the map）；它不能接 that 子句。這是本題最需要分辨的選項：point at 用手指，point out 用話指出。",
+            C:"pick out 意為「挑選出」或「辨認出」（pick out a shirt／pick out a face in the crowd），受詞是具體的對象；它同樣不接 that 子句。",
+            D:"point out that ... 是固定用法，意為「指出（某項事實或問題）」。兩個線索：場合 During the safety meeting（在安全會議上）是提出專業意見的場合，而 that 子句的內容 could not support the weight of heavy trucks（無法承受重型卡車的重量）正是一項需要被指明的隱憂。"
+          },
+          notes:[
+            {term:"point out", pos:"phr. v.", gloss:"指出（point out that ...／point out a mistake／point sth out to sb）。受詞可以是 that 子句或名詞。對照 point at／to 用手指向某處。", ex:"She pointed out that the data were outdated.", exZh:"她指出那些數據已經過時。"},
+            {term:"pick 片語整理", pos:"整理", gloss:"pick on sb 找某人麻煩／pick out 挑選出、辨認出／pick up 撿起、接送、學會（第 12 題的誘答）／pick up the tab 付帳。"}
+          ]},
+
+        { n:4, kind:"turn 片語",
+          stem:"Mia ______ the job offer in Shanghai, not because the salary was too low but because she did not want to live far from her aging parents.",
+          options:{A:"turned up 出現；把音量轉大",B:"turned down 拒絕；把音量轉小",C:"turned on 打開（電源）",D:"turned in 繳交；投案"}, answer:"B",
+          translation:"米亞拒絕了上海的工作機會，不是因為薪水太低，而是因為她不想住得離年邁的父母太遠。",
+          explain:{
+            A:"turn up 意為「出現、到場」（He turned up late.）或「把音量轉大」；一份工作機會不會「出現」在她手上又接上後面的理由子句，而且 turn up 作「出現」時是不及物的。",
+            B:"turn down an offer 是固定搭配，意為「拒絕一項提議」。兩個線索：not because the salary was too low but because ...（不是因為薪水太低，而是因為…）這個結構本身就在替一個「拒絕」的決定說明理由，而 did not want to live far from her aging parents（不想離年邁父母太遠）正是她不去的原因。",
+            C:"turn on 意為「打開（電燈、電源）」，受詞是電器或開關；一份工作機會不能被「打開」。",
+            D:"turn in 意為「繳交（作業、報告）」或「向警方投案」；工作機會不是繳交的對象。"
+          },
+          notes:[
+            {term:"turn down", pos:"phr. v.", gloss:"① 拒絕（turn down an offer／an invitation／a request）② 把（音量、溫度）調小。對照 accept／take up an offer 接受提議。", ex:"He turned down a scholarship to stay home.", exZh:"他為了留在家鄉而拒絕了一份獎學金。"},
+            {term:"not because A but because B", pos:"句型", gloss:"不是因為 A，而是因為 B。兩個 because 子句並列，重點落在 but 之後。本題的空格要靠整句的「解釋原因」語氣來判斷動作是拒絕。"}
+          ]},
+
+        { n:5, kind:"up 動詞片語",
+          stem:"It is by swimming three times a week that Kevin hopes to ______ the strength in his injured leg after last month's knee surgery.",
+          options:{A:"build up 逐漸增強、累積",B:"use up 用盡、耗盡",C:"set up 設立、架設",D:"give up 放棄"}, answer:"A",
+          translation:"凱文希望藉著每週游泳三次，逐漸增強他上個月膝部手術後受傷那條腿的力量。",
+          explain:{
+            A:"build up 意為「逐漸增強、累積」。三個線索：受詞 the strength in his injured leg（受傷腿部的力量）是需要慢慢培養回來的，手段 swimming three times a week（每週游泳三次）是持續性的復健運動，而 after last month's knee surgery（手術後）說明這是從零慢慢恢復的過程。",
+            B:"use up 意為「用盡、耗盡」；把腿力耗盡與復健的目的正好相反。",
+            C:"set up 意為「設立、架設」（set up a company／a tent）；力量不是可以被「架設」的東西。",
+            D:"give up 意為「放棄」；凱文正在努力復健，不是放棄，語意相反。"
+          },
+          notes:[
+            {term:"build up", pos:"phr. v.", gloss:"① 逐漸增強、累積（build up strength／confidence／a reputation／savings）② （交通、壓力）累積起來。n. buildup 累積、增強。", ex:"Start slowly and build up your stamina.", exZh:"慢慢開始，逐步增強你的耐力。"},
+            {term:"It is ... that ... 的分裂句", pos:"句型", gloss:"強調句型：把要強調的部分放在 It is 與 that 之間（It is by swimming that he hopes to ...）。可強調主詞、受詞、時間、地點或方式。"}
+          ]},
+
+        { n:6, kind:"keep 片語",
+          stem:"Although our team was only two hundred meters below the peak, a sudden snowstorm ______ reaching it, forcing us to turn back before dark.",
+          options:{A:"reminded us of 使我們想起…",B:"protected us from 保護我們免於…",C:"kept us from 阻止我們…",D:"turned us into 把我們變成…"}, answer:"C",
+          translation:"雖然我們的隊伍距離山頂只剩兩百公尺，一場突來的暴風雪卻讓我們無法登頂，迫使我們在天黑前折返。",
+          explain:{
+            A:"remind sb of sth 意為「使某人想起某事」；但暴風雪不是讓我們「想起」登頂，而是讓我們登不上去，與 forcing us to turn back（迫使我們折返）的結果不符。",
+            B:"protect sb from sth 意為「保護某人免受…」，是正面的保護；但暴風雪是危險的來源，不是保護者。語意方向相反。這是本題最需要分辨的選項，因為兩者結構相同（都接 from ＋ V-ing）。",
+            C:"keep sb from V-ing 是固定句型，意為「阻止某人做某事」。兩個線索：讓步語氣 Although our team was only two hundred meters below the peak（雖然只剩兩百公尺）鋪陳出「差一點就到卻沒到」的遺憾，而結果 forcing us to turn back before dark（迫使我們天黑前折返）正說明登頂被阻止了。",
+            D:"turn sb into sth 意為「把某人變成某物」，後面要接名詞（turned him into a hero）；但空格後是動名詞 reaching it，結構不合。"
+          },
+          notes:[
+            {term:"keep sb from V-ing", pos:"句型", gloss:"阻止某人做某事。同結構：prevent／stop／discourage／prohibit／deter sb from V-ing。注意 keep 的這個用法一定要有 from，不能寫成 keep sb to V。", ex:"The rain kept us from going out.", exZh:"那場雨讓我們無法出門。"},
+            {term:"turn back", pos:"phr. v.", gloss:"折返、回頭（turn back before dark）。相關：turn around 轉身、轉虧為盈／there is no turning back 沒有回頭路了。"}
+          ]},
+
+        { n:7, kind:"分隔式片語",
+          stem:"The twins look so much alike that even their own teachers cannot ______ them ______ unless the girls wear name tags in two different colors.",
+          options:{A:"set ... free 釋放…",B:"tell ... apart 分辨…（兩者的差別）",C:"put ... to death 處死…",D:"leave ... to 把…留給"}, answer:"B",
+          translation:"這對雙胞胎長得太像，連她們自己的老師都分不出來，除非兩個女孩戴上兩種不同顏色的名牌。",
+          explain:{
+            A:"set sb free 意為「釋放某人」；雙胞胎並沒有被關起來需要釋放，語意不通。",
+            B:"tell A and B apart（或 tell them apart）是固定片語，意為「分辨出兩者的差別」。三個線索：前提 The twins look so much alike（這對雙胞胎長得太像）說明辨識困難，連 their own teachers（她們自己的老師）都辦不到，而解方 wear name tags in two different colors（戴不同顏色的名牌）正是為了讓人分得出誰是誰。",
+            C:"put sb to death 意為「處死某人」；它與雙胞胎長相相似的情境毫無關聯。",
+            D:"leave sth to sb 意為「把某事留給某人（處理）」；但這個片語的語序是 leave ＋ 事 ＋ to ＋ 人，而本句空格之間只有 them，後面沒有接人，結構不合。"
+          },
+          notes:[
+            {term:"tell ... apart", pos:"phr. v.", gloss:"分辨（tell A from B／tell A and B apart／tell them apart）。注意三種寫法都成立，但介系詞不同：from 用於 tell A from B。", ex:"I still can't tell the twins apart.", exZh:"我到現在還是分不出這對雙胞胎。"},
+            {term:"分隔式片語動詞", pos:"文法", gloss:"受詞為代名詞時必須放在中間：tell them apart（不可說 tell apart them）／turn it down／put it off／fill it out。受詞為名詞時則兩種位置皆可。"}
+          ]},
+
+        { n:8, kind:"for 片語",
+          stem:"In many Asian cultures, the color red ______ good luck and happiness, which is why it appears almost everywhere during Lunar New Year celebrations.",
+          options:{A:"pays for 支付…的費用",B:"waits for 等待",C:"looks for 尋找",D:"stands for 代表、象徵"}, answer:"D",
+          translation:"在許多亞洲文化中，紅色象徵好運與喜慶，這就是為什麼它在農曆新年的慶典中幾乎無處不在。",
+          explain:{
+            A:"pay for 意為「支付…的費用」；一個顏色不會付錢，語意不通。",
+            B:"wait for 意為「等待」；顏色不會等待好運。",
+            C:"look for 意為「尋找」；顏色不會去找好運，而且它無法解釋為何紅色會滿布於新年慶典。",
+            D:"stand for 意為「代表、象徵」。兩個線索：主詞 the color red（紅色）與受詞 good luck and happiness（好運與喜慶）構成「符號對應意義」的關係，而 which is why it appears almost everywhere during Lunar New Year（這就是它在農曆新年無處不在的原因）正說明這份象徵意義帶來了實際的使用。"
+          },
+          notes:[
+            {term:"stand for", pos:"phr. v.", gloss:"① 代表、象徵（The dove stands for peace.）② 是…的縮寫（UN stands for the United Nations.）③ 容忍（won't stand for sth 不會容忍某事）。", ex:"What does this symbol stand for?", exZh:"這個符號代表什麼？"},
+            {term:"for 結尾的片語", pos:"整理", gloss:"stand for 象徵／pay for 支付／wait for 等待／look for 尋找／make room for 騰出空間（第 1 題）／leave for 出發前往（第 9 題）／send for 派人去請／search for 搜尋。"}
+          ]},
+
+        { n:9, kind:"for 片語",
+          stem:"Since our flight to Tokyo departs at seven in the morning, we must ______ the airport before five, or we may get stuck in heavy traffic.",
+          options:{A:"leave for 出發前往（某地）",B:"send for 派人去請、召來",C:"search for 搜尋、尋找",D:"reach for 伸手去拿"}, answer:"A",
+          translation:"由於我們飛往東京的班機早上七點起飛，我們必須在五點前出發前往機場，否則可能會卡在車陣裡。",
+          explain:{
+            A:"leave for + 地點 是固定片語，意為「出發前往某地」。三個線索：時間壓力 our flight departs at seven（班機七點起飛）、時限 before five（五點前），以及風險 get stuck in heavy traffic（卡在車陣裡）——都指向「必須提早出門」這個動作。注意 leave for the airport 是「往機場出發」，不是「離開機場」。",
+            B:"send for 意為「派人去請、召來」（send for a doctor 請醫生來）；機場不能被「召來」。",
+            C:"search for 意為「搜尋、尋找」；他們知道機場在哪裡，不需要尋找。",
+            D:"reach for 意為「伸手去拿」，受詞是觸手可及的物品（reach for the salt）；機場不是伸手能拿的東西。"
+          },
+          notes:[
+            {term:"leave for", pos:"phr. v.", gloss:"出發前往某地（leave for the airport／for Tokyo）。注意與 leave（離開）的差別：leave the airport 是離開機場，leave for the airport 是前往機場。同義：set off／head for。", ex:"They left for Taipei early this morning.", exZh:"他們今天清晨出發前往台北。"},
+            {term:"get stuck in", pos:"phr.", gloss:"卡在、陷在（get stuck in traffic／in an elevator／in a rut 一成不變）。相關：a traffic jam 交通阻塞／rush hour 尖峰時段／bumper to bumper 車流緩慢。"}
+          ]},
+
+        { n:10, kind:"set 片語",
+          stem:"Police arrested a man who had ______ an empty warehouse near the harbor last night, causing thick black smoke to drift over the town for hours.",
+          options:{A:"taken the place of 取代",B:"set fire to 放火燒、縱火",C:"played a part in 參與其中、起了作用",D:"put up with 容忍、忍受"}, answer:"B",
+          translation:"警方逮捕了一名男子，他昨晚在港口附近的一座空倉庫縱火，造成濃密的黑煙在小鎮上空飄散數小時。",
+          explain:{
+            A:"take the place of 意為「取代」；一個人不會「取代一座倉庫」，而且它無法解釋濃煙與逮捕。",
+            B:"set fire to sth 是固定片語，意為「縱火燒某物」。三個線索：被逮捕 Police arrested a man（警方逮捕一名男子）說明這是犯罪行為，地點 an empty warehouse（空倉庫），以及結果 causing thick black smoke to drift over the town（造成濃密黑煙飄散全鎮）——這就是縱火案。",
+            C:"play a part in 意為「參與其中、起了作用」；雖然他確實參與了某事，但這個片語本身不含「放火」的意思，無法解釋濃煙從何而來。這是語意過於籠統的誘答。",
+            D:"put up with 意為「容忍、忍受」；忍受一座空倉庫不會被逮捕，也不會產生濃煙。"
+          },
+          notes:[
+            {term:"set fire to", pos:"phr.", gloss:"縱火燒（set fire to a building；也可寫 set sth on fire）。n. arson 縱火罪／n. arsonist 縱火犯。對照 catch fire 著火（The curtain caught fire.）。", ex:"Vandals set fire to the abandoned house.", exZh:"破壞者在那棟廢屋縱火。"},
+            {term:"set 片語整理", pos:"整理", gloss:"set fire to 縱火／set sb free 釋放（第 7 題的誘答）／set up 設立（第 5 題的誘答）／set out 出發、著手（第 22 題的誘答）／set aside 撥出、擱置／set off 出發、引爆。"}
+          ]},
+
+        { n:11, kind:"earn 片語",
+          stem:"Having lost his job at the factory last year, Mr. Chen now ______ by delivering food on his scooter for more than ten hours a day.",
+          options:{A:"takes a nap 小睡一下",B:"takes his time 慢慢來、不趕時間",C:"earns his living 謀生、賺取生活費",D:"loses his way 迷路"}, answer:"C",
+          translation:"陳先生去年在工廠失業後，現在靠著每天騎機車送餐超過十小時來謀生。",
+          explain:{
+            A:"take a nap 意為「小睡一下」；每天工作超過十小時與打瞌睡無關，而且它無法接上 by delivering food 這個表達方式的介系詞片語。",
+            B:"take one's time 意為「慢慢來、不必趕」；但 more than ten hours a day（每天超過十小時）顯示他是在拚命工作，語意相反。",
+            C:"earn one's living 是固定片語，意為「謀生」。三個線索：前提 Having lost his job at the factory（在工廠失業後）說明他需要新的收入來源，方式 by delivering food on his scooter（騎機車送餐），以及工時 more than ten hours a day（每天超過十小時）——這是在靠勞力養家活口。",
+            D:"lose one's way 意為「迷路」；送餐員或許偶爾會迷路，但那無法說明他失業後靠什麼生活。"
+          },
+          notes:[
+            {term:"earn one's living", pos:"phr.", gloss:"謀生（earn a living by V-ing／as a teacher；也可說 make a living）。相關：breadwinner 家中的經濟支柱／make ends meet 收支打平／moonlight 兼差。", ex:"She earns her living as a translator.", exZh:"她以翻譯為生。"},
+            {term:"Having ＋ p.p. 的分詞構句", pos:"句型", gloss:"完成式分詞構句，表示比主要動詞更早發生（Having lost his job, he now ...＝After he had lost his job, he now ...）。"}
+          ]},
+
+        { n:12, kind:"put 片語",
+          stem:"Had the guest speaker's flight not been delayed by the typhoon, the organizers would not have had to ______ the opening ceremony until the next afternoon.",
+          options:{A:"put on 穿上；上演",B:"pick up 撿起；接送；學會",C:"put down 放下；鎮壓",D:"put off 延期、推遲"}, answer:"D",
+          translation:"如果這位客座講者的班機沒有因颶風延誤，主辦單位就不必把開幕典禮延到隔天下午了。",
+          explain:{
+            A:"put on 意為「穿上」或「上演（戲劇）」（put on a play）；雖然典禮可以被「舉行」，但本句的關鍵是時間被挪到隔天，不是舉不舉行。",
+            B:"pick up 意為「撿起、接送、學會」；一場典禮不是被撿起或接送的對象。",
+            C:"put down 意為「放下」或「鎮壓（叛亂）」；典禮不會被放下或鎮壓。",
+            D:"put off 意為「延期、推遲」。兩個線索：時間片語 until the next afternoon（到隔天下午）明確指出活動被挪到更晚的時間，而原因 the guest speaker's flight ... been delayed by the typhoon（講者班機因颶風延誤）正是不得不改期的理由。"
+          },
+          notes:[
+            {term:"put off", pos:"phr. v.", gloss:"① 延期（put off a meeting until next week／put off doing sth 拖延做某事）② 使倒胃口、使反感（be put off by the smell）。同義（延期）：postpone／delay／reschedule。", ex:"Don't put off what you can do today.", exZh:"今天能做的事不要拖延。"},
+            {term:"Had ＋ 主詞 ＋ not ＋ p.p.", pos:"句型", gloss:"若當時沒有…（＝If sb had not ＋ p.p.），與過去事實相反的倒裝假設句。主句用 would／could not have ＋ p.p.。"}
+          ]},
+
+        { n:13, kind:"show 片語",
+          stem:"Whenever relatives come to visit, Tom loves to ______ the expensive sports car he bought last month, driving it slowly around the block so everyone notices.",
+          options:{A:"show off 炫耀、賣弄",B:"shut up 閉嘴；關閉",C:"show up 出現、到場",D:"shut down 關閉（機器、工廠）"}, answer:"A",
+          translation:"每次有親戚來訪，湯姆就愛炫耀他上個月買的那輛昂貴跑車，慢慢繞街區開一圈好讓每個人都注意到。",
+          explain:{
+            A:"show off 意為「炫耀、賣弄」。三個線索：場合 Whenever relatives come to visit（每次親戚來訪）是有觀眾的時候，受詞 the expensive sports car（昂貴跑車）是可供誇耀的財物，而目的 driving it slowly around the block so everyone notices（慢慢繞街區開讓每個人都注意到）正是炫耀的經典動作。",
+            B:"shut up 意為「閉嘴」（不客氣的用語）或「把…關起來」；一輛車不是被叫閉嘴的對象。",
+            C:"show up 意為「出現、到場」，是不及物動詞（He didn't show up.）；它後面接不上 the expensive sports car 這個受詞。這是本題最需要分辨的選項：show off 及物，show up 不及物。",
+            D:"shut down 意為「關閉（機器、工廠、系統）」；把車關掉與「讓每個人注意到」的目的相反。"
+          },
+          notes:[
+            {term:"show off", pos:"phr. v.", gloss:"炫耀、賣弄（show off one's new phone／show off about sth）。n. a show-off 愛炫耀的人。對照 show up 出現、現身（不及物）。", ex:"He's always showing off his knowledge.", exZh:"他總是在賣弄自己的學問。"},
+            {term:"around the block", pos:"phr.", gloss:"繞街區一圈（walk／drive around the block）。片語 have been around the block 意為「見過世面、有經驗」。"}
+          ]},
+
+        { n:14, kind:"after 片語",
+          stem:"When a thief snatched her handbag outside the bank, the brave old lady ______ him for nearly two blocks until a police officer finally caught him.",
+          options:{A:"looked after 照顧、照料",B:"ran after 追趕、追逐",C:"waited on 服侍、伺候（用餐）",D:"pointed to 指向"}, answer:"B",
+          translation:"當一名小偷在銀行外搶走她的手提包時，這位勇敢的老太太追著他跑了將近兩個街區，直到一位警員終於把他逮住。",
+          explain:{
+            A:"look after 意為「照顧、照料」；沒有人會去照顧搶自己包包的小偷，語意完全相反。",
+            B:"run after 意為「追趕、追逐」。三個線索：起因 a thief snatched her handbag（小偷搶走手提包）、距離 for nearly two blocks（將近兩個街區），以及結果 until a police officer finally caught him（直到警員終於逮住他）——一路追上去，正是 run after。形容詞 brave（勇敢的）也呼應了這個動作。",
+            C:"wait on 意為「服侍、伺候（尤指用餐）」（wait on tables 當服務生）；老太太不是在服侍小偷。",
+            D:"point to 意為「指向」，只是手指的動作；它無法解釋 for nearly two blocks（將近兩個街區）這個移動距離。"
+          },
+          notes:[
+            {term:"run after", pos:"phr. v.", gloss:"追趕（run after a thief／a bus）；也指「追求（異性）」。同義：chase (after)／go after／pursue。", ex:"The dog ran after the mail carrier.", exZh:"那隻狗追著郵差跑。"},
+            {term:"look after / wait on", pos:"對照", gloss:"look after 照顧（look after a child／a pet）／wait on 服侍用餐（wait on customers）。兩者都是「照料」卻語境不同，不可互換。"}
+          ]},
+
+        { n:15, kind:"mind 片語",
+          stem:"Before you travel abroad, ______ that tipping customs differ greatly from country to country; what seems generous at home may seem rude somewhere else.",
+          options:{A:"take notes 做筆記",B:"learn by heart 背熟、熟記（逐字）",C:"keep in mind 記住、謹記",D:"make up your mind 下定決心"}, answer:"C",
+          translation:"出國旅行之前，要記住小費習慣在各國之間差異很大；在自己國家看來大方的做法，在別處可能顯得無禮。",
+          explain:{
+            A:"take notes 意為「做筆記」，是把內容寫下來的動作，而且它不接 that 子句；本句要求的是「心裡記著」而非動筆。",
+            B:"learn by heart 意為「背熟（逐字記下）」，用於詩文或台詞（learn a poem by heart）；一項文化觀念不需要逐字背誦，而且它也不接 that 子句。這是本題最需要分辨的選項。",
+            C:"keep in mind that ... 是固定用法，意為「記住、謹記」。兩個線索：時機 Before you travel abroad（出國旅行前）是提醒注意事項的時候，而 that 子句的內容 tipping customs differ greatly from country to country（小費習慣各國差異很大）正是出門時要放在心上的常識。",
+            D:"make up one's mind 意為「下定決心」，後面接 to V 或 about sth；但本句沒有要做的決定，而且它不接 that 子句說明被記住的內容。"
+          },
+          notes:[
+            {term:"keep in mind", pos:"phr.", gloss:"記住、謹記（keep in mind that ...／bear sth in mind／with this in mind 考慮到這一點）。對照 remind sb of sth 提醒某人某事。", ex:"Keep in mind that the office closes at five.", exZh:"記住辦公室五點就關門。"},
+            {term:"mind 片語整理", pos:"整理", gloss:"keep／bear sth in mind 記住／make up one's mind 下定決心／change one's mind 改變心意／have sth in mind 心中有某個想法／be out of one's mind 瘋了／speak one's mind 直言。"}
+          ]},
+
+        { n:16, kind:"hear 片語",
+          stem:"Ever since Grace moved to Canada last spring, I have not ______ her even once, so I have no idea whether she got my birthday card.",
+          options:{A:"heard from 收到…的來信或消息",B:"heard of 聽說過…的存在",C:"known of 知道…的存在",D:"gotten along with 與…相處融洽"}, answer:"A",
+          translation:"自從葛瑞絲去年春天搬到加拿大，我連一次都沒收到她的消息，所以我不知道她有沒有收到我的生日卡。",
+          explain:{
+            A:"hear from sb 意為「收到某人的來信或消息」。兩個線索：時間 Ever since Grace moved to Canada last spring（自從去年春天搬去加拿大）加上 not ... even once（連一次都沒有）說明這段期間完全失去聯繫，而結果 I have no idea whether she got my birthday card（我不知道她有沒有收到卡片）正是因為她沒回音。",
+            B:"hear of sb 意為「聽說過某人（的存在）」；但說話者是葛瑞絲的朋友，當然知道她這個人，問題在於沒有她的音訊。這是本題最需要分辨的選項：hear from 是「收到消息」，hear of 是「聽說過有這個人」。",
+            C:"know of 意為「知道…的存在」；同樣地，她認識葛瑞絲，不是不知道有這個人。",
+            D:"get along with 意為「與…相處融洽」；但兩人已分隔兩地毫無聯絡，談不上相處得好不好，而且它無法解釋生日卡的疑問。"
+          },
+          notes:[
+            {term:"hear from / hear of", pos:"對照", gloss:"hear from sb 收到某人的消息或來信（I haven't heard from her in weeks.）／hear of sb／sth 聽說過某人或某事的存在（I've never heard of that band.）。介系詞一換，意思完全不同。", ex:"Let me know if you hear from him.", exZh:"如果你收到他的消息就告訴我。"},
+            {term:"Ever since ...", pos:"句型", gloss:"自從…（引導時間子句，主句常用現在完成式：Ever since she left, I have not heard from her.）。注意 since 子句用過去式，主句用完成式。"}
+          ]},
+
+        { n:17, kind:"over 片語",
+          stem:"Before deciding whether to sell the family's old house, Grandpa wanted to ______ the matter with all his children, since they had grown up there.",
+          options:{A:"stop by 順道拜訪",B:"hang up 掛斷電話；掛起",C:"light up 點亮、照亮",D:"talk over 仔細商討、商量"}, answer:"D",
+          translation:"在決定是否賣掉家裡的老房子之前，爺爺想和所有孩子仔細商量這件事，因為他們都是在那裡長大的。",
+          explain:{
+            A:"stop by 意為「順道拜訪」，是不及物動詞（stop by my office）；它後面接不上 the matter 這個受詞。",
+            B:"hang up 意為「掛斷電話」或「把衣物掛起」；一件事情不是被掛斷的對象，而且掛電話與「商量」正好相反。",
+            C:"light up 意為「點亮、照亮」（light up a room／one's face 面露喜色）；一件事不會被點亮。",
+            D:"talk sth over 意為「仔細商討」。三個線索：時機 Before deciding whether to sell（在決定是否出售之前）是需要討論的階段，介系詞 with all his children（與所有孩子）指出商量的對象，而理由 they had grown up there（他們都在那裡長大）說明這件事牽涉大家的感情，必須好好談。"
+          },
+          notes:[
+            {term:"talk over", pos:"phr. v.", gloss:"仔細商討（talk sth over with sb／talk it over）。同義：discuss sth with sb／go over sth／thrash sth out。注意受詞為代名詞時要放中間：talk it over。", ex:"Let's talk it over before we decide.", exZh:"我們決定之前先好好談一談。"},
+            {term:"over 結尾的片語", pos:"整理", gloss:"talk over 商討／think over 仔細考慮／look over 瀏覽檢查／go over 複習、檢視／hand over 交出／take over 接管／get over 克服、復原。"}
+          ]},
+
+        { n:18, kind:"try 片語",
+          stem:"The shop assistant suggested that I ______ the jacket in a larger size, as the sleeves of this one looked a little too short for my arms.",
+          options:{A:"try out 試用、測試（功能）",B:"try on 試穿",C:"dress up 打扮得體面、盛裝",D:"come across 偶然遇到、碰見"}, answer:"B",
+          translation:"店員建議我試穿大一號的那件外套，因為這一件的袖子看起來對我的手臂來說有點太短。",
+          explain:{
+            A:"try out 意為「試用、測試（某物的功能或某人的能力）」（try out a new app／try out for the team 參加選拔）；它的重點是測試性能，但買衣服看的是合不合身。這是本題最需要分辨的選項：try out 測功能，try on 試大小。",
+            B:"try on 意為「試穿（衣物、鞋、配件）」。兩個線索：受詞 the jacket in a larger size（大一號的外套）是服飾，而理由 the sleeves of this one looked a little too short for my arms（這件的袖子對我的手臂有點太短）正是尺寸不合，所以要換個尺碼穿上看看。",
+            C:"dress up 意為「打扮得體面、盛裝」，是不及物動詞（dress up for a party）；它後面接不上 the jacket 這個受詞。",
+            D:"come across 意為「偶然遇到、碰見」（come across an old photo）；店員不會建議客人「偶然碰到」一件外套。"
+          },
+          notes:[
+            {term:"try on / try out", pos:"對照", gloss:"try on 試穿（try on a shirt／try it on）／try out 試用、測試（try out a new method）。買衣服用 try on，測試功能或參加選拔用 try out。", ex:"Can I try this on in a size up?", exZh:"我可以試穿大一號的嗎？"},
+            {term:"suggest that ＋ 原形動詞", pos:"句型", gloss:"建議句型的假設語氣：that 子句用原形動詞（should 可省略）——suggested that I try（不是 tried）。同類：insist／demand／require／recommend／propose that sb (should) V。"}
+          ]},
+
+        { n:19, kind:"in 片語",
+          stem:"Because the head coach was still in the hospital, his assistant accepted the championship trophy ______ him and thanked every player for their hard work.",
+          options:{A:"in search of 尋找、搜尋",B:"in spite of 儘管、不顧",C:"in place of 代替、取代",D:"in favor of 支持、贊同"}, answer:"C",
+          translation:"由於總教練還在醫院，他的助理代替他領取了冠軍獎盃，並感謝每一位球員的辛勤付出。",
+          explain:{
+            A:"in search of 意為「尋找」（in search of food）；助理不是在尋找總教練，而且這個片語無法表達「代為領獎」。",
+            B:"in spite of 意為「儘管、不顧」；若填入會變成「不顧總教練而領獎」，與助理代表球隊受獎的善意情境不合。",
+            C:"in place of sb 意為「代替某人」。兩個線索：原因 the head coach was still in the hospital（總教練還在醫院）說明他本人無法出席，而 his assistant accepted the championship trophy（助理領取了冠軍獎盃）正是由他人代勞。",
+            D:"in favor of 意為「支持、贊同」（vote in favor of a motion 投票支持提案）；領獎與支持誰無關。"
+          },
+          notes:[
+            {term:"in place of", pos:"phr.", gloss:"代替、取代（in place of sb／sth；也可說 take the place of sb 或 on behalf of sb 代表某人）。注意 in the place of 也通，但 in place of 更常用。", ex:"Use honey in place of sugar.", exZh:"用蜂蜜代替糖。"},
+            {term:"in ＋ 名詞 ＋ of 片語", pos:"整理", gloss:"in place of 代替／in search of 尋找／in spite of 儘管／in favor of 支持／in need of 需要／in charge of 負責／in terms of 就…而言／in case of 萬一。"}
+          ]},
+
+        { n:20, kind:"of 片語",
+          stem:"The more our rent goes up, the more seriously we are ______ moving to a smaller apartment closer to the MRT station and my school.",
+          options:{A:"thinking of 考慮、打算",B:"depending on 依賴、取決於",C:"laughing at 嘲笑",D:"agreeing with 同意（某人或某看法）"}, answer:"A",
+          translation:"我們的房租漲得愈多，我們就愈認真考慮搬到一間離捷運站和我學校更近的小一點的公寓。",
+          explain:{
+            A:"think of V-ing 意為「考慮做某事」。兩個線索：The more ... the more seriously 的正比結構加上 seriously（認真地）這個副詞，自然搭配的是「考慮」這個心理動作；而 moving to a smaller apartment（搬到小一點的公寓）是房租上漲後的因應之道。",
+            B:"depend on 意為「依賴」或「取決於」；但房租上漲不會讓他們「愈來愈依賴搬家」，而且 seriously depending on 搭配不自然。",
+            C:"laugh at 意為「嘲笑」；搬家不是被嘲笑的對象，而且 laughing at moving 語意不通。",
+            D:"agree with 意為「同意（某人或某看法）」；它的受詞是人或意見，而搬家是一個行動選項，用 agree with 不自然。"
+          },
+          notes:[
+            {term:"think of V-ing", pos:"phr.", gloss:"考慮做某事（be thinking of moving／changing jobs）。同義：consider V-ing／contemplate V-ing／toy with the idea of V-ing。注意 of 後面接動名詞。", ex:"We're thinking of going abroad next year.", exZh:"我們正考慮明年出國。"},
+            {term:"The ＋ 比較級, the ＋ 比較級", pos:"句型", gloss:"愈…就愈…（The more our rent goes up, the more seriously we are thinking of ...）。兩邊各自置於子句句首，語意方向要能合理對應。"}
+          ]},
+
+        { n:21, kind:"out 片語",
+          stem:"All new patients are required to ______ a form listing their personal information and any drug allergies before they are allowed to see the doctor.",
+          options:{A:"put away 收起來、放回原處",B:"see off 送行、送別",C:"pay off 還清；（努力）有回報",D:"fill out 填寫（表格）"}, answer:"D",
+          translation:"所有初診病患都必須先填寫一份列出個人資料與任何藥物過敏的表格，才能看診。",
+          explain:{
+            A:"put away 意為「收起來、放回原處」（put away your toys）；表格要先被填好而不是被收起來，而且空的表格收起來無法達到建檔的目的。",
+            B:"see off 意為「送行」，受詞是人（see sb off at the airport）；一份表格不是被送別的對象。",
+            C:"pay off 意為「還清（債務）」或「（努力）有回報」；表格不是債務。",
+            D:"fill out a form 是固定搭配，意為「填寫表格」。兩個線索：受詞 a form listing their personal information and any drug allergies（列有個人資料與藥物過敏的表格）需要被填上內容，而 before they are allowed to see the doctor（才能看診）說明這是就診前的必要手續。英式也說 fill in a form。"
+          },
+          notes:[
+            {term:"fill out", pos:"phr. v.", gloss:"填寫（fill out a form／an application；英式多用 fill in）。對照 fill in for sb 暫代某人的職務／fill up 加滿（fill up the tank 加滿油）。", ex:"Please fill out this form in block letters.", exZh:"請以正楷填寫這份表格。"},
+            {term:"out 結尾的片語", pos:"整理", gloss:"fill out 填寫／point out 指出（第 3 題）／pick out 挑選（第 3 題的誘答）／try out 試用（第 18 題的誘答）／set out 出發（第 22 題的誘答）／look out 小心（第 24 題的誘答）／work out 運動、想出辦法。"}
+          ]},
+
+        { n:22, kind:"down 片語",
+          stem:"As the bus approached the elementary school, the driver began to ______ , for a group of young children was crossing the road with their teacher.",
+          options:{A:"sit down 坐下",B:"slow down 減速、放慢",C:"set out 出發、著手進行",D:"get along 相處融洽；進展"}, answer:"B",
+          translation:"當公車接近那所國小時，司機開始減速，因為有一群小朋友正和老師一起穿越馬路。",
+          explain:{
+            A:"sit down 意為「坐下」；司機本來就坐著開車，而且坐下無法回應孩童穿越馬路的狀況。",
+            B:"slow down 意為「減速、放慢」。三個線索：接近 the elementary school（國小）是必須減速的路段，for 引導的理由 a group of young children was crossing the road（一群小朋友正穿越馬路），以及 began to（開始）這個漸進語氣——都指向放慢車速。",
+            C:"set out 意為「出發」或「著手進行」；但公車已在行駛中且正接近學校，不是剛要出發。",
+            D:"get along 意為「相處融洽」或「進展」；它與行車速度無關。"
+          },
+          notes:[
+            {term:"slow down", pos:"phr. v.", gloss:"減速、放慢（slow down the car／Slow down! 慢一點！）；也指「放慢生活步調」。反義：speed up 加速。", ex:"You'd better slow down near the school.", exZh:"在學校附近你最好減速。"},
+            {term:"down 結尾的片語", pos:"整理", gloss:"slow down 減速／turn down 拒絕（第 4 題）／put down 放下（第 12 題的誘答）／shut down 關閉（第 13 題的誘答）／break down 故障、分解／cut down on 減少攝取（第 25 題句中出現）／calm down 冷靜下來。"}
+          ]},
+
+        { n:23, kind:"get 片語",
+          stem:"Without a map or a working phone, the two hikers soon ______ in the thick forest and had to spend a cold night under a large rock.",
+          options:{A:"found their way 找到路、摸索出方向",B:"made it 成功做到、及時抵達",C:"got lost 迷路",D:"stayed up 熬夜不睡"}, answer:"C",
+          translation:"沒有地圖也沒有能用的手機，這兩名登山客很快就在濃密的森林裡迷了路，只能在一塊大石頭下度過寒冷的一夜。",
+          explain:{
+            A:"find one's way 意為「找到路、摸索出方向」；但結果 had to spend a cold night under a large rock（只能在大石頭下過夜）顯示他們沒走出森林，語意正好相反。這是本題最需要分辨的選項。",
+            B:"make it 意為「成功做到、及時抵達」；同樣地，如果他們成功了，就不必在野外露宿一夜。",
+            C:"get lost 意為「迷路」。三個線索：條件 Without a map or a working phone（沒有地圖也沒有能用的手機）說明他們無從辨位，地點 in the thick forest（濃密的森林裡）容易失去方向，而結果 had to spend a cold night under a large rock（被迫在大石下過夜）正是迷路後的處境。",
+            D:"stay up 意為「熬夜不睡」，通常是自願的（stay up studying）；但他們是被迫留在山裡，而且 stay up 無法接 in the thick forest 來表達位置的迷失。"
+          },
+          notes:[
+            {term:"get lost", pos:"phr.", gloss:"迷路（get lost in a city／in the woods）；口語中也是不客氣的「滾開」（Get lost!）。對照 lose one's way 迷路（第 11 題的誘答）／be lost 處於迷路狀態。", ex:"We got lost on the way back.", exZh:"我們在回程路上迷了路。"},
+            {term:"make it", pos:"phr.", gloss:"① 及時抵達（make it to the airport on time）② 成功、出人頭地（make it big）③ 能夠出席（Can you make it on Friday?）。"}
+          ]},
+
+        { n:24, kind:"place 片語",
+          stem:"Not until next Sunday will the annual kite festival ______ on Cijin Beach, where more than forty teams from all over Taiwan will compete.",
+          options:{A:"take place 舉行、發生",B:"look out 小心、注意",C:"line up 排隊、排成一列",D:"pass away 過世、去世"}, answer:"A",
+          translation:"一年一度的風箏節要到下週日才會在旗津海灘舉行，屆時將有來自全臺四十多支隊伍同場競技。",
+          explain:{
+            A:"take place 意為「舉行、發生」，用於有計畫的活動。三個線索：主詞 the annual kite festival（年度風箏節）是一項活動，時間 Not until next Sunday（要到下週日才），以及地點 on Cijin Beach（在旗津海灘）——活動在某時某地舉行，正是 take place 的用法。注意這個片語是不及物的，不可用被動。",
+            B:"look out 意為「小心、注意」（Look out! 小心！）；一項活動不會「小心」。",
+            C:"line up 意為「排隊、排成一列」；雖然參賽隊伍可能會排隊，但主詞是 the kite festival（風箏節）這個活動本身，活動不會排隊。",
+            D:"pass away 意為「過世」，是 die 的委婉說法；活動不會過世。"
+          },
+          notes:[
+            {term:"take place", pos:"phr.", gloss:"舉行、發生（The ceremony will take place at noon.）。不及物，不可用被動（不可說 be taken place）。對照 happen 偶然發生／occur 發生（較正式）／be held 被舉辦。", ex:"The election takes place every four years.", exZh:"選舉每四年舉行一次。"},
+            {term:"Not until ... will ...", pos:"句型", gloss:"直到…才…。Not until ＋ 時間片語置句首時，主句要倒裝（will the festival take place）。本卷第 24 題與許多學測倒裝題同型。"}
+          ]},
+
+        { n:25, kind:"weight 片語",
+          stem:"My doctor warned me that unless I ______ by cutting down on sugary drinks and exercising more often, I might develop serious health problems.",
+          options:{A:"take off 脫下；起飛",B:"make sure 確認、確保",C:"take a trip 去旅行",D:"lose weight 減輕體重"}, answer:"D",
+          translation:"我的醫師警告我，除非我靠著減少含糖飲料並更常運動來減重，否則可能會出現嚴重的健康問題。",
+          explain:{
+            A:"take off 意為「脫下（衣物）」或「（飛機）起飛」；雖然口語中有 take off weight 的說法，但 take off 單獨使用時沒有「減重」之意，而且它接不上 by cutting down on sugary drinks 這個手段。",
+            B:"make sure 意為「確認、確保」，後面要接 that 子句或 to V（make sure that the door is locked）；本句空格後直接接 by 引導的方式片語，結構不合。",
+            C:"take a trip 意為「去旅行」；減少含糖飲料與多運動不是旅行的方式，而且旅行無助於避免健康問題。",
+            D:"lose weight 是固定搭配，意為「減輕體重」。三個線索：醫師的警告 I might develop serious health problems（可能出現嚴重健康問題）、手段 cutting down on sugary drinks（減少含糖飲料），以及 exercising more often（更常運動）——這兩項正是減重的標準做法。"
+          },
+          notes:[
+            {term:"lose weight", pos:"phr.", gloss:"減重（lose weight／put on weight 增重／gain weight 體重增加／watch one's weight 注意體重）。注意 weight 是不可數名詞，不加冠詞。", ex:"He lost ten kilos in six months.", exZh:"他在六個月內瘦了十公斤。"},
+            {term:"cut down on", pos:"phr. v.", gloss:"減少（攝取或使用）（cut down on sugar／salt／screen time）。對照 cut back on 削減（支出、產量）／cut off 切斷／cut in 插話、插隊。"}
+          ]}
+      ]
+    }]
+  }
+  ]
+};
+
+/* ==========================================================================
+   ②  以下為程式碼，一般情況不需要修改。
+   ========================================================================== */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const wordOf = q => q.options ? q.options[q.answer] : (q.answerText || '');
+const allQ = [];
+EXAM.sections.forEach(s => s.groups.forEach(g => g.questions.forEach(q => { q.__sid = s.id; allQ.push(q); })));
+const findQ = (n, sid) => allQ.find(q => String(q.n) === String(n) && (sid == null || q.__sid === sid));
+
+document.getElementById('brand').textContent = EXAM.brand;
+document.getElementById('examTitle').textContent = EXAM.title;
+document.getElementById('examMeta').textContent = EXAM.meta;
+
+let noteCount = 0;
+allQ.forEach(q => noteCount += (q.notes || []).length);
+
+const nav = document.getElementById('nav');
+EXAM.sections.forEach(s => {
+  const a = document.createElement('a');
+  a.className = 'chip'; a.href = '#sec-' + s.id; a.textContent = s.label.replace(/^[一二三四五六]、/, m => m);
+  nav.appendChild(a);
+});
+const noteChip = document.createElement('a');
+noteChip.className = 'chip'; noteChip.href = '#side'; noteChip.textContent = '重點表 ' + noteCount;
+nav.appendChild(noteChip);
+const toggleAll = document.createElement('button');
+toggleAll.className = 'chip solid'; toggleAll.textContent = '全部展開';
+nav.appendChild(toggleAll);
+
+function renderPassage(g, i, sid) {
+  let html = esc(g.passage);
+  g.questions.forEach(q => {
+    if (!q.evidence) return;
+    const t = esc(q.evidence);
+    if (html.includes(t)) html = html.replace(t, `<span class="hl ev" data-ev="${q.n}">${t}</span>`);
+  });
+  html = html.replace(/__(\d+)__/g, (m, n) =>
+    `<button class="blank" data-blank="${n}" aria-label="第 ${n} 題空格">${n}</button>`);
+  const body = '<div class="passage">' +
+    html.split(/\n{2,}/).map(p => '<p>' + p.replace(/\n/g, ' ') + '</p>').join('') + '</div>';
+  if (!g.zh) return body;
+  const id = sid + '-' + i;
+  return body +
+    `<button class="zhbtn" data-zh="${id}">全文中譯</button>` +
+    `<div class="zhbox" id="zh-${id}">` +
+      g.zh.split(/\n{2,}/).map(p => '<p>' + esc(p).replace(/\n/g, ' ') + '</p>').join('') +
+    '</div>';
+}
+
+function renderQ(q) {
+  const parts = [];
+  if (q.options) {
+    const ks = Object.keys(q.options);
+    parts.push('<div class="opts">' + ks.map(k =>
+      `<div class="opt"><span class="opt-k">(${k})</span><span>${esc(q.options[k])}</span></div>`).join('') + '</div>');
+  }
+  const head = `<div class="q-tag"><span class="q-n">${String(q.n).padStart(2,'0')}</span><span class="q-kind">${esc(q.kind || '')}</span></div>` +
+    (q.prompt ? `<p class="prompt">${esc(q.prompt)}</p>` : '') +
+    (q.stem ? `<p class="stem">${esc(q.stem).replace(/\n/g,'<br>')}</p>` : '');
+
+  let ans = '';
+  if (q.answers) {
+    ans = '<ul class="fills">' + q.answers.map(a =>
+      `<li class="fill"><span class="fill-k">${esc(a.k)}</span><span class="fill-w hl" data-ansmulti>${esc(a.w)}</span><span class="fill-n">${esc(a.note || '')}</span></li>`).join('') + '</ul>';
+  } else {
+    const label = q.options ? `(${q.answer}) ${esc(wordOf(q))}` :
+      (q.answer ? `(${q.answer}) ${esc(q.answerText)}` : esc(q.answerText));
+    ans = `<p class="ans"><span class="ans-k">答案</span><span class="ans-v hl" data-ans="${q.n}">${label}</span></p>`;
+  }
+
+  let expl = '';
+  if (q.explain) {
+    expl = '<ul class="lines">' + Object.keys(q.options).map(k => {
+      const right = q.multi ? q.multi.includes(k) : k === q.answer;
+      return `<li class="line ${right ? 'right' : 'wrong'}"><span class="line-k">(${k})</span><span>${esc(q.explain[k] || '')}</span></li>`;
+    }).join('') + '</ul>';
+  }
+  const why = q.why ? `<p class="why">${esc(q.why)}</p>` : '';
+  const sample = q.sample ? `<div class="sample"><p class="note-h">參考範文</p>` +
+    q.sample.split(/\n{2,}/).map(p => `<p>${esc(p).replace(/\n/g,' ')}</p>`).join('') + '</div>' : '';
+  const evid = q.evidence ? `<p class="evid"><span>文中依據</span>${esc(q.evidence)}</p>` : '';
+  const notes = (q.notes || []).length ? `<div class="note"><p class="note-h">重點整理</p>` +
+    q.notes.map(nt => `<p class="note-i"><span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span><span class="gloss">${esc(nt.gloss || '')}</span>` +
+      (nt.ex ? `<span class="ex">${esc(nt.ex)}<i>${esc(nt.exZh || '')}</i></span>` : '') + '</p>').join('') + '</div>' : '';
+
+  return `<article class="q" id="q-${q.__sid}-${q.n}" data-n="${q.n}" data-sid="${q.__sid}">
+    <div class="q-top">${head}${parts.join('')}
+      <button class="reveal" aria-expanded="false" aria-controls="body-${q.n}">看詳解</button>
+    </div>
+    <div class="body" id="body-${q.n}">
+      ${ans}${q.translation ? `<p class="zh">${esc(q.translation)}</p>` : ''}${expl}${why}${evid}${sample}${notes}
+    </div>
+  </article>`;
+}
+
+document.getElementById('main').innerHTML = EXAM.sections.map((s, i) => `
+  <section class="sec" id="sec-${s.id}">
+    <div class="sec-head">
+      <span class="sec-num">${String(i+1).padStart(2,'0')}</span>
+      <h2 class="sec-label">${esc(s.label)}</h2>
+      <span class="sec-score">${esc(s.score || '')}</span>
+    </div>
+    ${s.instruction ? `<p class="sec-inst">${esc(s.instruction)}</p>` : ''}
+    ${s.bank ? `<div class="bank${s.bankWide ? ' wide' : ''}">${Object.keys(s.bank).map(k =>
+      `<div class="bank-i" data-bank="${k}"><span>(${k})</span>${esc(s.bank[k])}</div>`).join('')}</div>` : ''}
+    ${s.groups.map((g, gi) => (g.passage ? renderPassage(g, gi, s.id) : '') + g.questions.map(renderQ).join('')).join('')}
+  </section>`).join('');
+
+const items = [];
+allQ.forEach(q => (q.notes || []).forEach(nt => items.push({ ...nt, n: q.n, sid: q.__sid })));
+document.getElementById('side').innerHTML = `
+  <p class="side-h">Notes</p>
+  <p class="side-t">本卷重點 ${items.length} 則</p>
+  <ul class="card-list">${items.map(nt => `
+    <li class="card-item"><a href="#q-${nt.sid}-${nt.n}">
+      <span class="jump">第 ${nt.n} 題</span>
+      <span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span>
+      <div class="gloss">${esc(nt.gloss || '')}</div>
+    </a></li>`).join('')}</ul>
+  <p class="side-note">點任一則可跳到出處題目。用瀏覽器列印（Ctrl／⌘ + P）會自動展開全部詳解與中譯，可直接印成講義。</p>`;
+
+document.getElementById('foot').textContent = `共 ${allQ.length} 題 · ${EXAM.footer}`;
+
+function setOpen(card, open) {
+  card.classList.toggle('open', open);
+  const btn = card.querySelector('.reveal');
+  btn.setAttribute('aria-expanded', open);
+  btn.firstChild.nodeValue = open ? '收合詳解' : '看詳解';
+  const n = card.dataset.n;
+  const sec = card.closest('.sec') || document;
+  card.querySelectorAll('.hl').forEach(h => h.classList.toggle('on', open));
+  const ev = sec.querySelector(`[data-ev="${n}"]`);
+  if (ev) ev.classList.toggle('on', open);
+  const q = findQ(n, card.dataset.sid);
+  if (q && q.answer && q.answerText) {
+    const bi = sec.querySelector(`[data-bank="${q.answer}"]`);
+    if (bi) bi.classList.toggle('used', open);
+  }
+  const bl = sec.querySelector(`[data-blank="${n}"]`);
+  if (bl) {
+    if (open) {
+      bl.classList.add('filled');
+      bl.innerHTML = `<sup>${n}</sup><span class="hl">${esc(wordOf(q))}</span>`;
+      requestAnimationFrame(() => bl.querySelector('.hl').classList.add('on'));
+    } else {
+      bl.classList.remove('filled');
+      bl.textContent = n;
+    }
+  }
+}
+document.addEventListener('click', e => {
+  const rv = e.target.closest('.reveal');
+  if (rv) { const c = rv.closest('.q'); setOpen(c, !c.classList.contains('open')); return; }
+  const zb = e.target.closest('.zhbtn');
+  if (zb) { zb.classList.toggle('on'); document.getElementById('zh-' + zb.dataset.zh).classList.toggle('on'); return; }
+  const bl = e.target.closest('.blank');
+  if (bl) {
+    const c = document.getElementById('q-' + bl.dataset.blank);
+    if (!c.classList.contains('open')) setOpen(c, true);
+    c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+toggleAll.addEventListener('click', () => {
+  const open = toggleAll.textContent === '全部展開';
+  document.querySelectorAll('.q').forEach(c => setOpen(c, open));
+  toggleAll.textContent = open ? '全部收合' : '全部展開';
+});
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('.q').forEach(c => setOpen(c, true));
+  document.querySelectorAll('.zhbox').forEach(b => b.classList.add('on'));
+  toggleAll.textContent = '全部收合';
+});
+</script>
+</body>
+</html>
