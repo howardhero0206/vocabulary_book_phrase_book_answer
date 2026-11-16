@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>片語書進階篇小考 詳解｜Unit 06~10 (310)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7EBEE; --card:#FDFDFC;
+  --ink:#10202F; --ink-2:#56687A; --ink-3:#7C8B99;
+  --rule:#C6D0D8; --pen:#17457E; --hl:#FFE773; --miss:#A34234;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono','Cascadia Mono',Menlo,Consolas,monospace;
+  --read:'Literata',Georgia,'Times New Roman',serif;
+  --han:'PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--han);font-size:16px;line-height:1.75}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2px}
+
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+.title{font-size:23px;font-weight:600;margin:0;line-height:1.3}
+.meta{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin:4px 0 0;letter-spacing:.04em}
+.bar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;padding:12px 0 11px;margin-top:10px;border-top:1px solid var(--rule)}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--rule);background:transparent;color:var(--ink-2);padding:5px 10px;border-radius:999px;cursor:pointer;text-decoration:none;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:var(--pen);color:var(--pen)}
+.chip.solid{margin-left:auto;border-color:var(--ink);color:var(--ink);font-weight:500}
+.chip.solid:hover{background:var(--ink);color:var(--card)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:28px 24px 96px;display:grid;gap:36px;grid-template-columns:minmax(0,1fr) 288px}
+@media (max-width:1020px){.wrap{grid-template-columns:minmax(0,1fr);gap:44px}}
+
+.sec{margin:0 0 48px;scroll-margin-top:136px}
+.sec-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--ink-3)}
+.sec-label{font-size:18px;font-weight:600;margin:0}
+.sec-score{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-left:auto}
+.sec-inst{font-size:13.5px;color:var(--ink-2);margin:9px 0 0}
+
+.bank{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:16px 0 0}
+@media (max-width:760px){.bank{grid-template-columns:repeat(2,1fr)}}
+.bank-i{background:var(--card);padding:8px 10px;font-family:var(--read);font-size:14.5px}
+.bank-i span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-right:5px}
+.bank-i.used{background:#F2F5F6;color:var(--ink-3)}
+
+.passage{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--ink);padding:22px 26px;margin:18px 0 0;font-family:var(--read);font-size:16.5px;line-height:1.95;color:#1a2836}
+.passage p{margin:0 0 1em}
+.passage p:last-child{margin-bottom:0}
+.blank{display:inline-block;min-width:70px;text-align:center;border:0;border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:13px;color:var(--pen);cursor:pointer;background:none;padding:0 4px;line-height:1.4}
+.blank:hover{background:rgba(23,69,126,.07)}
+.blank.filled{font-family:var(--read);font-size:16.5px;color:var(--ink);border-bottom-color:transparent;min-width:0}
+.blank sup{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:2px}
+.zhbtn{display:block;margin:0 0 18px;background:var(--card);border:1px solid var(--rule);border-top:0;width:100%;text-align:left;padding:8px 26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--pen);cursor:pointer}
+.zhbtn:hover{color:var(--ink)}
+.zhbtn::after{content:' ▾'}
+.zhbtn.on::after{content:' ▴'}
+.zhbox{display:none;background:#F7F9FA;border:1px solid var(--rule);border-top:0;padding:18px 26px;margin:0 0 18px;font-size:15px;line-height:1.95;color:#22323F}
+.zhbox.on{display:block}
+.zhbox p{margin:0 0 .9em}
+.zhbox p:last-child{margin:0}
+
+.q{background:var(--card);border:1px solid var(--rule);margin:14px 0 0;scroll-margin-top:142px}
+.q-top{padding:16px 22px 14px}
+.q-tag{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.q-n{font-family:var(--mono);font-size:13px;font-weight:600}
+.q-kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.prompt{font-size:14.5px;line-height:1.85;color:var(--ink-2);margin:0 0 11px;padding-left:11px;border-left:2px solid var(--rule)}
+.stem{font-family:var(--read);font-size:16.5px;line-height:1.85;margin:0 0 13px;color:#1a2836}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:9px;font-family:var(--read);font-size:15.5px;line-height:1.6;padding:3px 0;color:#243342}
+.opt-k{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);padding-top:2px;flex:none}
+.reveal{display:block;width:100%;text-align:left;margin-top:14px;background:none;border:0;border-top:1px dashed var(--rule);padding:11px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--pen);cursor:pointer}
+.reveal:hover{color:var(--ink)}
+.reveal::after{content:' ▾'}
+.q.open .reveal::after{content:' ▴'}
+.q.open .reveal{color:var(--ink-3)}
+
+.body{display:none;border-top:1px solid var(--rule);background:#F7F9FA;padding:18px 22px 20px}
+.q.open .body{display:block}
+.ans{display:flex;align-items:baseline;gap:10px;margin:0 0 13px;flex-wrap:wrap}
+.ans-k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink-3);flex:none;padding-top:2px}
+.ans-v{font-family:var(--read);font-size:18px;font-weight:600}
+.fills{list-style:none;margin:0 0 13px;padding:0}
+.fill{display:flex;gap:11px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--rule)}
+.fill-k{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);flex:none;width:26px}
+.fill-w{font-family:var(--read);font-size:17px;font-weight:600;flex:none}
+.fill-n{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.zh{font-size:15px;line-height:1.85;margin:0 0 14px;color:#22323F}
+.why{font-size:14.5px;line-height:1.85;margin:0 0 4px;color:#22323F;border-top:1px solid var(--rule);padding-top:12px}
+.lines{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.line{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.75;color:var(--ink-2)}
+.line-k{font-family:var(--mono);font-size:12.5px;flex:none;width:28px;color:var(--ink-3);padding-top:2px}
+.line.right{color:var(--ink)}
+.line.right .line-k{color:var(--ink);font-weight:600}
+.line.right .line-k::after{content:'✓';display:block;font-size:12px;line-height:1.3}
+.line.wrong .line-k{color:var(--miss);opacity:.85}
+.line.wrong .line-k::after{content:'✗';display:block;font-size:12px;line-height:1.3}
+.evid{margin:15px 0 0;font-family:var(--read);font-size:14.5px;line-height:1.8;color:var(--ink-2);padding-left:13px;border-left:2px solid var(--hl)}
+.evid span{font-family:var(--han);font-size:11px;letter-spacing:.14em;color:var(--ink-3);display:block;margin-bottom:3px}
+
+.hl{background-image:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 90%,transparent 90%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size .55s cubic-bezier(.2,.75,.3,1);border-radius:1px}
+.hl.on{background-size:100% 100%}
+
+.sample{margin:15px 0 0;border:1px solid var(--rule);border-left:3px solid var(--ink);background:var(--card);padding:16px 20px}
+.sample p:not(.note-h){font-family:var(--read);font-size:15.5px;line-height:1.9;color:#1a2836;margin:0 0 1em}
+.sample p:last-child{margin-bottom:0}
+.bank.wide{grid-template-columns:1fr}
+.bank.wide .bank-i{font-size:15px;line-height:1.7;padding:10px 14px}
+.note{margin:15px 0 0;border:1px solid var(--rule);background:var(--card);padding:13px 16px}
+.note-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:0 0 9px}
+.note-i{margin:0;padding:9px 0 0;border-top:1px dotted var(--rule)}
+.note-i:first-of-type{border-top:0;padding-top:0}
+.term{font-family:var(--read);font-size:16px;font-weight:600}
+.pos{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin:0 6px}
+.gloss{font-size:14.5px}
+.ex{font-family:var(--read);font-size:14px;color:var(--ink-2);line-height:1.7;margin:3px 0 0;display:block}
+.ex i{font-family:var(--han);font-style:normal;font-size:13px;color:var(--ink-3);display:block}
+
+.side{position:sticky;top:136px;align-self:start;max-height:calc(100vh - 164px);overflow:auto;padding-right:4px}
+@media (max-width:1020px){.side{position:static;max-height:none;scroll-margin-top:136px}}
+.side-h{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 3px}
+.side-t{font-size:16px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.card-list{margin:0;padding:0;list-style:none}
+.card-item{border-bottom:1px solid var(--rule);padding:11px 0}
+.card-item a{display:block;text-decoration:none;color:inherit}
+.card-item a:hover .term{background:var(--hl)}
+.jump{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);float:right;padding-top:5px}
+.side-note{font-size:12.5px;color:var(--ink-3);line-height:1.7;margin:16px 0 0}
+.foot{max-width:var(--maxw);margin:0 auto;padding:0 24px 48px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .top,.side,.reveal,.foot,.zhbtn{display:none!important}
+  .wrap{display:block;max-width:none;padding:0}
+  .q .body{display:block!important}
+  .zhbox{display:block!important}
+  .q{break-inside:avoid;border-color:#999;margin-bottom:9pt}
+  .passage{break-inside:avoid}
+  .hl{background-size:100% 100%!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <p class="eyebrow" id="brand"></p>
+    <h1 class="title" id="examTitle"></h1>
+    <p class="meta" id="examMeta"></p>
+    <nav class="bar" id="nav"></nav>
+  </div>
+</header>
+
+<div class="wrap"><main id="main"></main><aside class="side" id="side"></aside></div>
+<p class="foot" id="foot"></p>
+
+<script>
+/* ==========================================================================
+   ①  題目與詳解全部寫在下面的 EXAM 物件裡。要改題、加題、修字，只動這裡。
+
+   section（大題）：{ id, label, score, instruction, bank?, groups: [...] }
+   group（同一篇文章的題組）：{ passage?, zh?, questions: [...] }
+       passage 裡寫 __7__ 就會變成可點的空格，數字對應題號。
+       zh 是全文中譯，會做成可展開的按鈕。
+
+   question 依題型三選一：
+     選擇題   { n, kind, stem, options:{A..D}, answer:"B", translation, explain:{A..D}, evidence?, notes? }
+     單一填答 { n, kind, stem, answerText:"prejudice", why, notes? }
+     多格填答 { n, kind, prompt, stem, answers:[{k:"①", w:"字", note:"說明"}], notes? }
+   ========================================================================== */
+const EXAM = {
+  brand: "片語書小考(310)",
+  title: "片語書進階篇小考 詳解｜Unit 06~10",
+  meta: "Instructor: Howard Chang　·　範圍：片語書進階篇 Unit 06~10 (Class 310)",
+  footer: "KGHS 片語書(進階篇)【Unit 06~10】小考 (Class 310)",
+  sections: [
+  {
+    id:"mc", label:"Multiple Choice", score:"第 1-35 題（70%，每題 2%）",
+    groups:[{
+      questions:[
+        { n:1, kind:"片語（後位修飾）",
+          stem:"During cross-examination, the prosecution's key eyewitness admitted that on the night __________ she had actually been at home nursing her daughter rather than witnessing the crime.",
+          options:{A:"in person 親自、本人到場",B:"in question 所討論的、案發當時的",C:"on duty 值班中",D:"out of focus 失焦、模糊"}, answer:"B",
+          translation:"在交互詰問期間，檢方的關鍵證人承認，案發當晚她其實在家照顧女兒，而不是在目擊犯罪。",
+          explain:{B:"✔ in question 放在名詞之後作後位修飾，意思是「所討論的那個、相關的那個」，the night in question 正是法庭上指「案發當晚」的標準說法；cross-examination（交互詰問）與 witnessing the crime（目擊犯罪）都在這個法律語境裡。",A:"✘ in person 是「親自」，是修飾動作的副詞片語（visit in person），不能用來限定 the night 是哪一晚。",C:"✘ on duty 是「值班中」，若寫成 on the night on duty 文法不成立，而且證人是在家照顧女兒而非值勤。",D:"✘ out of focus 是「失焦」，用於照片或影像，無法修飾時間名詞。"},
+          notes:[{term:"in question", pos:"片語", gloss:"所討論的、相關的（後位修飾：the night／the document／the period in question）；也指「有疑問的」（Her honesty is not in question.）。對照 out of the question 根本不可能／beyond question 毫無疑問。", ex:"On the date in question, the suspect was out of the country.", exZh:"在所指的那個日期，嫌犯並不在國內。"},{term:"cross-examination", pos:"n.", gloss:"交互詰問（v. cross-examine）。相關：the prosecution 檢方／the defense 辯方／eyewitness 目擊證人／testify 作證。"},{term:"rather than", pos:"片語", gloss:"而不是（at home nursing her daughter rather than witnessing the crime）。注意前後結構要對等，此處兩邊都是動名詞。"}]},
+
+        { n:2, kind:"片語動詞（不及物）",
+          stem:"However eloquent your argument may be, it is hardly courteous to __________ while others are still speaking; wait until the chairperson invites comments from the floor.",
+          options:{A:"break in 插話、打斷別人說話（不及物）",B:"break into 闖入、突然開始（及物，須接受詞）",C:"cut down 砍倒；削減",D:"hold back 忍住、阻止；保留不說"}, answer:"A",
+          translation:"不管你的論點多麼有說服力，在別人還在發言時插話都很不禮貌；等主席邀請大家發言再說。",
+          explain:{A:"✔ 兩個線索鎖定答案：語意上 while others are still speaking（別人還在講話時）加上 hardly courteous（很不禮貌），指的正是「插話」；文法上空格後面沒有受詞（直接接 while 子句），所以必須用不及物的 break in。",B:"✘ break into 意思雖相近（突然開始、闖入），但它是及物片語動詞，後面一定要接受詞（break into a house／break into laughter）；本句沒有受詞，文法不符。這組分工正是本題唯一的考點。",C:"✘ cut down 是「砍倒、削減」，受詞是樹木或數量，與打斷發言無關。",D:"✘ hold back 是「忍住、保留」，語意正好相反——忍住不說才是有禮貌的作法。"},
+          notes:[{term:"break in / break into", pos:"辨析", gloss:"break in 不及物：插話（break in on a conversation）、闖入（The thieves broke in.）／break into sth 及物：闖入某處（break into a house）、突然開始（break into laughter／a run）。意思相近，差別在後面有沒有受詞。一般班的 Unit 06~10 第 27 題考的正是及物的 break into，兩卷剛好一題一式。", ex:"Sorry to break in, but there's an urgent call for you.", exZh:"抱歉插個話，有一通急電找你。"},{term:"However + adj. + S + may V", pos:"句型", gloss:"不管多麼…（However eloquent your argument may be＝No matter how eloquent your argument is）。注意形容詞必須緊跟在 However 之後，不可拆開。等義句型：Eloquent as your argument may be（形容詞前置的讓步倒裝）。", ex:"However hard it may seem, the method works.", exZh:"不管看起來多難，這個方法是有效的。"},{term:"from the floor", pos:"片語", gloss:"（會議上）來自聽眾席的（comments／questions from the floor）。相關：chairperson 主席／courteous 有禮的（n. courtesy）／eloquent 有說服力的、辯才無礙的。"}]},
+
+        { n:3, kind:"片語（主詞補語）",
+          stem:"Strained by incessant quarrels and mounting household debts, the couple's marriage was __________ by the time they reluctantly agreed to seek counseling.",
+          options:{A:"on the rise 上升中、不斷攀升",B:"under the weather 身體不舒服",C:"behind the times 落伍、跟不上時代",D:"on the rocks 瀕臨破裂、陷入困境"}, answer:"D",
+          translation:"在無止盡的爭吵與不斷累積的家庭債務的壓力下，這對夫妻的婚姻在他們勉為其難同意尋求諮商時已經瀕臨破裂。",
+          explain:{D:"✔ 句首 Strained by incessant quarrels and mounting household debts（被不斷的爭吵與累積的債務壓迫）加上 reluctantly agreed to seek counseling（勉強同意去諮商），說明婚姻已經快撐不住，on the rocks 正是「觸礁、瀕臨破裂」的比喻，用於關係或事業皆可。",A:"✘ on the rise 是「上升中」，主詞應是數量或趨勢（prices／crime on the rise），婚姻不會「上升」。",B:"✘ under the weather 是「身體不舒服」，主詞須是人，不能形容一段婚姻。",C:"✘ behind the times 是「落伍」，描述觀念或作法跟不上潮流，與婚姻瀕臨破裂無關。"},
+          notes:[{term:"on the rocks", pos:"片語", gloss:"瀕臨破裂、陷入困境（a marriage／business on the rocks）；字面是船「觸礁」。另有「加冰塊」之義（whisky on the rocks）。一般班的第 18 題也考這個片語，當時的主詞是家族企業，本題換成婚姻。", ex:"Their partnership was on the rocks long before the lawsuit.", exZh:"早在訴訟之前，他們的合夥關係就已經瀕臨破裂。"},{term:"strained", pos:"adj.", gloss:"緊繃的、不自然的（a strained relationship／a strained smile）。v. strain 使緊繃、拉傷；n. strain 壓力（put a strain on sth，片語書 Unit 01~05 第 16 題考過）。"},{term:"by the time + 子句", pos:"句型", gloss:"到…的時候（by the time they agreed, the marriage was already on the rocks）。注意主句常用過去完成式或已完成的狀態，表示在那個時間點之前就已如此。"}]},
+
+        { n:4, kind:"片語動詞",
+          stem:"The distinctive charm of this remote fishing village __________ its unspoiled coastline and hospitable residents, not in any landmark heavily promoted by travel agencies.",
+          options:{A:"consists of 由…組成（主詞是整體）",B:"results in 造成、導致",C:"lies in 在於（本質、原因）",D:"corresponds with 與…相符；與…通信"}, answer:"C",
+          translation:"這個偏遠漁村獨特的魅力在於它未受破壞的海岸線與好客的居民，而不在於任何被旅行社大力宣傳的地標。",
+          explain:{C:"✔ 決定性線索是句尾的 not in any landmark（而不在於任何地標）——這個 in 與空格形成對稱，所以空格的片語必須以 in 結尾，而主詞 The distinctive charm（魅力）指向它的來源，正是 lie in（在於）。",A:"✘ consists of 的語意是「由…組成」且介系詞是 of，無法與句尾的 not in 對稱；若要表「在於」必須用 consist in（注意是 in 不是 of），而選項給的是 of。",B:"✘ results in 是「造成、導致」，主詞是原因、受詞是結果；但海岸線與居民是魅力的「來源」而不是魅力造成的「結果」，因果方向顛倒。",D:"✘ corresponds with 是「與…相符」或「與…通信」，介系詞是 with，同樣無法與 not in 對稱，而且語意是兩者相符而非本質所在。"},
+          notes:[{term:"lie in", pos:"片語動詞", gloss:"在於（The problem lies in the design.／Her strength lies in her patience.）。主詞通常是 the problem／the reason／the charm／the difference 這類抽象名詞。同義：consist in（較正式）／rest in／reside in。注意 lie-lay-lain（位於）與 lay-laid-laid（放置）的三態差別。", ex:"The real difficulty lies in persuading the landlord.", exZh:"真正的困難在於說服房東。"},{term:"consist in / consist of", pos:"辨析", gloss:"consist in 在於（本質上是）／consist of 由…組成。兩者只差一個介系詞但意思完全不同，本題的 (A) 給的是 of，所以即使 consist in 可以表「在於」也不能選。一般班第 4 題考的正是 consist of 的方向問題。"},{term:"unspoiled", pos:"adj.", gloss:"未受破壞的、原始的（an unspoiled coastline／unspoiled countryside）。v. spoil 破壞、寵壞。相關：hospitable 好客的／landmark 地標／travel agency 旅行社。"}]},
+
+        { n:5, kind:"介系詞片語",
+          stem:"Located __________ both the bustling night market and the MRT station, the guesthouse is highly accessible to backpackers who cannot afford taxis or rental cars.",
+          options:{A:"within easy reach of 離…很近、輕易可到達",B:"beyond the reach of 在…無法到達的範圍之外",C:"out of sight of 看不見…的地方",D:"in contrast with 與…相對照"}, answer:"A",
+          translation:"這家民宿位於熱鬧的夜市與捷運站都近在咫尺的位置，對於付不起計程車或租車費用的背包客來說極為方便。",
+          explain:{A:"✔ 主句 the guesthouse is highly accessible to backpackers who cannot afford taxis or rental cars（對付不起車資的背包客極為方便）說明步行可達，而 Located＋地點片語正需要一個表距離的說法，within easy reach of 正是「離…很近」。",B:"✘ beyond the reach of 是「無法到達」，與 highly accessible（極為方便）直接矛盾，這是本題最主要的反向陷阱。",C:"✘ out of sight of 是「看不見…的地方」，強調視線被遮蔽，與交通是否方便無關，而且也與「方便抵達」不符。",D:"✘ in contrast with 是「與…相對照」，後面接被比較的對象；民宿不是在與夜市和捷運站做對比，而是在說明它的位置。"},
+          notes:[{term:"within (easy) reach of", pos:"片語", gloss:"在…可及範圍內、離…很近（within easy reach of the station／within arm's reach 伸手可及）。對照 beyond／out of the reach of 無法企及；within one's reach 能力所及（一般班第 20 題考過）；within one's means 財力負擔得起。reach 這個字在本卷與一般班共出現四次，是重點字。", ex:"The cabin is within easy reach of three hiking trails.", exZh:"這間小屋離三條健行步道都很近。"},{term:"Located…, S + V", pos:"句型", gloss:"過去分詞開頭的分詞構句（Located within easy reach of…, the guesthouse is…＝Because it is located…）。同類：Situated on a hill, the house…／Built in 1920, the bridge…。"},{term:"accessible", pos:"adj.", gloss:"容易到達的、可取得的（be accessible to sb／wheelchair accessible）。n. access（have access to sth；注意動詞 access 是及物，不加 to）。一般班第 28 題也用過這個字。"}]},
+
+        { n:6, kind:"片語（主詞補語）",
+          stem:"Because the embassy rejects visa applications with missing paperwork, make sure all the mandatory documents are __________ before you submit yours.",
+          options:{A:"out of order 故障；順序錯亂",B:"in order 齊備、妥當、符合規定",C:"in action 在運作中、投入行動",D:"on all hands 四面八方；眾所公認"}, answer:"B",
+          translation:"由於大使館會駁回文件不齊的簽證申請，在你送件之前務必確認所有必備文件都已齊備。",
+          explain:{B:"✔ 原因子句 the embassy rejects visa applications with missing paperwork（文件不齊就會被駁回）說明要確認的是「文件是否齊全妥當」，in order 正是「齊備、符合規定」之義（put one's papers in order 把文件備齊）。",A:"✘ out of order 是「故障」或「順序錯亂」，正是 in order 的反面；文件若 out of order 就會被駁回，與 make sure（務必確認）的叮嚀方向相反。",C:"✘ in action 是「在運作中」，用於機器、計畫或人投入行動，不能形容文件是否齊全。",D:"✘ on all hands 是「四面八方」或「眾所公認」，描述方位或共識，與文件狀態無關。"},
+          notes:[{term:"in order / out of order", pos:"對照", gloss:"in order 齊備妥當、符合規定（Are your documents in order?／put one's affairs in order）；也指「按順序」。out of order 故障（The lift is out of order.）、順序錯亂、（議事）不合規定。一般班第 30 題把 out of order 放在誘答位置。", ex:"The inspector confirmed that all the permits were in order.", exZh:"稽查員確認所有許可文件都齊備無誤。"},{term:"mandatory", pos:"adj.", gloss:"強制的、必備的（mandatory documents／mandatory attendance）。同義：compulsory／obligatory／required；反義 optional 選擇性的。"},{term:"make sure (that)", pos:"句型", gloss:"務必確認（make sure all the documents are in order）。注意後接子句時時態用現在式表未來；也可接 of＋名詞（make sure of the date）。"}]},
+
+        { n:7, kind:"片語動詞（原形）",
+          stem:"Volunteers spent the entire morning helping __________ hundreds of balloons for the graduation ceremony, and by noon their cheeks ached from the strain.",
+          options:{A:"blow out 吹熄",B:"cut off 切斷、打斷",C:"aim at 瞄準、以…為目標",D:"blow up 充氣；爆炸"}, answer:"D",
+          translation:"志工們花了一整個早上幫忙給數百顆氣球打氣，到了中午他們的臉頰都因為使力而發痛。",
+          explain:{D:"✔ 決定性線索是 their cheeks ached from the strain（臉頰因使力而發痛）——會讓臉頰痠痛的動作就是用嘴吹氣，而受詞是 hundreds of balloons（數百顆氣球），blow up a balloon 正是「給氣球充氣」。",A:"✘ blow out 是「吹熄」，受詞是蠟燭或火（blow out candles）；氣球沒有火可以吹熄。一般班第 7 題考的正是 blow out，兩卷剛好把這組分開考。",B:"✘ cut off 是「切斷」，把氣球剪斷與畢業典禮的布置以及臉頰痠痛都接不上。",C:"✘ aim at 是「瞄準」，受詞是目標；氣球不是用來瞄準的對象，而且也不會讓臉頰痠痛。"},
+          notes:[{term:"blow up", pos:"片語動詞", gloss:"① 充氣（blow up a balloon／a tire）② 爆炸、炸毀（The car blew up.）③ 放大（照片）（blow up a photo）④ 大發雷霆（He blew up at me.）。一詞四義，靠受詞判斷。", ex:"Could you help me blow up these balloons?", exZh:"你可以幫我把這些氣球打氣嗎？"},{term:"blow 家族", pos:"整理", gloss:"blow up 充氣、爆炸／blow out 吹熄（一般班第 7 題的答案）／blow off 吹掉、不理會／blow over （風暴、爭議）平息／blow one's own trumpet 自吹自擂。"},{term:"help (to) V", pos:"句型", gloss:"help 後面的不定詞可以省略 to（helping blow up balloons＝helping to blow up balloons）。同類可省略 to 的還有 help sb (to) V。"}]},
+
+        { n:8, kind:"副詞片語",
+          stem:"__________, the scheme to provide sustainable housing for every family seems flawless, but in practice the city lacks both the land and the revenue to implement it.",
+          options:{A:"By definition 就定義而言、照定義來說",B:"In the long run 長遠來看",C:"In theory 理論上",D:"At the same time 同時；話雖如此"}, answer:"C",
+          translation:"理論上，這個為每個家庭提供永續住宅的方案看起來毫無瑕疵，但實際上這座城市既缺土地也缺財源來執行它。",
+          explain:{C:"✔ 句中的 but in practice（但實際上）是最明確的信號：in theory 與 in practice 是一組固定的對照（理論上對實際上），所以空格必須是 In theory。",A:"✘ By definition 是「就定義而言」，用於從字詞定義本身推出必然結論（A bachelor is by definition unmarried.），但本句談的是理想與現實的落差，不是定義問題。",B:"✘ In the long run 是「長遠來看」，它的對照詞是 in the short run（短期而言）而不是 in practice；而且城市缺地缺錢是當下的限制，不是長短期的差別。一般班第 8 題考的正是這個片語。",D:"✘ At the same time 是「同時」或「話雖如此」，雖帶些轉折意味，但它不與 in practice 構成固定對照，語意也不夠精準。"},
+          notes:[{term:"in theory / in practice", pos:"對照", gloss:"理論上／實際上（In theory it works; in practice it doesn't.）。這是英文最固定的一組對照片語，看到其中一個就要想到另一個。相關：in principle 原則上／on paper 紙面上（a rule that sounds simple on paper）。", ex:"In theory anyone can apply; in practice few qualify.", exZh:"理論上人人都可以申請，實際上符合資格的很少。"},{term:"flawless", pos:"adj.", gloss:"毫無瑕疵的（a flawless plan／performance）。n. flaw 瑕疵、缺陷（a fatal flaw）。"},{term:"implement", pos:"v.", gloss:"執行、實施（implement a policy／a scheme）。n. implementation。相關：revenue 財源、歲入／sustainable 永續的／scheme 方案。"}]},
+
+        { n:9, kind:"片語動詞（受詞置中）",
+          stem:"Lily has offered to help at Saturday's charity concert raising funds for the local animal shelter, so please __________; she has organized similar events before.",
+          options:{A:"count her out 把她排除在外、別算她",B:"count her in 把她算進去、算她一份",C:"leave her out 把她漏掉、不把她列入",D:"long for her 渴望得到她"}, answer:"B",
+          translation:"Lily 已經主動表示要在週六為當地動物收容所募款的慈善音樂會幫忙，所以請把她算進去；她以前辦過類似的活動。",
+          explain:{B:"✔ 兩個線索都是正面的：Lily has offered to help（她主動表示要幫忙）與 she has organized similar events before（她辦過類似活動），所以合理的請求是「把她算進來」，count sb in 正是此義。",A:"✘ count her out 是「別算她、把她排除」，與她主動請求幫忙以及具備經驗的描述完全矛盾，這是本題最主要的反向陷阱。",C:"✘ leave her out 同樣是「把她漏掉、不列入」，語意方向與 (A) 一樣錯。",D:"✘ long for her 是「渴望得到她」，表達強烈的思念或欲求，與安排人力協助的語境完全不合。"},
+          notes:[{term:"count sb in / count sb out", pos:"對照", gloss:"count sb in 把某人算進來（Count me in! 算我一份）／count sb out 別算某人（You can count me out.）。注意受詞是代名詞時必須放在中間（count her in，不說 count in her）。", ex:"If you're going hiking on Sunday, count me in.", exZh:"如果你們週日要去健行，算我一份。"},{term:"片語動詞的受詞位置", pos:"文法重點", gloss:"可分離的片語動詞（count sb in／leave sb out／blow it up），代名詞受詞一定放中間；名詞受詞則前後皆可（count Lily in／count in Lily）。不可分離的片語動詞（long for sb／appeal to sb）則受詞一律放後面。"},{term:"raise funds", pos:"片語", gloss:"募款（raise funds for a charity／a fundraiser 募款活動）。相關：animal shelter 動物收容所／charity concert 慈善音樂會。"}]},
+
+        { n:10, kind:"片語動詞",
+          stem:"Instead of employing manipulative rhetoric to __________ voters' fears and prejudices, the candidate articulated her policies calmly and supported every claim with hard data.",
+          options:{A:"appeal to 訴諸（情感）、打動",B:"amount to 總計達；等同於",C:"yearn for 渴望、嚮往",D:"crave for 極想要、渴求"}, answer:"A",
+          translation:"這位候選人沒有運用操弄人心的話術去訴諸選民的恐懼與偏見，而是冷靜地闡述政策，並用確切的數據支持每一項主張。",
+          explain:{A:"✔ appeal to 除了「吸引」，也指「訴諸（某種情感或理性）」（appeal to sb's emotions／to reason），而受詞正是 voters' fears and prejudices（選民的恐懼與偏見）；Instead of employing manipulative rhetoric（而非使用操弄的話術）也說明這是煽動情緒的手法。",B:"✘ amount to 是「總計達」或「等同於」，受詞是數量或結論；話術不會「總計」選民的恐懼。",C:"✘ yearn for 是「渴望」，主詞須是有欲望的人，而且是「自己想要某物」；候選人不是在渴望選民的恐懼。",D:"✘ crave for 同樣是「渴求」，主詞也須是渴望者本人，方向與「去撩動別人的情緒」不同。"},
+          notes:[{term:"appeal to 的三個意思", pos:"整理", gloss:"① 吸引（The design appeals to children.，一般班第 15 題考的是這個義）② 訴諸（情感、理性）（appeal to sb's fears／to reason）③ 呼籲、懇求（appeal to sb for help）。本卷與一般班各考一義，可互相對照。", ex:"The ad appeals to our desire to belong.", exZh:"這則廣告訴諸我們渴望歸屬的心理。"},{term:"rhetoric", pos:"n.", gloss:"話術、修辭（manipulative／empty rhetoric 操弄人心的／空洞的言辭）。adj. rhetorical（a rhetorical question 反問句）。ED 雜誌小考 (310) 第 5 題的題幹也用了這個字。"},{term:"articulate", pos:"v. / adj.", gloss:"v. 清楚闡述（articulate her policies）／adj. 表達清楚的（an articulate speaker）。相關：prejudice 偏見／hard data 確切的數據／manipulative 善於操控人的。"}]},
+
+        { n:11, kind:"片語（主詞補語）",
+          stem:"For decades, historians believed the earliest printed scroll had been destroyed in a monastery fire, but newly discovered fragments prove that part of it is still __________.",
+          options:{A:"in print 仍在印行、買得到",B:"out of print 絕版",C:"in existence 存在著、還沒消失",D:"out of action 無法運作、不能使用"}, answer:"C",
+          translation:"幾十年來史學家都相信最早的印刷捲軸已在一場修道院火災中燒毀，但新發現的殘片證明它有一部分仍然存在。",
+          explain:{C:"✔ but 前後形成對比：原本以為 had been destroyed（已被燒毀），新證據卻 prove that part of it is still…（證明有一部分仍然…）。既然沒被燒掉，就是「還存在」，正是 in existence。",A:"✘ in print 是「仍在印行、買得到」，談的是出版狀態；一件古代捲軸文物不是仍在印行的商品，而且與火災是否燒毀無關。",B:"✘ out of print 是「絕版」，同樣屬出版語境，而且若是絕版反而支持「買不到」而非「還存在」。一般班第 11 題考的正是這個片語，本卷把它放在誘答位置。",D:"✘ out of action 是「無法運作」，用於機器或受傷無法上場的人，不能形容一件文物是否倖存。"},
+          notes:[{term:"in existence", pos:"片語", gloss:"存在著（the oldest building in existence 現存最古老的建築／come into existence 開始存在、形成）。n. existence；v. exist。對照 in print／out of print（印行狀態）、in use（仍在使用中）。", ex:"Only three copies of the manuscript remain in existence.", exZh:"這份手稿只有三份仍然存世。"},{term:"in / out of 狀態片語整理", pos:"整理", gloss:"in existence 存在／in print 仍印行／in order 齊備（本卷第 6 題）／in hand 受掌控（第 21 題）；out of print 絕版／out of order 故障／out of action 無法運作／out of focus 失焦（第 1 題的誘答）／out of sight 看不見。本卷光是這一組就出現七次。"},{term:"scroll", pos:"n.", gloss:"捲軸（an ancient scroll）；也指螢幕上的「捲動」（v. scroll down）。相關：monastery 修道院／fragment 殘片（一般班第 33 題也出現這個字）。"}]},
+
+        { n:12, kind:"片語動詞",
+          stem:"Since the seminar's opening session starts promptly at eight, I'll __________ you at your apartment at seven; please be waiting downstairs so we won't be late.",
+          options:{A:"ask after 問候、探詢（某人的近況）",B:"attend to 照料、處理",C:"back up 支持；備份",D:"call for 去接某人；需要"}, answer:"D",
+          translation:"研討會的開幕場次八點整開始，所以我七點會去你公寓接你；請在樓下等，這樣我們才不會遲到。",
+          explain:{D:"✔ 時間與地點的安排是關鍵：at your apartment at seven（七點在你的公寓）加上 please be waiting downstairs（請在樓下等），描述的正是「開車去接人」，call for sb 在英式用法中正是「去某處接某人」。",A:"✘ ask after 是「問候某人的近況」，是口頭關心而非實際前往接人，無法解釋「請在樓下等」。一般班第 2 題考的正是這個片語。",B:"✘ attend to 是「照料、處理」（attend to a patient／to business），受詞是需要處理的人或事務，不含「前往接送」的意思。",C:"✘ back up 是「支持」或「備份」，受詞是說法、計畫或資料，與接送無關。"},
+          notes:[{term:"call for 的四個意思", pos:"整理", gloss:"① 去接某人（I'll call for you at seven.）② 需要、要求具備（The job calls for patience.，一般班第 32 題考的是這個義）③ 呼籲（call for an investigation）④ （計畫）規定要（The plan calls for three dams.）。本卷與一般班各考一義。", ex:"My brother will call for me after work.", exZh:"我哥下班後會來接我。"},{term:"be waiting", pos:"時態", gloss:"please be waiting downstairs（請在樓下等著）用進行式的祈使句，強調「到那個時間點時正處於等待的狀態」，比 please wait 更強調時間的配合。"},{term:"promptly", pos:"adv.", gloss:"準時地、立刻（starts promptly at eight／reply promptly）。adj. prompt 迅速的、準時的；n. prompt 提示詞（ED 雜誌小考第 37 題考過）。"}]},
+
+        { n:13, kind:"副詞片語",
+          stem:"Fearing a public backlash, the school board met __________ to discuss the controversial proposal, barring reporters and keeping the minutes strictly confidential.",
+          options:{A:"in secret 祕密地、不公開地",B:"in public 公開地、在眾人面前",C:"on all sides 在各方面、四面",D:"on every hand 四面八方、到處"}, answer:"A",
+          translation:"校務委員會擔心引發眾怒，於是祕密開會討論這項爭議性提案，禁止記者進入，並把會議紀錄列為機密。",
+          explain:{A:"✔ 句尾兩個分詞構句就是定義：barring reporters（禁止記者進入）與 keeping the minutes strictly confidential（會議紀錄嚴格保密），加上 Fearing a public backlash（擔心引發眾怒）的動機，正是 in secret（祕密地）。",B:"✘ in public 是「公開地」，與禁止記者、紀錄保密完全相反，是本題最主要的反向陷阱。",C:"✘ on all sides 是「四面、在各方面」，描述方位或範圍，不能修飾開會的方式是否公開。",D:"✘ on every hand 同樣是「四面八方、到處」，與會議是否保密無關。"},
+          notes:[{term:"in secret / in public / in private", pos:"對照", gloss:"in secret 祕密地（不讓人知道）／in public 公開地（在眾人面前）／in private 私下地（不在他人面前，但不必然是機密）。三者程度不同：in private 只是「不公開」，in secret 更強調「刻意隱瞞」。一般班第 13 題把 in private 放在誘答位置。", ex:"The negotiations were conducted in secret for six months.", exZh:"這場談判祕密進行了六個月。"},{term:"backlash", pos:"n.", gloss:"（強烈的）反彈、眾怒（a public backlash／face a backlash against sth）。相關：controversial 爭議性的／bar sb from sth 禁止某人進入／minutes 會議紀錄（恆用複數）。"},{term:"confidential", pos:"adj.", gloss:"機密的（strictly confidential／confidential information）。n. confidentiality 保密。對照 classified 列為機密的（政府文件用語）。"}]},
+
+        { n:14, kind:"片語動詞（原形）",
+          stem:"The comedian's humor was so subtle and his delivery so dry that it took the audience several seconds to __________ before laughter filled the room.",
+          options:{A:"dawn on 使（某人）突然領悟（須接受詞）",B:"catch on 理解、聽懂（不及物）",C:"come to 總計達；甦醒；來到",D:"apply to 適用於；向…申請"}, answer:"B",
+          translation:"這位喜劇演員的幽默非常含蓄、語氣又很冷，觀眾花了好幾秒才聽懂，之後笑聲才充滿整個房間。",
+          explain:{B:"✔ 情境是幽默太含蓄（so subtle）、語氣太冷（so dry），所以觀眾需要幾秒鐘才反應過來；catch on 除了「流行起來」，也指「理解、聽懂」，而且是不及物，空格後面沒有受詞完全吻合。",A:"✘ dawn on 雖然也是「突然領悟」，但它的句型固定為 It dawned on sb that…（某人忽然想到某事），必須有受詞與 that 子句；本句的結構是 take sb several seconds to V，接不上這個句型。一般班第 9 題考的正是 dawn on 的正確用法。",C:"✘ come to 是「總計達、甦醒、來到」；若解作「甦醒」，觀眾並沒有昏過去，語意不合。",D:"✘ apply to 是「適用於」或「向…申請」，與觀眾是否聽懂笑點無關。"},
+          notes:[{term:"catch on 的兩個意思", pos:"辨析", gloss:"① 理解、聽懂（It took him a while to catch on.／catch on to sth 看穿某事）② 流行起來（The trend caught on quickly.，一般班第 29 題考的是這個義）。兩義都不及物（接受詞時要加 to），靠主詞判斷：主詞是人多半是「理解」，主詞是風潮則是「流行」。", ex:"Some of the audience didn't catch on until the second joke.", exZh:"有些觀眾到第二個笑話才聽懂。"},{term:"dry humor", pos:"片語", gloss:"冷幽默（a dry delivery／dry wit）。adj. dry 在此指「不帶表情、看似正經」。相關：subtle 含蓄細微的（讀 /ˈsʌtl/，b 不發音）／delivery 說話的方式與語氣。"},{term:"It takes sb + 時間 + to V", pos:"句型", gloss:"某人花多少時間做某事（It took the audience several seconds to catch on.）。對照 sb spends 時間 V-ing（本卷第 7 題的 spent the entire morning helping）。"}]},
+
+        { n:15, kind:"片語（主詞補語）",
+          stem:"Paramedics were __________ within minutes of the explosion, treating survivors with acute burns while firefighters searched the debris of the warehouse for others.",
+          options:{A:"in a row 連續地（一連幾次）",B:"out of sight 看不見、在視線之外",C:"on the scene 在現場、趕到現場",D:"in every direction 四面八方"}, answer:"C",
+          translation:"爆炸發生後幾分鐘內，救護人員就已抵達現場，救治有急性灼傷的倖存者，同時消防員則在倉庫的瓦礫中搜尋其他人。",
+          explain:{C:"✔ within minutes of the explosion（爆炸後幾分鐘內）加上 treating survivors（救治倖存者），說明救護人員已經抵達事故地點並開始工作，on the scene 正是「在現場」。",A:"✘ in a row 是「連續地」，必須接在數量詞之後（three times in a row），描述次數的連續，與抵達現場無關。",B:"✘ out of sight 是「看不見」，若救護人員不在視線範圍內就不可能同時在救治傷者，語意矛盾。",D:"✘ in every direction 是「四面八方」，描述擴散或分布的方向，不能說明人員是否抵達現場。"},
+          notes:[{term:"on the scene", pos:"片語", gloss:"在現場、趕到現場（be first on the scene 最先抵達現場／arrive on the scene）。n. scene 現場、場景（the scene of the crime 犯罪現場／behind the scenes 幕後）。一般班第 31 題把它放在誘答位置。", ex:"Police were on the scene within four minutes.", exZh:"警方在四分鐘內就抵達現場。"},{term:"paramedic", pos:"n.", gloss:"救護技術員、急救人員。相關：acute 急性的（acute burns，單字書 10-2~11 (310) 第 8 題考過）／debris 瓦礫碎片（讀 /dəˈbriː/，s 不發音）／survivor 倖存者。"},{term:"within minutes of", pos:"片語", gloss:"在…之後幾分鐘內（within minutes of the explosion／within days of his arrival）。注意這個 of 表「在…之後」，不是「屬於」。"}]},
+
+        { n:16, kind:"片語動詞",
+          stem:"When the chief engineer contracted a contagious disease and was quarantined, Mia, the most competent member of the team, was asked to __________ the project.",
+          options:{A:"take sides with 偏袒、站在某一方",B:"come close to 差一點就…（後接動名詞）",C:"be similar to 與…相似",D:"take charge of 負責、接手掌管"}, answer:"D",
+          translation:"總工程師感染傳染病被隔離後，團隊中最能幹的成員 Mia 被請來接手負責這個專案。",
+          explain:{D:"✔ 情境是負責人因病隔離而出缺，而 Mia 是 the most competent member of the team（團隊中最能幹的成員），所以她被請來「接手掌管」這個專案，take charge of 正是此義，受詞 the project 也完全吻合。",A:"✘ take sides with 是「偏袒某一方」，受詞須是人或立場，而且專案不是爭執中的任一方。一般班第 23 題考的正是這個片語。",B:"✘ come close to 是「差一點就…」，後面必須接動名詞（come close to finishing），接不上 the project 這個名詞；而且語意是「幾乎做到」而非「接手」。",C:"✘ be similar to 是「與…相似」，用來比較兩個事物；說 Mia 與專案相似語意不通。"},
+          notes:[{term:"take charge of", pos:"片語", gloss:"負責、掌管（take charge of a project／a department；be in charge of 是「正在負責」的狀態，take charge of 強調「接手」這個動作）。n. charge 責任、費用（free of charge 免費／in charge 負責的，本卷第 30 題的誘答）。", ex:"She took charge of the department after the merger.", exZh:"併購之後她接手負責這個部門。"},{term:"take 家族", pos:"整理", gloss:"take charge of 接手掌管／take sides 選邊站／take after 像（某位長輩）／take on 承擔、僱用／take over 接管（與 take charge of 語意相近，但 take over 強調「取代前任」）／take up 開始從事。"},{term:"contract a disease", pos:"片語", gloss:"感染疾病（contract a contagious disease）。單字書 10-2~11 (310) 第 13 題考過這個搭配，當時的辨析重點是 contract 與 infect 的方向相反。相關：quarantine 隔離／competent 能幹的。"}]},
+
+        { n:17, kind:"片語動詞（過去式）",
+          stem:"Even when an abrupt power failure plunged the concert hall into darkness, the orchestra __________ playing until the emergency lights came on a minute later.",
+          options:{A:"burst out 突然（笑、哭）起來（後接動名詞）",B:"carried on 繼續（後接動名詞）",C:"came near 接近（須接 to＋動名詞）",D:"broke into 突然開始（後接名詞）"}, answer:"B",
+          translation:"即使突如其來的停電讓音樂廳陷入一片黑暗，管弦樂團仍繼續演奏，直到一分鐘後緊急照明亮起。",
+          explain:{B:"✔ Even when（即使當…時）的讓步語氣加上 until the emergency lights came on（直到緊急照明亮起），說明樂團在黑暗中並未中斷演奏，carry on＋V-ing（繼續做某事）正是此義，空格後的 playing 詞形也吻合。",A:"✘ burst out 雖然也接動名詞，但意思是「突然開始（笑或哭）」，強調從無到有的爆發；然而樂團本來就在演奏（音樂會進行中），不是突然開始演奏，語意與情境衝突。這是本題最需要留意的陷阱。",C:"✘ came near 必須接 to＋動名詞（come near to doing sth 差一點就…），本句沒有 to，文法不符，而且語意是「幾乎」而非「繼續」。",D:"✘ broke into 後面接名詞（break into laughter／a run），不能直接接 playing 這個動名詞當受詞表「繼續」，而且它同樣是「突然開始」的意思。"},
+          notes:[{term:"carry on (with) sth / carry on V-ing", pos:"片語動詞", gloss:"繼續（carry on playing／carry on with your work／Carry on! 繼續吧）。同義：go on V-ing／keep (on) V-ing／continue。注意 carry on with＋名詞、carry on＋動名詞兩種搭配。", ex:"Despite the rain, the band carried on playing.", exZh:"儘管下雨，樂團仍繼續演奏。"},{term:"「繼續」與「突然開始」的對撞", pos:"辨析", gloss:"carry on V-ing 繼續（動作本來就在進行）／burst out V-ing 突然開始（動作從無到有）。兩者都接動名詞，差別在動作是否已經在進行。本題的情境（音樂會進行中停電）正是用來區分這一點。"},{term:"plunge sth into", pos:"片語", gloss:"使陷入（plunge the hall into darkness／plunge the country into crisis）。v. plunge 也指「暴跌、跳入」（Prices plunged.）。相關：abrupt 突如其來的／power failure 停電。"}]},
+
+        { n:18, kind:"副詞片語",
+          stem:"Owing to a severe shortage of construction workers, the new library will not open until March; __________, students may borrow books from a temporary branch.",
+          options:{A:"in the meantime 在這期間、在此之前",B:"in the long term 長期而言",C:"on the contrary 相反地",D:"all in all 總而言之"}, answer:"A",
+          translation:"由於建築工人嚴重短缺，新圖書館要到三月才會開放；在這期間，學生可以到臨時分館借書。",
+          explain:{A:"✔ 分號前給出一段等待的時間（要到三月才開放），分號後說明這段期間內的替代安排（可到臨時分館借書），正是 in the meantime（在這期間）。",B:"✘ in the long term 是「長期而言」，用來談長遠的結果或趨勢；但臨時分館只是這幾個月的過渡安排，不是長期規劃。",C:"✘ on the contrary 是「相反地」，用來反駁前面的說法；但分號前後並非對立，而是「等待期間的應對」，方向不符。",D:"✘ all in all 是「總而言之」，是收尾總結的插入語，不能引出一個具體的替代措施。"},
+          notes:[{term:"in the meantime", pos:"片語", gloss:"在這期間、在此之前（The new system launches in June; in the meantime, use the old one.）。同義：meanwhile／in the interim。注意它指「兩個時間點之間」，所以前文必須先給出一段等待期。ED 雜誌小考 (310) 第 16 題考的正是這個片語。", ex:"Repairs start next week; in the meantime, the pool is closed.", exZh:"下週開始整修，在這之前泳池關閉。"},{term:"Owing to / Due to", pos:"片語", gloss:"由於（Owing to a shortage of workers…）。兩者後接名詞或動名詞，不接子句（表原因的子句用 because）。同義：because of／on account of／as a result of。"},{term:"not…until", pos:"句型", gloss:"直到…才（will not open until March）。注意中文說「才」，英文卻是「not…until」的否定形式。倒裝寫法：Not until March will the new library open.（一般班的 ED 卷考過這個倒裝）。"}]},
+
+        { n:19, kind:"片語動詞（過去式）",
+          stem:"Humiliated by a vicious remark in front of the whole class, Ben __________ his indignation and walked out calmly instead of retaliating against the arrogant bully.",
+          options:{A:"burst into 突然陷入（後接名詞）",B:"brought forth 產生、生出",C:"abided by 遵守（規定、法律）",D:"choked back 忍住、壓抑（情緒）"}, answer:"D",
+          translation:"Ben 在全班面前被一句惡毒的話羞辱，他忍住憤怒，冷靜地走出去，而沒有去報復那個傲慢的霸凌者。",
+          explain:{D:"✔ walked out calmly instead of retaliating（冷靜走出去而非報復）說明他壓抑住了情緒，而受詞 his indignation（他的憤怒）正是被壓抑的對象，choke back 正是「忍住、把情緒哽回去」。",A:"✘ burst into 是「突然陷入」（burst into tears／laughter），語意是情緒爆發出來，與 walked out calmly（冷靜離開）完全相反；而且它後面接的是情緒名詞本身（burst into tears），不是 his indignation 這種所有格形式。",B:"✘ brought forth 是「產生、生出」（bring forth new ideas），語氣正式且語意是「使產生」，而 Ben 是在壓抑已有的情緒。",C:"✘ abided by 是「遵守」，受詞是規定或法律（abide by the rules），不能接情緒；一般班第 5 題考的正是這個片語。"},
+          notes:[{term:"choke back", pos:"片語動詞", gloss:"忍住、壓抑（choke back tears／sobs／anger／indignation）。v. choke 哽住、窒息（choke up 哽住說不出話）。同義：hold back／fight back／suppress／swallow（swallow one's pride 忍下自尊）。一般班第 34 題也考這個片語，當時的受詞是 tears，本題換成 indignation。", ex:"She choked back her anger and said nothing.", exZh:"她忍住怒氣，什麼也沒說。"},{term:"indignation", pos:"n.", gloss:"（因不公而生的）憤慨（public indignation／with indignation）。adj. indignant 憤慨的（be indignant at sth）。語感比 anger 更強調「出於義憤」。"},{term:"retaliate", pos:"v.", gloss:"報復（retaliate against sb／for sth）。n. retaliation。相關：humiliate 使羞辱（單字書 10-2~11 第 5 題考過）／vicious 惡毒的／arrogant 傲慢的。"}]},
+
+        { n:20, kind:"片語動詞（原形）",
+          stem:"Should the bridge ever collapse, the corrupt inspector who accepted bribes to overlook its cracks will have to __________ his misconduct in court.",
+          options:{A:"apply for 申請（職位、許可）",B:"lead to 導致、通往",C:"answer for 為…負責、為…付出代價",D:"be equal to 等於；勝任得了"}, answer:"C",
+          translation:"萬一這座橋真的倒塌，那位收賄而對裂縫視而不見的腐敗稽查員，將必須在法庭上為自己的不當行為負責。",
+          explain:{C:"✔ in court（在法庭上）加上受詞 his misconduct（他的不當行為），指的正是「為自己的行為負起責任、接受制裁」，answer for sth 正是此義；accepted bribes to overlook its cracks（收賄而對裂縫視而不見）也說明他確實有過失。",A:"✘ apply for 是「申請」，受詞是職位或許可（apply for a permit）；沒有人會去「申請」自己的不當行為。",B:"✘ lead to 是「導致」，主詞應是原因、受詞是結果；但本句的主詞是人（the inspector），人不會「導致」自己的不當行為。",D:"✘ be equal to 是「等於」或「勝任」（be equal to the task），語意是對等或能力足夠，與在法庭上承擔後果不同。"},
+          notes:[{term:"answer for", pos:"片語動詞", gloss:"為…負責、為…付出代價（answer for one's actions／misconduct；have a lot to answer for 要負很大的責任）。同義：be held accountable for／take responsibility for／pay for。一般班第 35 題把它放在誘答位置。", ex:"Those who approved the plan must answer for its failure.", exZh:"核准這項計畫的人必須為它的失敗負責。"},{term:"Should + S + V 的倒裝假設", pos:"句型", gloss:"萬一…（Should the bridge ever collapse＝If the bridge should ever collapse）。Should 之後接原形動詞，用於可能性較低的假設。倒裝假設的三種開頭：Were／Should／Had（本卷第 32 題考的是 Were 的用法）。", ex:"Should you change your mind, give me a call.", exZh:"萬一你改變心意，打電話給我。"},{term:"bribe / overlook", pos:"字彙", gloss:"bribe 賄賂（accept／offer a bribe；n. bribery 行賄罪）／overlook 忽視、視而不見（overlook a mistake）；overlook 另有「俯瞰」之義（a room overlooking the sea）。相關：misconduct 不當行為／corrupt 腐敗的。"}]},
+
+        { n:21, kind:"片語（主詞補語）",
+          stem:"Despite the riot that erupted outside the stadium, the police chief assured anxious reporters that the situation was well __________ and that no curfew would be imposed.",
+          options:{A:"in hand 受到掌控、在控制中",B:"on hand 在手邊、現有；在場",C:"in private 私下地",D:"at large 在逃；普遍而言"}, answer:"A",
+          translation:"儘管球場外爆發了暴動，警察局長仍向焦慮的記者保證情況已完全在控制之中，而且不會實施宵禁。",
+          explain:{A:"✔ assured anxious reporters（向焦慮的記者保證）加上 no curfew would be imposed（不會實施宵禁），說明局長想傳達的是「局勢可控」，而 well in hand（完全在掌控中）是固定搭配，副詞 well 也正是修飾 in hand 的常見用法。",B:"✘ on hand 是「在手邊、現有」或「在場」（have supplies on hand／be on hand to help），描述的是「備有、人在現場」，而不是「局勢受到控制」。這兩個片語只差一個介系詞，是本題唯一的考點。",C:"✘ in private 是「私下地」，修飾談話的場合；但局長正在對記者公開說話，而且它也無法形容「情況」。",D:"✘ at large 是「在逃」（The suspect is at large.）或「普遍而言」，若情況 at large 語意不通，而且在逃反而表示失控。"},
+          notes:[{term:"in hand / on hand", pos:"辨析", gloss:"in hand 受到掌控（have the situation well in hand）、手頭上正在處理的（the matter in hand）／on hand 在手邊可用（keep cash on hand）、在場（be on hand to answer questions）。一般班第 28 題把 in hand 放在誘答、第 21 題把 on hand 放在誘答，本題則讓兩者正面對撞。", ex:"The crew had the fire well in hand within an hour.", exZh:"消防隊在一小時內就把火勢完全控制住了。"},{term:"assure / ensure / insure", pos:"辨析", gloss:"assure sb (that)… 向某人保證（使其安心）／ensure (that)… 確保（使某事發生）／insure 投保。三字拼法相近但用法不同：assure 的受詞是「人」。"},{term:"curfew", pos:"n.", gloss:"宵禁（impose／lift a curfew）。相關：riot 暴動（riot police 鎮暴警察）／erupt 爆發（也用於火山）。"}]},
+
+        { n:22, kind:"片語動詞（原形）",
+          stem:"Two teachers rushed into the crowded hallway to __________ a fierce fight between rival students before anyone suffered anything worse than a bruised lip.",
+          options:{A:"break out 爆發（不及物，主詞是爆發的事）",B:"account for 解釋、說明（是…的原因）",C:"break up 拆開、勸阻（打架）；散開",D:"contribute to 促成、導致"}, answer:"C",
+          translation:"兩位老師衝進擁擠的走廊去拉開一場敵對學生之間的激烈鬥殴，在有人受到比嘴唇瘀青更嚴重的傷害之前就制止了。",
+          explain:{C:"✔ 老師 rushed into the hallway（衝進走廊）的目的，以及 before anyone suffered anything worse（在有人受更重的傷之前）的結果，都說明他們是去「把打架的人拉開、制止衝突」，break up a fight 正是這個固定搭配。",A:"✘ break out 是「爆發」，但它是不及物動詞，主詞必須是爆發的事件本身（A fight broke out.）；本句空格後有受詞 a fierce fight，文法不符。一般班第 12 題考的正是 break out 的正確用法。",B:"✘ account for 是「解釋、是…的原因」；老師衝進走廊不是去解釋打架的原因。",D:"✘ contribute to 是「促成、導致」，若老師 contributed to the fight 就變成他們助長了鬥殴，語意完全相反。"},
+          notes:[{term:"break up", pos:"片語動詞", gloss:"① 拆開、勸阻（break up a fight／a crowd）② 分手（break up with sb）③ 散開、解散（The meeting broke up at noon.）④ （學校）放假。一般班第 12 題把它放在誘答位置。", ex:"Security guards moved in to break up the scuffle.", exZh:"警衛上前把這場扭打拉開。"},{term:"break 家族的及物與不及物", pos:"文法重點", gloss:"不及物：break out（事件爆發）、break in（插話、闖入，本卷第 2 題）、break down（故障）。及物：break up sth（拆開）、break into sth（闖入）、break off sth（折斷）。看空格後面有沒有受詞，能一次篩掉一半選項——本卷第 2、22 題都是這個考法。"},{term:"rival", pos:"adj. / n.", gloss:"敵對的、競爭的（rival students／rival fans／a rival company）／n. 對手。n. rivalry 競爭、對立。"}]},
+
+        { n:23, kind:"片語（後位修飾）",
+          stem:"My grandparents __________ were humble rice farmers in Yunlin, whereas my father's relatives have run a retail pharmacy in Tainan for three successive generations.",
+          options:{A:"on my mother's hands 在我母親手上（非慣用語）",B:"on my mother's side 我母親那一邊的（親戚）",C:"in my mother's name 以我母親的名義",D:"within my mother's means 在我母親的財力範圍內"}, answer:"B",
+          translation:"我外祖父母是雲林的樸實稻農，而我父親那邊的親戚則在台南經營一家零售藥局，已經傳了三代。",
+          explain:{B:"✔ 決定性線索是 whereas my father's relatives（而我父親那邊的親戚）——句子在對比父母雙方的家族，所以前半句要指「母親那邊的」，on sb's side (of the family) 正是這個固定說法，放在名詞之後作後位修飾。",A:"✘ on my mother's hands 不是慣用語；have sth on one's hands 是「某事落在某人身上待處理」，與家族血緣無關。",C:"✘ in my mother's name 是「以我母親的名義」（登記、捐款時用），描述名義歸屬而不是血緣關係。",D:"✘ within my mother's means 是「在財力範圍內」，談的是金錢；祖父母不是「買得起」的東西，語意荒謬。"},
+          notes:[{term:"on sb's side (of the family)", pos:"片語", gloss:"某人那一邊的親戚（my grandparents on my mother's side／relatives on his father's side）。注意這個 side 指「家族的一邊」，與 take sides（選邊站）的 side 用法不同。", ex:"Diabetes runs in the family on my father's side.", exZh:"我父親那邊的家族有糖尿病的遺傳。"},{term:"side 相關片語整理", pos:"整理", gloss:"on sb's side of the family 某人那邊的親戚／take sides with sb 偏袒某方（一般班第 23 題）／side by side 並肩地（一般班第 31 題的誘答）／on the side 兼差、額外的／on its side 側躺著。"},{term:"successive", pos:"adj.", gloss:"連續的、接連的（three successive generations／four successive wins）。對照 consecutive 同義／in a row（一般班第 31 題的答案）／successful 成功的（拼法近但意思完全不同）。"}]},
+
+        { n:24, kind:"片語動詞（第三人稱單數）",
+          stem:"Since Taiwan's first year of senior high school roughly __________ the tenth grade in the American system, exchange students are usually eligible for tenth-grade classes.",
+          options:{A:"adds up to 總計達；意味著",B:"abounds with 充滿、富含",C:"consists in 在於（本質上是）",D:"corresponds to 相當於、對應於"}, answer:"D",
+          translation:"由於台灣的高中一年級大致相當於美國制度中的十年級，交換學生通常可以修十年級的課程。",
+          explain:{D:"✔ 本句在把兩套學制的年級做對照，而結果 exchange students are usually eligible for tenth-grade classes（交換學生可修十年級課程）也印證兩者是對等的，correspond to（相當於、對應於）正是此義；副詞 roughly（大致）也常與它連用。",A:"✘ adds up to 是「總計達」，受詞是數量總和（The bill adds up to $500.）；一個年級不會「總計等於」另一個年級。",B:"✘ abounds with 是「充滿」（The lake abounds with fish.），主詞須是場所或容器，接的是裡面有什麼。",C:"✘ consists in 是「在於」，用來說明本質所在（Happiness consists in contentment.）；高一的「本質」不是十年級，兩者是對應關係而非本質定義。注意本卷第 4 題考的正是 lie in 這個「在於」的語意。"},
+          notes:[{term:"correspond to / with", pos:"片語動詞", gloss:"① 相當於、對應於（correspond to the tenth grade／Rings correspond to years.）② 與…相符（Your account corresponds with hers.）③ 與…通信（correspond with a pen pal）。n. correspondence 通信、對應關係；n. correspondent 通訊記者。一般班第 15 題把它放在誘答位置。", ex:"The Chinese term corresponds roughly to \"mentorship.\"", exZh:"這個中文詞大致相當於英文的 mentorship。"},{term:"be eligible for", pos:"片語", gloss:"符合資格（be eligible for classes／a subsidy；be eligible to V）。n. eligibility；反義 ineligible。ED 雜誌小考 (310) 第 2 題也用過這個片語。"},{term:"roughly", pos:"adv.", gloss:"大致、約略（roughly corresponds to／roughly 80 kilometers）；也指「粗暴地」。同義：approximately／about／more or less。"}]},
+
+        { n:25, kind:"副詞片語",
+          stem:"Knowing it would be months before they could return, the children splashed in the immense lake __________ on the final day of their summer vacation.",
+          options:{A:"at their wit's end 束手無策、想不出辦法",B:"beyond their means 超出他們的財力",C:"to their heart's content 盡情地、玩個痛快",D:"out of their reach 他們所無法企及的"}, answer:"C",
+          translation:"孩子們知道要再過好幾個月才能回來，於是在暑假的最後一天在那片廣闊的湖裡盡情玩水。",
+          explain:{C:"✔ Knowing it would be months before they could return（知道要好幾個月才能再來）與 the final day of their summer vacation（暑假最後一天）兩個線索都在說「要玩就趁現在」，所以他們玩得毫無保留，to one's heart's content 正是「盡情地」。",A:"✘ at their wit's end 是「束手無策」，用於遇到難題毫無辦法時；孩子們在玩水，並沒有面臨難題。",B:"✘ beyond their means 是「超出財力」，談的是金錢；在湖裡玩水不需要花錢，而且它通常當主詞補語而不是修飾動作的副詞片語。",D:"✘ out of their reach 是「無法企及」，同樣是主詞補語用法（The goal is out of their reach.），不能用來修飾 splashed 這個動作的方式。"},
+          notes:[{term:"to one's heart's content", pos:"片語", gloss:"盡情地、心滿意足地（eat／play／sing to your heart's content）。注意所有格要隨主詞變化（to their heart's content）。同義：to the full（充分地）／as much as one likes。一般班第 20 題把它放在誘答位置。", ex:"At the buffet you can eat to your heart's content.", exZh:"在吃到飽餐廳你可以盡情地吃。"},{term:"heart 相關片語", pos:"整理", gloss:"to one's heart's content 盡情地／learn sth by heart 背下來／take sth to heart 認真看待、放在心上／have a change of heart 改變心意／lose heart 失去信心／at heart 本質上。"},{term:"immense", pos:"adj.", gloss:"廣大的、巨大的（an immense lake／immense pressure）。adv. immensely 極其；n. immensity。同義：vast／enormous／massive。"}]},
+
+        { n:26, kind:"副詞片語",
+          stem:"Three diners were rushed to the hospital __________ last night, the first at 7:10 and the last shortly before eight, all displaying identical symptoms of food poisoning.",
+          options:{A:"one after the other 一個接一個地、陸續地",B:"side by side 並肩地、並排地",C:"once and for all 一次解決、徹底了結",D:"around the clock 二十四小時不間斷"}, answer:"A",
+          translation:"昨晚有三位用餐的客人陸續被送往醫院，第一位是七點十分，最後一位則在八點前不久，三人都出現一模一樣的食物中毒症狀。",
+          explain:{A:"✔ 句中的時間就是答案：the first at 7:10 and the last shortly before eight（第一位七點十分、最後一位快八點），三人是在不同時間先後被送醫，正是 one after the other（一個接一個、陸續地）。",B:"✘ side by side 是「並肩、並排」，描述空間上的並列（walk side by side）；但這三人是在時間上先後送醫，不是同時並排。",C:"✘ once and for all 是「一次徹底解決」，用於永久了結某個問題（settle it once and for all），與送醫的先後順序無關。",D:"✘ around the clock 是「二十四小時不間斷」，但三人送醫的時間集中在不到一小時之內（7:10 到接近八點），時間跨度完全不符。"},
+          notes:[{term:"one after the other / one after another", pos:"片語", gloss:"一個接一個地、陸續地（They arrived one after the other.）。兩者幾乎同義，傳統上 one after the other 多用於兩者或明確的一組，one after another 用於不定數量。一般班第 8 題把它放在誘答位置。", ex:"The lights went out one after the other.", exZh:"燈一盞接一盞地熄滅了。"},{term:"identical", pos:"adj.", gloss:"完全相同的（identical symptoms／identical twins 同卵雙胞胎）。adv. identically；n. identity 身分、同一性。注意搭配的介系詞是 to 或 with（be identical to sth）。"},{term:"food poisoning", pos:"n.", gloss:"食物中毒（get／have food poisoning，不可數）。相關：symptom 症狀／diner 用餐的客人（也指小餐館）／be rushed to the hospital 被緊急送醫。"}]},
+
+        { n:27, kind:"片語動詞（第三人稱單數）",
+          stem:"Although the family's night-market stall looks modest, it __________ more than NT$60,000 in monthly revenue, helping to pay the rent and their children's tuition.",
+          options:{A:"brings out 推出、出版（新產品或新書）",B:"brings in 帶來（收入）、賺進",C:"serves as 充當、作為",D:"acts as 擔任、充當"}, answer:"B",
+          translation:"這家人的夜市攤位雖然看起來不起眼，每個月卻能帶來超過新台幣六萬元的營收，幫忙支付房租與孩子的學費。",
+          explain:{B:"✔ 受詞是 more than NT$60,000 in monthly revenue（每月六萬元以上的營收），而 helping to pay the rent and their children's tuition（幫忙付房租與學費）說明這是實際進帳的收入，bring in（帶來收入、賺進）正是此義；Although（雖然）的讓步也凸顯「看起來不起眼卻很賺」的對比。",A:"✘ brings out 是「推出、出版」，受詞是新產品或新書（bring out a new album）；攤位不會「推出」營收。一般班第 22 題考的正是這個片語，本卷把它放在誘答位置。",C:"✘ serves as 是「充當、作為」，受詞是角色或功能（serve as a reminder）；營收不是攤位所扮演的角色。",D:"✘ acts as 同樣是「擔任、充當」，受詞也必須是身分或功能，不能接金額。"},
+          notes:[{term:"bring in", pos:"片語動詞", gloss:"① 帶來收入、賺進（bring in NT$60,000 a month／bring in revenue）② 引進（制度、人才）（bring in new rules／bring in an expert）③ （陪審團）做出裁決（bring in a verdict）。", ex:"The side business brings in about a third of their income.", exZh:"這項副業帶來他們約三分之一的收入。"},{term:"bring 家族", pos:"整理", gloss:"bring in 帶來收入、引進／bring out 推出、使顯現（bring out the best in sb）／bring up 養育、提起話題／bring about 造成／bring forth 產生（本卷第 19 題的誘答）／bring down 使下台。"},{term:"modest", pos:"adj.", gloss:"不起眼的、樸實的（a modest stall／a modest income）；也指「謙虛的」（be modest about one's success）。n. modesty。本卷第 23 題的 humble 與它語意相近。"}]},
+
+        { n:28, kind:"片語（主詞補語）",
+          stem:"Dr. Lin, a Taipei-based heart surgeon who specializes in pediatric cases, is currently __________ to a hospital in Hualien, where such expertise is extremely scarce.",
+          options:{A:"on leave 休假中",B:"in half 分成兩半",C:"in return 作為回報",D:"on loan 被外借（到另一個單位）"}, answer:"D",
+          translation:"林醫師是一位專攻小兒病例、以台北為據點的心臟外科醫師，目前被外借到花蓮的一間醫院——那裡極度缺乏這樣的專業。",
+          explain:{D:"✔ 兩個線索鎖定答案：a Taipei-based heart surgeon（以台北為據點）說明他原本不屬於花蓮，而 where such expertise is extremely scarce（那裡極度缺乏這種專業）說明他是被調去支援的。on loan to＋單位正是「被外借到某處」，人員與物品都可用。",A:"✘ on leave 是「休假中」，休假的人不會被派到另一間醫院工作，而且 on leave 後面不接 to＋地點。",B:"✘ in half 是「分成兩半」，描述分割方式，語意荒謬。",C:"✘ in return 是「作為回報」，需要前文有某人先給予的恩惠，而且它後面要接 for 才完整（in return for sth）。"},
+          notes:[{term:"on loan to / on loan from", pos:"辨析", gloss:"on loan to sb/sth 被外借到（去）／on loan from sb/sth 從…借來的。方向由介系詞決定：一般班第 28 題考的是 on loan from a museum in Paris（借來的畫），本題是 on loan to a hospital in Hualien（借去的醫師）。足球的「租借球員」也用這個片語（a player on loan to another club）。", ex:"Two engineers are on loan to the Taitung branch this quarter.", exZh:"這一季有兩位工程師被外借到台東分部。"},{term:"-based", pos:"構詞", gloss:"以…為據點的（a Taipei-based surgeon／a London-based company／home-based work）。同型複合形容詞：web-based／evidence-based 以證據為基礎的。"},{term:"pediatric", pos:"adj.", gloss:"小兒科的（pediatric cases／a pediatrician 小兒科醫師）。相關：specialize in 專攻／expertise 專業知識／scarce 稀少的（n. scarcity）。"}]},
+
+        { n:29, kind:"片語動詞（原形）",
+          stem:"Diagnosed with a chronic stomach condition, Jason was advised by his doctor to __________ caffeine entirely rather than merely reducing his daily coffee intake.",
+          options:{A:"cut back 削減（支出、產量）",B:"cut out 完全戒除、不再攝取",C:"deal with 處理、應對",D:"be thirsty for 渴求（知識、權力等）"}, answer:"B",
+          translation:"Jason 被診斷出慢性胃疾，醫師建議他完全戒掉咖啡因，而不只是減少每天喝咖啡的量。",
+          explain:{B:"✔ 句中的對比把答案說得非常清楚：entirely rather than merely reducing his daily coffee intake（完全而不只是減少每日攝取量）。既然不是「減量」而是「全戒」，就要用 cut out（完全戒除）。",A:"✘ cut back 是「削減」，正是句中被否定掉的 merely reducing（只是減量）那一邊；一般班第 24 題的答案 cut down on 也屬同一類「減量」片語，本題刻意用 rather than 把兩種程度分開，所以不能選。",C:"✘ deal with 是「處理、應對」（deal with a problem），語意是面對處理而非戒除，無法與 entirely 的程度對比呼應。",D:"✘ be thirsty for 是「渴求」，而且它接的是渴望的對象；醫師不會建議病人渴求咖啡因。"},
+          notes:[{term:"cut out / cut down on / cut back", pos:"辨析", gloss:"cut out sth 完全戒除（cut out sugar altogether）／cut down on sth 減少攝取（cut down on salt，一般班第 24 題的答案）／cut back (on) sth 削減（多用於支出或產量）。三者程度不同：cut out 是零，cut down on 與 cut back 是變少。本題用 entirely rather than merely reducing 直接把這個程度差當成考點。", ex:"She cut out alcohol completely after the diagnosis.", exZh:"確診之後她完全戒了酒。"},{term:"cut 家族", pos:"整理", gloss:"cut out 戒除、剪下／cut down on 減少／cut back 削減／cut off 切斷（cut off the power）／cut in 插話、插隊／cut corners 便宜行事／cut it close 時間抓得很緊。"},{term:"intake", pos:"n.", gloss:"攝取量（daily coffee／calorie intake）；也指「招收人數」（this year's intake）。ED 雜誌小考第 19 題考過這個字。相關：caffeine 咖啡因／chronic 慢性的。"}]},
+
+        { n:30, kind:"片語（主詞補語）",
+          stem:"Preparations for the international film festival are already well __________: the outdoor stage has been assembled, and each volunteer has been assigned a specific duty.",
+          options:{A:"in charge 負責的、主管的",B:"in season 當季的、盛產期的",C:"under way 進行中、已經展開",D:"under consideration 在審議中、尚在考慮"}, answer:"C",
+          translation:"國際影展的籌備工作已經順利進行中：戶外舞台已經搭好，每位志工也都分配到了特定的職責。",
+          explain:{C:"✔ 冒號後面列出已完成的具體進度（舞台搭好、職責分配完畢），說明工作已經開始且推進得很順利，under way（進行中）正是此義，而且 well under way（進行得很順利）是固定搭配。",A:"✘ in charge 是「負責的、主管的」，主詞須是人（Who's in charge here?）；籌備工作本身不會「負責」什麼。",B:"✘ in season 是「當季的」，用於蔬果或獵捕期，不能形容籌備進度。",D:"✘ under consideration 是「在審議中、還在考慮」，與 the outdoor stage has been assembled（舞台已經搭好）直接矛盾——都已經動工了就不會還在考慮階段。一般班第 16 題考的正是這個片語。"},
+          notes:[{term:"under way", pos:"片語", gloss:"進行中（Work is well under way.／get under way 開始進行；也寫作 underway）。注意常與 well 連用表「進展順利」。一般班第 30 題也考這個片語。", ex:"The investigation is already well under way.", exZh:"調查已經順利進行中了。"},{term:"under + 名詞 的進行狀態", pos:"整理", gloss:"under way 進行中／under construction 施工中／under consideration 審議中／under discussion 討論中／under review 檢討中／under repair 修理中／under control 受到控制。本卷第 30 題考 under way、一般班第 16、30 題分別考 under consideration 與 under way。"},{term:"assemble", pos:"v.", gloss:"組裝、集合（assemble the stage／The crowd assembled.）。n. assembly 集會、裝配（an assembly line 生產線）。相關：assign sb sth 分配／specific duty 特定職責。"}]},
+
+        { n:31, kind:"副詞片語（插入語）",
+          stem:"Many students struggle with English grammar; Tom, __________, finds the distinction between the present perfect and the simple past almost impossible to comprehend.",
+          options:{A:"in particular 尤其、特別是",B:"in general 大致上、一般而言",C:"as a whole 整體而言",D:"quite the contrary 恰恰相反"}, answer:"A",
+          translation:"許多學生都為英文文法所苦；Tom 尤其覺得現在完成式與過去簡單式的區別幾乎無法理解。",
+          explain:{A:"✔ 分號前是概括的敘述（許多學生都苦於文法），分號後把焦點縮到一個特例（Tom 覺得某個區別特別難），這種「從一般到特定」的收束正是 in particular（尤其）。",B:"✘ in general 是「大致上、一般而言」，方向正好相反——它是把範圍放大，但本句是從眾多學生縮到 Tom 一個人。一般班第 1 題把它放在誘答位置。",C:"✘ as a whole 是「整體而言」（the class as a whole），同樣是概括整體，與聚焦到個別案例的方向相反。",D:"✘ quite the contrary 是「恰恰相反」，用來否定前面的說法；但 Tom 的情況是在印證「學生苦於文法」而不是反駁它。"},
+          notes:[{term:"in particular / in general", pos:"對照", gloss:"in particular 尤其、特別是（放在被強調的對象之後：Tom, in particular, finds…／I liked this one in particular.）／in general 大致上（一般而言）。兩者方向相反：一個聚焦，一個概括。一般班第 30 題把 in particular 放在誘答位置。", ex:"The whole album is strong; the final track in particular is stunning.", exZh:"整張專輯都很強，尤其最後一首令人驚豔。"},{term:"插入語的逗號", pos:"句型", gloss:"Tom, in particular, finds…（兩個逗號之間是插入語，拿掉後主幹 Tom finds… 仍完整）。閱讀長句時先刪掉插入語，主詞與動詞就會浮現。"},{term:"distinction", pos:"n.", gloss:"區別、差異（the distinction between A and B／draw a distinction 加以區分）；也指「榮譽、卓越」（graduate with distinction）。v. distinguish 區分；adj. distinctive 獨特的（本卷第 4 題的題幹用過）。"}]},
+
+        { n:32, kind:"片語動詞（反身受詞）",
+          stem:"Were you to __________ your studies with the same devotion you show on the basketball court, passing the entrance exam would be well within your capability.",
+          options:{A:"adjust yourself to 使自己適應",B:"break up with 與…分手",C:"catch on with 在…之間流行起來",D:"apply yourself to 專心致力於（某事）"}, answer:"D",
+          translation:"假如你用在籃球場上展現的同樣投入來專心讀書，通過入學考試絕對在你的能力範圍之內。",
+          explain:{D:"✔ with the same devotion you show on the basketball court（用你在籃球場上同樣的投入）說明說話者希望他把專注力轉移到學業上，apply oneself to sth 正是「專心致力於某事」，反身代名詞 yourself 的形式也完全吻合。",A:"✘ adjust yourself to 是「使自己適應」（adjust yourself to a new school），語意是順應外在改變，而不是主動投入努力。",B:"✘ break up with 是「與…分手」，受詞必須是人，不能接 your studies。",C:"✘ catch on with 是「在某群人之間流行起來」，主詞須是風潮或商品（The style caught on with teenagers.），不能以人為主詞加反身受詞。"},
+          notes:[{term:"apply oneself to", pos:"片語", gloss:"專心致力於（apply yourself to your studies／He applied himself to the task.）。注意反身代名詞要隨主詞變化。相關：apply for 申請（本卷第 20 題的誘答）／apply to 適用於（第 14 題的誘答）／apply sth to sth 把…應用於。一個動詞三種介系詞三種意思。", ex:"If he applied himself to the job, he'd finish in a week.", exZh:"如果他專心投入這份工作，一週就能做完。"},{term:"Were S to V 的倒裝假設", pos:"句型", gloss:"假如…（Were you to apply yourself…＝If you were to apply yourself…），用於對未來的假設，語氣較委婉。倒裝假設的三種開頭：Were／Should（本卷第 20 題）／Had。ED 雜誌小考 (310) 第 8 題與第 38 題也考過這組句型。", ex:"Were she to accept the offer, she'd move in June.", exZh:"假如她接受這個職位，她六月就會搬過去。"},{term:"devotion", pos:"n.", gloss:"投入、奉獻（with devotion／devotion to one's family）。adj. devoted 忠誠投入的（be devoted to sth）；v. devote（devote oneself to sth，與 apply oneself to 語意相近）。"}]},
+
+        { n:33, kind:"副詞片語",
+          stem:"Firefighters persisted in battling the flames throughout the night, but __________; by dawn, the sacred wooden temple had been reduced to smoldering ruins.",
+          options:{A:"of no avail 毫無用處（須接在 be 動詞之後）",B:"of little avail 幾乎沒有用（須接在 be 動詞之後）",C:"to no avail 徒勞無功（可直接接在 but 之後）",D:"to the full 充分地、盡情地"}, answer:"C",
+          translation:"消防員整夜不停地與火勢搏鬥，卻徒勞無功；到了天亮時，那座神聖的木造寺廟已經化為一片還在冒煙的廢墟。",
+          explain:{C:"✔ 本題同時考語意與結構。語意上 the temple had been reduced to smoldering ruins（寺廟已成冒煙廢墟）說明搶救失敗；結構上 but 之後沒有主詞和動詞，所以必須用能獨立當副詞片語的 to no avail（but to no avail 是固定的寫法）。",A:"✘ of no avail 意思雖同，但它是當主詞補語用的（Their efforts were of no avail.），必須搭配 be 動詞；本句的 but 後面沒有 were，文法不成立。",B:"✘ of little avail 與 (A) 同樣需要 be 動詞，而且語意上火被完全燒毀屬於「毫無成效」而非「幾乎沒用」。",D:"✘ to the full 是「充分地、盡情地」（live life to the full），語氣正面，與搶救失敗完全相反。"},
+          notes:[{term:"to no avail / of no avail", pos:"辨析", gloss:"to no avail 徒勞無功（副詞片語，可直接接在句末或 but 之後：They tried, but to no avail.）／of no avail 毫無用處（主詞補語，需接在 be 動詞後：Their efforts were of no avail.）。兩者意思相同但文法位置不同，這正是本題唯一的考點。同義：in vain（一般班第 33 題的答案）。", ex:"We appealed to the committee, but to no avail.", exZh:"我們向委員會申訴，卻徒勞無功。"},{term:"persist in V-ing", pos:"片語", gloss:"堅持不斷地做（persisted in battling the flames）。n. persistence；adj. persistent 持續不斷的。片語書 Unit 01~05 (310) 第 1 題與單字書 10-2~11 (310) 第 17 題都考過這個搭配。"},{term:"be reduced to", pos:"片語", gloss:"淪為、化為（be reduced to ruins／to tears／to begging）。相關：smoldering 悶燒冒煙的／sacred 神聖的／by dawn 到天亮時（一般班第 33 題的題幹也用了這個片語）。"}]},
+
+        { n:34, kind:"片語動詞（過去式）",
+          stem:"As soon as the last passenger had boarded, the crew __________ the mooring ropes, and the ferry set sail for the barren island on the horizon.",
+          options:{A:"broke down 故障、崩潰、談判破裂",B:"cast off 解開（纜繩）；拋棄、擺脫",C:"made up 構成；編造；化妝；和好",D:"blew off 吹掉；（口語）不理會"}, answer:"B",
+          translation:"最後一位乘客登船之後，船員便解開了繫纜，渡輪就朝著地平線上那座荒蕪的島嶼啟航了。",
+          explain:{B:"✔ 受詞是 the mooring ropes（繫船的纜繩），而結果是 the ferry set sail（渡輪啟航）。cast off 在航海用語中正是「解開纜繩、解纜啟航」，與整句的航行情境完全吻合。",A:"✘ broke down 是「故障、崩潰」，而且當「故障」時是不及物（The car broke down.）；船員不會把纜繩弄故障，而且船若故障就無法啟航。",C:"✘ made up 有「構成、編造、化妝、和好」等義，但沒有一個能接 the mooring ropes；一般班第 4 題考的 make up 是「構成（整體）」，受詞應是被組成的那個整體。",D:"✘ blew off 是「吹掉」或口語的「不理會」；纜繩是被解開而不是被吹走，而且這是船員刻意的動作。"},
+          notes:[{term:"cast off", pos:"片語動詞", gloss:"① 解纜、解開繩索啟航（cast off the mooring ropes；也可不及物：The boat cast off at dawn.）② 拋棄、擺脫（cast off old habits／cast off one's inhibitions）。v. cast 投擲、鑄造（cast-cast-cast，三態同形）。一般班第 5 題把它放在誘答位置。", ex:"The crew cast off and the yacht glided out of the harbor.", exZh:"船員解開纜繩，遊艇便滑出了港口。"},{term:"cast 相關片語", pos:"整理", gloss:"cast off 解纜、拋棄／cast aside 棄置一旁／cast doubt on sth 使人對…產生懷疑／cast a vote 投票／cast a shadow over sth 為…蒙上陰影／be cast as sb 被選角扮演某人。"},{term:"set sail", pos:"片語", gloss:"啟航（set sail for a destination）。相關：board 登船、登機／mooring ropes 繫纜／ferry 渡輪／on the horizon 在地平線上、即將到來。"}]},
+
+        { n:35, kind:"片語動詞（第三人稱複數）",
+          stem:"Because the coastal wetlands __________ rare and exotic migratory birds, bird-watchers from all over Asia flock there every winter, armed with sophisticated cameras.",
+          options:{A:"abound in 充滿、富含（主詞是場所）",B:"are composed of 由…組成（主詞是整體）",C:"hunger for 渴望、極想要",D:"have a desire for 渴望得到"}, answer:"A",
+          translation:"由於這片海岸濕地有大量稀有而罕見的候鳥，來自亞洲各地的賞鳥人每年冬天都帶著高階相機湧向那裡。",
+          explain:{A:"✔ 主詞是 the coastal wetlands（海岸濕地，一個場所），受詞是棲息其中的 rare and exotic migratory birds（稀有候鳥），而結果是賞鳥人蜂擁而至。abound in（充滿、富含）的主詞正是場所，完全吻合。",B:"✘ are composed of 是「由…組成」，意思會變成「這片濕地是由候鳥組成的」——濕地是由水、泥灘與植被構成，候鳥只是棲息其中的生物，語意荒謬。一般班第 4 題考的正是這組「組成」片語的方向問題。",C:"✘ hunger for 是「渴望」，主詞須是有欲望的生物（hunger for success）；濕地不會渴望候鳥。",D:"✘ have a desire for 同樣是「渴望得到」，主詞也必須是能產生欲望的人或動物，方向與「場所富含某物」不同。"},
+          notes:[{term:"abound in / abound with", pos:"片語動詞", gloss:"充滿、富含（The wetlands abound in birds.／The river abounds with fish.）。兩個介系詞都可以，主詞是「場所或容器」。adj. abundant 豐富的（be abundant in sth）；n. abundance（in abundance 大量地）。一般班第 29 題把 abounded in、第 17 題把 abounded with 都放在誘答位置。", ex:"The old forest abounds in rare orchids.", exZh:"這片古老森林裡有大量稀有的蘭花。"},{term:"flock", pos:"v. / n.", gloss:"v. 蜂擁而至（Tourists flock there every winter.／flock to see sth）／n. 一群（鳥、羊）（a flock of birds）。相關：migratory birds 候鳥／exotic 外來的、罕見的／wetlands 濕地。"},{term:"be armed with", pos:"片語", gloss:"配備著（armed with sophisticated cameras／armed with evidence）。此處是分詞片語，修飾前面的 bird-watchers。ED 雜誌小考 (310) 第 3 題的題幹也用過這個片語。"}]}
+      ]
+    }]
+  }
+  ]
+};
+
+/* ==========================================================================
+   ②  以下為程式碼，一般情況不需要修改。
+   ========================================================================== */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const wordOf = q => q.options ? q.options[q.answer] : (q.answerText || '');
+const allQ = [];
+EXAM.sections.forEach(s => s.groups.forEach(g => g.questions.forEach(q => { q.__sid = s.id; allQ.push(q); })));
+const findQ = (n, sid) => allQ.find(q => String(q.n) === String(n) && (sid == null || q.__sid === sid));
+
+document.getElementById('brand').textContent = EXAM.brand;
+document.getElementById('examTitle').textContent = EXAM.title;
+document.getElementById('examMeta').textContent = EXAM.meta;
+
+let noteCount = 0;
+allQ.forEach(q => noteCount += (q.notes || []).length);
+
+const nav = document.getElementById('nav');
+EXAM.sections.forEach(s => {
+  const a = document.createElement('a');
+  a.className = 'chip'; a.href = '#sec-' + s.id; a.textContent = s.label.replace(/^[一二三四五六]、/, m => m);
+  nav.appendChild(a);
+});
+const noteChip = document.createElement('a');
+noteChip.className = 'chip'; noteChip.href = '#side'; noteChip.textContent = '重點表 ' + noteCount;
+nav.appendChild(noteChip);
+const toggleAll = document.createElement('button');
+toggleAll.className = 'chip solid'; toggleAll.textContent = '全部展開';
+nav.appendChild(toggleAll);
+
+function renderPassage(g, i, sid) {
+  let html = esc(g.passage);
+  g.questions.forEach(q => {
+    if (!q.evidence) return;
+    const t = esc(q.evidence);
+    if (html.includes(t)) html = html.replace(t, `<span class="hl ev" data-ev="${q.n}">${t}</span>`);
+  });
+  html = html.replace(/__(\d+)__/g, (m, n) =>
+    `<button class="blank" data-blank="${n}" aria-label="第 ${n} 題空格">${n}</button>`);
+  const body = '<div class="passage">' +
+    html.split(/\n{2,}/).map(p => '<p>' + p.replace(/\n/g, ' ') + '</p>').join('') + '</div>';
+  if (!g.zh) return body;
+  const id = sid + '-' + i;
+  return body +
+    `<button class="zhbtn" data-zh="${id}">全文中譯</button>` +
+    `<div class="zhbox" id="zh-${id}">` +
+      g.zh.split(/\n{2,}/).map(p => '<p>' + esc(p).replace(/\n/g, ' ') + '</p>').join('') +
+    '</div>';
+}
+
+function renderQ(q) {
+  const parts = [];
+  if (q.options) {
+    const ks = Object.keys(q.options);
+    parts.push('<div class="opts">' + ks.map(k =>
+      `<div class="opt"><span class="opt-k">(${k})</span><span>${esc(q.options[k])}</span></div>`).join('') + '</div>');
+  }
+  const head = `<div class="q-tag"><span class="q-n">${String(q.n).padStart(2,'0')}</span><span class="q-kind">${esc(q.kind || '')}</span></div>` +
+    (q.prompt ? `<p class="prompt">${esc(q.prompt)}</p>` : '') +
+    (q.stem ? `<p class="stem">${esc(q.stem).replace(/\n/g,'<br>')}</p>` : '');
+
+  let ans = '';
+  if (q.answers) {
+    ans = '<ul class="fills">' + q.answers.map(a =>
+      `<li class="fill"><span class="fill-k">${esc(a.k)}</span><span class="fill-w hl" data-ansmulti>${esc(a.w)}</span><span class="fill-n">${esc(a.note || '')}</span></li>`).join('') + '</ul>';
+  } else {
+    const label = q.options ? `(${q.answer}) ${esc(wordOf(q))}` :
+      (q.answer ? `(${q.answer}) ${esc(q.answerText)}` : esc(q.answerText));
+    ans = `<p class="ans"><span class="ans-k">答案</span><span class="ans-v hl" data-ans="${q.n}">${label}</span></p>`;
+  }
+
+  let expl = '';
+  if (q.explain) {
+    expl = '<ul class="lines">' + Object.keys(q.options).map(k => {
+      const right = q.multi ? q.multi.includes(k) : k === q.answer;
+      return `<li class="line ${right ? 'right' : 'wrong'}"><span class="line-k">(${k})</span><span>${esc(q.explain[k] || '')}</span></li>`;
+    }).join('') + '</ul>';
+  }
+  const why = q.why ? `<p class="why">${esc(q.why)}</p>` : '';
+  const sample = q.sample ? `<div class="sample"><p class="note-h">參考範文</p>` +
+    q.sample.split(/\n{2,}/).map(p => `<p>${esc(p).replace(/\n/g,' ')}</p>`).join('') + '</div>' : '';
+  const evid = q.evidence ? `<p class="evid"><span>文中依據</span>${esc(q.evidence)}</p>` : '';
+  const notes = (q.notes || []).length ? `<div class="note"><p class="note-h">重點整理</p>` +
+    q.notes.map(nt => `<p class="note-i"><span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span><span class="gloss">${esc(nt.gloss || '')}</span>` +
+      (nt.ex ? `<span class="ex">${esc(nt.ex)}<i>${esc(nt.exZh || '')}</i></span>` : '') + '</p>').join('') + '</div>' : '';
+
+  return `<article class="q" id="q-${q.__sid}-${q.n}" data-n="${q.n}" data-sid="${q.__sid}">
+    <div class="q-top">${head}${parts.join('')}
+      <button class="reveal" aria-expanded="false" aria-controls="body-${q.n}">看詳解</button>
+    </div>
+    <div class="body" id="body-${q.n}">
+      ${ans}${q.translation ? `<p class="zh">${esc(q.translation)}</p>` : ''}${expl}${why}${evid}${sample}${notes}
+    </div>
+  </article>`;
+}
+
+document.getElementById('main').innerHTML = EXAM.sections.map((s, i) => `
+  <section class="sec" id="sec-${s.id}">
+    <div class="sec-head">
+      <span class="sec-num">${String(i+1).padStart(2,'0')}</span>
+      <h2 class="sec-label">${esc(s.label)}</h2>
+      <span class="sec-score">${esc(s.score || '')}</span>
+    </div>
+    ${s.instruction ? `<p class="sec-inst">${esc(s.instruction)}</p>` : ''}
+    ${s.bank ? `<div class="bank${s.bankWide ? ' wide' : ''}">${Object.keys(s.bank).map(k =>
+      `<div class="bank-i" data-bank="${k}"><span>(${k})</span>${esc(s.bank[k])}</div>`).join('')}</div>` : ''}
+    ${s.groups.map((g, gi) => (g.passage ? renderPassage(g, gi, s.id) : '') + g.questions.map(renderQ).join('')).join('')}
+  </section>`).join('');
+
+const items = [];
+allQ.forEach(q => (q.notes || []).forEach(nt => items.push({ ...nt, n: q.n, sid: q.__sid })));
+document.getElementById('side').innerHTML = `
+  <p class="side-h">Notes</p>
+  <p class="side-t">本卷重點 ${items.length} 則</p>
+  <ul class="card-list">${items.map(nt => `
+    <li class="card-item"><a href="#q-${nt.sid}-${nt.n}">
+      <span class="jump">第 ${nt.n} 題</span>
+      <span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span>
+      <div class="gloss">${esc(nt.gloss || '')}</div>
+    </a></li>`).join('')}</ul>
+  <p class="side-note">點任一則可跳到出處題目。用瀏覽器列印（Ctrl／⌘ + P）會自動展開全部詳解與中譯，可直接印成講義。</p>`;
+
+document.getElementById('foot').textContent = `共 ${allQ.length} 題 · ${EXAM.footer}`;
+
+function setOpen(card, open) {
+  card.classList.toggle('open', open);
+  const btn = card.querySelector('.reveal');
+  btn.setAttribute('aria-expanded', open);
+  btn.firstChild.nodeValue = open ? '收合詳解' : '看詳解';
+  const n = card.dataset.n;
+  const sec = card.closest('.sec') || document;
+  card.querySelectorAll('.hl').forEach(h => h.classList.toggle('on', open));
+  const ev = sec.querySelector(`[data-ev="${n}"]`);
+  if (ev) ev.classList.toggle('on', open);
+  const q = findQ(n, card.dataset.sid);
+  if (q && q.answer && q.answerText) {
+    const bi = sec.querySelector(`[data-bank="${q.answer}"]`);
+    if (bi) bi.classList.toggle('used', open);
+  }
+  const bl = sec.querySelector(`[data-blank="${n}"]`);
+  if (bl) {
+    if (open) {
+      bl.classList.add('filled');
+      bl.innerHTML = `<sup>${n}</sup><span class="hl">${esc(wordOf(q))}</span>`;
+      requestAnimationFrame(() => bl.querySelector('.hl').classList.add('on'));
+    } else {
+      bl.classList.remove('filled');
+      bl.textContent = n;
+    }
+  }
+}
+document.addEventListener('click', e => {
+  const rv = e.target.closest('.reveal');
+  if (rv) { const c = rv.closest('.q'); setOpen(c, !c.classList.contains('open')); return; }
+  const zb = e.target.closest('.zhbtn');
+  if (zb) { zb.classList.toggle('on'); document.getElementById('zh-' + zb.dataset.zh).classList.toggle('on'); return; }
+  const bl = e.target.closest('.blank');
+  if (bl) {
+    const c = document.getElementById('q-' + bl.dataset.blank);
+    if (!c.classList.contains('open')) setOpen(c, true);
+    c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+toggleAll.addEventListener('click', () => {
+  const open = toggleAll.textContent === '全部展開';
+  document.querySelectorAll('.q').forEach(c => setOpen(c, open));
+  toggleAll.textContent = open ? '全部收合' : '全部展開';
+});
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('.q').forEach(c => setOpen(c, true));
+  document.querySelectorAll('.zhbox').forEach(b => b.classList.add('on'));
+  toggleAll.textContent = '全部收合';
+});
+</script>
+</body>
+</html>
