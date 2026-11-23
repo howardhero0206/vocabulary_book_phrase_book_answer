@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>片語書進階篇小考 詳解｜Unit 11~15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7EBEE; --card:#FDFDFC;
+  --ink:#10202F; --ink-2:#56687A; --ink-3:#7C8B99;
+  --rule:#C6D0D8; --pen:#17457E; --hl:#FFE773; --miss:#A34234;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono','Cascadia Mono',Menlo,Consolas,monospace;
+  --read:'Literata',Georgia,'Times New Roman',serif;
+  --han:'PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--han);font-size:16px;line-height:1.75}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px;border-radius:2px}
+
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+.title{font-size:23px;font-weight:600;margin:0;line-height:1.3}
+.meta{font-family:var(--mono);font-size:12px;color:var(--ink-2);margin:4px 0 0;letter-spacing:.04em}
+.bar{display:flex;gap:7px;align-items:center;flex-wrap:wrap;padding:12px 0 11px;margin-top:10px;border-top:1px solid var(--rule)}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--rule);background:transparent;color:var(--ink-2);padding:5px 10px;border-radius:999px;cursor:pointer;text-decoration:none;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:var(--pen);color:var(--pen)}
+.chip.solid{margin-left:auto;border-color:var(--ink);color:var(--ink);font-weight:500}
+.chip.solid:hover{background:var(--ink);color:var(--card)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:28px 24px 96px;display:grid;gap:36px;grid-template-columns:minmax(0,1fr) 288px}
+@media (max-width:1020px){.wrap{grid-template-columns:minmax(0,1fr);gap:44px}}
+
+.sec{margin:0 0 48px;scroll-margin-top:136px}
+.sec-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--ink-3)}
+.sec-label{font-size:18px;font-weight:600;margin:0}
+.sec-score{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-left:auto}
+.sec-inst{font-size:13.5px;color:var(--ink-2);margin:9px 0 0}
+
+.bank{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:16px 0 0}
+@media (max-width:760px){.bank{grid-template-columns:repeat(2,1fr)}}
+.bank-i{background:var(--card);padding:8px 10px;font-family:var(--read);font-size:14.5px}
+.bank-i span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-right:5px}
+.bank-i.used{background:#F2F5F6;color:var(--ink-3)}
+
+.passage{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--ink);padding:22px 26px;margin:18px 0 0;font-family:var(--read);font-size:16.5px;line-height:1.95;color:#1a2836}
+.passage p{margin:0 0 1em}
+.passage p:last-child{margin-bottom:0}
+.blank{display:inline-block;min-width:70px;text-align:center;border:0;border-bottom:1.5px solid var(--ink);font-family:var(--mono);font-size:13px;color:var(--pen);cursor:pointer;background:none;padding:0 4px;line-height:1.4}
+.blank:hover{background:rgba(23,69,126,.07)}
+.blank.filled{font-family:var(--read);font-size:16.5px;color:var(--ink);border-bottom-color:transparent;min-width:0}
+.blank sup{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:2px}
+.zhbtn{display:block;margin:0 0 18px;background:var(--card);border:1px solid var(--rule);border-top:0;width:100%;text-align:left;padding:8px 26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--pen);cursor:pointer}
+.zhbtn:hover{color:var(--ink)}
+.zhbtn::after{content:' ▾'}
+.zhbtn.on::after{content:' ▴'}
+.zhbox{display:none;background:#F7F9FA;border:1px solid var(--rule);border-top:0;padding:18px 26px;margin:0 0 18px;font-size:15px;line-height:1.95;color:#22323F}
+.zhbox.on{display:block}
+.zhbox p{margin:0 0 .9em}
+.zhbox p:last-child{margin:0}
+
+.q{background:var(--card);border:1px solid var(--rule);margin:14px 0 0;scroll-margin-top:142px}
+.q-top{padding:16px 22px 14px}
+.q-tag{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.q-n{font-family:var(--mono);font-size:13px;font-weight:600}
+.q-kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.prompt{font-size:14.5px;line-height:1.85;color:var(--ink-2);margin:0 0 11px;padding-left:11px;border-left:2px solid var(--rule)}
+.stem{font-family:var(--read);font-size:16.5px;line-height:1.85;margin:0 0 13px;color:#1a2836}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px}
+@media (max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:9px;font-family:var(--read);font-size:15.5px;line-height:1.6;padding:3px 0;color:#243342}
+.opt-k{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);padding-top:2px;flex:none}
+.reveal{display:block;width:100%;text-align:left;margin-top:14px;background:none;border:0;border-top:1px dashed var(--rule);padding:11px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--pen);cursor:pointer}
+.reveal:hover{color:var(--ink)}
+.reveal::after{content:' ▾'}
+.q.open .reveal::after{content:' ▴'}
+.q.open .reveal{color:var(--ink-3)}
+
+.body{display:none;border-top:1px solid var(--rule);background:#F7F9FA;padding:18px 22px 20px}
+.q.open .body{display:block}
+.ans{display:flex;align-items:baseline;gap:10px;margin:0 0 13px;flex-wrap:wrap}
+.ans-k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink-3);flex:none;padding-top:2px}
+.ans-v{font-family:var(--read);font-size:18px;font-weight:600}
+.fills{list-style:none;margin:0 0 13px;padding:0}
+.fill{display:flex;gap:11px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--rule)}
+.fill-k{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);flex:none;width:26px}
+.fill-w{font-family:var(--read);font-size:17px;font-weight:600;flex:none}
+.fill-n{font-size:13.5px;color:var(--ink-2);line-height:1.7}
+.zh{font-size:15px;line-height:1.85;margin:0 0 14px;color:#22323F}
+.why{font-size:14.5px;line-height:1.85;margin:0 0 4px;color:#22323F;border-top:1px solid var(--rule);padding-top:12px}
+.lines{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.line{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:14.5px;line-height:1.75;color:var(--ink-2)}
+.line-k{font-family:var(--mono);font-size:12.5px;flex:none;width:28px;color:var(--ink-3);padding-top:2px}
+.line.right{color:var(--ink)}
+.line.right .line-k{color:var(--ink);font-weight:600}
+.line.right .line-k::after{content:'✓';display:block;font-size:12px;line-height:1.3}
+.line.wrong .line-k{color:var(--miss);opacity:.85}
+.line.wrong .line-k::after{content:'✗';display:block;font-size:12px;line-height:1.3}
+.evid{margin:15px 0 0;font-family:var(--read);font-size:14.5px;line-height:1.8;color:var(--ink-2);padding-left:13px;border-left:2px solid var(--hl)}
+.evid span{font-family:var(--han);font-size:11px;letter-spacing:.14em;color:var(--ink-3);display:block;margin-bottom:3px}
+
+.hl{background-image:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 90%,transparent 90%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size .55s cubic-bezier(.2,.75,.3,1);border-radius:1px}
+.hl.on{background-size:100% 100%}
+
+.sample{margin:15px 0 0;border:1px solid var(--rule);border-left:3px solid var(--ink);background:var(--card);padding:16px 20px}
+.sample p:not(.note-h){font-family:var(--read);font-size:15.5px;line-height:1.9;color:#1a2836;margin:0 0 1em}
+.sample p:last-child{margin-bottom:0}
+.bank.wide{grid-template-columns:1fr}
+.bank.wide .bank-i{font-size:15px;line-height:1.7;padding:10px 14px}
+.note{margin:15px 0 0;border:1px solid var(--rule);background:var(--card);padding:13px 16px}
+.note-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:0 0 9px}
+.note-i{margin:0;padding:9px 0 0;border-top:1px dotted var(--rule)}
+.note-i:first-of-type{border-top:0;padding-top:0}
+.term{font-family:var(--read);font-size:16px;font-weight:600}
+.pos{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin:0 6px}
+.gloss{font-size:14.5px}
+.ex{font-family:var(--read);font-size:14px;color:var(--ink-2);line-height:1.7;margin:3px 0 0;display:block}
+.ex i{font-family:var(--han);font-style:normal;font-size:13px;color:var(--ink-3);display:block}
+
+.side{position:sticky;top:136px;align-self:start;max-height:calc(100vh - 164px);overflow:auto;padding-right:4px}
+@media (max-width:1020px){.side{position:static;max-height:none;scroll-margin-top:136px}}
+.side-h{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 3px}
+.side-t{font-size:16px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.card-list{margin:0;padding:0;list-style:none}
+.card-item{border-bottom:1px solid var(--rule);padding:11px 0}
+.card-item a{display:block;text-decoration:none;color:inherit}
+.card-item a:hover .term{background:var(--hl)}
+.jump{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);float:right;padding-top:5px}
+.side-note{font-size:12.5px;color:var(--ink-3);line-height:1.7;margin:16px 0 0}
+.foot{max-width:var(--maxw);margin:0 auto;padding:0 24px 48px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .top,.side,.reveal,.foot,.zhbtn{display:none!important}
+  .wrap{display:block;max-width:none;padding:0}
+  .q .body{display:block!important}
+  .zhbox{display:block!important}
+  .q{break-inside:avoid;border-color:#999;margin-bottom:9pt}
+  .passage{break-inside:avoid}
+  .hl{background-size:100% 100%!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <p class="eyebrow" id="brand"></p>
+    <h1 class="title" id="examTitle"></h1>
+    <p class="meta" id="examMeta"></p>
+    <nav class="bar" id="nav"></nav>
+  </div>
+</header>
+
+<div class="wrap"><main id="main"></main><aside class="side" id="side"></aside></div>
+<p class="foot" id="foot"></p>
+
+<script>
+/* ==========================================================================
+   ①  題目與詳解全部寫在下面的 EXAM 物件裡。要改題、加題、修字，只動這裡。
+
+   section（大題）：{ id, label, score, instruction, bank?, groups: [...] }
+   group（同一篇文章的題組）：{ passage?, zh?, questions: [...] }
+       passage 裡寫 __7__ 就會變成可點的空格，數字對應題號。
+       zh 是全文中譯，會做成可展開的按鈕。
+
+   question 依題型三選一：
+     選擇題   { n, kind, stem, options:{A..D}, answer:"B", translation, explain:{A..D}, evidence?, notes? }
+     單一填答 { n, kind, stem, answerText:"prejudice", why, notes? }
+     多格填答 { n, kind, prompt, stem, answers:[{k:"①", w:"字", note:"說明"}], notes? }
+   ========================================================================== */
+const EXAM = {
+  brand: "片語書小考",
+  title: "片語書進階篇小考 詳解｜Unit 11~15",
+  meta: "Instructor: Howard Chang　·　範圍：片語書進階篇 Unit 11~15",
+  footer: "KGHS 片語書(進階篇)【Unit 11~15】小考",
+  sections: [
+  {
+    id:"mc", label:"Multiple Choice", score:"第 1-40 題（80%，每題 2%）",
+    groups:[{
+      questions:[
+        { n:1, kind:"片語動詞（因果方向）",
+          stem:"According to a recent police report, most traffic accidents in the city __________ driver carelessness rather than mechanical failure or bad weather.",
+          options:{A:"result in 造成、導致（後面接結果）",B:"die from 死於（外力、意外）",C:"make believe 假裝",D:"result from 起因於、源自（後面接原因）"}, answer:"D",
+          translation:"根據最近一份警方報告，市區大多數的交通事故起因於駕駛人的疏忽，而不是機械故障或天候不佳。",
+          explain:{D:"✔ 本題考因果方向。主詞是 most traffic accidents（交通事故，也就是結果），空格後面的 driver carelessness（駕駛疏忽）是原因，所以要用「結果 result from 原因」的 result from。句尾的 rather than mechanical failure or bad weather（而不是機械故障或天候）也再次確認空格後面列的都是「原因」。",A:"✘ result in 的方向正好相反，它是「原因 result in 結果」（Carelessness results in accidents.）；照這個選項讀下來會變成「事故造成了駕駛疏忽」，因果顛倒。這是本題唯一的考點。",B:"✘ die from 是「死於」，主詞必須是人或動物；交通事故本身不會死亡，而且後面接的疏忽也不是死因的敘述方式。",C:"✘ make believe 是「假裝」（The children made believe they were pirates.），與因果關係完全無關。"},
+          notes:[{term:"result from / result in", pos:"辨析", gloss:"result from 起因於（結果 + result from + 原因：The delay resulted from heavy rain.）／result in 造成（原因 + result in + 結果：Heavy rain resulted in the delay.）。同一個動詞靠介系詞決定方向，是最常見的考點。等義寫法：A results from B＝B results in A＝B leads to A。", ex:"Most of the damage resulted from the flooding, not the wind.", exZh:"大部分的損害起因於洪水，而不是強風。"},{term:"表「導致」的家族", pos:"整理", gloss:"result in／lead to／bring about／give rise to（本卷第 2 題的答案）／contribute to（部分促成，語氣較弱）／account for（解釋、佔比例）。片語書 Unit 06~10 把 result in 與 lead to 一起放在誘答位置，整理時可以兩卷並看。"},{term:"rather than", pos:"片語", gloss:"而不是（driver carelessness rather than mechanical failure）。前後要對等，此處兩邊都是名詞片語。相關：carelessness 疏忽（adj. careless）／mechanical failure 機械故障。"}]},
+
+        { n:2, kind:"片語（固定搭配）",
+          stem:"The false rumor that the bank was about to collapse __________ widespread panic, and thousands of customers rushed to withdraw their savings.",
+          options:{A:"turned over to 移交給；翻轉到",B:"hung on to 緊抓著不放",C:"gave rise to 引起、導致",D:"went round to 繞道去；順道拜訪"}, answer:"C",
+          translation:"銀行即將倒閉的假消息引起了大規模的恐慌，數千名客戶衝去提領他們的存款。",
+          explain:{C:"✔ 主詞是 The false rumor（假消息，原因），受詞是 widespread panic（大規模恐慌，結果），而後半句 thousands of customers rushed to withdraw their savings（數千人衝去提款）說明恐慌確實發生了。give rise to 正是「引起、導致」，受詞通常是抽象的負面結果。",A:"✘ turned over to 是「移交給」（turn the suspect over to the police），受詞是被移交的人或物、to 後面是接收方；謠言不會把恐慌「移交」給誰。",B:"✘ hung on to 是「緊抓不放」，主詞須是能握住東西的人（hang on to the railing／to one's job）；而且謠言抓著恐慌不放語意不成立。",D:"✘ went round to 是「繞道去、順道拜訪」，後面接地點或人；與引發恐慌無關。"},
+          notes:[{term:"give rise to", pos:"片語", gloss:"引起、導致（give rise to panic／speculation／concern／a new industry）。受詞多為抽象名詞，尤其是負面結果，語氣比 cause 正式。注意 rise 是名詞，不要寫成 give raise to。", ex:"The vague wording gave rise to endless disputes.", exZh:"含糊的用字引起了無止盡的爭議。"},{term:"be about to V", pos:"句型", gloss:"即將（the bank was about to collapse）。表最近的未來，不與明確的時間副詞連用（不說 be about to leave tomorrow）。相關：on the verge of V-ing／on the point of V-ing。"},{term:"withdraw", pos:"v.", gloss:"① 提領（withdraw savings／money from an account）② 撤回、退出（withdraw a statement／withdraw from a race）。三態 withdraw-withdrew-withdrawn；n. withdrawal 提款、撤回。對照本卷第 15 題的 draw back（退縮）。"}]},
+
+        { n:3, kind:"片語動詞（過去式）",
+          stem:"The moment Julia saw the old cottage with its exotic garden, she __________ it and decided to buy it despite the high price.",
+          options:{A:"fell for 一見就喜歡上、傾心於；受騙上當",B:"turned over 翻轉；移交；（引擎）運轉",C:"wore down 磨損；使疲憊、逐步瓦解",D:"recovered from 從…康復、復原"}, answer:"A",
+          translation:"Julia 一看到那間有著異國風情花園的老農舍，就立刻愛上了它，即使價格高昂也決定要買。",
+          explain:{A:"✔ The moment Julia saw…（她一看到就…）加上 decided to buy it despite the high price（不顧高價決定買下），說明她是瞬間被吸引、愛上這間房子，fall for sth 正是「一見就喜歡上」。",B:"✘ turned over 是「翻轉、移交」，受詞是物品或職務；把房子翻過來語意荒謬。",C:"✘ wore down 是「磨損、使疲憊」，若說她把房子磨損了，與接著要買下它的行為矛盾。",D:"✘ recovered from 是「從…康復」，後面接疾病、打擊或損失（本卷第 20 題考的 get over 正是此義）；房子不是需要康復的對象。"},
+          notes:[{term:"fall for", pos:"片語動詞", gloss:"① 一見就喜歡上、傾心於（fall for a house／fall for sb at first sight）② 受騙上當（fall for a scam／fall for it）。兩個意思差別很大，靠受詞判斷：受詞是人或美好的事物就是「愛上」，受詞是謊言、騙局就是「上當」。本卷第 6 題把 fall for 放在誘答位置。", ex:"Don't fall for those emails promising easy money.", exZh:"不要上那些保證輕鬆賺錢的電子郵件的當。"},{term:"The moment + 子句", pos:"句型", gloss:"一…就…（The moment she saw it, she fell for it.）。同類連接詞：the instant／the minute／as soon as／no sooner…than／hardly…when。注意 the moment 後面直接接子句，不加 when。", ex:"The moment the bell rang, the students dashed out.", exZh:"鐘聲一響，學生們就衝了出去。"},{term:"exotic", pos:"adj.", gloss:"異國風情的、外來罕見的（an exotic garden／exotic birds／exotic flavors）。相關：cottage 小屋、農舍／despite 儘管（介系詞，後接名詞，不可接子句）。片語書 Unit 06~10 (310) 第 35 題的題幹也用過 exotic。"}]},
+
+        { n:4, kind:"片語（履行承諾）",
+          stem:"During the campaign, the mayor vowed to __________ his promise to build affordable housing, but four years later, not a single project had been completed.",
+          options:{A:"play a trick on 對…惡作劇、開玩笑",B:"wait on 服侍、伺候（用餐）",C:"let on 洩漏、說出（祕密）",D:"make good on 履行、兌現（承諾）"}, answer:"D",
+          translation:"在競選期間，市長誓言要兌現他興建平價住宅的承諾，但四年後，連一個案子都沒有完成。",
+          explain:{D:"✔ 受詞是 his promise（他的承諾），而 vowed to（誓言要）說明這是他宣示要做到的事，make good on one's promise 正是「兌現承諾」的固定搭配。句尾的 but four years later, not a single project had been completed（但四年後一個案子都沒完成）用轉折點出他並未做到，更確認空格是「兌現」之義。",A:"✘ play a trick on 是「惡作劇」，後面接被開玩笑的人（play a trick on his sister），不能接 promise。",B:"✘ wait on 是「服侍、伺候」，受詞是人（wait on customers）；承諾不是伺候的對象。",C:"✘ let on 是「洩漏祕密」（本卷第 23 題的答案），語意是把不該說的說出來，與履行承諾無關。"},
+          notes:[{term:"make good on", pos:"片語", gloss:"履行、兌現（make good on a promise／a pledge／a threat／a debt）。也可說 make good one's promise（不加 on）。同義：keep／fulfill／honor a promise；反義：go back on one's word 違背承諾／break a promise。", ex:"The company finally made good on its pledge to raise wages.", exZh:"公司終於兌現了加薪的承諾。"},{term:"vow to V", pos:"v.", gloss:"誓言、發誓要（vow to fight on／vow that…）；n. 誓言（take a vow／marriage vows）。同義：pledge／swear／promise。"},{term:"affordable", pos:"adj.", gloss:"負擔得起的（affordable housing 平價住宅／affordable prices）。v. afford 負擔得起（can't afford a taxi；本卷的 afford 概念與片語書 Unit 06~10 (310) 第 5 題的題幹相同）。相關：campaign 競選活動／not a single + 單數名詞（連一個都沒有，加強語氣）。"}]},
+
+        { n:5, kind:"被動語態（介系詞搭配）",
+          stem:"The former manager was __________ of stealing confidential documents and selling them to a rival company for a large sum of money.",
+          options:{A:"charged 被指控（但須搭配 with）",B:"accused 被指控（搭配 of）",C:"associated 有關聯（搭配 with）",D:"transformed 被改變、轉變（搭配 into）"}, answer:"B",
+          translation:"這位前任經理被指控竊取機密文件，並以一大筆錢把它們賣給了競爭對手公司。",
+          explain:{B:"✔ 本題考介系詞搭配。空格後面是 of，而「指控某人某罪」有兩種寫法：accuse sb of sth 與 charge sb with sth。既然題目已經給了 of，就只能選 accused。語意上 stealing confidential documents（竊取機密文件）確實是被指控的罪名。",A:"✘ charged 意思完全正確，但它的固定介系詞是 with（be charged with theft），不能接 of。這組 of 與 with 的分工正是本題唯一的考點，也是最容易被選錯的選項。",C:"✘ associated 的介系詞是 with（be associated with sth 與…有關聯），而且語意只是「有關聯」，遠不及「被指控」來得明確。本卷第 38 題把 associated with 放在誘答位置。",D:"✘ transformed 的介系詞是 into（be transformed into sth 被轉變成），語意是形態改變，與指控無關。"},
+          notes:[{term:"accuse sb of / charge sb with", pos:"辨析", gloss:"accuse sb of (doing) sth 指控某人（of 後接名詞或動名詞）／charge sb with sth 控告某人（較正式，常用於法律程序）。被動：be accused of／be charged with。同組還有 blame sb for sth 責怪／suspect sb of sth 懷疑／convict sb of sth 判某人有罪。集訓五的題目也出現過 be accused of 的用法。", ex:"Two officials were accused of accepting bribes.", exZh:"兩名官員被指控收受賄賂。"},{term:"介系詞固定搭配整理", pos:"整理", gloss:"of：accuse sb of／suspect sb of／deprive sb of／rob sb of／remind sb of／convict sb of。with：charge sb with／provide sb with／present sb with／trust sb with。for：blame sb for／punish sb for／praise sb for／thank sb for。這組是選擇題最常用來設陷阱的區塊。"},{term:"confidential", pos:"adj.", gloss:"機密的（confidential documents／keep sth confidential）。n. confidentiality 保密。相關：rival 競爭對手（a rival company）／a large sum of money 一大筆錢／former 前任的（反義 latter 後者、current 現任的）。"}]},
+
+        { n:6, kind:"片語動詞（主修）",
+          stem:"Fascinated by how genes shape our health, Amy decided to __________ biology at college and later conducted research on rare genetic disorders.",
+          options:{A:"see into 調查、看透；看進…裡面",B:"major in 主修",C:"give in 屈服、讓步；繳交",D:"fall for 愛上；受騙上當"}, answer:"B",
+          translation:"Amy 對基因如何影響我們的健康深感著迷，於是決定在大學主修生物學，後來還研究了罕見的遺傳疾病。",
+          explain:{B:"✔ 受詞是 biology（生物學）、地點是 at college（在大學），這個組合只能是「主修」，major in 正是此義。前面的 Fascinated by how genes shape our health（對基因如何影響健康著迷）說明了她選擇這個領域的原因。",A:"✘ see into 是「調查、看透」（see into the matter），受詞是事情或人心，不能接一個學科表示主修。",C:"✘ give in 是「屈服、讓步」，不及物（give in to pressure），後面不能直接接 biology。",D:"✘ fall for 是「愛上」或「受騙」（本卷第 3 題的答案），即使勉強理解成「愛上生物學」，也無法表達「主修」這個在大學選定專業的具體行為，而且與 at college 搭配不自然。"},
+          notes:[{term:"major in", pos:"片語動詞", gloss:"主修（major in biology／major in English literature）；n. major 主修科目、主修生（She's a biology major.）。對照 minor in 副修（minor in Japanese）。注意中文說「主修生物」，英文的 in 不可省略。", ex:"She majored in economics but now works as a translator.", exZh:"她主修經濟學，但現在從事翻譯工作。"},{term:"Fascinated by…, S + V", pos:"句型", gloss:"過去分詞開頭的分詞構句（Fascinated by…, Amy decided…＝Because she was fascinated by…）。因為主詞 Amy 是「被吸引」的，所以用過去分詞；若用 Fascinating 就會變成她本身很迷人。同類：Exhausted by the hike, we fell asleep at once.", ex:"Fascinated by the fossils, the boy visited the museum every week.", exZh:"那男孩對化石深感著迷，每週都去博物館。"},{term:"gene / genetic", pos:"n. / adj.", gloss:"gene 基因／genetic 基因的、遺傳的（genetic disorders 遺傳疾病／genetic engineering 基因工程）。相關：conduct research on sth 針對…進行研究／rare 罕見的／shape 塑造、影響（v.）。"}]},
+
+        { n:7, kind:"片語動詞（求助）",
+          stem:"When her small bakery ran into serious financial trouble, Rita __________ her former professor, a highly competent economist, for advice on cutting costs.",
+          options:{A:"handed in 繳交（作業、辭呈）",B:"turned to 求助於、轉向…尋求",C:"spoke of 談到、提及",D:"made believe 假裝"}, answer:"B",
+          translation:"當 Rita 的小烘焙坊陷入嚴重的財務困境時，她求助於她以前的教授，一位非常有能力的經濟學家，想請教削減成本的建議。",
+          explain:{B:"✔ 決定性線索是句尾的 for advice on cutting costs（為了取得削減成本的建議），turn to sb for sth 正是「向某人求助、尋求某物」的固定搭配；前面 ran into serious financial trouble（陷入財務困境）也說明她需要幫助。",A:"✘ handed in 是「繳交」，受詞是作業、報告或辭呈（hand in an assignment）；人不能被「繳交」。",C:"✘ spoke of 是「談到」，但它無法與 for advice 搭配，而且語意只是提到某人，沒有求助的意思。",D:"✘ made believe 是「假裝」，後面接子句（made believe she was fine），與求助完全無關。"},
+          notes:[{term:"turn to sb (for sth)", pos:"片語動詞", gloss:"求助於、轉向…尋求（turn to a friend for help／turn to the Internet for answers／have nowhere to turn 無處可求助）。片語書 Unit 01~05 (310) 第 1 題的題幹用的正是 not know whom to turn to（不知該找誰求助），可以兩題並看。", ex:"With no family nearby, she turned to her neighbors for support.", exZh:"身邊沒有家人，她只好向鄰居尋求支援。"},{term:"run into", pos:"片語動詞", gloss:"① 遇到（困難、麻煩）（run into trouble／difficulties／debt）② 偶然遇見某人（I ran into an old classmate.）③ 撞上（run into a tree）。同義（遇到困難）：encounter／come up against。", ex:"The project ran into unexpected delays.", exZh:"這個案子遇到了意料之外的延誤。"},{term:"competent", pos:"adj.", gloss:"有能力的、勝任的（a highly competent economist／be competent at sth）。n. competence 能力；反義 incompetent 不勝任的。相關：cut costs 削減成本／bakery 烘焙坊。片語書 Unit 06~10 (310) 第 2 題也用過 competent。"}]},
+
+        { n:8, kind:"片語動詞（第三人稱單數）",
+          stem:"With her curly hair and quick temper, Lily really __________ her grandmother, who was known throughout the village for her outspoken personality.",
+          options:{A:"tells apart 分辨、區別",B:"hangs out 閒晃、混在一起",C:"goes round with 與…來往、交往",D:"takes after （長相、性格）像（某位長輩）"}, answer:"D",
+          translation:"Lily 一頭捲髮又脾氣急躁，真的很像她的祖母，她祖母以直言不諱的個性在村裡人人皆知。",
+          explain:{D:"✔ 句首 With her curly hair and quick temper（捲髮加上急脾氣）列出外貌與性格兩項特徵，而關係子句又說祖母以 outspoken personality（直言不諱）聞名，整句在比較孫女與祖母的相似。take after 正是「（天生）像某位長輩」，受詞必須是親屬。",A:"✘ tells apart 是「分辨」，受詞通常是兩個以上容易混淆的對象（tell the twins apart）；只接一個人語意不完整，而且方向相反（分辨差異而非相似）。",B:"✘ hangs out 是「閒晃、混在一起」，描述一起打發時間（hang out with friends），與長相性格的遺傳無關，而且後面需要 with。",C:"✘ goes round with 是「與…來往、交往」，同樣是描述社交關係而不是相似度。本卷第 35 題也把 go around with 放在誘答位置。"},
+          notes:[{term:"take after", pos:"片語動詞", gloss:"（天生）像某位長輩，用於長相或性格（She takes after her mother.）。注意：take after 只用於血親的先天相似，不可用於朋友或後天模仿。對照 resemble（及物，不加介系詞：She resembles her mother.）／look like（外表像）／follow in sb's footsteps（效法、走上同樣的路，後天選擇）。片語書 Unit 06~10 的「take 家族」整理把 take after 與本卷第 12 題的 take over 放在一起，可以合併複習。", ex:"Tim takes after his father in both looks and temper.", exZh:"Tim 的長相和脾氣都像他父親。"},{term:"outspoken", pos:"adj.", gloss:"直言不諱的（an outspoken critic／be outspoken about sth）。相關：quick temper 急脾氣（have a short temper／lose one's temper 發脾氣）／curly hair 捲髮／throughout the village 整個村子裡。"},{term:"be known for / as / to", pos:"辨析", gloss:"be known for sth 以某特質聞名（known for her outspoken personality）／be known as sth 以某身分為人所知（known as a reformer）／be known to sb 為某人所知（known to the police）。本卷第 38 題考的 be referred to as 與 be known as 同屬「被稱為」的家族。"}]},
+
+        { n:9, kind:"片語動詞（過去式）",
+          stem:"Having skipped breakfast and stood under the burning sun for hours, the soldier suddenly __________ during the ceremony and had to be revived by medics.",
+          options:{A:"passed out 昏倒、失去意識",B:"passed away 去世、過世",C:"died away （聲音、光線）逐漸消失",D:"held on 堅持下去；（電話）稍等不掛"}, answer:"A",
+          translation:"這名士兵沒吃早餐又在烈日下站了好幾個小時，在典禮進行中突然昏倒，必須由醫護人員急救甦醒。",
+          explain:{A:"✔ 前面的分詞構句 Having skipped breakfast and stood under the burning sun for hours（空腹又在烈日下久站）正是昏倒的典型原因，而句尾 had to be revived by medics（必須由醫護人員施救甦醒）說明他只是失去意識，pass out 正是「昏倒」。",B:"✘ passed away 是「去世」的委婉說法，與句尾 revived（被救醒）直接矛盾，人去世了就不會被救醒。這組 out 與 away 的差別正是本題的考點。",C:"✘ died away 的主詞是聲音、光線或風（The music died away.），不能用於人失去意識。",D:"✘ held on 是「堅持下去」，語意與 suddenly（突然）不搭，而且若他撐住了就不需要急救。"},
+          notes:[{term:"pass out / pass away", pos:"辨析", gloss:"pass out 昏倒、失去意識（＝faint；也作「分發」：pass out flyers）／pass away 去世（委婉說法，＝die）。兩者只差一個介副詞，意思卻是「暫時失去意識」與「永久離世」的差別。同組還有 pass down 傳承（本卷第 30 題的 hand down 同義）／pass on 傳遞、轉達／pass by 經過。ED 雜誌 Nov. Week 3 也出現過 pass away。", ex:"He passed out from heat exhaustion but came to within minutes.", exZh:"他因中暑昏倒，但幾分鐘內就恢復了意識。"},{term:"Having + p.p., S + V", pos:"句型", gloss:"完成式分詞構句，表示比主要動詞更早發生（Having skipped breakfast…, the soldier passed out＝Because he had skipped breakfast…）。注意此處 Having skipped breakfast and stood…是兩個動作共用 Having。", ex:"Having finished the report, she finally went to bed.", exZh:"把報告寫完之後，她終於去睡了。"},{term:"revive", pos:"v.", gloss:"① 使甦醒、急救（revive a patient）② 復甦、重振（revive the economy／revive an old tradition）。n. revival 復興。相關：medic 醫護人員／burning sun 烈日／skip a meal 不吃一餐。"}]},
+
+        { n:10, kind:"片語動詞（受詞順序）",
+          stem:"Our coach repeatedly __________ us the importance of warming up before practice, since cold, stiff muscles are far more vulnerable to injury.",
+          options:{A:"impressed on 使（某人）深刻了解、再三告誡",B:"hung on 緊抓著；稍等",C:"passed on 傳遞、轉達；傳給下一代",D:"hooked on 使著迷（須用被動 be hooked on）"}, answer:"A",
+          translation:"我們的教練再三告誡我們練習前熱身的重要性，因為肌肉在冰冷僵硬的狀態下受傷的風險高得多。",
+          explain:{A:"✔ 本題考句型。impress sth on sb（使某人深刻了解某事）的受詞順序可以倒裝成 impress on sb sth，本句正是 impressed on us the importance of warming up。語意上 repeatedly（再三）與 since cold, stiff muscles are far more vulnerable to injury（因為僵硬的肌肉更容易受傷）都說明教練在強調觀念的重要性。",B:"✘ hung on 是「緊抓著、稍等」，不及物（hang on to sth 才及物），無法接 us the importance 這樣的雙受詞結構。",C:"✘ passed on 雖然可以說 pass on information to sb，但介系詞是 to 而不是 on，寫成 passed on us 文法不成立。",D:"✘ hooked on 必須用被動 be hooked on sth（著迷於，本卷第 19 題的答案）；主動寫成 hooked on us 文法與語意都不通。"},
+          notes:[{term:"impress sth on sb", pos:"片語動詞", gloss:"使某人深刻了解、牢牢記住（impress the importance of safety on the workers＝impress on the workers the importance of safety）。當受詞很長時，英文習慣把 on sb 提前，本題考的就是這個順序。對照 be impressed by／with sth 對…印象深刻（主詞是人）；n. impression 印象（make an impression on sb）。", ex:"My mother impressed on me the value of keeping my word.", exZh:"母親讓我深深記住守信的價值。"},{term:"be vulnerable to", pos:"片語", gloss:"易受…傷害、對…脆弱（be vulnerable to injury／to criticism／to attack）。n. vulnerability。同義：be susceptible to／be prone to（容易發生某事）。", ex:"Young seedlings are especially vulnerable to frost.", exZh:"幼苗特別容易受霜害。"},{term:"warm up", pos:"片語動詞", gloss:"① 熱身（warm up before practice）② 加熱（warm up the leftovers）③ 氣氛熱絡起來（The crowd warmed up.）。n. warm-up 熱身運動。相關：stiff 僵硬的／far more + 比較級（程度加強：far more vulnerable）。"}]},
+
+        { n:11, kind:"片語動詞（勿靠近）",
+          stem:"Signs posted around the newly planted lawn explicitly warn visitors to __________ the grass until the seedlings have developed strong roots.",
+          options:{A:"keep up 維持、保持；跟上（須接 with）",B:"wipe off 擦掉、抹去",C:"keep off 遠離、勿踐踏",D:"rub off 擦掉；（特質）感染給他人"}, answer:"C",
+          translation:"新種草坪四周張貼的告示明確警告遊客勿踐踏草地，直到幼苗長出強韌的根為止。",
+          explain:{C:"✔ warn visitors to…（警告遊客要…）加上 until the seedlings have developed strong roots（直到幼苗長出強韌的根），說明告示的目的是要人不要踩草地，keep off the grass 正是公園告示牌上最標準的用語（勿踐踏草坪）。",A:"✘ keep up 是「維持」或「跟上」，當「跟上」時必須接 with（keep up with the class）；而且叫遊客「維持草地」與幼苗需要時間生根的理由接不上。本卷第 39 題把 keep up 放在誘答位置，考的正是少了 with 的問題。",B:"✘ wipe off 是「擦掉」，受詞是表面上的汙漬或水（wipe off the dust）；草地不是用擦的。",D:"✘ rub off 是「擦掉」或「（特質）感染給別人」（His enthusiasm rubbed off on me.），同樣與遠離草地無關。本卷第 40 題也把 rub off 放在誘答位置。"},
+          notes:[{term:"keep off", pos:"片語動詞", gloss:"遠離、勿踐踏、不碰（Keep off the grass!／keep off fatty foods 不吃油膩食物／keep sb off sth 讓某人遠離）。對照 keep out 不准進入（Keep out!）／keep away from sth 遠離／keep to sth 遵守、不偏離（keep to the path）。", ex:"The doctor told him to keep off alcohol for a month.", exZh:"醫生叫他一個月內不要碰酒。"},{term:"keep 家族", pos:"整理", gloss:"keep off 遠離／keep up 維持（keep up appearances 維持體面）／keep up with 跟上（本卷第 39 題的誘答）／keep on V-ing 繼續／keep sth in mind 記住／keep an eye on 留意／keep one's word 守信。"},{term:"explicitly", pos:"adv.", gloss:"明確地（explicitly warn／explicitly state）；adj. explicit 明確的、露骨的。反義 implicit 含蓄的、隱含的。相關：lawn 草坪／seedling 幼苗／develop roots 長出根。單字書 10-2~11 (310) 與片語書 Unit 06~10 的題幹都用過 explicit 系列。"}]},
+
+        { n:12, kind:"片語動詞（過去式）",
+          stem:"After the founder retired, his daughter __________ the family business and gradually expanded it into a nationwide retail chain.",
+          options:{A:"tore down 拆除（建築）",B:"brought on 引起、招致（疾病、問題）",C:"died off 相繼死去、逐漸絕跡",D:"took over 接管、接手"}, answer:"D",
+          translation:"創辦人退休之後，他的女兒接管了家族事業，並逐步把它擴展成全國性的零售連鎖店。",
+          explain:{D:"✔ After the founder retired（創辦人退休後）說明經營權要轉移，而後半句 gradually expanded it into a nationwide retail chain（逐步擴展成全國連鎖）說明女兒接手後把它經營得更大。take over 正是「接管」，受詞是公司、職位或責任。",A:"✘ tore down 是「拆除」，受詞是建築物（tear down the old factory）；把家族事業拆掉與後面「擴展成全國連鎖」完全矛盾。本卷第 13 題也把 tear down 放在誘答位置。",B:"✘ brought on 是「引起」，受詞是疾病或問題（bring on a headache）；事業不是被「招致」的對象。",C:"✘ died off 是「相繼死去、逐漸絕跡」，不及物，主詞通常是族群或物種，後面不能接受詞。本卷第 28 題也把 die off 放在誘答位置。"},
+          notes:[{term:"take over", pos:"片語動詞", gloss:"接管、接手（take over the business／take over from sb 接替某人；n. takeover 併購、接管）。對照 take on 承擔、僱用（take on more work／take on new staff）／take up 開始從事、佔據（本卷第 31 題的答案）／take after 像長輩（本卷第 8 題的答案）。片語書 Unit 06~10 的「take 家族」整理已列出這一組，本卷同時考了其中三個。", ex:"When the manager fell ill, her deputy took over.", exZh:"經理生病時，她的副手接手了工作。"},{term:"expand sth into sth", pos:"片語", gloss:"把…擴展成（expand a shop into a chain）。n. expansion 擴張；adj. expansive 廣闊的。相關：founder 創辦人／retail chain 零售連鎖／nationwide 全國性的。"},{term:"tear down", pos:"片語動詞", gloss:"拆除（tear down a wall／a building）；三態 tear-tore-torn。對照 tear up 撕碎（tear up the letter）／tear apart 使分裂、拆散／be torn between A and B 在兩者之間難以取捨。本卷第 13 題再次用它當誘答。"}]},
+
+        { n:13, kind:"片語動詞（及物與不及物）",
+          stem:"Within just a few years, a deadly virus brought by visitors nearly __________ the island's native bird population.",
+          options:{A:"died out 絕種、消失（不及物）",B:"wiped out 徹底消滅、殲滅（及物）",C:"died down （風、聲音、情緒）平息減弱",D:"tore down 拆除（建築）"}, answer:"B",
+          translation:"在短短幾年之內，遊客帶來的一種致命病毒幾乎徹底消滅了這座島上原生的鳥類族群。",
+          explain:{B:"✔ 本題考及物與不及物。空格後面有受詞 the island's native bird population（島上原生鳥類族群），而主詞是 a deadly virus（致命病毒，施加動作的一方），所以必須用及物的 wipe out（消滅）。",A:"✘ died out 意思雖是「絕種」，但它是不及物片語動詞，後面不能接受詞（只能說 The species died out.）。若要表達病毒使鳥類絕種，就必須換成及物的 wipe out。這組及物與不及物的分工正是本題唯一的考點。",C:"✘ died down 是「平息、減弱」，主詞是風、聲音或情緒（The applause died down.），不及物，而且語意是變弱而非消滅。本卷第 28 題也把 die down 的同族字放在誘答位置。",D:"✘ tore down 是「拆除」，受詞是建築物；鳥類族群不是被拆掉的對象。"},
+          notes:[{term:"wipe out / die out", pos:"辨析", gloss:"wipe out 及物：徹底消滅、殲滅（wipe out a species／wipe out one's savings 把存款耗盡；也作「使筋疲力盡」：be wiped out）／die out 不及物：絕種、（習俗）消失（The custom has died out.）。中文都翻成「滅絕」，差別在後面能不能接受詞。片語書 Unit 01~05 兩個班的第 5 題題幹都用過 wiped out，ED 雜誌 Nov. Week 3 的題幹也用過 wipe out years of progress。", ex:"A single outbreak wiped out half the colony.", exZh:"一次疫情就消滅了這個群落的一半。"},{term:"die 家族", pos:"整理", gloss:"die out 絕種、消失／die down 平息減弱（風、聲音、爭議）／die away （聲音、光線）漸漸消失（本卷第 9、15 題的誘答）／die off 相繼死去（本卷第 12、28 題的誘答）／die from／of 死於／be dying to V 渴望做。本卷把這一家族幾乎考遍，值得整組一起背。"},{term:"native", pos:"adj.", gloss:"原生的、本地的（native species／native bird population／one's native language 母語）。相關：deadly 致命的／population 族群、人口／within just a few years 短短幾年內。"}]},
+
+        { n:14, kind:"片語動詞（突出）",
+          stem:"Among hundreds of applications submitted by students with similar grades, Patricia's application __________ because of the striking originality of her personal essay.",
+          options:{A:"split off 分裂出去、脫離",B:"fell behind 落後、進度落後",C:"felt left out 覺得被排擠、被冷落",D:"stood out 突出、顯眼"}, answer:"D",
+          translation:"在數百份成績相近的學生申請書當中，Patricia 的申請因為自傳驚人的原創性而格外突出。",
+          explain:{D:"✔ Among hundreds of applications…with similar grades（在數百份成績相近的申請書中）設定了一個彼此難分高下的背景，而 because of the striking originality（因為驚人的原創性）是正面的原因，所以她的申請是「脫穎而出」，stand out 正是此義。",A:"✘ split off 是「分裂出去、脫離」，主詞通常是團體或碎片（A faction split off from the party.）；申請書不會脫離什麼。",B:"✘ fell behind 是「落後」，方向與 striking originality（驚人的原創性）這個正面原因相反。本卷第 37、39 題也用到 fall behind 與 lag behind，可以一起比較。",C:"✘ felt left out 是「覺得被冷落」，主詞必須是有感覺的人；一份申請書不會有感受，而且語意同樣是負面的。"},
+          notes:[{term:"stand out", pos:"片語動詞", gloss:"突出、顯眼（stand out from the crowd／stand out in a field；adj. outstanding 傑出的）。常見搭配：stand out as the best candidate。對照本卷第 35 題的 stand up against 挺身對抗／stand by 支持、待命／stand for 代表、容忍／stand up to 抵抗、經得起。", ex:"Her handwriting stood out among all the entries.", exZh:"她的字跡在所有參賽作品中格外顯眼。"},{term:"striking", pos:"adj.", gloss:"驚人的、引人注目的（a striking resemblance／striking originality）。v. strike 打擊、使印象深刻（It strikes me that…）。相關：originality 原創性（adj. original）／personal essay 自傳、個人申述。"},{term:"submit", pos:"v.", gloss:"① 提交（submit an application／a report）② 屈服（submit to pressure）。n. submission。此處 submitted by students 是過去分詞片語，後位修飾 applications。"}]},
+
+        { n:15, kind:"片語動詞（退縮）",
+          stem:"When the investors learned of the company's enormous deficit, several of them decided to __________ from signing the contract, fearing that they might suffer substantial losses.",
+          options:{A:"hang on 緊抓著不放；稍等不掛電話",B:"die away （聲音、光線）逐漸消失",C:"draw back 退縮、打退堂鼓",D:"wait on 服侍、伺候"}, answer:"C",
+          translation:"當投資人得知這家公司巨額的虧損時，其中好幾位決定打退堂鼓不簽約，因為擔心自己可能遭受重大損失。",
+          explain:{C:"✔ 兩個線索鎖定答案。語意上 enormous deficit（巨額虧損）與 fearing that they might suffer substantial losses（擔心重大損失）說明他們臨陣退縮；結構上空格後面是 from signing，而 draw back from V-ing 正是「從…退縮、不再參與」的固定搭配。",A:"✘ hang on 的語意正好相反，是「堅持、抓住不放」；而且它不搭配 from。",B:"✘ die away 的主詞是聲音或光線，不能用於人改變決定，而且也無法接 from。",D:"✘ wait on 是「服侍」，受詞是人（wait on guests），介系詞用法與 from 不合，語意也與退出簽約無關。本卷第 4 題也把 wait on 放在誘答位置。"},
+          notes:[{term:"draw back (from)", pos:"片語動詞", gloss:"退縮、打退堂鼓（draw back from a deal／draw back in horror 驚恐退開）；n. drawback 缺點、不利之處（The main drawback is the cost.）。同義：back out (of)／pull out (of)／withdraw from（本卷第 2 題的 withdraw 可以並看）。", ex:"At the last minute the buyer drew back from the purchase.", exZh:"買方在最後一刻打退堂鼓，沒有買下。"},{term:"draw 家族", pos:"整理", gloss:"draw back 退縮／draw up 草擬（draw up a contract）、（車）停下／draw on 利用、憑藉（draw on experience）／draw up a list 列出清單／draw a conclusion 下結論／draw attention to 使人注意。"},{term:"deficit", pos:"n.", gloss:"赤字、虧損（a huge deficit／a trade deficit 貿易逆差）。反義 surplus 盈餘。相關：enormous 巨大的／substantial 可觀的、大量的／suffer losses 遭受損失／learn of sth 得知。片語書 Unit 06~10 (310) 第 3 題的題幹也用過 mounting debts 這類財務用語。"}]},
+
+        { n:16, kind:"片語動詞（追捕）",
+          stem:"After a three-day manhunt, the police finally __________ the escaped prisoner in a barren valley about fifty kilometers from the jail.",
+          options:{A:"took apart 拆解；徹底駁倒",B:"ran down 追捕到、追查到",C:"gave forth 發出（聲音、氣味）",D:"split into 分裂成、分成"}, answer:"B",
+          translation:"經過三天的搜捕，警方終於在距離監獄約五十公里的一處荒谷裡追捕到了那名逃犯。",
+          explain:{B:"✔ After a three-day manhunt（經過三天搜捕）加上受詞 the escaped prisoner（逃犯）與地點 in a barren valley（在荒谷裡），整句描述的是搜索後終於找到人。run down 在此正是「追捕到、追查到」。",A:"✘ took apart 是「拆解」（take apart a machine）或「徹底駁倒（論點）」，受詞是機器或說法，不能用於抓到一個人。本卷第 17 題也把 take apart 放在誘答位置。",C:"✘ gave forth 是「發出」，受詞是聲音或氣味（give forth a strange smell），與抓到逃犯無關。本卷第 34 題考的 give off 與它同義。",D:"✘ split into 是「分裂成」，後面接分成的數量或部分（split into three groups）；逃犯不是被分割的對象。"},
+          notes:[{term:"run down", pos:"片語動詞", gloss:"① 追捕到、追查到（run down a suspect／run down the source of a leak）② 撞倒（be run down by a car）③ 貶損、說人壞話（run sb down）④ （電池）耗盡、（人）累垮（My battery is running down.／feel run-down）。一詞多義，本題取第一義，靠 manhunt 與 escaped prisoner 判斷。", ex:"It took investigators months to run down the missing witness.", exZh:"調查人員花了好幾個月才追查到那位失蹤的證人。"},{term:"run 家族", pos:"整理", gloss:"run down 追捕、撞倒、耗盡／run into 遇到困難、偶然遇見（本卷第 7 題的題幹用過）／run out of 用完／run over 輾過、快速看過／run for 競選／run a business 經營／in the long run 長遠來看。"},{term:"barren", pos:"adj.", gloss:"荒蕪的、不孕的（barren land／a barren valley）。同義：desolate／infertile。相關：manhunt 搜捕行動／escaped prisoner 逃犯／jail 監獄。片語書 Unit 06~10 (310) 第 34、35 題的題幹都用過 barren。"}]},
+
+        { n:17, kind:"片語動詞（弄懂）",
+          stem:"Despite the explicit instructions in the manual, I still couldn't __________ how to assemble the sturdy wooden bookcase, so I called my brother for help.",
+          options:{A:"carry out 執行、實施（計畫、命令）",B:"hand down 傳承；宣判",C:"take apart 拆解；徹底駁倒",D:"figure out 弄懂、想出、算出"}, answer:"D",
+          translation:"儘管說明書上的指示很明確，我還是弄不懂那個堅固的木書櫃要怎麼組裝，只好打電話請我哥哥幫忙。",
+          explain:{D:"✔ 空格後面接 how to assemble…（如何組裝）這個疑問詞引導的名詞片語，而句尾 so I called my brother for help（所以打電話求助）說明他想不出來。figure out 正是「弄懂、想出」，後面常接 how／what／why 引導的結構。",A:"✘ carry out 是「執行」，受詞是計畫、命令或實驗（carry out a plan／an experiment）；它接的是要被執行的事情，而不是「如何做某事」這個理解上的難題，而且若他已經弄懂就不需要求助。",B:"✘ hand down 是「傳承、宣判」（本卷第 30 題的答案），受詞是傳統、財物或判決，與理解說明書無關。",C:"✘ take apart 是「拆解」，而他要做的是 assemble（組裝）而不是拆開，方向正好相反。"},
+          notes:[{term:"figure out", pos:"片語動詞", gloss:"弄懂、想出、算出（figure out how to do sth／figure out the answer／I can't figure him out. 我搞不懂他這個人）。同義：work out（本卷第 23 題的誘答）／make out（看出、辨認出）。注意受詞若是代名詞必須放中間（figure it out）。", ex:"It took me an hour to figure out why the printer wouldn't work.", exZh:"我花了一個小時才弄懂印表機為什麼不能用。"},{term:"assemble", pos:"v.", gloss:"① 組裝（assemble a bookcase／assemble furniture）② 集合、聚集（The crowd assembled in the square.）。n. assembly 組裝、集會（an assembly line 生產線）。反義（組裝）：take apart／disassemble。"},{term:"sturdy", pos:"adj.", gloss:"堅固的、結實的（a sturdy bookcase／sturdy boots）。同義：solid／robust／durable。相關：manual 說明書／explicit 明確的（本卷第 11 題的題幹也用過）／Despite + N 儘管（不可接子句，接子句要用 Although）。"}]},
+
+        { n:18, kind:"片語動詞（虛度時光）",
+          stem:"Although Tom had promised his parents that he would study hard for the entrance exam, he __________ the whole summer playing video games and eventually failed the test.",
+          options:{A:"knocked off 擊落、打掉；（口語）下班、減價",B:"brought about 造成、導致（改變）",C:"idled away 虛度、浪費（時間）",D:"put on 穿上；增加（體重）；上演"}, answer:"C",
+          translation:"雖然 Tom 向父母承諾過他會為入學考試用功讀書，他卻把整個暑假都虛度在打電玩上，最後考試不及格。",
+          explain:{C:"✔ 受詞是 the whole summer（整個暑假，一段時間），而 Although…he would study hard…but…eventually failed the test（本來承諾用功，最後卻不及格）的轉折說明這段時間被浪費掉了。idle away + 時間 正是「虛度」的固定用法，後面常接 V-ing 說明怎麼虛度的。",A:"✘ knocked off 是「擊落、打掉」或口語的「下班、折價」（knock off work at five／knock off ten percent）；它的受詞不是一段時間。",B:"✘ brought about 是「造成（改變）」，受詞是結果或變化（bring about reform）；暑假不是被造成的結果。",D:"✘ put on 是「穿上、增重、上演」，受詞是衣物、體重或節目；接 the whole summer 語意不通。"},
+          notes:[{term:"idle away", pos:"片語動詞", gloss:"虛度、浪費（idle away the summer／idle away one's time）。adj. idle 空閒的、懶散的（an idle afternoon／idle hands）、（機器）空轉的。同義：while away（較中性，消磨時光）／fritter away（一點一點浪費掉）／waste。注意 idle 作動詞時幾乎只用在 idle away 這個片語。", ex:"He idled away three years before finally finding a direction.", exZh:"他虛度了三年，最後才找到方向。"},{term:"V + 時間 + V-ing", pos:"句型", gloss:"spend／waste／idle away + 時間 + V-ing（spent the whole summer playing games／wasted an hour waiting）。注意動名詞前不加 to，也不加 on（spend money on sth 才用 on）。", ex:"She spent the entire weekend revising her essay.", exZh:"她整個週末都在修改她的文章。"},{term:"entrance exam", pos:"n.", gloss:"入學考試（take／sit an entrance exam／pass an entrance exam）。相關：fail the test 考試不及格（fail 當及物動詞，不加 in）／eventually 最後、終究／promise sb that… 向某人承諾。"}]},
+
+        { n:19, kind:"片語動詞（著迷）",
+          stem:"Once she __________ the crime drama, Jenny watched six episodes in a row, ignoring her mother's incessant reminders about the exam the next morning.",
+          options:{A:"got over 克服、從…復原",B:"got hooked on 開始著迷於、上癮",C:"went over 複習、仔細檢查；走過去",D:"faded away 逐漸消失、褪去"}, answer:"B",
+          translation:"Jenny 一旦開始迷上那部犯罪劇，就一口氣連看了六集，完全不理母親關於隔天早上考試的不停叮嚀。",
+          explain:{B:"✔ watched six episodes in a row（一口氣連看六集）加上 ignoring her mother's incessant reminders about the exam（無視母親關於考試的叮嚀），典型的追劇上癮行為。get hooked on 正是「開始著迷、上癮」，受詞是讓人入迷的事物。",A:"✘ got over 是「克服、復原」（本卷第 20 題的答案），若說她「克服了」這部劇，與接著連看六集完全矛盾。",C:"✘ went over 是「複習、仔細檢查」；她無視的正是考試提醒，不可能是在複習功課，而且 go over a drama 也不是追劇的說法。",D:"✘ faded away 是「逐漸消失」，不及物，後面不能接受詞，而且主詞應該是聲音、記憶或影像。本卷第 28 題也把 fade away 放在誘答位置。"},
+          notes:[{term:"be / get hooked on", pos:"片語", gloss:"著迷於、對…上癮（be hooked on a series／get hooked on caffeine）。hook 原意是「鉤子」，v. 鉤住、吸引（The opening scene hooks the reader.）；n. hook（off the hook 脫身、免責）。注意這個片語幾乎都用被動或 get 的形式，不說 I hooked on it。", ex:"My father got hooked on crossword puzzles after he retired.", exZh:"我父親退休後就迷上了填字遊戲。"},{term:"in a row", pos:"片語", gloss:"連續、一口氣（six episodes in a row／three days in a row）。同義：in succession／consecutively／on end（for hours on end）。ED 雜誌 Nov. Week 3 的題幹也用過 successive storms 這個同族概念。", ex:"The team has won five games in a row.", exZh:"這支隊伍連贏了五場。"},{term:"incessant", pos:"adj.", gloss:"不停的、無休止的（incessant reminders／incessant rain／incessant quarrels）。adv. incessantly。同義：constant／ceaseless／relentless。片語書 Unit 06~10 (310) 第 3 題的題幹也用過 incessant quarrels。"}]},
+
+        { n:20, kind:"片語動詞（克服、復原）",
+          stem:"It took Grandma almost a year to __________ the shock of losing her husband, but she gradually resumed her volunteer work at the local hospital.",
+          options:{A:"go about 著手進行；四處走動",B:"pass down 傳承給下一代",C:"get over 克服、從（打擊、疾病）中復原",D:"take off 脫下；起飛；（事業）起飛"}, answer:"C",
+          translation:"奶奶花了將近一年才從喪夫的打擊中走出來，但她逐漸恢復了在當地醫院的志工工作。",
+          explain:{C:"✔ 受詞是 the shock of losing her husband（喪夫的打擊），而 It took…almost a year（花了將近一年）與 gradually resumed her volunteer work（逐漸恢復志工工作）說明她慢慢復原了。get over 正是「克服、從打擊或疾病中復原」。",A:"✘ go about 是「著手進行」（go about one's work）或「四處走動」，受詞是工作或任務；打擊不是被「著手處理」的工作。",B:"✘ pass down 是「傳承給下一代」，受詞是傳統、技藝或財物（本卷第 30 題考的 hand down 與它同義）；悲傷不是要傳給子孫的東西。",D:"✘ take off 是「脫下、起飛」，與從打擊中復原無關。"},
+          notes:[{term:"get over", pos:"片語動詞", gloss:"① 克服、從…復原（get over a shock／an illness／a breakup）② 翻越（get over the wall）③ get sth over with 把（討厭的事）做完了事（Let's get it over with.）。同義（復原）：recover from（本卷第 3 題的誘答）／come to terms with（接受、與…和解）。", ex:"It took him months to get over the disappointment.", exZh:"他花了好幾個月才從那份失望中走出來。"},{term:"resume", pos:"v.", gloss:"恢復、繼續（resume work／resume negotiations；resume V-ing）。n. resumption。注意與名詞 résumé（履歷）同形不同義、重音與發音也不同。", ex:"Services will resume as soon as the storm passes.", exZh:"暴風雨一過，服務就會恢復。"},{term:"It takes sb + 時間 + to V", pos:"句型", gloss:"某人花多少時間做某事（It took Grandma a year to get over it.）。對照 spend 的主詞是人（She spent a year getting over it.），而 take 的主詞是 it。注意 take 用時間當受詞，spend 後面接 V-ing。"}]},
+        { n:21, kind:"片語動詞（處理掉）",
+          stem:"Hospitals must __________ used needles and other medical waste properly, since careless handling can expose sanitation workers and the public to dangerous infections.",
+          options:{A:"hand in 繳交（作業、報告、辭呈）",B:"pass on 傳遞、轉達；傳染給他人",C:"set about 著手開始（後接 V-ing）",D:"dispose of 處理掉、丟棄"}, answer:"D",
+          translation:"醫院必須妥善處理用過的針頭和其他醫療廢棄物，因為處理不慎可能讓清潔人員與一般民眾暴露在危險的感染風險中。",
+          explain:{D:"✔ 受詞是 used needles and other medical waste（用過的針頭與醫療廢棄物），加上 properly（妥善地）與後面 careless handling（處理不慎）的對照，說明這是廢棄物的處置。dispose of 正是「處理掉、丟棄」，是廢棄物管理的標準用語。",A:"✘ hand in 是「繳交」，受詞是作業、報告或辭呈，繳給的是老師或上級；廢棄物不是繳交的對象。",B:"✘ pass on 是「傳遞、轉達」，若說把針頭傳給別人，正好是題目要避免的危險行為，與 properly 的要求矛盾。",C:"✘ set about 是「著手開始」，後面必須接動名詞（set about cleaning），不能直接接 used needles 這個名詞受詞。本卷第 32 題也把 set about 放在誘答位置。"},
+          notes:[{term:"dispose of", pos:"片語動詞", gloss:"處理掉、丟棄（dispose of waste／of old furniture）；也作「解決、擺平」（dispose of a problem）。n. disposal（waste disposal 廢棄物處理／at one's disposal 任某人使用）；adj. disposable 用完即丟的（disposable cups）。注意 of 不可省略，而且被動是 be disposed of。", ex:"Batteries must be disposed of at a designated collection point.", exZh:"電池必須在指定的回收點處理。"},{term:"expose sb to sth", pos:"片語", gloss:"使某人暴露於、接觸到（expose workers to infections／be exposed to radiation／expose children to music）。n. exposure（exposure to sunlight）。可以是負面的風險，也可以是正面的接觸機會。", ex:"Travel exposed her to a wide range of cultures.", exZh:"旅行讓她接觸到各種不同的文化。"},{term:"sanitation", pos:"n.", gloss:"環境衛生、汙水處理（sanitation workers 清潔人員／poor sanitation）。adj. sanitary 衛生的。相關：medical waste 醫療廢棄物／infection 感染（v. infect；adj. infectious 傳染性的）。ED 雜誌 Nov. Week 3 的文章正是以 sanitation 與 sewage 為主題，可以互相對照。"}]},
+
+        { n:22, kind:"片語動詞（存錢）",
+          stem:"It is often recommended that young workers __________ at least ten percent of their monthly salary so that an unexpected emergency won't leave them in debt.",
+          options:{A:"wear away 磨損、逐漸侵蝕",B:"give out 分發；（體力、物資）用盡；發出",C:"set aside 撥出、存下（錢、時間）",D:"let go 放手、放開；解僱"}, answer:"C",
+          translation:"一般建議年輕的上班族至少把每月薪水的一成撥出來存起來，這樣突如其來的急用才不會讓他們陷入負債。",
+          explain:{C:"✔ 受詞是 at least ten percent of their monthly salary（至少一成的月薪），而目的子句 so that an unexpected emergency won't leave them in debt（這樣急用時才不會負債）說明這筆錢是要留著備用的。set aside 正是「撥出、存下」，受詞常是錢或時間。",A:"✘ wear away 是「磨損、侵蝕」，主詞是外力、受詞是被磨損的表面（Water wore away the rock.）；薪水不是被磨掉的對象。本卷第 29、31 題也用到 wear 家族，可以一起比較。",B:"✘ give out 是「分發」或「用盡」；把薪水發出去或花光，都與「避免負債」的目的相反。",D:"✘ let go 是「放手、解僱」（let go of the rope／be let go 被解僱），語意是鬆手放開而不是保留下來。本卷第 24 題也把 let go of 放在誘答位置。"},
+          notes:[{term:"set aside", pos:"片語動詞", gloss:"① 撥出、存下（set aside money／time for sth）② 把…放到一旁、暫時不管（set aside our differences）③ （法律）撤銷（set aside a verdict）。同義（存錢）：put aside／save up／lay aside。對照 set about 著手（接 V-ing）／set in 開始並持續（本卷第 28 題的答案）／set off 出發、引發／set up 建立。", ex:"Try to set aside a small amount every payday.", exZh:"試著每次領薪水都存下一小筆錢。"},{term:"It is recommended that + S + (should) V", pos:"句型", gloss:"建議…（It is recommended that workers set aside…）。recommend／suggest／insist／demand／require 等字後面的 that 子句要用「原形動詞」（should 可省略），所以此處是 set 而不是 sets。這是本題隱藏的文法考點。", ex:"The doctor insisted that he stay in bed for a week.", exZh:"醫生堅持他必須臥床一週。"},{term:"in debt", pos:"片語", gloss:"負債（be／fall／get into debt／be deeply in debt／pay off a debt 還清債務）。相關：leave sb in debt 使某人陷入負債／unexpected emergency 突發的急用／monthly salary 月薪。"}]},
+
+        { n:23, kind:"片語動詞（洩漏祕密）",
+          stem:"Although Mia knew about the surprise party planned for her best friend, she never __________ that she knew anything about it, even when her friend repeatedly asked about their weekend plans.",
+          options:{A:"let up 減弱、緩和；鬆懈",B:"died down （風、聲音、爭議）平息",C:"worked out 解決、算出；順利進行；健身",D:"let on 洩漏、說出（祕密）"}, answer:"D",
+          translation:"雖然 Mia 知道大家為她最好的朋友籌備的驚喜派對，她卻從未透露自己知情，即使朋友一再追問週末的計畫也沒說。",
+          explain:{D:"✔ 空格後面接 that 子句（that she knew anything about it），而 never 加上 even when her friend repeatedly asked（即使朋友一再追問）說明她守口如瓶。let on (that)… 正是「洩漏、說出祕密」，否定句型 never let on 更是常見用法。",A:"✘ let up 是「減弱、緩和」，主詞通常是雨勢、壓力或工作強度（The rain finally let up.），不及物，後面不能接 that 子句。",B:"✘ died down 是「平息」，主詞是風、聲音或爭議，不及物，無法接 that 子句，也與保守祕密無關。",C:"✘ worked out 是「解決、算出」，受詞是問題或答案；她不是在算什麼，而是在隱瞞。本卷第 17 題考的 figure out 與它同義，可以一起整理。"},
+          notes:[{term:"let on", pos:"片語動詞", gloss:"洩漏、說出（常用於否定：Don't let on that you know.／She never let on how much it hurt.）。同義：give away a secret（本卷第 27 題考的 give away 另有「捐出」之義）／spill the beans／let the cat out of the bag。對照 let out 發出（聲音）、放出、洩漏（let out a scream）。本卷第 4 題把 let on 放在誘答位置，第 23 題才是它真正的用法。", ex:"He knew the answer all along but never let on.", exZh:"他一直都知道答案，卻從來沒說出來。"},{term:"let 家族", pos:"整理", gloss:"let on 洩漏祕密／let up 減弱、緩和／let out 發出、放出（本卷第 33、40 題的誘答）／let go (of) 放手、解僱／let down 使失望（let sb down）／let sb in on sth 讓某人知道祕密／let alone 更不用說。本卷把 let 家族考了五次，值得整組背。"},{term:"surprise party", pos:"n.", gloss:"驚喜派對（throw sb a surprise party）。相關：planned for her best friend 是過去分詞片語後位修飾／repeatedly 一再地／know about sth 知道有關…的事。"}]},
+
+        { n:24, kind:"片語動詞（堅持）",
+          stem:"Despite fierce criticism from other researchers, the scientist __________ her original conclusion, insisting that the substantial data she had collected supported it.",
+          options:{A:"let go of 放開、放手；放棄",B:"took in 吸收、理解；收容；欺騙",C:"stuck to 堅持（立場、計畫、說法）",D:"wiped off 擦掉、抹去"}, answer:"C",
+          translation:"儘管遭到其他研究者猛烈的批評，這位科學家仍堅持她原本的結論，並強調她所蒐集的大量數據支持這個結論。",
+          explain:{C:"✔ Despite fierce criticism（儘管遭到猛烈批評）的讓步語氣，加上 insisting that the substantial data…supported it（強調數據支持她），說明她沒有改變立場。stick to 正是「堅持」，受詞是立場、計畫、原則或說法。",A:"✘ let go of 是「放開、放棄」，語意與 insisting（堅持強調）直接矛盾，是本題最主要的反向陷阱。",B:"✘ took in 是「吸收、理解」或「欺騙」，受詞是資訊或人；說她「吸收了自己的結論」語意不通。",D:"✘ wiped off 是「擦掉」，受詞是表面的汙漬或字跡；結論不是用擦的，而且抹去結論與她堅持的態度相反。"},
+          notes:[{term:"stick to", pos:"片語動詞", gloss:"堅持、不偏離（stick to one's guns 堅持立場／stick to the plan／stick to the facts／stick to a diet）。三態 stick-stuck-stuck。同義：adhere to（較正式）／hold on to／stand by（stand by one's decision）。對照 stick out 伸出、突出／stick up for sb 挺某人。ED 雜誌 Nov. Week 1+2 的題幹也用過 stick to。", ex:"Whatever the pressure, she stuck to her original estimate.", exZh:"不管壓力多大，她都堅持她原本的估計。"},{term:"substantial", pos:"adj.", gloss:"① 大量的、可觀的（substantial data／substantial losses，本卷第 15 題的題幹也用過）② 實質的（substantial progress）。adv. substantially 大幅地。同義：considerable／significant。"},{term:"fierce", pos:"adj.", gloss:"猛烈的、兇猛的（fierce criticism／fierce competition／a fierce storm）。adv. fiercely。相關：insist that… 堅持主張（後接子句時若表「主張應該」要用原形動詞，此處表「強調事實」故用過去式 supported）／original conclusion 原本的結論。"}]},
+
+        { n:25, kind:"片語動詞（裁員）",
+          stem:"Facing a huge deficit, the factory had no choice but to __________ two hundred workers, many of whom had worked there for decades.",
+          options:{A:"lay off 裁員、解僱（因業務緊縮）",B:"leave out 遺漏、省略、不包括",C:"turn over 翻轉；移交；（營業額）達到",D:"go around to 繞道去；順道拜訪"}, answer:"A",
+          translation:"面對巨額虧損，這家工廠不得不裁掉兩百名員工，其中許多人已經在那裡工作了數十年。",
+          explain:{A:"✔ Facing a huge deficit（面對巨額虧損）是裁員最典型的原因，而受詞是 two hundred workers（兩百名員工），加上 had no choice but to（不得不）的無奈語氣。lay off 正是「因業務緊縮而裁員」，與因過失被開除的 fire 不同。",B:"✘ leave out 是「遺漏、省略」，受詞是項目、名字或細節（leave out an important detail）；若說把員工「省略掉」，不是解僱關係的說法。本卷第 27 題也把 leave out 放在誘答位置。",C:"✘ turn over 是「翻轉、移交」或指營業額，受詞不是被解僱的員工。",D:"✘ go around to 是「繞道去、順道拜訪」，後面接地點或人家，與裁員無關。本卷第 32 題考的 go around 是另一個意思。"},
+          notes:[{term:"lay off", pos:"片語動詞", gloss:"裁員（lay off workers／be laid off）；n. layoff 裁員（mass layoffs）。注意三者的差別：lay off 因公司縮編而被裁（非個人過失）／fire（因過失）開除／dismiss 解僱（較正式）／make sb redundant（英式，因職位不再需要）。另有「停止（某習慣）」之義：lay off smoking。三態 lay-laid-laid，別與 lie-lay-lain（躺）混淆。", ex:"The plant laid off a third of its staff last quarter.", exZh:"這家工廠上一季裁掉了三分之一的員工。"},{term:"have no choice but to V", pos:"句型", gloss:"不得不（had no choice but to lay off workers）。注意 but 後面接「原形動詞」。同義：cannot help V-ing（忍不住）／cannot but V／be forced to V／have no alternative but to V。", ex:"With the bridge closed, we had no choice but to turn back.", exZh:"橋梁封閉，我們不得不折返。"},{term:"many of whom", pos:"句型", gloss:"關係代名詞前加數量詞（two hundred workers, many of whom had worked there for decades）。這是在補充說明先行詞中有多少比例如何，不可寫成 many of them（那會變成兩個獨立句子，需要連接詞）。ED 雜誌 Nov. Week 3 第 1 題考的正是 354 million of whom 這個結構，可以兩題並看。", ex:"She interviewed forty candidates, most of whom lacked experience.", exZh:"她面試了四十位應徵者，其中大多數缺乏經驗。"}]},
+
+        { n:26, kind:"片語動詞（被動）",
+          stem:"Traffic on the highway was __________ for three hours after a truck overturned and scattered debris across all four lanes.",
+          options:{A:"held up 被阻塞、被延誤",B:"knocked down 被撞倒；（價格）被壓低",C:"worn out 磨壞的；累垮的",D:"passed down 被傳承給下一代"}, answer:"A",
+          translation:"在一輛卡車翻覆、碎片散落四個車道之後，高速公路上的交通被阻塞了三個小時。",
+          explain:{A:"✔ 主詞是 Traffic（車流），時間是 for three hours（三個小時），原因是 a truck overturned and scattered debris across all four lanes（卡車翻覆、碎片散落所有車道）。hold up 正是「阻塞、延誤」，被動 be held up 用於交通或班機誤點。",B:"✘ knocked down 是「撞倒」，受詞是人或建物（be knocked down by a car）；車流這個抽象的集體概念不會被撞倒。",C:"✘ worn out 是「磨壞的、累垮的」，主詞是物品或人（worn-out shoes／I'm worn out.）；交通不會磨損或疲倦。",D:"✘ passed down 是「傳承」，受詞是傳統或財物（本卷第 30 題考的 hand down 同義）；交通不會被傳給下一代。"},
+          notes:[{term:"hold up", pos:"片語動詞", gloss:"① 阻塞、延誤（be held up in traffic／The flight was held up by fog.）② 舉起、支撐（hold up a sign）③ 持械搶劫（hold up a bank；n. holdup 搶案、延誤）④ 站得住腳（Does the theory hold up?）。ED 雜誌 Nov. Week 3 的選項也出現過 hold up，當時取的是另一個意思。", ex:"We were held up at customs for over an hour.", exZh:"我們在海關被耽誤了一個多小時。"},{term:"hold 家族", pos:"整理", gloss:"hold up 延誤、舉起、搶劫／hold on 堅持、稍等不掛（本卷第 9、15 題的誘答）／hold back 忍住、阻止／hold out 堅持下去、維持／hold on to 緊抓著／get hold of 聯絡到、拿到。"},{term:"overturn", pos:"v.", gloss:"① 翻覆（The truck overturned.）② 推翻（overturn a ruling／a verdict）。相關：debris /dəˈbriː/ 碎片、殘骸（不可數）／scatter 散落、撒／lane 車道。"}]},
+
+        { n:27, kind:"片語動詞（捐出）",
+          stem:"Rather than sell the collection online, Lisa decided to __________ her late father's rare books to the village library, where they would be accessible to every child.",
+          options:{A:"see into 調查、看透",B:"give away 贈送、捐出；洩漏（祕密）",C:"knock down 撞倒；（價格）壓低",D:"lead to 導致、通往"}, answer:"B",
+          translation:"Lisa 決定不把這批收藏放到網路上賣，而是把她已故父親的珍本書捐給村裡的圖書館，讓每個孩子都能取用。",
+          explain:{B:"✔ 句首 Rather than sell the collection online（而不是上網賣掉）設定了對比：不是賣，而是無償送出；而 where they would be accessible to every child（讓每個孩子都能取用）說明是捐給圖書館。give away 正是「贈送、捐出」，與 sell 形成明確對照。",A:"✘ see into 是「調查、看透」，受詞是事情或人心，不能接書本當捐贈對象。本卷第 6 題也把 see into 放在誘答位置。",C:"✘ knock down 是「撞倒」或「把價格壓低」；若取壓低價格之義，仍屬於買賣行為，與 Rather than sell（不賣）的對比矛盾。",D:"✘ lead to 是「導致、通往」，受詞是結果或地點；書本不是導致圖書館的原因。"},
+          notes:[{term:"give away", pos:"片語動詞", gloss:"① 贈送、捐出（give away one's books／give away free samples）② 洩漏（give away a secret／Her trembling voice gave her away. 她顫抖的聲音讓她露了餡）③ （婚禮上）把新娘交給新郎。n. giveaway 贈品、洩露的跡象。本卷第 23 題考的 let on 與第二義同屬「洩漏」家族。", ex:"They gave away most of the furniture before moving abroad.", exZh:"他們出國前把大部分家具都送人了。"},{term:"Rather than + 原形動詞", pos:"句型", gloss:"而不是（Rather than sell the collection, she decided to give it away.）。Rather than 置於句首時後面常接原形動詞；若放在句中則前後結構要對等。ED 雜誌 Nov. Week 3 第 18 題考的正是 rather than 接原形動詞這個考點。", ex:"Rather than complain, he set about fixing the problem himself.", exZh:"他沒有抱怨，而是自己動手解決問題。"},{term:"late", pos:"adj.", gloss:"此處是「已故的」（her late father／the late president），放在名詞前。注意與「遲的」同形（be late for school）、與 the latter（後者）、lately（最近）區別。相關：rare books 珍本書／accessible to sb 可供…取用的。"}]},
+
+        { n:28, kind:"片語動詞（季節開始）",
+          stem:"Farmers rushed to harvest their rice before the rainy season __________, knowing that successive storms could ruin an entire year's output.",
+          options:{A:"died off 相繼死去、逐漸絕跡",B:"stopped off 中途短暫停留",C:"faded away 逐漸消失、褪去",D:"set in （壞天氣、季節、情況）開始並持續"}, answer:"D",
+          translation:"農民趕著在雨季來臨之前收割稻作，因為他們知道接連不斷的暴風雨可能毀掉一整年的收成。",
+          explain:{D:"✔ before the rainy season __________（在雨季…之前）加上 successive storms could ruin an entire year's output（接連的暴風雨可能毀掉整年收成），說明農民要趕在雨季「開始」之前收割。set in 正是「（壞天氣或不好的情況）開始並持續下去」，主詞常是 winter／the rainy season／panic／decay。",A:"✘ died off 是「相繼死去」，主詞是生物族群；雨季不會死去，而且若雨季結束反而不需要趕工。",B:"✘ stopped off 是「中途短暫停留」，主詞是旅行中的人（stop off in Tokyo）；季節不會順道停留。",C:"✘ faded away 是「逐漸消失」，方向正好相反：雨季褪去的話農民就不必搶收了。本卷第 19 題也把 fade away 放在誘答位置。"},
+          notes:[{term:"set in", pos:"片語動詞", gloss:"（壞天氣、季節、不良狀況）開始並持續（Winter has set in.／The rainy season sets in early.／Panic set in.／Decay had already set in.）。注意它幾乎只用於負面或持續性的狀態，而且是不及物。對照本卷第 29 題的 wear off（藥效消退），兩題剛好是「開始」與「消失」的一組。", ex:"Once the cold weather set in, the construction work stopped.", exZh:"寒冷的天氣一來，工程就停了下來。"},{term:"set 家族", pos:"整理", gloss:"set in 開始並持續／set aside 撥出、存下（本卷第 22 題的答案）／set about V-ing 著手（本卷第 21、32 題的誘答）／set off 出發、引爆／set out 出發、著手／set up 建立／set back 延誤（n. setback 挫折）。本卷把 set 家族考了四次。"},{term:"successive", pos:"adj.", gloss:"連續的、接連的（successive storms／three successive wins）。注意與 successful（成功的）字形相近但意思完全不同。adv. successively；n. succession（in succession 連續地）。相關：harvest 收割／output 產量、收成／ruin 毀掉。"}]},
+
+        { n:29, kind:"片語動詞（藥效消退）",
+          stem:"The medication started to __________ after about four hours, and the throbbing pain in her injured knee gradually returned.",
+          options:{A:"set in （壞天氣、情況）開始並持續",B:"wear off （藥效、感覺）逐漸消失",C:"split off 分裂出去、脫離",D:"bring on 引起、招致（疾病、問題）"}, answer:"B",
+          translation:"藥效在大約四個小時之後開始退去，她受傷膝蓋的那股抽痛也逐漸回來了。",
+          explain:{B:"✔ 主詞是 The medication（藥物），而後半句 the throbbing pain…gradually returned（抽痛逐漸回來）說明藥的作用正在減弱。wear off 正是「（藥效、感覺、新鮮感）逐漸消失」。",A:"✘ set in 是「開始並持續」（本卷第 28 題的答案），方向正好相反：若藥效才開始發揮，疼痛就不會回來。這組「開始」與「消退」的對照是兩題共同的考點。",C:"✘ split off 是「分裂出去」，主詞是團體或碎片；藥物不會分裂。本卷第 14、16 題也用到 split 家族。",D:"✘ bring on 是「引起」，它是及物的（bring on a headache），後面需要受詞；本句空格後面直接接 after about four hours，文法不符，而且語意會變成藥物引發了什麼。"},
+          notes:[{term:"wear off", pos:"片語動詞", gloss:"（藥效、麻醉、感覺、新鮮感）逐漸消失（The anesthetic wore off.／The novelty soon wore off.）。不及物。對照 wear out 穿壞、使累垮（本卷第 26、33 題的誘答）／wear away 磨損、侵蝕（本卷第 22、31 題的誘答）／wear down 逐步瓦解、使疲憊（本卷第 3、30 題的誘答）。本卷把 wear 家族完整考過一輪，是最值得整組整理的一題。", ex:"By noon the effect of the painkiller had worn off.", exZh:"到了中午，止痛藥的效果已經退了。"},{term:"wear 家族對照", pos:"整理", gloss:"wear off 效果消退（主詞是藥效、感覺）／wear out 穿壞、使疲累（主詞是物品或人）／wear away 磨損、侵蝕（主詞多是外力如水、風）／wear down 逐步磨耗、使屈服（wear down the opposition 逐步瓦解反對勢力）。四個都與「磨損」有關，差別在主詞與受詞。"},{term:"throbbing", pos:"adj.", gloss:"一陣陣抽痛的（a throbbing pain／a throbbing headache）。v. throb 跳動、抽痛。相關：medication 藥物（不可數，較正式）／injured knee 受傷的膝蓋／gradually 逐漸地。"}]},
+
+        { n:30, kind:"片語動詞（被動、傳承）",
+          stem:"The recipe for this dumpling sauce, which my family has kept strictly confidential, has been __________ from generation to generation for over a century.",
+          options:{A:"handed down 被傳承（給下一代）",B:"handed out 被分發出去",C:"worn down 被磨耗、被逐步瓦解",D:"laid off 被裁員"}, answer:"A",
+          translation:"這款水餃醬料的配方，我家一直嚴格保密，已經世代相傳了一個多世紀。",
+          explain:{A:"✔ 決定性線索是 from generation to generation（一代傳一代）與 for over a century（超過一個世紀），這正是 hand down 的典型搭配，意思是把傳統、技藝或配方傳給後代。",B:"✘ handed out 是「分發出去」，受詞是傳單或講義（hand out flyers）；而且題目明說 kept strictly confidential（嚴格保密），分發給大家與保密直接矛盾。這組 down 與 out 的差別是本題唯一的考點。",C:"✘ worn down 是「磨耗、逐步瓦解」，受詞是物品的表面或人的意志；配方不是被磨損的東西。",D:"✘ laid off 是「被裁員」，主詞必須是員工（本卷第 25 題的答案）；配方不會被裁員。"},
+          notes:[{term:"hand down / hand out / hand in", pos:"辨析", gloss:"hand down 傳承給下一代（hand down a recipe／a tradition），也指「宣判」（hand down a sentence）／hand out 分發（hand out leaflets；n. handout 講義、救濟品）／hand in 繳交（hand in a report，本卷第 7、21 題的誘答）。同義（傳承）：pass down／pass on（本卷第 10、20、21 題的誘答）。集訓五的題目也把 hand down 放在誘答位置，當時考的是「宣判」之義。", ex:"The silver watch was handed down from his great-grandfather.", exZh:"這只銀錶是從他的曾祖父那裡傳下來的。"},{term:"from generation to generation", pos:"片語", gloss:"一代傳一代（be handed down from generation to generation）。同類的「from A to A」結構：from door to door 挨家挨戶／from time to time 偶爾／from head to toe 從頭到腳／from hand to mouth 僅能溫飽（live from hand to mouth）。注意中間的名詞都不加冠詞。"},{term:"keep sth confidential", pos:"片語", gloss:"保密（keep the recipe confidential／in strict confidence 極機密地）。本卷第 5 題的題幹用的是 confidential documents，兩題可以並看。相關：recipe /ˈresəpi/ 食譜、配方／for over a century 一個多世紀。"}]},
+
+        { n:31, kind:"片語動詞（佔據空間）",
+          stem:"The immense leather sofa __________ so much space in our tiny apartment that we can hardly walk from the kitchen to the balcony.",
+          options:{A:"wears away 磨損、逐漸侵蝕",B:"takes up 佔據（空間、時間）",C:"knocks off 擊落、打掉；下班、折價",D:"puts together 組裝、彙整"}, answer:"B",
+          translation:"那張巨大的皮沙發在我們狹小的公寓裡佔了太多空間，以致我們幾乎無法從廚房走到陽台。",
+          explain:{B:"✔ 受詞是 so much space（這麼多空間），而 so…that 的結果子句 we can hardly walk from the kitchen to the balcony（幾乎走不過去）說明空間被佔滿了。take up 正是「佔據（空間或時間）」。",A:"✘ wears away 是「磨損、侵蝕」，它磨掉的是物體表面而不是空間；沙發不會把空間磨掉。",C:"✘ knocks off 是「擊落、下班、折價」，受詞是物品、工作或價格，不能接空間。本卷第 18、33 題也把 knock 家族放在誘答位置。",D:"✘ puts together 是「組裝、彙整」，受詞是零件、資料或計畫（put together a plan）；沙發不會把空間組裝起來。"},
+          notes:[{term:"take up", pos:"片語動詞", gloss:"① 佔據（take up space／take up too much time）② 開始從事（take up jogging／take up a new hobby）③ 接受（take up an offer）④ 把（褲子）改短。對照 take over 接管（本卷第 12 題的答案）／take after 像（本卷第 8 題的答案）／take on 承擔。這個片語在集訓五、單字書 10-2~11、片語書 Unit 06~10 與 ED 雜誌都出現過，是出現頻率最高的片語之一。", ex:"The new filing cabinet takes up half the office.", exZh:"新的檔案櫃佔了辦公室一半的空間。"},{term:"so + adj./adv. + that", pos:"句型", gloss:"如此…以致於（takes up so much space that we can hardly walk）。注意 so much／so many 後接名詞（so much space／so many books），而 such 後接「a + adj. + 名詞」（such a large sofa that…）。此處因為 space 是不可數名詞，所以用 so much。", ex:"The line was so long that we gave up and went home.", exZh:"隊伍太長，我們就放棄回家了。"},{term:"immense", pos:"adj.", gloss:"巨大的（an immense sofa／immense pressure）。同義：enormous（本卷第 15 題的題幹用過）／vast／colossal。相關：hardly 幾乎不（否定副詞，不與 not 連用）／balcony 陽台／leather 皮革。"}]},
+
+        { n:32, kind:"片語動詞（數量足夠）",
+          stem:"There weren't enough copies of the seminar's reading material to __________, so several students had to share with the classmates sitting beside them.",
+          options:{A:"go around （數量）足夠分配給每個人",B:"hang out 閒晃、混在一起",C:"take off 脫下；起飛；（事業）起飛",D:"set about 著手開始（後接 V-ing）"}, answer:"A",
+          translation:"研討會的閱讀資料份數不夠發給所有人，所以好幾個學生必須和坐在旁邊的同學共用。",
+          explain:{A:"✔ There weren't enough copies…（份數不夠）加上結果 several students had to share（好幾個學生得共用），說明資料不足以人人有一份。go around（也作 go round）正是「（數量）足夠分配給每個人」，常用於 enough to go around 這個搭配。",B:"✘ hang out 是「閒晃」，主詞須是人；資料不會閒晃，而且與份數夠不夠無關。",C:"✘ take off 是「脫下、起飛」，與分配數量無關。",D:"✘ set about 是「著手開始」，後面必須接動名詞；而且資料不會自己著手做事。本卷第 21 題也把 set about 放在誘答位置，考的同樣是後面要接 V-ing。"},
+          notes:[{term:"go around / go round", pos:"片語動詞", gloss:"① （數量）足夠分配（There isn't enough food to go around.）② 四處走動、流傳（A rumor is going around.）③ 繞過（go around the block）。注意 enough…to go around 是最常考的搭配。本卷第 25 題的誘答 go around to（順道拜訪）與第 8、35 題的 go around with（與…來往）是同一個字加不同介系詞的三種用法，三題可以合併整理。", ex:"We'll need more chairs if there aren't enough to go around.", exZh:"如果椅子不夠大家坐，我們得再搬一些來。"},{term:"go around 的三種搭配", pos:"整理", gloss:"go around（不加介系詞）數量足夠（本題）／go around with sb 與某人來往、交往（本卷第 8、35 題的誘答）／go around to + 地點／人 繞道去、順道拜訪（本卷第 25 題的誘答）。同一個片語動詞因介系詞不同而意思全變，是本卷反覆設陷阱的手法。"},{term:"copy", pos:"n.", gloss:"此處是「一份、一本」（three copies of the report／not enough copies to go around），不是「影印」。相關：seminar 研討會／reading material 閱讀資料（不可數）／share with sb 與某人共用。"}]},
+
+        { n:33, kind:"片語動詞（介系詞已給）",
+          stem:"Forced to support his family after his father contracted a chronic illness, Ken had to __________ of college in his second year.",
+          options:{A:"drop out 退學、中途退出（搭配 of）",B:"let out 發出（聲音）、放出、洩漏",C:"knock out 打昏、淘汰",D:"wear out 穿壞；使累垮"}, answer:"A",
+          translation:"在父親罹患慢性疾病之後，Ken 被迫養家，只好在大二那年從大學退學。",
+          explain:{A:"✔ 本題的關鍵線索是空格後面已經給了 of，而受詞是 college（大學），drop out of college（從大學退學）正是這個固定搭配。語意上 Forced to support his family（被迫養家）也完全吻合輟學的原因。",B:"✘ let out 是「發出、放出」，它不搭配 of（要說 let out a scream），文法上接不上空格後的 of college。",C:"✘ knock out 是「打昏、淘汰」，同樣不與 of 搭配（be knocked out of the tournament 才是用 of，但主詞須是被淘汰的隊伍，而且語意是比賽落敗而非退學）。",D:"✘ wear out 是「穿壞、使累垮」，不搭配 of，而且受詞應是物品或人而非 college。本卷第 26、29 題也用到 wear 家族。"},
+          notes:[{term:"drop out of", pos:"片語動詞", gloss:"退學、中途退出（drop out of college／of a race／of the program）；n. dropout 中輟生（a high school dropout）。對照 drop by／drop in 順道拜訪／drop off 讓（人）下車、（數量）下降、睡著／drop sb a line 寫短信給某人。注意 of 不可省略。", ex:"She dropped out of the program halfway through to care for her mother.", exZh:"她中途退出了這個計畫，去照顧她的母親。"},{term:"contract", pos:"v. / n.", gloss:"v. ① 罹患（contract an illness／contract a disease，較正式）② 收縮（Metal contracts when cooled.）③ 簽約（contract with a supplier）／n. 合約（sign a contract，本卷第 15 題的題幹用過）。同一個字在本卷出現兩種詞性與意思，可以並看。", ex:"He contracted malaria while working overseas.", exZh:"他在海外工作時感染了瘧疾。"},{term:"chronic", pos:"adj.", gloss:"長期的、慢性的（a chronic illness／chronic shortage，本卷第 39 題的題幹也用過）。反義 acute 急性的（本卷第 37 題的題幹用的正是 acute motion sickness），兩個字在本卷剛好形成一組對照。相關：Forced to V 是過去分詞構句（＝Because he was forced to…）。"}]},
+
+        { n:34, kind:"片語動詞（發出氣味）",
+          stem:"After lying in the sun for days, the rotting fruit began to __________ a foul smell that attracted flies from every corner of the market.",
+          options:{A:"hand out 分發（傳單、講義）",B:"stop off 中途短暫停留",C:"die of 死於（疾病、飢餓等內因）",D:"give off 發出（氣味、光、熱）"}, answer:"D",
+          translation:"在陽光下擺了好幾天之後，腐爛的水果開始散發出一股惡臭，把市場各個角落的蒼蠅都吸引過來了。",
+          explain:{D:"✔ 受詞是 a foul smell（一股惡臭），主詞是 the rotting fruit（腐爛的水果）。give off 正是「發出（氣味、光、熱）」，是描述物體散發某種東西的標準說法。",A:"✘ hand out 是「分發」，主詞須是人、受詞是可以傳遞的物品；水果不會分發氣味。本卷第 30 題把 hand out 放在誘答位置，考的正是它與 hand down 的差別。",B:"✘ stop off 是「中途停留」，不及物，後面不能接受詞。本卷第 28 題也把它放在誘答位置。",C:"✘ die of 是「死於」，主詞須是生物、後面接死因（die of hunger）；而且水果不會「死於一股惡臭」，語意與文法都不成立。"},
+          notes:[{term:"give off", pos:"片語動詞", gloss:"發出（氣味、光、熱、氣體）（give off a foul smell／give off heat／give off fumes）。同義：emit（較正式、科學用語）／give forth（較文言，本卷第 16 題的誘答）。對照 give out 分發、用盡、發出（give out leaflets／My strength gave out.，本卷第 22 題的誘答）／give away 捐出、洩漏（本卷第 27 題的答案）／give in 屈服（本卷第 6、35、37 題的誘答）／give rise to 引起（本卷第 2 題的答案）。give 家族在本卷考了六次。", ex:"The old heater gives off a faint burning smell.", exZh:"那台舊暖氣機會散發出淡淡的燒焦味。"},{term:"give 家族對照", pos:"整理", gloss:"give off 發出（氣味、光、熱）／give out 分發、用盡／give away 捐出、洩漏祕密／give in (to) 屈服、讓步／give up 放棄／give rise to 引起／give forth 發出（文言）。七個片語只差一個介副詞，本卷幾乎考遍，值得整組一起記。"},{term:"foul", pos:"adj.", gloss:"惡臭的、汙穢的（a foul smell／foul language 粗話／foul weather）；n. （運動）犯規。同義（氣味）：rank／putrid。相關：rotting 腐爛的（v. rot）／attract flies 吸引蒼蠅／from every corner of 從各個角落。"}]},
+
+        { n:35, kind:"片語（挺身對抗）",
+          stem:"Inspired by one brave teacher's example, the villagers finally began to __________ the corrupt officials who had illegally seized their farmland.",
+          options:{A:"give in to 向…屈服、讓步",B:"stand up against 挺身對抗、反抗",C:"go around with 與…來往、交往",D:"compensate for 補償、彌補"}, answer:"B",
+          translation:"受到一位勇敢老師的榜樣鼓舞，村民們終於開始挺身對抗那些非法強佔他們農地的貪官。",
+          explain:{B:"✔ Inspired by one brave teacher's example（受到一位勇敢老師的榜樣鼓舞）定調為正面的勇氣，而受詞是 the corrupt officials who had illegally seized their farmland（非法強佔農地的貪官），所以村民做的是起身反抗。stand up against 正是「挺身對抗」。",A:"✘ give in to 是「屈服、讓步」，語意與 brave（勇敢）、Inspired（受到鼓舞）完全相反，是本題最主要的反向陷阱。",C:"✘ go around with 是「與…來往、交往」；與貪官往來不但與勇氣無關，語意也與整句的對抗語氣相反。本卷第 8 題也把它放在誘答位置。",D:"✘ compensate for 是「補償、彌補」，後面接損失或不足（compensate for the damage）；村民不是要補償貪官，而是要對抗他們。"},
+          notes:[{term:"stand up against / stand up to", pos:"片語", gloss:"stand up against sth／sb 挺身對抗（stand up against injustice／against corruption）／stand up to sb 勇敢面對、抵抗（stand up to a bully），也指「經得起」（stand up to scrutiny 經得起檢驗）。對照 stand up for sb／sth 為…挺身而出、捍衛（stand up for your rights）。三個介系詞三種語意，是這組最常被混淆的地方。", ex:"It takes courage to stand up against an entire system.", exZh:"對抗一整個體制需要勇氣。"},{term:"stand 家族", pos:"整理", gloss:"stand out 突出（本卷第 14 題的答案）／stand up against 挺身對抗／stand up for 捍衛／stand up to 抵抗、經得起／stand by 支持、待命／stand for 代表、容忍（I won't stand for it.）／stand a chance 有機會。單字書 10-2~11 的題目也用過 stand up 的概念。"},{term:"corrupt", pos:"adj. / v.", gloss:"adj. 貪腐的（corrupt officials）／v. 腐化、使墮落。n. corruption 貪腐。相關：seize 強佔、抓住（seize farmland／seize an opportunity）／illegally 非法地／Inspired by…是過去分詞構句。"}]},
+
+        { n:36, kind:"片語動詞（沒有也行）",
+          stem:"Living alone on the barren island for months taught the explorer that he could __________ most modern comforts, though never fresh water.",
+          options:{A:"do with 需要、將就（常用 could do with 想要）",B:"give forth 發出（聲音、氣味）",C:"do without 沒有…也過得去",D:"go about with 與…來往；隨身帶著"}, answer:"C",
+          translation:"在那座荒島上獨自生活數個月，讓這位探險家明白他可以沒有大多數的現代舒適設備，但淡水絕對不行。",
+          explain:{C:"✔ 決定性線索是句尾 though never fresh water（但淡水絕對不行）。這個轉折說明前面講的是「可以沒有」某些東西，只有淡水例外，所以空格必須是 do without（沒有…也行）。",A:"✘ do with 的語意正好相反：could do with sth 是「需要、想要」（I could do with a cup of coffee.），照這個選項讀下來會變成「他需要大多數的現代舒適設備」，與荒島求生的情境和句尾的轉折都矛盾。這組 with 與 without 的差別正是本題唯一的考點。",B:"✘ give forth 是「發出（聲音、氣味）」（本卷第 16、34 題也出現這個誘答），受詞是氣味或聲音；探險家不會「發出現代舒適設備」。",D:"✘ go about with 是「與…來往」或「隨身帶著」，受詞通常是人；而且語意與「可以沒有」不同。"},
+          notes:[{term:"do without / could do with", pos:"辨析", gloss:"do without sth 沒有…也過得去（I can do without a car in this city.；也可不接受詞：If there's no milk, we'll just have to do without.）／could do with sth 需要、想要（I could do with some help.）。兩者只差一個 out，意思卻完全相反，是最經典的一組陷阱。相關：make do with sth 將就使用（We'll make do with what we have.）。", ex:"Campers soon learn to do without hot showers.", exZh:"露營的人很快就學會沒有熱水澡也能過。"},{term:"do 家族", pos:"整理", gloss:"do without 沒有也行／could do with 需要／make do with 將就／do away with 廢除、除去（do away with the rule）／have to do with 與…有關／do up 扣上、整修。這一組都以 do 為核心，意思靠後面的介系詞決定。"},{term:"V-ing 當主詞", pos:"句型", gloss:"Living alone on the barren island for months taught the explorer that…（動名詞片語當主詞，動詞用單數 taught）。注意主詞是「獨自生活這件事」而不是探險家，所以動詞不是 learned 而是 taught。同類：Reading widely broadens the mind.", ex:"Working night shifts taught her to value sleep.", exZh:"值夜班讓她懂得珍惜睡眠。"}]},
+
+        { n:37, kind:"片語動詞（過去式）",
+          stem:"Suffering from acute motion sickness on the winding mountain road, the little boy __________ twice before the tour bus finally reached the hotel.",
+          options:{A:"threw up 嘔吐",B:"gave in 屈服、讓步",C:"fell behind 落後、進度落後",D:"made good 成功、發跡"}, answer:"A",
+          translation:"這個小男孩在蜿蜒的山路上嚴重暈車，在旅遊巴士終於抵達飯店之前吐了兩次。",
+          explain:{A:"✔ Suffering from acute motion sickness（嚴重暈車）加上 twice（兩次）與 on the winding mountain road（在蜿蜒山路上），暈車的典型結果就是嘔吐。throw up 正是「嘔吐」，此處不接受詞。",B:"✘ gave in 是「屈服、讓步」，需要有對抗的對象（give in to pressure）；暈車不是在和誰妥協。",C:"✘ fell behind 是「落後」，主詞須是在隊伍或進度中落後的人；他坐在巴士上，不會落在後面。本卷第 14、39 題也用到這組「落後」的片語。",D:"✘ made good 是「成功、發跡」（a self-made man who made good），語氣正面，與暈車難受的情境完全相反。注意它與本卷第 4 題的 make good on（兌現承諾）只差一個 on，意思卻不同。"},
+          notes:[{term:"throw up", pos:"片語動詞", gloss:"嘔吐（通常不及物：He threw up twice.；也可接吐出的東西：throw up one's dinner）。同義：vomit（較正式、醫學用語）／be sick（英式口語）。注意另有「倉促搭建」與「使人注意到」之義（throw up new questions 引發新的問題）。單字書 10-2~11 把 throw up 放在誘答位置，當時考的正是它不能接 the flu 當受詞的問題。", ex:"She felt dizzy and nearly threw up on the boat.", exZh:"她在船上頭暈，差點吐了出來。"},{term:"make good / make good on", pos:"辨析", gloss:"make good 成功、發跡（a poor boy who made good）／make good on sth 兌現、履行（make good on a promise，本卷第 4 題的答案）。多了一個 on 意思就從「個人成功」變成「履行承諾」，本卷把兩者分別放在第 4 與第 37 題，是刻意的對照。"},{term:"acute", pos:"adj.", gloss:"① 嚴重的、急性的（acute motion sickness／acute pain／an acute shortage）② 敏銳的（an acute sense of smell）。反義（急性）chronic 慢性的，正是本卷第 33、39 題題幹用的字。相關：motion sickness 動暈症、暈車／winding 蜿蜒的。"}]},
+
+        { n:38, kind:"被動片語（被稱為）",
+          stem:"Because it can damage the heart and blood vessels for years without causing noticeable symptoms, high blood pressure is often __________ as \"the silent killer.\"",
+          options:{A:"referred to 被稱為（搭配 as）",B:"associated with 與…有關聯（搭配 with）",C:"compensated for 被補償（搭配 for）",D:"disposed of 被處理掉（搭配 of）"}, answer:"A",
+          translation:"高血壓可以在不引起明顯症狀的情況下損害心臟與血管長達數年，因此常被稱為「沉默的殺手」。",
+          explain:{A:"✔ 決定性線索是空格後面的 as \"the silent killer\"。be referred to as sth 正是「被稱為」的固定搭配，而且 referred to 的 to 加上 as 這個「雙重介系詞」的結構常被誤認為多餘，其實 refer to sth as sth 的 to 是不可省略的。",B:"✘ associated with 的介系詞是 with 而不是 as（be associated with heart disease）；題目已經給了 as，文法不符。本卷第 5 題也把 associated 放在誘答位置，考的同樣是介系詞搭配。",C:"✘ compensated for 的介系詞是 for，而且語意是「被補償」，與替某個疾病取別名無關。本卷第 35 題也把 compensate for 放在誘答位置。",D:"✘ disposed of 的介系詞是 of，語意是「被處理掉」（本卷第 21 題的答案）；疾病不是被丟棄的廢棄物。"},
+          notes:[{term:"be referred to as", pos:"片語", gloss:"被稱為（High blood pressure is referred to as the silent killer.＝is called／is known as）。主動是 refer to sth as sth（People refer to it as the silent killer.）。注意被動時 to 與 as 會連在一起出現，不可漏掉 to。refer to 另有「提及」（refer to a report）與「查閱」（refer to a dictionary）之義。", ex:"The period is often referred to as the golden age of jazz.", exZh:"這段時期常被稱為爵士樂的黃金年代。"},{term:"「被稱為」的家族", pos:"整理", gloss:"be referred to as／be known as／be called／go by the name of／be dubbed（被封為，常帶媒體語氣：dubbed the silent killer）。對照本卷第 8 題筆記的 be known for（以…聞名）與 be known to（為…所知），三個介系詞三種意思。"},{term:"blood vessel", pos:"n.", gloss:"血管（damage the blood vessels）。相關：high blood pressure 高血壓／symptom 症狀（noticeable symptoms 明顯的症狀）／the silent killer 沉默的殺手（引號表示這是個外來的稱號）。注意 without causing 是「介系詞＋動名詞」，without 後面不能接原形動詞。"}]},
+
+        { n:39, kind:"片語動詞（落後）",
+          stem:"Because of a chronic shortage of qualified teachers, many rural schools still __________ urban ones in both reading and math scores.",
+          options:{A:"leave behind 把…留在後面、拋下",B:"keep up 維持、保持（跟上須接 with）",C:"lag behind 落後於",D:"straighten up 整理乾淨；站直、改正行為"}, answer:"C",
+          translation:"由於長期缺乏合格教師，許多偏鄉學校在閱讀與數學成績上仍然落後於都市學校。",
+          explain:{C:"✔ Because of a chronic shortage of qualified teachers（長期缺乏合格教師）是負面的原因，而比較的對象是 urban ones（都市學校），所以偏鄉學校是處於落後的一方。lag behind 正是「落後於」，後面可以直接接比較對象，不需要介系詞。",A:"✘ leave behind 的方向正好相反：leave sb behind 是「把某人拋在後面」，也就是自己領先；照這個選項讀下來會變成偏鄉學校把都市學校拋在後面，與缺乏師資的原因矛盾。",B:"✘ keep up 若要表「跟上」必須接 with（keep up with urban schools），題目的空格後面直接接 urban ones，缺少 with 文法不成立；而且語意是「跟得上」，與長期缺師資的原因也不符。本卷第 11 題也把 keep up 放在誘答位置。",D:"✘ straighten up 是「整理乾淨」或「站直、改正行為」，與成績的高低比較無關。"},
+          notes:[{term:"lag behind", pos:"片語動詞", gloss:"落後於（lag behind other countries／lag behind in technology；n. lag 落後、時差：jet lag 時差／a time lag 時間差）。注意 lag behind 後面可直接接受詞（lag behind urban schools），也可單獨使用（Sales are lagging behind.）。同義：fall behind（本卷第 14、37 題的誘答）／trail behind。反義：keep up with／catch up with 追上／get ahead of 超前。", ex:"Our region still lags behind the national average in broadband speed.", exZh:"我們這個地區的寬頻速度仍落後於全國平均。"},{term:"behind 系列對照", pos:"整理", gloss:"lag behind 落後（持續的狀態）／fall behind 落後、進度跟不上（由平到落後的變化，也用於 fall behind on payments 繳款遲延）／leave sb behind 把某人拋在後面（自己領先）／be behind schedule 進度落後／behind the times 落伍。本卷在第 14、37、39 三題都用到這一組，可以合併整理。"},{term:"qualified", pos:"adj.", gloss:"合格的、有資格的（qualified teachers／be qualified for the job）。v. qualify（qualify as a nurse／qualify for a subsidy）；n. qualification 資格。相關：chronic shortage 長期短缺（chronic 本卷第 33 題的題幹也用過）／rural 偏鄉的（反義 urban 都市的）。"}]},
+
+        { n:40, kind:"片語動詞（擋開）",
+          stem:"In ancient times, villagers hung garlic above their doors, believing that its strong smell could __________ evil spirits and contagious diseases.",
+          options:{A:"rub off 擦掉；（特質）感染給他人",B:"let out 發出（聲音）、放出、洩漏",C:"ward off 擋開、避開（危險、疾病、惡靈）",D:"wear off （藥效、感覺）逐漸消失"}, answer:"C",
+          translation:"在古代，村民會把蒜頭掛在門上，相信它強烈的氣味可以擋開惡靈與傳染病。",
+          explain:{C:"✔ 受詞是 evil spirits and contagious diseases（惡靈與傳染病），都是要被阻擋在外的威脅，而掛蒜頭在門上正是為了防範。ward off 正是「擋開、避開（危險、疾病、惡靈）」，是這個情境的標準用語。",A:"✘ rub off 是「擦掉」或「（特質）感染給他人」（His optimism rubbed off on the team.）；惡靈不是靠擦拭去除的。本卷第 11 題也把 rub off 放在誘答位置。",B:"✘ let out 是「發出、放出」；若說氣味把惡靈「放出來」，方向正好相反，變成招來而非擋開。本卷第 33 題也把 let out 放在誘答位置。",D:"✘ wear off 是「（藥效、感覺）逐漸消失」（本卷第 29 題的答案），它是不及物的，後面不能接 evil spirits 當受詞，而且主詞應該是藥效或感覺而非氣味的防護作用。"},
+          notes:[{term:"ward off", pos:"片語動詞", gloss:"擋開、避開（ward off evil spirits／ward off a cold／ward off hunger／ward off an attack）。n. ward 病房、選區；v. ward 守護。同義：fend off（fend off criticism）／keep sth at bay（keep the disease at bay）／stave off（stave off hunger／bankruptcy）。", ex:"A hot drink and a scarf should ward off the worst of the cold.", exZh:"一杯熱飲加一條圍巾應該可以擋掉最嚴重的寒意。"},{term:"off 的核心概念", pos:"整理", gloss:"本卷出現的 off 系列幾乎都帶「離開、脫離、消除」的意涵：ward off 擋開／wear off 消退／keep off 遠離／wipe off 擦掉／rub off 擦掉／let off 放過、引爆／knock off 打掉、下班／lay off 裁員／die off 相繼死去／split off 脫離／stop off 中途停留／take off 脫下、起飛。把介副詞的核心意思掌握住，一整組片語就好記得多。"},{term:"contagious", pos:"adj.", gloss:"（接觸）傳染性的（contagious diseases／a contagious laugh 有感染力的笑聲）。對照 infectious（經空氣或病媒傳染的；也指情緒有感染力）。n. contagion。相關：garlic 蒜頭／evil spirits 惡靈／hang-hung-hung 懸掛（注意「絞死」是 hang-hanged-hanged）。"}]}
+      ]
+    }]
+  }
+  ]
+};
+
+/* ==========================================================================
+   ②  以下為程式碼，一般情況不需要修改。
+   ========================================================================== */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const wordOf = q => q.options ? q.options[q.answer] : (q.answerText || '');
+const allQ = [];
+EXAM.sections.forEach(s => s.groups.forEach(g => g.questions.forEach(q => { q.__sid = s.id; allQ.push(q); })));
+const findQ = (n, sid) => allQ.find(q => String(q.n) === String(n) && (sid == null || q.__sid === sid));
+
+document.getElementById('brand').textContent = EXAM.brand;
+document.getElementById('examTitle').textContent = EXAM.title;
+document.getElementById('examMeta').textContent = EXAM.meta;
+
+let noteCount = 0;
+allQ.forEach(q => noteCount += (q.notes || []).length);
+
+const nav = document.getElementById('nav');
+EXAM.sections.forEach(s => {
+  const a = document.createElement('a');
+  a.className = 'chip'; a.href = '#sec-' + s.id; a.textContent = s.label.replace(/^[一二三四五六]、/, m => m);
+  nav.appendChild(a);
+});
+const noteChip = document.createElement('a');
+noteChip.className = 'chip'; noteChip.href = '#side'; noteChip.textContent = '重點表 ' + noteCount;
+nav.appendChild(noteChip);
+const toggleAll = document.createElement('button');
+toggleAll.className = 'chip solid'; toggleAll.textContent = '全部展開';
+nav.appendChild(toggleAll);
+
+function renderPassage(g, i, sid) {
+  let html = esc(g.passage);
+  g.questions.forEach(q => {
+    if (!q.evidence) return;
+    const t = esc(q.evidence);
+    if (html.includes(t)) html = html.replace(t, `<span class="hl ev" data-ev="${q.n}">${t}</span>`);
+  });
+  html = html.replace(/__(\d+)__/g, (m, n) =>
+    `<button class="blank" data-blank="${n}" aria-label="第 ${n} 題空格">${n}</button>`);
+  const body = '<div class="passage">' +
+    html.split(/\n{2,}/).map(p => '<p>' + p.replace(/\n/g, ' ') + '</p>').join('') + '</div>';
+  if (!g.zh) return body;
+  const id = sid + '-' + i;
+  return body +
+    `<button class="zhbtn" data-zh="${id}">全文中譯</button>` +
+    `<div class="zhbox" id="zh-${id}">` +
+      g.zh.split(/\n{2,}/).map(p => '<p>' + esc(p).replace(/\n/g, ' ') + '</p>').join('') +
+    '</div>';
+}
+
+function renderQ(q) {
+  const parts = [];
+  if (q.options) {
+    const ks = Object.keys(q.options);
+    parts.push('<div class="opts">' + ks.map(k =>
+      `<div class="opt"><span class="opt-k">(${k})</span><span>${esc(q.options[k])}</span></div>`).join('') + '</div>');
+  }
+  const head = `<div class="q-tag"><span class="q-n">${String(q.n).padStart(2,'0')}</span><span class="q-kind">${esc(q.kind || '')}</span></div>` +
+    (q.prompt ? `<p class="prompt">${esc(q.prompt)}</p>` : '') +
+    (q.stem ? `<p class="stem">${esc(q.stem).replace(/\n/g,'<br>')}</p>` : '');
+
+  let ans = '';
+  if (q.answers) {
+    ans = '<ul class="fills">' + q.answers.map(a =>
+      `<li class="fill"><span class="fill-k">${esc(a.k)}</span><span class="fill-w hl" data-ansmulti>${esc(a.w)}</span><span class="fill-n">${esc(a.note || '')}</span></li>`).join('') + '</ul>';
+  } else {
+    const label = q.options ? `(${q.answer}) ${esc(wordOf(q))}` :
+      (q.answer ? `(${q.answer}) ${esc(q.answerText)}` : esc(q.answerText));
+    ans = `<p class="ans"><span class="ans-k">答案</span><span class="ans-v hl" data-ans="${q.n}">${label}</span></p>`;
+  }
+
+  let expl = '';
+  if (q.explain) {
+    expl = '<ul class="lines">' + Object.keys(q.options).map(k => {
+      const right = q.multi ? q.multi.includes(k) : k === q.answer;
+      return `<li class="line ${right ? 'right' : 'wrong'}"><span class="line-k">(${k})</span><span>${esc(q.explain[k] || '')}</span></li>`;
+    }).join('') + '</ul>';
+  }
+  const why = q.why ? `<p class="why">${esc(q.why)}</p>` : '';
+  const sample = q.sample ? `<div class="sample"><p class="note-h">參考範文</p>` +
+    q.sample.split(/\n{2,}/).map(p => `<p>${esc(p).replace(/\n/g,' ')}</p>`).join('') + '</div>' : '';
+  const evid = q.evidence ? `<p class="evid"><span>文中依據</span>${esc(q.evidence)}</p>` : '';
+  const notes = (q.notes || []).length ? `<div class="note"><p class="note-h">重點整理</p>` +
+    q.notes.map(nt => `<p class="note-i"><span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span><span class="gloss">${esc(nt.gloss || '')}</span>` +
+      (nt.ex ? `<span class="ex">${esc(nt.ex)}<i>${esc(nt.exZh || '')}</i></span>` : '') + '</p>').join('') + '</div>' : '';
+
+  return `<article class="q" id="q-${q.__sid}-${q.n}" data-n="${q.n}" data-sid="${q.__sid}">
+    <div class="q-top">${head}${parts.join('')}
+      <button class="reveal" aria-expanded="false" aria-controls="body-${q.n}">看詳解</button>
+    </div>
+    <div class="body" id="body-${q.n}">
+      ${ans}${q.translation ? `<p class="zh">${esc(q.translation)}</p>` : ''}${expl}${why}${evid}${sample}${notes}
+    </div>
+  </article>`;
+}
+
+document.getElementById('main').innerHTML = EXAM.sections.map((s, i) => `
+  <section class="sec" id="sec-${s.id}">
+    <div class="sec-head">
+      <span class="sec-num">${String(i+1).padStart(2,'0')}</span>
+      <h2 class="sec-label">${esc(s.label)}</h2>
+      <span class="sec-score">${esc(s.score || '')}</span>
+    </div>
+    ${s.instruction ? `<p class="sec-inst">${esc(s.instruction)}</p>` : ''}
+    ${s.bank ? `<div class="bank${s.bankWide ? ' wide' : ''}">${Object.keys(s.bank).map(k =>
+      `<div class="bank-i" data-bank="${k}"><span>(${k})</span>${esc(s.bank[k])}</div>`).join('')}</div>` : ''}
+    ${s.groups.map((g, gi) => (g.passage ? renderPassage(g, gi, s.id) : '') + g.questions.map(renderQ).join('')).join('')}
+  </section>`).join('');
+
+const items = [];
+allQ.forEach(q => (q.notes || []).forEach(nt => items.push({ ...nt, n: q.n, sid: q.__sid })));
+document.getElementById('side').innerHTML = `
+  <p class="side-h">Notes</p>
+  <p class="side-t">本卷重點 ${items.length} 則</p>
+  <ul class="card-list">${items.map(nt => `
+    <li class="card-item"><a href="#q-${nt.sid}-${nt.n}">
+      <span class="jump">第 ${nt.n} 題</span>
+      <span class="term">${esc(nt.term)}</span><span class="pos">${esc(nt.pos || '')}</span>
+      <div class="gloss">${esc(nt.gloss || '')}</div>
+    </a></li>`).join('')}</ul>
+  <p class="side-note">點任一則可跳到出處題目。用瀏覽器列印（Ctrl／⌘ + P）會自動展開全部詳解與中譯，可直接印成講義。</p>`;
+
+document.getElementById('foot').textContent = `共 ${allQ.length} 題 · ${EXAM.footer}`;
+
+function setOpen(card, open) {
+  card.classList.toggle('open', open);
+  const btn = card.querySelector('.reveal');
+  btn.setAttribute('aria-expanded', open);
+  btn.firstChild.nodeValue = open ? '收合詳解' : '看詳解';
+  const n = card.dataset.n;
+  const sec = card.closest('.sec') || document;
+  card.querySelectorAll('.hl').forEach(h => h.classList.toggle('on', open));
+  const ev = sec.querySelector(`[data-ev="${n}"]`);
+  if (ev) ev.classList.toggle('on', open);
+  const q = findQ(n, card.dataset.sid);
+  if (q && q.answer && q.answerText) {
+    const bi = sec.querySelector(`[data-bank="${q.answer}"]`);
+    if (bi) bi.classList.toggle('used', open);
+  }
+  const bl = sec.querySelector(`[data-blank="${n}"]`);
+  if (bl) {
+    if (open) {
+      bl.classList.add('filled');
+      bl.innerHTML = `<sup>${n}</sup><span class="hl">${esc(wordOf(q))}</span>`;
+      requestAnimationFrame(() => bl.querySelector('.hl').classList.add('on'));
+    } else {
+      bl.classList.remove('filled');
+      bl.textContent = n;
+    }
+  }
+}
+document.addEventListener('click', e => {
+  const rv = e.target.closest('.reveal');
+  if (rv) { const c = rv.closest('.q'); setOpen(c, !c.classList.contains('open')); return; }
+  const zb = e.target.closest('.zhbtn');
+  if (zb) { zb.classList.toggle('on'); document.getElementById('zh-' + zb.dataset.zh).classList.toggle('on'); return; }
+  const bl = e.target.closest('.blank');
+  if (bl) {
+    const n = bl.dataset.blank;
+    const sec = bl.closest('.sec');
+    const c = (sec && sec.querySelector('.q[data-n="' + n + '"]'))
+           || document.querySelector('.q[data-n="' + n + '"]');
+    if (!c) return;
+    if (!c.classList.contains('open')) setOpen(c, true);
+    c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+toggleAll.addEventListener('click', () => {
+  const open = toggleAll.textContent === '全部展開';
+  document.querySelectorAll('.q').forEach(c => setOpen(c, open));
+  toggleAll.textContent = open ? '全部收合' : '全部展開';
+});
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('.q').forEach(c => setOpen(c, true));
+  document.querySelectorAll('.zhbox').forEach(b => b.classList.add('on'));
+  toggleAll.textContent = '全部收合';
+});
+</script>
+</body>
+</html>
